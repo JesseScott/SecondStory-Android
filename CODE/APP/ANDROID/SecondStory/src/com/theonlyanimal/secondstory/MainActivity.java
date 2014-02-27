@@ -1,8 +1,13 @@
 package com.theonlyanimal.secondstory;
 
+// Android SDK
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
+
+// Vuforia SDK
+import com.qualcomm.QCAR.*;
+
 
 public class MainActivity extends Activity {
 
