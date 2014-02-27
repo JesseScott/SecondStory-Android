@@ -33,3 +33,186 @@ Caused by: java.lang.ClassNotFoundException: Prohibited package name: java.lang
 	at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
 	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
 	... 12 more
+
+!ENTRY org.eclipse.ui 2 2 2014-02-26 16:39:00.763
+!MESSAGE Invalid property category path: ValidationPropertiesPage (bundle: org.eclipse.wst.xml.ui, propertyPage: org.eclipse.wst.xml.ui.propertyPage.project.validation)
+!SESSION 2014-02-26 16:40:53.877 -----------------------------------------------
+eclipse.buildId=M20130204-1200
+java.version=1.6.0_51
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -keyring /Users/jessescott/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -keyring /Users/jessescott/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2014-02-26 16:41:04.888
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-26 16:41:17.897
+!MESSAGE Collect preferences failed, class java/lang/AutoCloseable not found in /Users/jessescott/Documents/Android_SDK/android-sdk-mac_x86/platforms/android-19/android.jar
+!STACK 0
+java.lang.NoClassDefFoundError: java/lang/AutoCloseable
+	at java.lang.ClassLoader.defineClass1(Native Method)
+	at java.lang.ClassLoader.defineClassCond(ClassLoader.java:631)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:615)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:465)
+	at com.android.ide.eclipse.adt.internal.sdk.AndroidJarLoader.defineAndCacheClass(AndroidJarLoader.java:327)
+	at com.android.ide.eclipse.adt.internal.sdk.AndroidJarLoader.findClassesDerivingFrom(AndroidJarLoader.java:254)
+	at com.android.ide.eclipse.adt.internal.sdk.LayoutParamsParser.parseClasses(LayoutParamsParser.java:160)
+	at com.android.ide.eclipse.adt.internal.sdk.LayoutParamsParser.parsePreferencesClasses(LayoutParamsParser.java:140)
+	at com.android.ide.eclipse.adt.internal.sdk.AndroidTargetParser.collectPreferenceClasses(AndroidTargetParser.java:497)
+	at com.android.ide.eclipse.adt.internal.sdk.AndroidTargetParser.run(AndroidTargetParser.java:166)
+	at com.android.ide.eclipse.adt.internal.sdk.Sdk$6.run(Sdk.java:662)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+Caused by: java.lang.ClassNotFoundException: Prohibited package name: java.lang
+	at com.android.ide.eclipse.adt.internal.sdk.AndroidJarLoader.findClass(AndroidJarLoader.java:313)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	... 12 more
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2014-02-26 16:45:47.381
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2014-02-26 16:45:47.381
+!MESSAGE Cannot complete the install because of a conflicting dependency.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2014-02-26 16:45:47.381
+!MESSAGE Software being installed: Eclipse Git Team Provider 3.2.0.201312181205-r (org.eclipse.egit.feature.group 3.2.0.201312181205-r)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2014-02-26 16:45:47.381
+!MESSAGE Software currently installed: EGit Plug-in Import Support 2.3.1.201302201838-r (org.eclipse.egit.import.feature.group 2.3.1.201302201838-r)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2014-02-26 16:45:47.381
+!MESSAGE Only one of the following can be installed at once: 
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-02-26 16:45:47.381
+!MESSAGE Git Team Provider UI 2.3.1.201302201838-r (org.eclipse.egit.ui 2.3.1.201302201838-r)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-02-26 16:45:47.381
+!MESSAGE Git Team Provider UI 3.2.0.201312181205-r (org.eclipse.egit.ui 3.2.0.201312181205-r)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2014-02-26 16:45:47.381
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-02-26 16:45:47.381
+!MESSAGE From: Eclipse Git Team Provider 3.2.0.201312181205-r (org.eclipse.egit.feature.group 3.2.0.201312181205-r)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-02-26 16:45:47.381
+!MESSAGE To: org.eclipse.egit.ui [3.2.0.201312181205-r]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2014-02-26 16:45:47.382
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-02-26 16:45:47.382
+!MESSAGE From: EGit Plug-in Import 2.3.1.201302201838-r (org.eclipse.egit.import 2.3.1.201302201838-r)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-02-26 16:45:47.382
+!MESSAGE To: package org.eclipse.egit.ui [2.3.1,2.4.0)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2014-02-26 16:45:47.382
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-02-26 16:45:47.382
+!MESSAGE From: EGit Plug-in Import Support 2.3.1.201302201838-r (org.eclipse.egit.import.feature.group 2.3.1.201302201838-r)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-02-26 16:45:47.382
+!MESSAGE To: org.eclipse.egit.import [2.3.1.201302201838-r]
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2014-02-26 16:45:47.608
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2014-02-26 16:45:47.608
+!MESSAGE Cannot complete the install because of a conflicting dependency.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2014-02-26 16:45:47.608
+!MESSAGE Software being installed: Eclipse Git Team Provider 3.2.0.201312181205-r (org.eclipse.egit.feature.group 3.2.0.201312181205-r)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2014-02-26 16:45:47.608
+!MESSAGE Software currently installed: EGit Plug-in Import Support 2.3.1.201302201838-r (org.eclipse.egit.import.feature.group 2.3.1.201302201838-r)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2014-02-26 16:45:47.608
+!MESSAGE Only one of the following can be installed at once: 
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-02-26 16:45:47.608
+!MESSAGE Git Team Provider UI 2.3.1.201302201838-r (org.eclipse.egit.ui 2.3.1.201302201838-r)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-02-26 16:45:47.608
+!MESSAGE Git Team Provider UI 3.2.0.201312181205-r (org.eclipse.egit.ui 3.2.0.201312181205-r)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2014-02-26 16:45:47.608
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-02-26 16:45:47.608
+!MESSAGE From: Eclipse Git Team Provider 3.2.0.201312181205-r (org.eclipse.egit.feature.group 3.2.0.201312181205-r)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-02-26 16:45:47.609
+!MESSAGE To: org.eclipse.egit.ui [3.2.0.201312181205-r]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2014-02-26 16:45:47.609
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-02-26 16:45:47.609
+!MESSAGE From: EGit Plug-in Import 2.3.1.201302201838-r (org.eclipse.egit.import 2.3.1.201302201838-r)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-02-26 16:45:47.609
+!MESSAGE To: package org.eclipse.egit.ui [2.3.1,2.4.0)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2014-02-26 16:45:47.609
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-02-26 16:45:47.609
+!MESSAGE From: EGit Plug-in Import Support 2.3.1.201302201838-r (org.eclipse.egit.import.feature.group 2.3.1.201302201838-r)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-02-26 16:45:47.609
+!MESSAGE To: org.eclipse.egit.import [2.3.1.201302201838-r]
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2014-02-26 16:45:48.415
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2014-02-26 16:45:48.415
+!MESSAGE Cannot complete the install because of a conflicting dependency.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2014-02-26 16:45:48.415
+!MESSAGE Software being installed: Eclipse Git Team Provider 3.2.0.201312181205-r (org.eclipse.egit.feature.group 3.2.0.201312181205-r)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2014-02-26 16:45:48.415
+!MESSAGE Software currently installed: EGit Plug-in Import Support 2.3.1.201302201838-r (org.eclipse.egit.import.feature.group 2.3.1.201302201838-r)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2014-02-26 16:45:48.415
+!MESSAGE Only one of the following can be installed at once: 
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-02-26 16:45:48.415
+!MESSAGE Git Team Provider UI 2.3.1.201302201838-r (org.eclipse.egit.ui 2.3.1.201302201838-r)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-02-26 16:45:48.415
+!MESSAGE Git Team Provider UI 3.2.0.201312181205-r (org.eclipse.egit.ui 3.2.0.201312181205-r)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2014-02-26 16:45:48.415
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-02-26 16:45:48.415
+!MESSAGE From: Eclipse Git Team Provider 3.2.0.201312181205-r (org.eclipse.egit.feature.group 3.2.0.201312181205-r)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-02-26 16:45:48.415
+!MESSAGE To: org.eclipse.egit.ui [3.2.0.201312181205-r]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2014-02-26 16:45:48.415
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-02-26 16:45:48.416
+!MESSAGE From: EGit Plug-in Import 2.3.1.201302201838-r (org.eclipse.egit.import 2.3.1.201302201838-r)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-02-26 16:45:48.416
+!MESSAGE To: package org.eclipse.egit.ui [2.3.1,2.4.0)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2014-02-26 16:45:48.416
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-02-26 16:45:48.416
+!MESSAGE From: EGit Plug-in Import Support 2.3.1.201302201838-r (org.eclipse.egit.import.feature.group 2.3.1.201302201838-r)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-02-26 16:45:48.416
+!MESSAGE To: org.eclipse.egit.import [2.3.1.201302201838-r]
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2014-02-26 16:45:48.693
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2014-02-26 16:45:48.693
+!MESSAGE Cannot complete the install because of a conflicting dependency.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2014-02-26 16:45:48.693
+!MESSAGE Software being installed: Eclipse Git Team Provider 3.2.0.201312181205-r (org.eclipse.egit.feature.group 3.2.0.201312181205-r)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2014-02-26 16:45:48.694
+!MESSAGE Software currently installed: EGit Plug-in Import Support 2.3.1.201302201838-r (org.eclipse.egit.import.feature.group 2.3.1.201302201838-r)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2014-02-26 16:45:48.694
+!MESSAGE Only one of the following can be installed at once: 
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-02-26 16:45:48.694
+!MESSAGE Git Team Provider UI 2.3.1.201302201838-r (org.eclipse.egit.ui 2.3.1.201302201838-r)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-02-26 16:45:48.694
+!MESSAGE Git Team Provider UI 3.2.0.201312181205-r (org.eclipse.egit.ui 3.2.0.201312181205-r)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2014-02-26 16:45:48.694
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-02-26 16:45:48.694
+!MESSAGE From: Eclipse Git Team Provider 3.2.0.201312181205-r (org.eclipse.egit.feature.group 3.2.0.201312181205-r)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-02-26 16:45:48.694
+!MESSAGE To: org.eclipse.egit.ui [3.2.0.201312181205-r]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2014-02-26 16:45:48.694
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-02-26 16:45:48.694
+!MESSAGE From: EGit Plug-in Import 2.3.1.201302201838-r (org.eclipse.egit.import 2.3.1.201302201838-r)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-02-26 16:45:48.694
+!MESSAGE To: package org.eclipse.egit.ui [2.3.1,2.4.0)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2014-02-26 16:45:48.695
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-02-26 16:45:48.695
+!MESSAGE From: EGit Plug-in Import Support 2.3.1.201302201838-r (org.eclipse.egit.import.feature.group 2.3.1.201302201838-r)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-02-26 16:45:48.695
+!MESSAGE To: org.eclipse.egit.import [2.3.1.201302201838-r]
+
+!ENTRY org.eclipse.ui 2 2 2014-02-26 16:52:15.425
+!MESSAGE Invalid property category path: ValidationPropertiesPage (bundle: org.eclipse.wst.xml.ui, propertyPage: org.eclipse.wst.xml.ui.propertyPage.project.validation)
+!SESSION 2014-02-26 16:52:26.529 -----------------------------------------------
+eclipse.buildId=M20130204-1200
+java.version=1.6.0_51
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -keyring /Users/jessescott/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -keyring /Users/jessescott/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2014-02-26 16:53:42.291
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.ui 2 2 2014-02-26 17:02:04.829
+!MESSAGE Invalid property category path: ValidationPropertiesPage (bundle: org.eclipse.wst.xml.ui, propertyPage: org.eclipse.wst.xml.ui.propertyPage.project.validation)
