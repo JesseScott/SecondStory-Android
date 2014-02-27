@@ -8,3 +8,28 @@ Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -data /Users/jessesco
 
 !ENTRY org.eclipse.core.net 1 0 2014-02-26 16:34:12.267
 !MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-26 16:36:31.493
+!MESSAGE Failed to load properties file for project 'SecondStory'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-02-26 16:36:34.876
+!MESSAGE Collect preferences failed, class java/lang/AutoCloseable not found in /Users/jessescott/Documents/Android_SDK/android-sdk-mac_x86/platforms/android-19/android.jar
+!STACK 0
+java.lang.NoClassDefFoundError: java/lang/AutoCloseable
+	at java.lang.ClassLoader.defineClass1(Native Method)
+	at java.lang.ClassLoader.defineClassCond(ClassLoader.java:631)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:615)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:465)
+	at com.android.ide.eclipse.adt.internal.sdk.AndroidJarLoader.defineAndCacheClass(AndroidJarLoader.java:327)
+	at com.android.ide.eclipse.adt.internal.sdk.AndroidJarLoader.findClassesDerivingFrom(AndroidJarLoader.java:254)
+	at com.android.ide.eclipse.adt.internal.sdk.LayoutParamsParser.parseClasses(LayoutParamsParser.java:160)
+	at com.android.ide.eclipse.adt.internal.sdk.LayoutParamsParser.parsePreferencesClasses(LayoutParamsParser.java:140)
+	at com.android.ide.eclipse.adt.internal.sdk.AndroidTargetParser.collectPreferenceClasses(AndroidTargetParser.java:497)
+	at com.android.ide.eclipse.adt.internal.sdk.AndroidTargetParser.run(AndroidTargetParser.java:166)
+	at com.android.ide.eclipse.adt.internal.sdk.Sdk$6.run(Sdk.java:662)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+Caused by: java.lang.ClassNotFoundException: Prohibited package name: java.lang
+	at com.android.ide.eclipse.adt.internal.sdk.AndroidJarLoader.findClass(AndroidJarLoader.java:313)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	... 12 more
