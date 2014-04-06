@@ -1,2 +1,2 @@
 eclipse.preferences.version=1
-task-tag-projects-already-scanned=SecondStory
+task-tag-projects-already-scanned=SecondStory,ImageTargetsNative,BackgroundTextureAccess,Books,Dominoes,OcclusionManagement,VideoPlayback,VuforiaSamples
