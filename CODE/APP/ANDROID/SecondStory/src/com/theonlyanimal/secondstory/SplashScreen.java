@@ -1,6 +1,8 @@
 package com.theonlyanimal.secondstory;
 
 // IMPORTS
+
+import com.theonlyanimal.secondstory.R;
 import android.os.Bundle;
 import android.util.Log;
 import android.app.Activity;
@@ -34,7 +36,7 @@ public class SplashScreen extends Activity {
 					e.printStackTrace();
 				}
 				finally {
-					Log.v(TAG, " - Ending The Initial Screen - ");
+					Log.v(TAG, " - Ending The Splash Screen - ");
 					finish();
 				}
 			}
