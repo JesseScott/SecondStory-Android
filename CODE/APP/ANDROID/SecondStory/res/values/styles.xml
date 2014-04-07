@@ -11,6 +11,17 @@
             backward-compatibility can go here.
         -->
     </style>
+    
+    <!-- Custom theme: No Action Bar But With Fullscreen -->
+    <style name="NoActionBar" parent="@android:style/Theme.Holo.Light">
+    	<item name="android:windowActionBar">false</item>
+    	<item name="android:windowNoTitle">true</item>
+	</style> 
+	
+    <!-- Custom theme: No Action Bar And Fullscreen -->
+    <style name="NoActionBarFullscreen" parent="@android:style/Theme.Holo.NoActionBar.Fullscreen">
+
+	</style> 
 
     <!-- Application theme. -->
     <style name="AppTheme" parent="AppBaseTheme">
