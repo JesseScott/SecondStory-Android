@@ -20,14 +20,14 @@
 ###############
 
 # built application files
-*.apk
-*.ap_
+CODE/APP/ANDROID/*.apk
+CODE/APP/ANDROID/*.ap_
 
 # files for the dex VM
-*.dex
+CODE/APP/ANDROID/*.dex
 
 # Java class files
-*.class
+CODE/APP/ANDROID/*.class
 
 # generated files
 bin/
@@ -44,32 +44,32 @@ local.properties
 ###############
 
 
-*.pydevproject
-.project
-.metadata
-bin/**
-tmp/**
-tmp/**/*
-*.tmp
-*.bak
-*.swp
-*~.nib
-local.properties
-.classpath
-.settings/
-.loadpath
+CODE/APP/ANDROID/*.pydevproject
+CODE/APP/ANDROID/.project
+CODE/APP/ANDROID/.metadata
+CODE/APP/ANDROID/bin/**
+CODE/APP/ANDROID/tmp/**
+CODE/APP/ANDROID/tmp/**/*
+CODE/APP/ANDROID/*.tmp
+CODE/APP/ANDROID/*.bak
+CODE/APP/ANDROID/*.swp
+CODE/APP/ANDROID/*~.nib
+CODE/APP/ANDROID/local.properties
+CODE/APP/ANDROID/.classpath
+CODE/APP/ANDROID/.settings/
+CODE/APP/ANDROID/.loadpath
 
 # External tool builders
-.externalToolBuilders/
+CODE/APP/ANDROID/.externalToolBuilders/
 
 # Locally stored "Eclipse launch configurations"
-*.launch
+CODE/APP/ANDROID/*.launch
 
 # CDT-specific
-.cproject
+CODE/APP/ANDROID/.cproject
 
 # PDT-specific
-.buildpath
+CODE/APP/ANDROID/.buildpath
 
 
 ############################################################
@@ -80,7 +80,7 @@ local.properties
 #
 ###############
 
-CODE/APP/ANDROID/.metadata/
+CODE/APP/ANDROID/.metadata/*
 CODE/APP/ANDROID/.plugins
 CODE/APP/ANDROID/.plugins/
 CODE/APP/ANDROID/.plugins/*
