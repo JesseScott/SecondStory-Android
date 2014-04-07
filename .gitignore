@@ -80,11 +80,10 @@ local.properties
 #
 ###############
 
-.metadata/
-.plugins
-.plugins/
-.plugins/*
-Android/.metadata/
+CODE/APP/ANDROID/.metadata/
+CODE/APP/ANDROID/.plugins
+CODE/APP/ANDROID/.plugins/
+CODE/APP/ANDROID/.plugins/*
 
 ############################################################
 
