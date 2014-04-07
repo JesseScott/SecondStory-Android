@@ -70,12 +70,14 @@ public class WelcomeScreen extends Activity {
 					builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
 					           public void onClick(DialogInterface dialog, int id) {
 					               // User clicked OK button
+					        	   Log.v(TAG, " - User Said YES! - ");
 					        	   directory.mkdirs();
 					           }
 					       });
 					builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
 					           public void onClick(DialogInterface dialog, int id) {
 					               // User cancelled the dialog - WERE GOING HOME
+					        	   Log.v(TAG, " - User Said No :( - ");
 					        	   Intent intent = new Intent(Intent.ACTION_MAIN);
 					        	   intent.addCategory(Intent.CATEGORY_HOME);
 					        	   intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
