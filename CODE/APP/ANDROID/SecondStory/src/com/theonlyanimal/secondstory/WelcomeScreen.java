@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.util.Log;
 import java.io.File;
 import com.theonlyanimal.secondstory.StorageHelper;
@@ -44,7 +45,7 @@ public class WelcomeScreen extends Activity {
 			try{
 
 				directoryName = "//sdcard//SecondStory";
-				File directory = new File(directoryName);
+				final File directory = new File(directoryName);
 				
 				if(directory.exists()) {
 					Log.v(TAG, " - Path Exists - ");
@@ -69,11 +70,17 @@ public class WelcomeScreen extends Activity {
 					builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
 					           public void onClick(DialogInterface dialog, int id) {
 					               // User clicked OK button
+					        	   directory.mkdirs();
 					           }
 					       });
 					builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
 					           public void onClick(DialogInterface dialog, int id) {
-					               // User cancelled the dialog
+					               // User cancelled the dialog - WERE GOING HOME
+					        	   Intent intent = new Intent(Intent.ACTION_MAIN);
+					        	   intent.addCategory(Intent.CATEGORY_HOME);
+					        	   intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+					        	   startActivity(intent);
+					        	   finish();
 					           }
 					       });
 
