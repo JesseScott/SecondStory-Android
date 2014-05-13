@@ -1,15 +1,12 @@
 INDEX VERSION 1.126+/Users/jessescott/Dropbox/GIT/SecondStory/CODE/APP/ANDROID/.metadata/.plugins/org.eclipse.jdt.core
 582052260.index
 262037332.index
-985988326.index
 1053111474.index
 47452982.index
-3340656962.index
 180413643.index
-3019498806.index
 1612118554.index
-3765020915.index
+3019498806.index
 2694292257.index
-3180126364.index
 1612331289.index
+3180126364.index
 20845591.index
