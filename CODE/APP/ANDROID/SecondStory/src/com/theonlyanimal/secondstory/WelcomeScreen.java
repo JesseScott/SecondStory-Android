@@ -91,15 +91,21 @@ public class WelcomeScreen extends Activity {
 					AlertDialog.Builder builder = new AlertDialog.Builder(this);
 					
 					// Title
-					builder.setTitle("Folder Doesn't Exist");
-					builder.setMessage("This App Requires A Custom Folder To Store Content - Can We Make One ?");
+					builder.setTitle("Content Doesn't Exist");
+					builder.setMessage("This App Requires Custom Content - We Need To Make A Directory & Download Some Content To It - Ok ?");
 					
 					// Buttons
 					builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
 					           public void onClick(DialogInterface dialog, int id) {
 					               // User clicked OK button
 					        	   Log.v(TAG, " - User Said YES! - ");
+					        	   
+					        	   // Make The Directory
 					        	   directory.mkdirs();
+					        	   
+					        	   // Get The Files
+					        	   getFiles();
+					        	   
 					           }
 					       });
 					builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
