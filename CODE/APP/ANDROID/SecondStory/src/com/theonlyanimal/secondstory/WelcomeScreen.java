@@ -4,22 +4,37 @@ package com.theonlyanimal.secondstory;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.app.Dialog;
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.util.Log;
+import android.os.AsyncTask;
 
+import java.io.BufferedOutputStream;
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.net.SocketException;
+
+import org.apache.commons.net.ftp.FTP;
+import org.apache.commons.net.ftp.FTPClient;
+import org.apache.commons.net.ftp.FTPFile;
 
 import com.theonlyanimal.secondstory.StorageHelper;
-import com.theonlyanimal.secondstory.DownloadHelper;
 
-//CLASS
+
+// ACTIVITY CLASS
+
 public class WelcomeScreen extends Activity {
 
 	// GLOBALS
 	private static final String TAG = "SecondStory";
 	private static final String SD_DIRECTORY = "//sdcard//SecondStory";
+    public static final int DIALOG_DOWNLOAD_PROGRESS = 0;
+    private ProgressDialog progressDialog;
 	
 	// LifeCycle
 	@Override
@@ -54,11 +69,13 @@ public class WelcomeScreen extends Activity {
 					if(directory.isDirectory()) {
 						Log.v(TAG, " - And Its A Directory - ");
 						
-						// 
+						// How Many Files Are There ?
 						File[] listOfFiles = directory.listFiles();
 						Log.v(TAG, "Directory has " + listOfFiles.length + " Files");
 
+						// If There's None
 						if(listOfFiles.length == 0) {
+							// Get 'Em
 							getFiles();
 						}
 						
@@ -120,8 +137,202 @@ public class WelcomeScreen extends Activity {
 		Log.v(TAG, " - getFiles() - ");
 		DownloadHelper downloadHelper = new DownloadHelper(); 
 		downloadHelper.execute();
-		
-		
 	}
 
-} /* WelcomeScreen */
+	// Show Progress
+	@Override
+	protected Dialog onCreateDialog(int id) {
+		switch(id) {
+			case DIALOG_DOWNLOAD_PROGRESS:
+				progressDialog = new ProgressDialog(this);
+				progressDialog.setMessage("Downloading files...");
+				progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+				progressDialog.setCancelable(false);
+				progressDialog.show();
+				
+				return progressDialog;
+				
+			default:
+				return null;
+		}
+	}
+	
+	
+	/*
+	 * ASYNC FTP CLASS 
+	 */
+
+	class DownloadHelper extends AsyncTask<String, Integer, String> {
+		
+		private static final String TAG = "FTP";
+		private final FTPClient ftp;
+		private static final String username = "ghostlight"; 
+		private static final String password = "gh0st_l1ght"; 
+		private static final String hostname = "ftp.memelab.ca"; 
+		private static final int port = 21; 
+
+		
+		// Constructor
+		DownloadHelper() {
+			
+			ftp = new FTPClient();
+			
+		}
+		
+		private Boolean setupFTP() {
+			
+			// Connect To Server
+			if(connectToFTP()) {
+				Log.v(TAG, "Connected");
+			}
+			else {
+				Log.v(TAG, "Couldnt Connect");
+				return false;
+			}
+			
+			// Login
+			if(loginToFTP()) {
+				Log.v(TAG, "Logged In");
+			}
+			else {
+				Log.v(TAG, "Couldnt Login");
+				return false;
+			}
+			
+			// Navigate To Correct Path
+			if(navigateToPath()) {
+				Log.v(TAG, "Navigated");
+			}
+			else {
+				Log.v(TAG, "Couldnt Navigate");
+				return false;
+			}
+			
+			// Set To Binary File Type 
+			try {
+				ftp.setFileType(FTP.BINARY_FILE_TYPE);
+			} catch (IOException e) {
+				e.printStackTrace();
+				return false;
+			}
+			
+			// Passive Mode For Firewall
+			ftp.enterLocalPassiveMode();
+			
+			// If No Errors... 
+			return true;
+		}
+		
+		private Boolean connectToFTP() {
+			try {
+				ftp.connect(hostname, port);
+				return true;
+			} catch (SocketException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			return false;
+		}
+		
+		private Boolean loginToFTP() {
+			try {
+				ftp.login(username, password);
+				return true;
+			} catch (SocketException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			return false;
+		}
+		
+		private Boolean navigateToPath() {
+			try {
+				ftp.changeWorkingDirectory(" /public_html/jessescott/storage/android");
+				return true;
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			return false;
+		}
+		
+		private void getFilesFromFTP() {
+		     try {
+		    	FTPFile[] files = ftp.listFiles();
+				int count = 0;
+				int totalFiles = files.length;
+		    	for (FTPFile f : files) {
+
+					// Log Names
+					Log.v("FTP", f.toFormattedString());
+					
+					// Set Path
+					String storagePath = "//sdcard//SecondStory//";
+					String fileName = storagePath + f.getName();
+				    OutputStream output = new BufferedOutputStream(new FileOutputStream(fileName));
+
+				    // Get Files
+	                ftp.retrieveFile(fileName, output);
+	                
+	                // Update Progress
+	                publishProgress((int) ((count / (float) totalFiles) * 100));
+	                count++;
+	                
+	                // Close Buffer
+	                output.close();
+				 }
+		     } 
+		     catch (IOException e) {
+				e.printStackTrace();
+		     }
+		     finally {
+				 // Logout + Disconnect
+				try {
+					ftp.logout();
+					ftp.disconnect();
+				} 
+				catch (IOException e) {
+					e.printStackTrace();
+				}
+		     }
+		}
+		
+		@SuppressWarnings("deprecation")
+		@Override
+		protected void onPreExecute() {
+			super.onPreExecute();
+			showDialog(DIALOG_DOWNLOAD_PROGRESS);
+		}
+
+
+		@Override
+		protected String doInBackground(String... params) {
+			try {
+				if(setupFTP()) {
+					getFilesFromFTP();
+				}
+			}
+			catch(Exception e) {
+				e.printStackTrace();
+			}
+			return null;
+		}
+		
+		protected void onProgressUpdate(Integer... progress) {
+			 progressDialog.setProgress(progress[0]);
+		}
+
+		@SuppressWarnings("deprecation")
+		protected void onPostExecute(String unused) {
+			dismissDialog(DIALOG_DOWNLOAD_PROGRESS);
+		}
+		
+
+
+	} /* EOC */
+
+	
+	
+	
+} /* EOC */

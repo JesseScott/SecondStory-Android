@@ -44,4 +44,4 @@ public class SplashScreen extends Activity {
 		timer.start();
     }
 	
-}
+} /* EOC */
