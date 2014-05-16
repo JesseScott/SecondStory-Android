@@ -8,16 +8,18 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.util.Log;
-import java.io.File;
-import com.theonlyanimal.secondstory.StorageHelper;
 
+import java.io.File;
+
+import com.theonlyanimal.secondstory.StorageHelper;
+import com.theonlyanimal.secondstory.DownloadHelper;
 
 //CLASS
 public class WelcomeScreen extends Activity {
 
 	// GLOBALS
 	private static final String TAG = "SecondStory";
-
+	private static final String SD_DIRECTORY = "//sdcard//SecondStory";
 	
 	// LifeCycle
 	@Override
@@ -31,10 +33,11 @@ public class WelcomeScreen extends Activity {
 		
 	} /* onCreate() */
 	
+	// Check If Directory Exists
 	public void checkStorage() {
 		
 		// Variables
-		String directoryName;
+		
 		StorageHelper storage = new StorageHelper();
 		
 		// Check For SD Card
@@ -44,13 +47,21 @@ public class WelcomeScreen extends Activity {
 			// Check For Custom Directory
 			try{
 
-				directoryName = "//sdcard//SecondStory";
-				final File directory = new File(directoryName);
+				final File directory = new File(SD_DIRECTORY);
 				
 				if(directory.exists()) {
 					Log.v(TAG, " - Path Exists - ");
 					if(directory.isDirectory()) {
 						Log.v(TAG, " - And Its A Directory - ");
+						
+						// 
+						File[] listOfFiles = directory.listFiles();
+						Log.v(TAG, "Directory has " + listOfFiles.length + " Files");
+
+						if(listOfFiles.length == 0) {
+							getFiles();
+						}
+						
 					} 
 					else {
 						Log.v(TAG, " - But Its Not Directory - ");
@@ -104,5 +115,13 @@ public class WelcomeScreen extends Activity {
 			
 	} /* checkStorage() */
 	
+	// Download Files
+	public void getFiles() {
+		Log.v(TAG, " - getFiles() - ");
+		DownloadHelper downloadHelper = new DownloadHelper(); 
+		downloadHelper.execute();
+		
+		
+	}
 
 } /* WelcomeScreen */

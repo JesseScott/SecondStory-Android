@@ -6,5 +6,6 @@
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
 	<classpathentry exported="true" kind="lib" path="/Users/jessescott/Documents/Android_SDK/vuforia-sdk-android-2-8-7/build/java/vuforia/Vuforia.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/commons-net-3.3.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>
