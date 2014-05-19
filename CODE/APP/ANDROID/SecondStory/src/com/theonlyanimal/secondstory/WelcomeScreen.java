@@ -155,9 +155,7 @@ public class WelcomeScreen extends Activity {
 				progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
 				progressDialog.setCancelable(false);
 				progressDialog.show();
-				
 				return progressDialog;
-				
 			default:
 				return null;
 		}
@@ -180,9 +178,7 @@ public class WelcomeScreen extends Activity {
 		
 		// Constructor
 		DownloadHelper() {
-			
 			ftp = new FTPClient();
-			
 		}
 		
 		private Boolean setupFTP() {
@@ -338,7 +334,5 @@ public class WelcomeScreen extends Activity {
 
 	} /* EOC */
 
-	
-	
 	
 } /* EOC */

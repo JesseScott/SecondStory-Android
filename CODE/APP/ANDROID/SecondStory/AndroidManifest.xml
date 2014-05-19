@@ -54,6 +54,17 @@
             </intent-filter>
         </activity>
         
+        <!-- TUTORIAL SCREEN  -->
+        <activity
+            android:name="com.theonlyanimal.secondstory.TutorialScreen"
+            android:label="@string/app_name"
+         >
+            <intent-filter>
+                <action android:name="android.intent.action.TUTORIAL" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
     </application>
 
 </manifest>
