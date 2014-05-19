@@ -28,7 +28,7 @@ public class SplashScreen extends Activity {
 				try { 
 					// Time for 5 seconds
 					sleep(5000);
-					Intent i = new Intent("android.intent.action.TUTORIAL");
+					Intent i = new Intent("android.intent.action.WELCOME");
 					startActivity(i);
 				}
 				catch(InterruptedException e) {

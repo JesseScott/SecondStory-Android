@@ -34,7 +34,7 @@ public class TutorialScreen extends FragmentActivity {
         adapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
         pager.setAdapter(adapter);
         //Log.v(TAG, "Initial Page is " + pager.getCurrentItem());
-        //pager.setCurrentItem(pager.getCurrentItem());
+        //pager.setCurrentItem(0);
         
     }
     

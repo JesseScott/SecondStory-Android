@@ -212,8 +212,10 @@ public class WelcomeScreen extends Activity {
 			
 			// Set To Binary File Type 
 			try {
-				ftp.setFileType(FTP.BINARY_FILE_TYPE);
-			} catch (IOException e) {
+				ftp.setFileType(FTPClient.BINARY_FILE_TYPE);
+				ftp.setBufferSize(1024);
+			} 
+			catch (IOException e) {
 				e.printStackTrace();
 				return false;
 			}
@@ -229,9 +231,11 @@ public class WelcomeScreen extends Activity {
 			try {
 				ftp.connect(hostname, port);
 				return true;
-			} catch (SocketException e) {
+			} 
+			catch (SocketException e) {
 				e.printStackTrace();
-			} catch (IOException e) {
+			} 
+			catch (IOException e) {
 				e.printStackTrace();
 			}
 			return false;
@@ -241,9 +245,11 @@ public class WelcomeScreen extends Activity {
 			try {
 				ftp.login(username, password);
 				return true;
-			} catch (SocketException e) {
+			} 
+			catch (SocketException e) {
 				e.printStackTrace();
-			} catch (IOException e) {
+			} 
+			catch (IOException e) {
 				e.printStackTrace();
 			}
 			return false;
@@ -260,22 +266,31 @@ public class WelcomeScreen extends Activity {
 		}
 		
 		private void getFilesFromFTP() {
-		     try {
+			int count = 0;
+			OutputStream output = null;
+			
+			try {
 		    	FTPFile[] files = ftp.listFiles();
-				int count = 0;
 				int totalFiles = files.length;
+
 		    	for (FTPFile f : files) {
 
 					// Log Names
 					Log.v("FTP", f.toFormattedString());
 					
 					// Set Path
-					String storagePath = "//sdcard//SecondStory//";
-					String fileName = storagePath + f.getName();
-				    OutputStream output = new BufferedOutputStream(new FileOutputStream(fileName));
+					String remoteFile = f.getName();
+					Log.v("FTP", "REMOTE: " + remoteFile);
+					String localFile = "//sdcard//SecondStory//";
+					localFile += remoteFile;
+					Log.v("FTP", "LOCAL: " + localFile);
+				    output = new BufferedOutputStream(new FileOutputStream(localFile));
 
 				    // Get Files
-	                ftp.retrieveFile(fileName, output);
+	                Boolean success = ftp.retrieveFile(remoteFile, output);
+	                if(success) {
+	                	Log.v("FTP", "SUCCESS");
+	                }
 	                
 	                // Update Progress
 	                publishProgress((int) ((count / (float) totalFiles) * 100));
@@ -291,8 +306,12 @@ public class WelcomeScreen extends Activity {
 		     finally {
 				 // Logout + Disconnect
 				try {
+					if(ftp != null) {
+						output.close();
+					}
 					ftp.logout();
 					ftp.disconnect();
+					Log.v("FTP", "DISCONNECT");
 				} 
 				catch (IOException e) {
 					e.printStackTrace();

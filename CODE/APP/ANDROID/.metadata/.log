@@ -6247,3 +6247,6 @@ Binding(CTRL+SHIFT+ARROW_RIGHT,
 
 !ENTRY com.android.ide.eclipse.adt 4 0 2014-05-19 14:10:00.543
 !MESSAGE Failed to load properties file for project 'MainActivity'
+
+!ENTRY com.android.ide.eclipse.adt 1 0 2014-05-19 17:44:46.781
+!MESSAGE No valid Android XML Editor Delegate found for file /VideoPlayback/CopyVuforiaFiles.xml [Res null, type null]
