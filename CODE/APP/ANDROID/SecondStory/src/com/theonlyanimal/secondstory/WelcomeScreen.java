@@ -19,7 +19,6 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.net.SocketException;
 
-import org.apache.commons.net.ftp.FTP;
 import org.apache.commons.net.ftp.FTPClient;
 import org.apache.commons.net.ftp.FTPFile;
 
@@ -73,10 +72,17 @@ public class WelcomeScreen extends Activity {
 						File[] listOfFiles = directory.listFiles();
 						Log.v(TAG, "Directory has " + listOfFiles.length + " Files");
 
+						// TODO check actual time stamp of files
 						// If There's None
 						if(listOfFiles.length == 0) {
 							// Get 'Em
 							getFiles();
+						}
+						// All Good To Proceed
+						else {
+							// Start Tutorial Screens
+							Intent i = new Intent("android.intent.action.TUTORIAL");
+							startActivity(i);
 						}
 						
 					} 
@@ -92,7 +98,7 @@ public class WelcomeScreen extends Activity {
 					
 					// Title
 					builder.setTitle("Content Doesn't Exist");
-					builder.setMessage("This App Requires Custom Content - We Need To Make A Directory & Download Some Content To It - Ok ?");
+					builder.setMessage("this app requires custom content - we need to make a directory & download some content to it - ok ?");
 					
 					// Buttons
 					builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -134,6 +140,29 @@ public class WelcomeScreen extends Activity {
 		}
 		else {
 			Log.v(TAG, " - SD ISNT AVAILABLE - ALERTING USER - ");
+			// Alert
+			AlertDialog.Builder builder = new AlertDialog.Builder(this);
+			
+			// Title
+			builder.setTitle("Storage Isn't Accessible");
+			builder.setMessage("this app requires access to your phone's storage - please make sure it is mounted then relaunch the app");
+			
+			// Buttons
+			builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+			           public void onClick(DialogInterface dialog, int id) {
+			               // User clicked OK button
+			        	   Log.v(TAG, " - User Said OK! - "); 
+			        	   Intent intent = new Intent(Intent.ACTION_MAIN);
+			        	   intent.addCategory(Intent.CATEGORY_HOME);
+			        	   intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+			        	   startActivity(intent);
+			        	   finish();
+			           }
+			       });;
+
+			// Show
+			AlertDialog dialog = builder.create();
+			dialog.show();
 		}
 			
 	} /* checkStorage() */
@@ -347,6 +376,12 @@ public class WelcomeScreen extends Activity {
 		@SuppressWarnings("deprecation")
 		protected void onPostExecute(String unused) {
 			dismissDialog(DIALOG_DOWNLOAD_PROGRESS);
+			Log.v(TAG, "ALL DONE!");
+			
+			// Start Tutorial Screens
+			Intent i = new Intent("android.intent.action.TUTORIAL");
+			startActivity(i);
+			
 		}
 		
 
