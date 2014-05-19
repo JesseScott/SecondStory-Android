@@ -9,6 +9,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 
 
 
@@ -16,7 +17,8 @@ import android.support.v4.view.ViewPager;
 public class TutorialScreen extends FragmentActivity {
 
 	// GLOBALS
-	private static final int NUM_PAGES = 5;
+	private static final String TAG = "SecondStory";
+	private static final int NUM_PAGES = 3;
 	private ViewPager pager; // animation handler
 	private PagerAdapter adapter; // provides pages to pager
 	
@@ -31,6 +33,9 @@ public class TutorialScreen extends FragmentActivity {
         pager = (ViewPager) findViewById(R.id.pager);
         adapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
         pager.setAdapter(adapter);
+        //Log.v(TAG, "Initial Page is " + pager.getCurrentItem());
+        //pager.setCurrentItem(pager.getCurrentItem());
+        
     }
     
     @Override
@@ -49,11 +54,14 @@ public class TutorialScreen extends FragmentActivity {
     	// Constructor
     	public ScreenSlidePagerAdapter(FragmentManager fm) {
     		super(fm);
+    		Log.v(TAG, "constructor");
+    		pager.setCurrentItem(pager.getCurrentItem());
     	}
     	
     	@Override
     	public Fragment getItem(int position) {
-    		return new ScreenSlidePageFragment();
+    		Log.v(TAG, "getItem " + position);
+    		return new ScreenSlidePageFragment(position);
     	}
     	
     	@Override

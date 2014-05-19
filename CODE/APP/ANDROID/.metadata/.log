@@ -6244,3 +6244,6 @@ Binding(CTRL+SHIFT+ARROW_RIGHT,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.jdt.ui.javaEditorScope,,cocoa,system)
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-05-19 14:10:00.543
+!MESSAGE Failed to load properties file for project 'MainActivity'
