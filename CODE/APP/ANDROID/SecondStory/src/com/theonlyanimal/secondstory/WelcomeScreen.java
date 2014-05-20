@@ -51,7 +51,6 @@ public class WelcomeScreen extends Activity {
 	public void checkStorage() {
 		
 		// Variables
-		
 		StorageHelper storage = new StorageHelper();
 		
 		// Check For SD Card
@@ -60,9 +59,7 @@ public class WelcomeScreen extends Activity {
 
 			// Check For Custom Directory
 			try{
-
 				final File directory = new File(SD_DIRECTORY);
-				
 				if(directory.exists()) {
 					Log.v(TAG, " - Path Exists - ");
 					if(directory.isDirectory()) {
@@ -111,7 +108,6 @@ public class WelcomeScreen extends Activity {
 					        	   
 					        	   // Get The Files
 					        	   getFiles();
-					        	   
 					           }
 					       });
 					builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
@@ -382,9 +378,7 @@ public class WelcomeScreen extends Activity {
 			Intent i = new Intent("android.intent.action.TUTORIAL");
 			startActivity(i);
 			
-		}
-		
-
+		}	
 
 	} /* EOC */
 
