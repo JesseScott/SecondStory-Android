@@ -159,14 +159,13 @@ public class VideoPlayerHelper implements OnPreparedListener,
                         // However, if you would like to load the movie from the
                         // sdcard or from a network location
                         // simply comment the three lines below
-                        AssetFileDescriptor afd = mParentActivity.getAssets()
-                            .openFd(filename);
-                        mMediaPlayer.setDataSource(afd.getFileDescriptor(),
-                            afd.getStartOffset(), afd.getLength());
-                        afd.close();
+                        
+                        //AssetFileDescriptor afd = mParentActivity.getAssets().openFd(filename);
+                        //mMediaPlayer.setDataSource(afd.getFileDescriptor(),afd.getStartOffset(), afd.getLength());
+                        //afd.close();
                         
                         // and uncomment this one
-                        // mMediaPlayer.setDataSource("/sdcard/myMovie.m4v");
+                        mMediaPlayer.setDataSource("/sdcard/SecondStory/2ndStory-gun-720p1.mov.ff.mp4");
                         
                         mMediaPlayer.prepareAsync();
                         mMediaPlayer.setOnPreparedListener(this);
@@ -178,11 +177,11 @@ public class VideoPlayerHelper implements OnPreparedListener,
                         mMediaPlayer.setSurface(new Surface(mSurfaceTexture));
                         canBeOnTexture = true;
                         mShouldPlayImmediately = playOnTextureImmediately;
-                    } catch (Exception e)
+                    } 
+                    catch (Exception e)
                     {
-                        Log.e(LOGTAG, "Error while creating the MediaPlayer: "
-                            + e.toString());
-                        
+                        Log.e(LOGTAG, "Error while creating the MediaPlayer: " + e.toString());
+                   
                         mCurrentState = MEDIA_STATE.ERROR;
                         mMediaPlayerLock.unlock();
                         mSurfaceTextureLock.unlock();

@@ -3,6 +3,14 @@
     android:id="@+id/content"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
+    
+    <ImageView
+        android:id="@+id/splash_image"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/bg_1" 
+    />
 
     <TextView
         android:id="@+id/textView_tutPg1"
@@ -12,7 +20,9 @@
         android:layout_centerVertical="true"
         android:lineSpacingMultiplier="1.2"
         android:padding="16dp"
-        android:text="Page 1" />
+        android:text="Page 1" 
+	    android:textAppearance="?android:attr/textAppearanceLarge"    
+    />
 
     <Button
         android:id="@+id/button_skipTutPg1"
@@ -22,5 +32,6 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="24dp"
         android:text="skip" />
+
 
 </RelativeLayout>
