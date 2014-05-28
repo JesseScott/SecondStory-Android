@@ -1,5 +1,6 @@
 package com.theonlyanimal.secondstory;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -21,9 +22,9 @@ public class TutorialPage3 extends Fragment {
 			@Override
 			public void onClick(View v) {
 				Log.v("SecondStory", "Clicked Page 3");
-				// Start Tracking Screen
-				//Intent i = new Intent("android.intent.action.XXX");
-				//startActivity(i);
+				//Start Tracking Screen
+				Intent i = new Intent("android.intent.action.VIDEO");
+				startActivity(i);
 			}
 		});
 		

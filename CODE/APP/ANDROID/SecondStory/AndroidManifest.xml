@@ -24,6 +24,12 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    
+    <!-- FEATURES USED  -->
+    <uses-feature android:glEsVersion="0x00020000"/>
+    <uses-feature android:name="android.hardware.camera"/>
     
     
     <application
@@ -35,6 +41,7 @@
         <!-- SPLASH SCREEN  -->
         <activity
             android:name="com.theonlyanimal.secondstory.SplashScreen"
+            android:configChanges="orientation|keyboardHidden"
             android:label="@string/app_name" 
         >
             <intent-filter>
@@ -46,6 +53,7 @@
         <!-- WELCOME SCREEN  -->
         <activity
             android:name="com.theonlyanimal.secondstory.WelcomeScreen"
+            android:configChanges="orientation|keyboardHidden"
             android:label="@string/app_name"
          >
             <intent-filter>
@@ -57,10 +65,24 @@
         <!-- TUTORIAL SCREEN  -->
         <activity
             android:name="com.theonlyanimal.secondstory.TutorialScreen"
+            android:configChanges="orientation|keyboardHidden"
             android:label="@string/app_name"
          >
             <intent-filter>
                 <action android:name="android.intent.action.TUTORIAL" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <!-- VIDEO SCREEN  -->
+        <activity
+            android:name="com.theonlyanimal.ar.VideoPlayback"
+            android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize"
+ 	        android:launchMode="singleTask"
+            android:label="@string/app_name"
+         >
+            <intent-filter>
+                <action android:name="android.intent.action.VIDEO" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
