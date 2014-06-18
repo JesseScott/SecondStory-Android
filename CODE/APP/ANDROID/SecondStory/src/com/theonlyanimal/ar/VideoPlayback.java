@@ -69,7 +69,7 @@ public class VideoPlayback extends Activity implements
     private SimpleOnGestureListener mSimpleListener = null;
     
     // Movie for the Targets:
-    public static final int NUM_TARGETS = 2;
+    public static final int NUM_TARGETS = 4;
     public static final int STONES = 0;
     public static final int CHIPS = 1;
     private VideoPlayerHelper mVideoPlayerHelper[] = null;
@@ -574,8 +574,7 @@ public class VideoPlayback extends Activity implements
         }
         
         // Load the data sets:
-        if (!dataSetStonesAndChips.load("StonesAndChips.xml",
-            STORAGE_TYPE.STORAGE_APPRESOURCE))
+        if (!dataSetStonesAndChips.load("SecondStory.xml", STORAGE_TYPE.STORAGE_APPRESOURCE))
         {
             Log.d(LOGTAG, "Failed to load data set.");
             return false;
