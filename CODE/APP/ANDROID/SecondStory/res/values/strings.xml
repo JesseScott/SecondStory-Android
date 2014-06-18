@@ -13,6 +13,7 @@
     <string name="menu_contAutofocus">Autofocus</string>
     <string name="menu_contAutofocus_error_on">Unable to activate Continuous Auto-Focus</string>
     <string name="menu_contAutofocus_error_off">Unable to deactivate Continuous Auto-Focus</string>
+    <string name="menu_playFullscreenVideo">Play Fullscreen</string>
     <string name="menu_camera">CAMERA</string>
     <string name="menu_camera_front">Front</string>
     <string name="menu_camera_back">Rear</string>

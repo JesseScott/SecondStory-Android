@@ -1,7 +1,9 @@
-/*==============================================================================
- Copyright (c) 2012-2013 Qualcomm Connected Experiences, Inc.
- All Rights Reserved.
- ==============================================================================*/
+/*===============================================================================
+Copyright (c) 2012-2014 Qualcomm Connected Experiences, Inc. All Rights Reserved.
+
+Vuforia is a trademark of QUALCOMM Incorporated, registered in the United States 
+and other countries. Trademarks of QUALCOMM Incorporated are used with permission.
+===============================================================================*/
 
 package com.theonlyanimal.ar;
 
@@ -48,9 +50,14 @@ public class VideoPlayerHelper implements OnPreparedListener,
     // This enum declares the possible states a media can have:
     public enum MEDIA_STATE
     {
-        REACHED_END(0), PAUSED(1), STOPPED(2), PLAYING(3), READY(4), NOT_READY(
-            5), ERROR(6);
-        
+        REACHED_END     (0),
+        PAUSED          (1),
+        STOPPED         (2),
+        PLAYING         (3),
+        READY           (4),
+        NOT_READY       (5),
+        ERROR           (6);
+
         private int type;
         
         
@@ -69,8 +76,11 @@ public class VideoPlayerHelper implements OnPreparedListener,
     // This enum declares what type of playback we can do, share with the team:
     public enum MEDIA_TYPE
     {
-        ON_TEXTURE(0), FULLSCREEN(1), ON_TEXTURE_FULLSCREEN(2), UNKNOWN(3);
-        
+        ON_TEXTURE              (0),
+        FULLSCREEN              (1),
+        ON_TEXTURE_FULLSCREEN   (2),
+        UNKNOWN                 (3);
+
         private int type;
         
         
@@ -132,17 +142,12 @@ public class VideoPlayerHelper implements OnPreparedListener,
             Log.d(LOGTAG, "Already loaded");
         } else
         {
-            if (((requestedType == MEDIA_TYPE.ON_TEXTURE) ||                        // If the client
-                                                             // requests on
+            if (((requestedType == MEDIA_TYPE.ON_TEXTURE) || // If the client requests on
                                                              // texture only
-                (requestedType == MEDIA_TYPE.ON_TEXTURE_FULLSCREEN))
-                &&             // or on texture with full screen
-                (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH))  // and
-                                                                                   // this
-                                                                                   // is
-                                                                                   // an
-                                                                                   // ICS
-                                                                                   // device
+                (requestedType == MEDIA_TYPE.ON_TEXTURE_FULLSCREEN)) &&   // or on texture with full screen
+                
+                (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH)) // and this is an
+                                                                                   // ICS device
             {
                 if (mSurfaceTexture == null)
                 {
@@ -159,13 +164,14 @@ public class VideoPlayerHelper implements OnPreparedListener,
                         // However, if you would like to load the movie from the
                         // sdcard or from a network location
                         // simply comment the three lines below
-                        
-                        //AssetFileDescriptor afd = mParentActivity.getAssets().openFd(filename);
-                        //mMediaPlayer.setDataSource(afd.getFileDescriptor(),afd.getStartOffset(), afd.getLength());
-                        //afd.close();
+                        AssetFileDescriptor afd = mParentActivity.getAssets()
+                            .openFd(filename);
+                        mMediaPlayer.setDataSource(afd.getFileDescriptor(),
+                            afd.getStartOffset(), afd.getLength());
+                        afd.close();
                         
                         // and uncomment this one
-                        mMediaPlayer.setDataSource("/sdcard/SecondStory/2ndStory-gun-720p1.mov.ff.mp4");
+                        // mMediaPlayer.setDataSource("/sdcard/myMovie.m4v");
                         
                         mMediaPlayer.prepareAsync();
                         mMediaPlayer.setOnPreparedListener(this);
@@ -177,11 +183,11 @@ public class VideoPlayerHelper implements OnPreparedListener,
                         mMediaPlayer.setSurface(new Surface(mSurfaceTexture));
                         canBeOnTexture = true;
                         mShouldPlayImmediately = playOnTextureImmediately;
-                    } 
-                    catch (Exception e)
+                    } catch (Exception e)
                     {
-                        Log.e(LOGTAG, "Error while creating the MediaPlayer: " + e.toString());
-                   
+                        Log.e(LOGTAG, "Error while creating the MediaPlayer: "
+                            + e.toString());
+                        
                         mCurrentState = MEDIA_STATE.ERROR;
                         mMediaPlayerLock.unlock();
                         mSurfaceTextureLock.unlock();
@@ -414,12 +420,8 @@ public class VideoPlayerHelper implements OnPreparedListener,
                     return false;
                 }
                 
-                if (mMediaPlayer.isPlaying())
-                    mPlayerHelperActivityIntent.putExtra(
-                        "shouldPlayImmediately", true);
-                else
-                    mPlayerHelperActivityIntent.putExtra(
-                        "shouldPlayImmediately", false);
+                mPlayerHelperActivityIntent.putExtra(
+                    "shouldPlayImmediately", true);
                 
                 try
                 {
@@ -459,8 +461,10 @@ public class VideoPlayerHelper implements OnPreparedListener,
             mPlayerHelperActivityIntent.putExtra("requestedOrientation",
                 ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
             mPlayerHelperActivityIntent.putExtra("movieName", mMovieName);
-            mParentActivity.startActivityForResult(mPlayerHelperActivityIntent,
-                1);
+            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB)
+                mParentActivity.startActivity(mPlayerHelperActivityIntent);
+            else
+                mParentActivity.startActivityForResult(mPlayerHelperActivityIntent, 1);
             return true;
         } else
         {

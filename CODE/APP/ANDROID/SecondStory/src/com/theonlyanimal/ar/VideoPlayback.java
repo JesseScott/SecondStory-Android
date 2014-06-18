@@ -1,7 +1,9 @@
-/*==============================================================================
- Copyright (c) 2012-2013 Qualcomm Connected Experiences, Inc.
- All Rights Reserved.
- ==============================================================================*/
+/*===============================================================================
+Copyright (c) 2012-2014 Qualcomm Connected Experiences, Inc. All Rights Reserved.
+
+Vuforia is a trademark of QUALCOMM Incorporated, registered in the United States 
+and other countries. Trademarks of QUALCOMM Incorporated are used with permission.
+===============================================================================*/
 
 package com.theonlyanimal.ar;
 
@@ -53,7 +55,9 @@ import com.theonlyanimal.ar.SampleAppMenuInterface;
 
 
 // The AR activity for the VideoPlayback sample.
-public class VideoPlayback extends Activity implements SampleApplicationControl, SampleAppMenuInterface {
+public class VideoPlayback extends Activity implements
+    SampleApplicationControl, SampleAppMenuInterface
+{
     private static final String LOGTAG = "VideoPlayback";
     
     SampleApplicationSession vuforiaAppSession;
@@ -92,6 +96,7 @@ public class VideoPlayback extends Activity implements SampleApplicationControl,
     private boolean mFlash = false;
     private boolean mContAutofocus = false;
     private boolean mExtendedTracking = false;
+    private boolean mPlayFullscreenVideo = false;
     
     private View mFlashOptionView;
     
@@ -101,6 +106,7 @@ public class VideoPlayback extends Activity implements SampleApplicationControl,
         this);
     
     boolean mIsDroidDevice = false;
+    boolean mIsInitialized = false;
     
     
     // Called when the activity first starts or the user navigates back
@@ -149,38 +155,10 @@ public class VideoPlayback extends Activity implements SampleApplicationControl,
         // Set the double tap listener:
         mGestureDetector.setOnDoubleTapListener(new OnDoubleTapListener()
         {
-            // Handle the double tap
             public boolean onDoubleTap(MotionEvent e)
             {
-                boolean isDoubleTapHandled = false;
-                for (int i = 0; i < NUM_TARGETS; i++)
-                {
-                    // Verify that the tap happens inside the target:
-                    if (mRenderer!= null && mRenderer.isTapOnScreenInsideTarget(i, e.getX(),
-                        e.getY()))
-                    {
-                        // Check whether we can play full screen at all:
-                        if (mVideoPlayerHelper[i].isPlayableFullscreen())
-                        {
-                            // Pause all other media:
-                            pauseAll(i);
-                            
-                            // Request the playback in fullscreen:
-                            mVideoPlayerHelper[i].play(true,
-                                VideoPlayerHelper.CURRENT_POSITION);
-                            
-                            isDoubleTapHandled = true;
-                        }
-                        
-                        // Even though multiple videos can be loaded only one
-                        // can be playing at any point in time. This break
-                        // prevents that, say, overlapping videos trigger
-                        // simultaneously playback.
-                        break;
-                    }
-                }
-                
-                return isDoubleTapHandled;
+               // We do not react to this event
+               return false;
             }
             
             
@@ -219,7 +197,7 @@ public class VideoPlayback extends Activity implements SampleApplicationControl,
                                 if ((mVideoPlayerHelper[i].getStatus() == MEDIA_STATE.REACHED_END))
                                     mSeekPosition[i] = 0;
                                 
-                                mVideoPlayerHelper[i].play(false,
+                                mVideoPlayerHelper[i].play(mPlayFullscreenVideo,
                                     mSeekPosition[i]);
                                 mSeekPosition[i] = VideoPlayerHelper.CURRENT_POSITION;
                             } else if (mVideoPlayerHelper[i].getStatus() == MEDIA_STATE.PLAYING)
@@ -285,6 +263,11 @@ public class VideoPlayback extends Activity implements SampleApplicationControl,
         try
         {
             vuforiaAppSession.resumeAR();
+            if( mIsInitialized && mContAutofocus)
+            {
+                CameraDevice.getInstance().setFocusMode(
+                    CameraDevice.FOCUS_MODE.FOCUS_MODE_CONTINUOUSAUTO);
+            }
         } catch (SampleApplicationException e)
         {
             Log.e(LOGTAG, e.getString());
@@ -748,6 +731,8 @@ public class VideoPlayback extends Activity implements SampleApplicationControl,
                 mGlView, mUILayout, null);
             setSampleAppMenuSettings();
             
+            mIsInitialized = true;
+            
         } else
         {
             Log.e(LOGTAG, exception.getString());
@@ -766,8 +751,9 @@ public class VideoPlayback extends Activity implements SampleApplicationControl,
     final private static int CMD_EXTENDED_TRACKING = 1;
     final private static int CMD_AUTOFOCUS = 2;
     final private static int CMD_FLASH = 3;
-    final private static int CMD_CAMERA_FRONT = 4;
-    final private static int CMD_CAMERA_REAR = 5;
+    final private static int CMD_FULLSCREEN_VIDEO = 4;
+    final private static int CMD_CAMERA_FRONT = 5;
+    final private static int CMD_CAMERA_REAR = 6;
     
     
     // This method sets the menu's settings
@@ -785,6 +771,11 @@ public class VideoPlayback extends Activity implements SampleApplicationControl,
             CMD_AUTOFOCUS, mContAutofocus);
         mFlashOptionView = group.addSelectionItem(
             getString(R.string.menu_flash), CMD_FLASH, false);
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH)
+        {
+            group.addSelectionItem(getString(R.string.menu_playFullscreenVideo),
+                CMD_FULLSCREEN_VIDEO, mPlayFullscreenVideo);
+        }
         
         CameraInfo ci = new CameraInfo();
         boolean deviceHasFrontCamera = false;
@@ -872,6 +863,22 @@ public class VideoPlayback extends Activity implements SampleApplicationControl,
                     }
                 }
                 
+                break;
+                
+            case CMD_FULLSCREEN_VIDEO:
+                mPlayFullscreenVideo = !mPlayFullscreenVideo;
+                
+                for(int i = 0; i < mVideoPlayerHelper.length; i++)
+                {
+                    if (mVideoPlayerHelper[i].getStatus() == MEDIA_STATE.PLAYING)
+                    {
+                        // If it is playing then we pause it
+                        mVideoPlayerHelper[i].pause();
+                        
+                        mVideoPlayerHelper[i].play(true,
+                            mSeekPosition[i]);
+                    }
+                }
                 break;
             
             case CMD_CAMERA_FRONT:
