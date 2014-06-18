@@ -9,8 +9,8 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_alignParentTop="true"
-        android:src="@drawable/bg_1" 
-    />
+        android:scaleType="fitXY"
+        android:src="@drawable/bg_1" />
 
     <TextView
         android:id="@+id/textView_tutPg1"
