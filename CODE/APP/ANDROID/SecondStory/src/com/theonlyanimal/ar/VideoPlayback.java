@@ -34,6 +34,7 @@ import com.qualcomm.vuforia.DataSet;
 import com.qualcomm.vuforia.HINT;
 import com.qualcomm.vuforia.ImageTracker;
 import com.qualcomm.vuforia.State;
+import com.qualcomm.vuforia.STORAGE_TYPE;
 import com.qualcomm.vuforia.Trackable;
 import com.qualcomm.vuforia.Tracker;
 import com.qualcomm.vuforia.TrackerManager;
@@ -591,7 +592,7 @@ public class VideoPlayback extends Activity implements SampleApplicationControl,
         
         // Load the data sets:
         if (!dataSetStonesAndChips.load("StonesAndChips.xml",
-            DataSet.STORAGE_TYPE.STORAGE_APPRESOURCE))
+            STORAGE_TYPE.STORAGE_APPRESOURCE))
         {
             Log.d(LOGTAG, "Failed to load data set.");
             return false;
