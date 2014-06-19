@@ -29,4 +29,5 @@
 <fullyQualifiedTypeName name="android.content.Intent"/>
 <fullyQualifiedTypeName name="android.widget.TextView"/>
 <fullyQualifiedTypeName name="android.graphics.Typeface"/>
+<fullyQualifiedTypeName name="com.qualcomm.QCAR.QCAR"/>
 </qualifiedTypeNameHistroy>
