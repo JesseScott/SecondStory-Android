@@ -7,10 +7,14 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.util.Log;
+import android.widget.Toast;
 import android.os.AsyncTask;
+import android.net.wifi.WifiConfiguration;
+import android.net.wifi.WifiManager;
 
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -31,6 +35,8 @@ public class WelcomeScreen extends Activity {
 
 	// GLOBALS
 	private static final String TAG = "SecondStory";
+	private static final String SSID = "TenantWifi";
+	private static final String PWD = "hypnotoad";
 	private static final String SD_DIRECTORY = "//sdcard//SecondStory";
     public static final int DIALOG_DOWNLOAD_PROGRESS = 0;
     private ProgressDialog progressDialog;
@@ -41,11 +47,32 @@ public class WelcomeScreen extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.welcome_layout);
 		
+		// Connect To WiFi
+		connectToWifi();
+		
 		// Do We Have Content ?
 		checkStorage();
 
 		
 	} /* onCreate() */
+	
+	// WiFi
+	public void connectToWifi() {
+		
+		// Configuration
+		WifiConfiguration config = new WifiConfiguration();
+		config.SSID = "\"" + SSID + "\"";
+		config.preSharedKey = "\"" + PWD + "\""; // WPA2
+		
+		// Manager
+		WifiManager manager = (WifiManager)this.getSystemService(Context.WIFI_SERVICE);
+		if(manager.isWifiEnabled() == false) {
+			manager.setWifiEnabled(true);
+			Toast.makeText(this, "Turning On WiFi", Toast.LENGTH_SHORT).show();
+		}
+		manager.addNetwork(config);
+		Toast.makeText(this, "Connecting To SecondStory Network", Toast.LENGTH_SHORT).show();
+	}
 	
 	// Check If Directory Exists
 	public void checkStorage() {
@@ -79,7 +106,7 @@ public class WelcomeScreen extends Activity {
 						else {
 							// Start Tutorial Screens
 							Intent i = new Intent("android.intent.action.TUTORIAL");
-							startActivity(i);
+							//startActivity(i);
 						}
 						
 					} 

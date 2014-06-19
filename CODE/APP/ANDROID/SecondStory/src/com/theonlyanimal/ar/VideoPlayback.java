@@ -555,8 +555,7 @@ public class VideoPlayback extends Activity implements
     {
         // Get the image tracker:
         TrackerManager trackerManager = TrackerManager.getInstance();
-        ImageTracker imageTracker = (ImageTracker) trackerManager
-            .getTracker(ImageTracker.getClassType());
+        ImageTracker imageTracker = (ImageTracker) trackerManager.getTracker(ImageTracker.getClassType());
         if (imageTracker == null)
         {
             Log.d(
