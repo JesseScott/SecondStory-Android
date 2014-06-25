@@ -35,8 +35,8 @@ public class WelcomeScreen extends Activity {
 
 	// GLOBALS
 	private static final String TAG = "SecondStory";
-	private static final String SSID = "TenantWifi";
-	private static final String PWD = "hypnotoad";
+	private static final String SSID = "43655C";
+	private static final String PWD = "248771039";
 	private static final String SD_DIRECTORY = "//sdcard//SecondStory";
     public static final int DIALOG_DOWNLOAD_PROGRESS = 0;
     private ProgressDialog progressDialog;
@@ -48,7 +48,7 @@ public class WelcomeScreen extends Activity {
 		setContentView(R.layout.welcome_layout);
 		
 		// Connect To WiFi
-		connectToWifi();
+		//connectToWifi();
 		
 		// Do We Have Content ?
 		checkStorage();
@@ -66,12 +66,34 @@ public class WelcomeScreen extends Activity {
 		
 		// Manager
 		WifiManager manager = (WifiManager)this.getSystemService(Context.WIFI_SERVICE);
+		
 		if(manager.isWifiEnabled() == false) {
 			manager.setWifiEnabled(true);
 			Toast.makeText(this, "Turning On WiFi", Toast.LENGTH_SHORT).show();
 		}
-		manager.addNetwork(config);
+
+		int networkID = -1;
+		networkID = manager.addNetwork(config);		
+		if(networkID < 0) {
+			Log.v(TAG, "couldnt connect");
+		}
+		else {
+			Log.v(TAG, "added network");
+		}
+		
+		manager.enableNetwork(networkID, true);
+		manager.saveConfiguration();
+		manager.reconnect();
+		
 		Toast.makeText(this, "Connecting To SecondStory Network", Toast.LENGTH_SHORT).show();
+		
+		/*
+		 	SupplicantState supState; 
+			wifiManager = (WifiManager) getSystemService(Context.WIFI_SERVICE);
+			WifiInfo wifiInfo = wifiManager.getConnectionInfo();
+			supState = wifiInfo.getSupplicantState();
+		 */
+		
 	}
 	
 	// Check If Directory Exists
@@ -106,7 +128,7 @@ public class WelcomeScreen extends Activity {
 						else {
 							// Start Tutorial Screens
 							Intent i = new Intent("android.intent.action.TUTORIAL");
-							//startActivity(i);
+							startActivity(i);
 						}
 						
 					} 
@@ -337,6 +359,9 @@ public class WelcomeScreen extends Activity {
 					localFile += remoteFile;
 					Log.v("FTP", "LOCAL: " + localFile);
 				    output = new BufferedOutputStream(new FileOutputStream(localFile));
+				    
+				    // HTTP
+				    System.setProperty("http.keepAlive", "false");
 
 				    // Get Files
 	                Boolean success = ftp.retrieveFile(remoteFile, output);
