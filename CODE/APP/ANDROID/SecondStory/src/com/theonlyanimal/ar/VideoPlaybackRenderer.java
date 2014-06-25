@@ -600,7 +600,7 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
                 // The first loaded texture from the assets folder is the
                 // keyframe
                 GLES20.glBindTexture(GLES20.GL_TEXTURE_2D,
-                    mTextures.get(currentTarget).mTextureID[0]);
+                    mTextures.get(currentTarget).mTextureID[0]); // still frame 
                 GLES20.glUniformMatrix4fv(keyframeMVPMatrixHandle, 1, false,
                     modelViewProjectionKeyframe, 0);
                 GLES20.glUniform1i(keyframeTexSampler2DHandle, 0);
@@ -751,27 +751,27 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
                 {
                     case READY:
                         GLES20.glBindTexture(GLES20.GL_TEXTURE_2D,
-                            mTextures.get(2).mTextureID[0]);
+                            mTextures.get(1).mTextureID[0]);
                         break;
                     case REACHED_END:
                         GLES20.glBindTexture(GLES20.GL_TEXTURE_2D,
-                            mTextures.get(2).mTextureID[0]);
+                            mTextures.get(1).mTextureID[0]);
                         break;
                     case PAUSED:
                         GLES20.glBindTexture(GLES20.GL_TEXTURE_2D,
-                            mTextures.get(2).mTextureID[0]);
+                            mTextures.get(1).mTextureID[0]);
                         break;
                     case NOT_READY:
                         GLES20.glBindTexture(GLES20.GL_TEXTURE_2D,
-                            mTextures.get(3).mTextureID[0]);
+                            mTextures.get(2).mTextureID[0]);
                         break;
                     case ERROR:
                         GLES20.glBindTexture(GLES20.GL_TEXTURE_2D,
-                            mTextures.get(4).mTextureID[0]);
+                            mTextures.get(3).mTextureID[0]);
                         break;
                     default:
                         GLES20.glBindTexture(GLES20.GL_TEXTURE_2D,
-                            mTextures.get(3).mTextureID[0]);
+                            mTextures.get(2).mTextureID[0]);
                         break;
                 }
                 GLES20.glUniformMatrix4fv(keyframeMVPMatrixHandle, 1, false,
@@ -876,8 +876,8 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
             videoQuadTextureCoordsTransformedStones[6] = tempUVMultRes[0];
             videoQuadTextureCoordsTransformedStones[7] = tempUVMultRes[1];
         } 
-        /*
-        else if (target == VideoPlayback.CHIPS)
+        
+        else if (target > VideoPlayback.BEEF)
         {
             tempUVMultRes = uvMultMat4f(
                 videoQuadTextureCoordsTransformedChips[0],
@@ -904,7 +904,7 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
             videoQuadTextureCoordsTransformedChips[6] = tempUVMultRes[0];
             videoQuadTextureCoordsTransformedChips[7] = tempUVMultRes[1];
         }
-        */
+        
         // textureCoordMatrix = mtx;
     }
     
