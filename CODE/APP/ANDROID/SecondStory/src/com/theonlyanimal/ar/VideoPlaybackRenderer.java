@@ -408,10 +408,8 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
         keyframeTexSampler2DHandle = GLES20.glGetUniformLocation(
             keyframeShaderID, "texSampler2D");
         
-        keyframeQuadAspectRatio[VideoPlayback.STONES] = (float) mTextures
-            .get(0).mHeight / (float) mTextures.get(0).mWidth;
-        keyframeQuadAspectRatio[VideoPlayback.CHIPS] = (float) mTextures.get(1).mHeight
-            / (float) mTextures.get(1).mWidth;
+        keyframeQuadAspectRatio[VideoPlayback.BEEF] = (float) mTextures.get(0).mHeight / (float) mTextures.get(0).mWidth;
+        //keyframeQuadAspectRatio[VideoPlayback.CHIPS] = (float) mTextures.get(1).mHeight / (float) mTextures.get(1).mWidth;
         
         quadVertices = fillBuffer(quadVerticesArray);
         quadTexCoords = fillBuffer(quadTexCoordsArray);
@@ -514,20 +512,32 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
             // Get the trackable:
             TrackableResult trackableResult = state.getTrackableResult(tIdx);
             
-            ImageTarget imageTarget = (ImageTarget) trackableResult
-                .getTrackable();
+            ImageTarget imageTarget = (ImageTarget) trackableResult.getTrackable();
             
             int currentTarget;
             
             // We store the modelview matrix to be used later by the tap
             // calculation
-            if (imageTarget.getName().compareTo("stones") == 0)
-                currentTarget = VideoPlayback.STONES;
-            else
-                currentTarget = VideoPlayback.CHIPS;
+            if(imageTarget.getName().compareTo("beef") == 0) {
+                currentTarget = VideoPlayback.BEEF;
+            }
+            if(imageTarget.getName().compareTo("bicycle") == 0) {
+                currentTarget = VideoPlayback.BICYCLES;
+            }
+            if(imageTarget.getName().compareTo("gun") == 0) {
+                currentTarget = VideoPlayback.GUN;
+            }
+            if(imageTarget.getName().compareTo("pennies") == 0) {
+                currentTarget = VideoPlayback.PENNIES;
+            }
+            if(imageTarget.getName().compareTo("suzyq") == 0) {
+                currentTarget = VideoPlayback.SUZYQ;
+            }
+            else {
+                currentTarget = 0;
+            }
             
-            modelViewMatrix[currentTarget] = Tool
-                .convertPose2GLMatrix(trackableResult.getPose());
+            modelViewMatrix[currentTarget] = Tool.convertPose2GLMatrix(trackableResult.getPose());
             
             isTracking[currentTarget] = true;
             
@@ -839,7 +849,7 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
         float mtx[] = textureCoordMatrix;
         float tempUVMultRes[] = new float[2];
         
-        if (target == VideoPlayback.STONES)
+        if (target == VideoPlayback.BEEF)
         {
             tempUVMultRes = uvMultMat4f(
                 videoQuadTextureCoordsTransformedStones[0],
@@ -865,7 +875,9 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
                 videoQuadTextureCoords[6], videoQuadTextureCoords[7], mtx);
             videoQuadTextureCoordsTransformedStones[6] = tempUVMultRes[0];
             videoQuadTextureCoordsTransformedStones[7] = tempUVMultRes[1];
-        } else if (target == VideoPlayback.CHIPS)
+        } 
+        /*
+        else if (target == VideoPlayback.CHIPS)
         {
             tempUVMultRes = uvMultMat4f(
                 videoQuadTextureCoordsTransformedChips[0],
@@ -892,7 +904,7 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
             videoQuadTextureCoordsTransformedChips[6] = tempUVMultRes[0];
             videoQuadTextureCoordsTransformedChips[7] = tempUVMultRes[1];
         }
-        
+        */
         // textureCoordMatrix = mtx;
     }
     

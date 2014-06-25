@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
-    <ImageTarget name="Bicycle" size="75.000000 49.921875" />
-    <ImageTarget name="Dark" size="75.000000 100.000000" />
-    <ImageTarget name="Graf" size="75.000000 56.250000" />
-    <ImageTarget name="Gunshot" size="75.000000 42.128906" />
+    <ImageTarget name="pennies" size="100.000000 56.171875" />
+    <ImageTarget name="suzyq" size="100.000000 56.250000" />
+    <ImageTarget name="gun" size="100.000000 53.437500" />
+    <ImageTarget name="bicycle" size="100.000000 66.666664" />
+    <ImageTarget name="beef" size="100.000000 56.406250" />
   </Tracking>
 </QCARConfig>
