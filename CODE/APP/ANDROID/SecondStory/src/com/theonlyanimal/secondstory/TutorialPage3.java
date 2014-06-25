@@ -20,7 +20,7 @@ public class TutorialPage3 extends Fragment {
 		
 		// Text
 		TextView txt = (TextView) rootView.findViewById(R.id.textView_tutPg3);  
-		Typeface font = Typeface.createFromAsset(getActivity().getAssets(), "Fonts/DIN/DIN.ttf");  
+		Typeface font = Typeface.createFromAsset(getActivity().getAssets(), "fonts/din/din.ttf");  
 		txt.setTypeface(font); 
 		
 		// Button

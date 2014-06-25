@@ -519,18 +519,23 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
             // We store the modelview matrix to be used later by the tap
             // calculation
             if(imageTarget.getName().compareTo("beef") == 0) {
+            	Log.v(LOGTAG, " - found BEEF -");
                 currentTarget = VideoPlayback.BEEF;
             }
             if(imageTarget.getName().compareTo("bicycle") == 0) {
+            	Log.v(LOGTAG, " - found BIKE -");
                 currentTarget = VideoPlayback.BICYCLES;
             }
             if(imageTarget.getName().compareTo("gun") == 0) {
+            	Log.v(LOGTAG, " - found GUN -");
                 currentTarget = VideoPlayback.GUN;
             }
             if(imageTarget.getName().compareTo("pennies") == 0) {
+            	Log.v(LOGTAG, " - found PENNIES -");
                 currentTarget = VideoPlayback.PENNIES;
             }
             if(imageTarget.getName().compareTo("suzyq") == 0) {
+            	Log.v(LOGTAG, " - found SUZY -");
                 currentTarget = VideoPlayback.SUZYQ;
             }
             else {
@@ -751,23 +756,23 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
                 {
                     case READY:
                         GLES20.glBindTexture(GLES20.GL_TEXTURE_2D,
-                            mTextures.get(1).mTextureID[0]);
+                            mTextures.get(0).mTextureID[0]); // Play
                         break;
                     case REACHED_END:
                         GLES20.glBindTexture(GLES20.GL_TEXTURE_2D,
-                            mTextures.get(1).mTextureID[0]);
+                            mTextures.get(0).mTextureID[0]); // Play
                         break;
                     case PAUSED:
                         GLES20.glBindTexture(GLES20.GL_TEXTURE_2D,
-                            mTextures.get(1).mTextureID[0]);
+                            mTextures.get(0).mTextureID[0]); // Play
                         break;
                     case NOT_READY:
                         GLES20.glBindTexture(GLES20.GL_TEXTURE_2D,
-                            mTextures.get(2).mTextureID[0]);
+                            mTextures.get(1).mTextureID[0]); // Busy
                         break;
                     case ERROR:
                         GLES20.glBindTexture(GLES20.GL_TEXTURE_2D,
-                            mTextures.get(3).mTextureID[0]);
+                            mTextures.get(2).mTextureID[0]); // Error
                         break;
                     default:
                         GLES20.glBindTexture(GLES20.GL_TEXTURE_2D,

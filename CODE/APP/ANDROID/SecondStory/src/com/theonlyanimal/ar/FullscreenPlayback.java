@@ -148,13 +148,12 @@ public class FullscreenPlayback extends Activity implements OnPreparedListener,
             // folder of the app. However, if you would like to load the
             // movie from the SD card or from a network location, simply
             // comment the four lines below:
-            AssetFileDescriptor afd = getAssets().openFd(mMovieName);
-            mMediaPlayer.setDataSource(afd.getFileDescriptor(),
-                afd.getStartOffset(), afd.getLength());
-            afd.close();
+            //AssetFileDescriptor afd = getAssets().openFd(mMovieName);
+            //mMediaPlayer.setDataSource(afd.getFileDescriptor(), afd.getStartOffset(), afd.getLength());
+            //afd.close();
             
             // And uncomment this line:
-            // mMediaPlayer.setDataSource("/sdcard/myMovie.m4v");
+            mMediaPlayer.setDataSource(mMovieName); // ???
             
             mMediaPlayer.setDisplay(mHolder);
             mMediaPlayer.prepareAsync();

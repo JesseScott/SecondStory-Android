@@ -128,7 +128,7 @@ public class VideoPlayerHelper implements OnPreparedListener,
         // then we need to create a MediaPlayer:
         
         boolean canBeOnTexture = false;
-        boolean canBeFullscreen = false; // EDIT
+        boolean canBeFullscreen = true; // EDIT
         
         boolean result = false;
         mMediaPlayerLock.lock();

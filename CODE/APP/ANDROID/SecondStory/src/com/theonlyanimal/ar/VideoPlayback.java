@@ -235,10 +235,14 @@ public class VideoPlayback extends Activity implements
     // use for rendering.
     private void loadTextures()
     {
-        mTextures.add(Texture.loadTextureFromApk("VideoPlayback/VuforiaSizzleReel_1.png", getAssets()));
-        mTextures.add(Texture.loadTextureFromApk("VideoPlayback/play.png", getAssets()));
-        mTextures.add(Texture.loadTextureFromApk("VideoPlayback/busy.png", getAssets()));
-        mTextures.add(Texture.loadTextureFromApk("VideoPlayback/error.png", getAssets()));
+        mTextures.add(Texture.loadTextureFromApk("ctrl/play.png", getAssets()));
+        mTextures.add(Texture.loadTextureFromApk("ctrl/busy.png", getAssets()));
+        mTextures.add(Texture.loadTextureFromApk("ctrl/error.png", getAssets()));
+        mTextures.add(Texture.loadTextureFromApk("frames/beef.jpg", getAssets()));
+        mTextures.add(Texture.loadTextureFromApk("frames/bicycle.jpg", getAssets()));
+        mTextures.add(Texture.loadTextureFromApk("frames/gun.jpg", getAssets()));
+        mTextures.add(Texture.loadTextureFromApk("frames/pennies.jpg", getAssets()));
+        mTextures.add(Texture.loadTextureFromApk("frames/suzyq.jpg", getAssets()));
     }
     
     
@@ -487,7 +491,7 @@ public class VideoPlayback extends Activity implements
         for (int i = 0; i < NUM_TARGETS; i++)
         {
             mRenderer.setVideoPlayerHelper(i, mVideoPlayerHelper[i]);
-            mRenderer.requestLoad(i, mMovieName[i], 0, false);
+            mRenderer.requestLoad(i, mMovieName[i], 0, false); // EDITED
         }
         
         mGlView.setRenderer(mRenderer);
@@ -557,7 +561,7 @@ public class VideoPlayback extends Activity implements
         }
         
         // Load the data sets:
-        if (!dataSet.load("SecondStory.xml", STORAGE_TYPE.STORAGE_APPRESOURCE))
+        if (!dataSet.load("tracking/SecondStory.xml", STORAGE_TYPE.STORAGE_APPRESOURCE))
         {
             Log.d(LOGTAG, "Failed to load data set.");
             return false;
