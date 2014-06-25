@@ -70,12 +70,12 @@ public class VideoPlayback extends Activity implements
     private SimpleOnGestureListener mSimpleListener = null;
     
     // Movie for the Targets:
-    public static final int NUM_TARGETS = 4;
+    public static final int NUM_TARGETS = 5;
     public static final int BEEF = 0;
     public static final int BICYCLES = 1;
     public static final int GUN = 2;
     public static final int PENNIES = 3;
-    public static final int SUZYQ = 3;
+    public static final int SUZYQ = 4;
     
     private VideoPlayerHelper mVideoPlayerHelper[] = null;
     private int mSeekPosition[] = null;
@@ -238,11 +238,11 @@ public class VideoPlayback extends Activity implements
         mTextures.add(Texture.loadTextureFromApk("ctrl/play.png", getAssets()));
         mTextures.add(Texture.loadTextureFromApk("ctrl/busy.png", getAssets()));
         mTextures.add(Texture.loadTextureFromApk("ctrl/error.png", getAssets()));
-        mTextures.add(Texture.loadTextureFromApk("frames/beef.jpg", getAssets()));
+        mTextures.add(Texture.loadTextureFromApk("frames/beef.jpg", getAssets())); // 3
         mTextures.add(Texture.loadTextureFromApk("frames/bicycle.jpg", getAssets()));
         mTextures.add(Texture.loadTextureFromApk("frames/gun.jpg", getAssets()));
         mTextures.add(Texture.loadTextureFromApk("frames/pennies.jpg", getAssets()));
-        mTextures.add(Texture.loadTextureFromApk("frames/suzyq.jpg", getAssets()));
+        mTextures.add(Texture.loadTextureFromApk("frames/suzyq.jpg", getAssets())); // 7
     }
     
     

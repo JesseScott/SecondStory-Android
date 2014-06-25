@@ -198,6 +198,7 @@ public class VideoPlayerHelper implements OnPreparedListener,
                     AssetFileDescriptor afd = mParentActivity.getAssets()
                         .openFd(filename);
                     afd.close();
+                    Log.d(LOGTAG, "SHOULD NOT BE LOADING ASSET HERE");
                 } catch (Exception e)
                 {
                     Log.d(LOGTAG, "File does not exist");
