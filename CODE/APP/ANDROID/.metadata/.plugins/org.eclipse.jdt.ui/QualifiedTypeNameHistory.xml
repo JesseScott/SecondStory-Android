@@ -30,4 +30,9 @@
 <fullyQualifiedTypeName name="android.widget.TextView"/>
 <fullyQualifiedTypeName name="android.graphics.Typeface"/>
 <fullyQualifiedTypeName name="com.qualcomm.QCAR.QCAR"/>
+<fullyQualifiedTypeName name="android.net.wifi.WifiConfiguration"/>
+<fullyQualifiedTypeName name="android.net.wifi.WifiConfiguration.KeyMgmt"/>
+<fullyQualifiedTypeName name="android.content.Context"/>
+<fullyQualifiedTypeName name="android.net.wifi.WifiManager"/>
+<fullyQualifiedTypeName name="android.widget.Toast"/>
 </qualifiedTypeNameHistroy>
