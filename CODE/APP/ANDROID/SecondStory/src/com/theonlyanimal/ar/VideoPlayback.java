@@ -153,7 +153,7 @@ public class VideoPlayback extends Activity implements
         
         String rootPath = Environment.getExternalStorageDirectory().getPath();
         rootPath += "/SecondStory/";
-        Log.v("SECONDSTORY", "PATH IS " + rootPath);
+        Log.v("SECONDSTORY", "ROOT PATH IS " + rootPath);
                 
         //mMovieName[BEEF] = "VideoPlayback/VuforiaSizzleReel_1.m4v";
         mMovieName[BEEF] = rootPath + "beef.mp4";
