@@ -122,14 +122,13 @@ public class VideoPlayerHelper implements OnPreparedListener,
     
     // Loads a movie from a file in the assets folder
     @SuppressLint("NewApi")
-    public boolean load(String filename, MEDIA_TYPE requestedType,
-        boolean playOnTextureImmediately, int seekPosition)
+    public boolean load(String filename, MEDIA_TYPE requestedType, boolean playOnTextureImmediately, int seekPosition)
     {
         // If the client requests that we should be able to play ON_TEXTURE,
         // then we need to create a MediaPlayer:
         
         boolean canBeOnTexture = false;
-        boolean canBeFullscreen = false;
+        boolean canBeFullscreen = false; // EDIT
         
         boolean result = false;
         mMediaPlayerLock.lock();
@@ -164,29 +163,26 @@ public class VideoPlayerHelper implements OnPreparedListener,
                         // However, if you would like to load the movie from the
                         // sdcard or from a network location
                         // simply comment the three lines below
-                        AssetFileDescriptor afd = mParentActivity.getAssets()
-                            .openFd(filename);
-                        mMediaPlayer.setDataSource(afd.getFileDescriptor(),
-                            afd.getStartOffset(), afd.getLength());
-                        afd.close();
+                        //AssetFileDescriptor afd = mParentActivity.getAssets().openFd(filename);
+                        //mMediaPlayer.setDataSource(afd.getFileDescriptor(), afd.getStartOffset(), afd.getLength());
+                        //afd.close();
                         
                         // and uncomment this one
-                        // mMediaPlayer.setDataSource("/sdcard/myMovie.m4v");
+                        Log.v(LOGTAG, "loading " + filename);
+                        mMediaPlayer.setDataSource(filename);
                         
                         mMediaPlayer.prepareAsync();
                         mMediaPlayer.setOnPreparedListener(this);
                         mMediaPlayer.setOnBufferingUpdateListener(this);
                         mMediaPlayer.setOnCompletionListener(this);
                         mMediaPlayer.setOnErrorListener(this);
-                        mMediaPlayer
-                            .setAudioStreamType(AudioManager.STREAM_MUSIC);
+                        mMediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
                         mMediaPlayer.setSurface(new Surface(mSurfaceTexture));
                         canBeOnTexture = true;
                         mShouldPlayImmediately = playOnTextureImmediately;
                     } catch (Exception e)
                     {
-                        Log.e(LOGTAG, "Error while creating the MediaPlayer: "
-                            + e.toString());
+                        Log.e(LOGTAG, "Error while creating the MediaPlayer: " + e.toString());
                         
                         mCurrentState = MEDIA_STATE.ERROR;
                         mMediaPlayerLock.unlock();

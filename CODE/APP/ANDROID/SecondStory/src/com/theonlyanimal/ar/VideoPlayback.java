@@ -18,6 +18,7 @@ import android.hardware.Camera;
 import android.hardware.Camera.CameraInfo;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.GestureDetector.OnDoubleTapListener;
@@ -150,11 +151,16 @@ public class VideoPlayback extends Activity implements
             mVideoPlayerHelper[i].setActivity(this);
         }
         
-        mMovieName[BEEF] = "VideoPlayback/VuforiaSizzleReel_1.m4v";
-        mMovieName[BICYCLES] = "VideoPlayback/VuforiaSizzleReel_1.m4v";
-        mMovieName[GUN] = "VideoPlayback/VuforiaSizzleReel_1.m4v";
-        mMovieName[PENNIES] = "VideoPlayback/VuforiaSizzleReel_1.m4v";
-        mMovieName[SUZYQ] = "VideoPlayback/VuforiaSizzleReel_1.m4v";
+        String rootPath = Environment.getExternalStorageDirectory().getPath();
+        rootPath += "/SecondStory/";
+        Log.v("SECONDSTORY", "PATH IS " + rootPath);
+                
+        //mMovieName[BEEF] = "VideoPlayback/VuforiaSizzleReel_1.m4v";
+        mMovieName[BEEF] = rootPath + "beef.mp4";
+        mMovieName[BICYCLES] = rootPath + "bicycles.mp4";
+        mMovieName[GUN] = rootPath + "gun.mp4";
+        mMovieName[PENNIES] = rootPath + "pennies.mp4";
+        mMovieName[SUZYQ] = rootPath + "suzyq.mp4";
         
         // Set the double tap listener:
         mGestureDetector.setOnDoubleTapListener(new OnDoubleTapListener() {
