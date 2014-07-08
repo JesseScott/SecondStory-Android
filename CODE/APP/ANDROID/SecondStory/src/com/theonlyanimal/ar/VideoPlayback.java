@@ -235,9 +235,9 @@ public class VideoPlayback extends Activity implements
     // use for rendering.
     private void loadTextures()
     {
-        mTextures.add(Texture.loadTextureFromApk("ctrl/play.png", getAssets()));
-        mTextures.add(Texture.loadTextureFromApk("ctrl/busy.png", getAssets()));
-        mTextures.add(Texture.loadTextureFromApk("ctrl/error.png", getAssets()));
+        //mTextures.add(Texture.loadTextureFromApk("ctrl/play.png", getAssets()));
+        //mTextures.add(Texture.loadTextureFromApk("ctrl/busy.png", getAssets()));
+        //mTextures.add(Texture.loadTextureFromApk("ctrl/error.png", getAssets()));
         mTextures.add(Texture.loadTextureFromApk("frames/beef.jpg", getAssets())); // 3
         mTextures.add(Texture.loadTextureFromApk("frames/bicycle.jpg", getAssets()));
         mTextures.add(Texture.loadTextureFromApk("frames/gun.jpg", getAssets()));

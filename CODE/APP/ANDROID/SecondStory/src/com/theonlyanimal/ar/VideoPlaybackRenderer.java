@@ -411,7 +411,7 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
             keyframeShaderID, "texSampler2D");
         
         // EDITED - 
-        int offset = 3; // THE NUMBER OF CTRL IMAGES
+        int offset = 0; // THE NUMBER OF CTRL IMAGES (was 3)
         keyframeQuadAspectRatio[VideoPlayback.BEEF] = (float) mTextures.get(offset).mHeight / (float) mTextures.get(offset).mWidth;
         keyframeQuadAspectRatio[VideoPlayback.BICYCLES] = (float) mTextures.get(offset + 1).mHeight / (float) mTextures.get(offset + 1).mWidth;
         keyframeQuadAspectRatio[VideoPlayback.GUN] = (float) mTextures.get(offset + 2).mHeight / (float) mTextures.get(offset + 2).mWidth;
