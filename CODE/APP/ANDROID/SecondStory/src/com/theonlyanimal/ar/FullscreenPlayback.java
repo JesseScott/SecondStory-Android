@@ -13,7 +13,7 @@ import com.theonlyanimal.secondstory.R;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.content.res.AssetFileDescriptor;
+//import android.content.res.AssetFileDescriptor;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.media.AudioManager;
@@ -84,15 +84,12 @@ public class FullscreenPlayback extends Activity implements OnPreparedListener,
         // Collect all of the data passed by the launching activity:
         mSeekPosition = getIntent().getIntExtra("currentSeekPosition", 0);
         mMovieName = getIntent().getStringExtra("movieName");
-        mRequestedOrientation = getIntent().getIntExtra("requestedOrientation",
-            0);
-        mShouldPlayImmediately = getIntent().getBooleanExtra(
-            "shouldPlayImmediately", false);
+        mRequestedOrientation = getIntent().getIntExtra("requestedOrientation", 0);
+        mShouldPlayImmediately = getIntent().getBooleanExtra("shouldPlayImmediately", false);
         
         // Create a gesture detector that will handle single and double taps:
         mSimpleListener = new SimpleOnGestureListener();
-        mGestureDetector = new GestureDetector(getApplicationContext(),
-            mSimpleListener);
+        mGestureDetector = new GestureDetector(getApplicationContext(), mSimpleListener);
         
         // We assign the actions for the single and double taps:
         mGestureDetector.setOnDoubleTapListener(new OnDoubleTapListener()
@@ -144,15 +141,7 @@ public class FullscreenPlayback extends Activity implements OnPreparedListener,
             mMediaPlayer = new MediaPlayer();
             mMediaController = new MediaController(this);
             
-            // This example shows how to load the movie from the assets
-            // folder of the app. However, if you would like to load the
-            // movie from the SD card or from a network location, simply
-            // comment the four lines below:
-            //AssetFileDescriptor afd = getAssets().openFd(mMovieName);
-            //mMediaPlayer.setDataSource(afd.getFileDescriptor(), afd.getStartOffset(), afd.getLength());
-            //afd.close();
-            
-            // And uncomment this line:
+            Log.v(LOGTAG, "loading " + mMovieName);
             mMediaPlayer.setDataSource(mMovieName); // ???
             
             mMediaPlayer.setDisplay(mHolder);
@@ -201,8 +190,7 @@ public class FullscreenPlayback extends Activity implements OnPreparedListener,
         mMediaControllerLock.lock();
         mMediaPlayerLock.lock();
         
-        if ((mMediaController != null) && (mVideoView != null)
-            && (mMediaPlayer != null))
+        if ((mMediaController != null) && (mVideoView != null) && (mMediaPlayer != null))
         {
             if (mVideoView.getParent() != null)
             {
@@ -210,8 +198,7 @@ public class FullscreenPlayback extends Activity implements OnPreparedListener,
                 mMediaController.setMediaPlayer(player_interface);
                 
                 // Add the media controller to the view:
-                View anchorView = mVideoView.getParent() instanceof View ? (View) mVideoView
-                    .getParent() : mVideoView;
+                View anchorView = mVideoView.getParent() instanceof View ? (View) mVideoView.getParent() : mVideoView;
                 mMediaController.setAnchorView(anchorView);
                 mVideoView.setMediaController(mMediaController);
                 mMediaController.setEnabled(true);
@@ -296,7 +283,7 @@ public class FullscreenPlayback extends Activity implements OnPreparedListener,
     // Called when the app is destroyed
     protected void onDestroy()
     {
-        // Log.d( LOGTAG, "Fullscreen.onDestroy");
+        Log.d( LOGTAG, "Fullscreen.onDestroy");
         
         // Prepare the media player for termination:
         prepareForTermination();
@@ -314,7 +301,7 @@ public class FullscreenPlayback extends Activity implements OnPreparedListener,
     // Called when the app is resumed
     protected void onResume()
     {
-        // Log.d( LOGTAG, "Fullscreen.onResume");
+        Log.d( LOGTAG, "Fullscreen.onResume");
         super.onResume();
         
         // Prepare a view that the media player can use:
@@ -386,7 +373,7 @@ public class FullscreenPlayback extends Activity implements OnPreparedListener,
     // Called when the activity is paused
     protected void onPause()
     {
-        // Log.d( LOGTAG, "Fullscreen.onPause");
+        Log.d( LOGTAG, "Fullscreen.onPause");
         super.onPause();
         
         // We first prepare for termination:

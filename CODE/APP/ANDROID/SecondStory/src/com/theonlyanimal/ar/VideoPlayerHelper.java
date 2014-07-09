@@ -157,18 +157,8 @@ public class VideoPlayerHelper implements OnPreparedListener,
                     try
                     {
                         mMediaPlayer = new MediaPlayer();
-                        
-                        // This example shows how to load the movie from the
-                        // assets folder of the app
-                        // However, if you would like to load the movie from the
-                        // sdcard or from a network location
-                        // simply comment the three lines below
-                        //AssetFileDescriptor afd = mParentActivity.getAssets().openFd(filename);
-                        //mMediaPlayer.setDataSource(afd.getFileDescriptor(), afd.getStartOffset(), afd.getLength());
-                        //afd.close();
-                        
-                        // and uncomment this one
-                        Log.v(LOGTAG, "loading " + filename);
+                  
+                        Log.v(LOGTAG, "VPH Loading " + filename);
                         mMediaPlayer.setDataSource(filename);
                         
                         mMediaPlayer.prepareAsync();
@@ -195,8 +185,7 @@ public class VideoPlayerHelper implements OnPreparedListener,
                 try
                 {
                     // We need to verify that the file exists
-                    AssetFileDescriptor afd = mParentActivity.getAssets()
-                        .openFd(filename);
+                    AssetFileDescriptor afd = mParentActivity.getAssets().openFd(filename);
                     afd.close();
                     Log.d(LOGTAG, "SHOULD NOT BE LOADING ASSET HERE");
                 } catch (Exception e)
@@ -211,13 +200,11 @@ public class VideoPlayerHelper implements OnPreparedListener,
             
             // If the client requests that we should be able to play FULLSCREEN
             // then we need to create a FullscreenPlaybackActivity
-            if ((requestedType == MEDIA_TYPE.FULLSCREEN)
-                || (requestedType == MEDIA_TYPE.ON_TEXTURE_FULLSCREEN))
+            if ((requestedType == MEDIA_TYPE.FULLSCREEN) || (requestedType == MEDIA_TYPE.ON_TEXTURE_FULLSCREEN))
             {
-                mPlayerHelperActivityIntent = new Intent(mParentActivity,
-                    FullscreenPlayback.class);
-                mPlayerHelperActivityIntent
-                    .setAction(android.content.Intent.ACTION_VIEW);
+                //mPlayerHelperActivityIntent = new Intent(mParentActivity, FullscreenPlayback.class);
+            	mPlayerHelperActivityIntent = new Intent("android.intent.action.FULLSCREEN");
+            	mPlayerHelperActivityIntent.setAction(android.content.Intent.ACTION_VIEW);
                 canBeFullscreen = true;
             }
             
@@ -278,8 +265,7 @@ public class VideoPlayerHelper implements OnPreparedListener,
     // Indicates whether the movie can be played on a texture
     public boolean isPlayableOnTexture()
     {
-        if ((mVideoType == MEDIA_TYPE.ON_TEXTURE)
-            || (mVideoType == MEDIA_TYPE.ON_TEXTURE_FULLSCREEN))
+        if ((mVideoType == MEDIA_TYPE.ON_TEXTURE) || (mVideoType == MEDIA_TYPE.ON_TEXTURE_FULLSCREEN))
             return true;
         
         return false;
@@ -289,8 +275,7 @@ public class VideoPlayerHelper implements OnPreparedListener,
     // Indicates whether the movie can be played fullscreen
     public boolean isPlayableFullscreen()
     {
-        if ((mVideoType == MEDIA_TYPE.FULLSCREEN)
-            || (mVideoType == MEDIA_TYPE.ON_TEXTURE_FULLSCREEN))
+        if ((mVideoType == MEDIA_TYPE.FULLSCREEN) || (mVideoType == MEDIA_TYPE.ON_TEXTURE_FULLSCREEN))
             return true;
         
         return false;
@@ -396,8 +381,7 @@ public class VideoPlayerHelper implements OnPreparedListener,
             // We check first whether this was requested upon load time
             if (!isPlayableFullscreen())
             {
-                Log.d(LOGTAG,
-                    "Cannot play this video fullscreen, it was not requested on load");
+                Log.d(LOGTAG,"Cannot play this video fullscreen, it was not requested on load");
                 return false;
             }
             
@@ -813,8 +797,8 @@ public class VideoPlayerHelper implements OnPreparedListener,
         
         // If requested an immediate play
         if (mShouldPlayImmediately)
-            play(false, mSeekPosition);
-        
+            //play(false, mSeekPosition);
+        	play(true, mSeekPosition);
         mSeekPosition = 0;
     }
     

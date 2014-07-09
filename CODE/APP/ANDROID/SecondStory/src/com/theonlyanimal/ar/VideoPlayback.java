@@ -101,7 +101,7 @@ public class VideoPlayback extends Activity implements
     private boolean mFlash = false;
     private boolean mContAutofocus = false;
     private boolean mExtendedTracking = false;
-    private boolean mPlayFullscreenVideo = false;
+    private boolean mPlayFullscreenVideo = true;
     
     private View mFlashOptionView;
     
@@ -199,8 +199,7 @@ public class VideoPlayback extends Activity implements
                                 if ((mVideoPlayerHelper[i].getStatus() == MEDIA_STATE.REACHED_END))
                                     mSeekPosition[i] = 0;
                                 
-                                mVideoPlayerHelper[i].play(mPlayFullscreenVideo,
-                                    mSeekPosition[i]);
+                                mVideoPlayerHelper[i].play(mPlayFullscreenVideo, mSeekPosition[i]);
                                 mSeekPosition[i] = VideoPlayerHelper.CURRENT_POSITION;
                             } else if (mVideoPlayerHelper[i].getStatus() == MEDIA_STATE.PLAYING)
                             {
@@ -235,9 +234,9 @@ public class VideoPlayback extends Activity implements
     // use for rendering.
     private void loadTextures()
     {
-        //mTextures.add(Texture.loadTextureFromApk("ctrl/play.png", getAssets()));
-        //mTextures.add(Texture.loadTextureFromApk("ctrl/busy.png", getAssets()));
-        //mTextures.add(Texture.loadTextureFromApk("ctrl/error.png", getAssets()));
+        mTextures.add(Texture.loadTextureFromApk("ctrl/play.png", getAssets()));
+        mTextures.add(Texture.loadTextureFromApk("ctrl/busy.png", getAssets()));
+        mTextures.add(Texture.loadTextureFromApk("ctrl/error.png", getAssets()));
         mTextures.add(Texture.loadTextureFromApk("frames/beef.jpg", getAssets())); // 3
         mTextures.add(Texture.loadTextureFromApk("frames/bicycle.jpg", getAssets()));
         mTextures.add(Texture.loadTextureFromApk("frames/gun.jpg", getAssets()));
@@ -285,7 +284,7 @@ public class VideoPlayback extends Activity implements
             {
                 if (!mReturningFromFullScreen)
                 {
-                    mRenderer.requestLoad(i, mMovieName[i], mSeekPosition[i], false);
+                    mRenderer.requestLoad(i, mMovieName[i], mSeekPosition[i], false); // dont set to true!
                 } else
                 {
                     mRenderer.requestLoad(i, mMovieName[i], mSeekPosition[i], mWasPlaying[i]);
@@ -848,8 +847,8 @@ public class VideoPlayback extends Activity implements
                     {
                         // If it is playing then we pause it
                         mVideoPlayerHelper[i].pause();
-                        
-                        mVideoPlayerHelper[i].play(true, mSeekPosition[i]);
+                        mVideoPlayerHelper[i].play(true, 0);
+                        //mVideoPlayerHelper[i].play(true, mSeekPosition[i]);
                     }
                 }
                 break;

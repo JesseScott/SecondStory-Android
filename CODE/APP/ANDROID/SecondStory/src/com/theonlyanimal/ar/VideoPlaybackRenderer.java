@@ -121,8 +121,7 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
     boolean isTracking[] = new boolean[VideoPlayback.NUM_TARGETS];
     MEDIA_STATE currentStatus[] = new MEDIA_STATE[VideoPlayback.NUM_TARGETS];
     
-    // These hold the aspect ratio of both the video and the
-    // keyframe
+    // These hold the aspect ratio of both the video and the keyframe
     float videoQuadAspectRatio[] = new float[VideoPlayback.NUM_TARGETS];
     float keyframeQuadAspectRatio[] = new float[VideoPlayback.NUM_TARGETS];
     
@@ -172,8 +171,7 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
     }
     
     
-    public void requestLoad(int target, String movieName, int seekPosition,
-        boolean playImmediately)
+    public void requestLoad(int target, String movieName, int seekPosition, boolean playImmediately)
     {
         mMovieName[target] = movieName;
         mSeekPosition[target] = seekPosition;
@@ -194,8 +192,7 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
         Vuforia.onSurfaceCreated();
         
         for (int i = 0; i < VideoPlayback.NUM_TARGETS; i++)
-        {
-            
+        { 
             if (mVideoPlayerHelper[i] != null)
             {
                 // The VideoPlayerHelper needs to setup a surface texture given
@@ -208,8 +205,7 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
                 // After the file has been loaded one must always check with
                 // isPlayableOnTexture() whether
                 // this can be played embedded in the AR scene
-                if (!mVideoPlayerHelper[i]
-                    .setupSurfaceTexture(videoPlaybackTextureID[i]))
+                if (!mVideoPlayerHelper[i].setupSurfaceTexture(videoPlaybackTextureID[i]))
                     mCanRequestType[i] = MEDIA_TYPE.FULLSCREEN;
                 else
                     mCanRequestType[i] = MEDIA_TYPE.ON_TEXTURE_FULLSCREEN;
@@ -243,8 +239,7 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
         {
             if (mLoadRequested[i] && mVideoPlayerHelper[i] != null)
             {
-                mVideoPlayerHelper[i].load(mMovieName[i], mCanRequestType[i],
-                    mShouldPlayImmediately[i], mSeekPosition[i]);
+                mVideoPlayerHelper[i].load(mMovieName[i], mCanRequestType[i], mShouldPlayImmediately[i], mSeekPosition[i]);
                 mLoadRequested[i] = false;
             }
         }
@@ -338,16 +333,14 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
         Log.d(LOGTAG, "VideoPlayback VideoPlaybackRenderer initRendering");
         
         // Define clear color
-        GLES20.glClearColor(0.0f, 0.0f, 0.0f, Vuforia.requiresAlpha() ? 0.0f
-            : 1.0f);
+        GLES20.glClearColor(0.0f, 0.0f, 0.0f, Vuforia.requiresAlpha() ? 0.0f : 1.0f);
         
         // Now generate the OpenGL texture objects and add settings
         for (Texture t : mTextures)
         {
-            // Here we create the textures for the keyframe
-            // and for all the icons
+            // Here we create the textures for the keyframe and for all the icons
             GLES20.glGenTextures(1, t.mTextureID, 0);
-            GLES20.glBindTexture(GLES20.GL_TEXTURE_2D, t.mTextureID[0]);
+            GLES20.glBindTexture(GLES20.GL_TEXTURE_2D, t.mTextureID[0]); // WHAT IS 0 ??
             GLES20.glTexParameterf(GLES20.GL_TEXTURE_2D,
                 GLES20.GL_TEXTURE_MIN_FILTER, GLES20.GL_LINEAR);
             GLES20.glTexParameterf(GLES20.GL_TEXTURE_2D,
@@ -378,22 +371,14 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
             GLES20.glBindTexture(GLES11Ext.GL_TEXTURE_EXTERNAL_OES, 0);
         }
         
-        // The first shader is the one that will display the video data of the
-        // movie
+        // The first shader is the one that will display the video data of the movie
         // (it is aware of the GL_TEXTURE_EXTERNAL_OES extension)
-        videoPlaybackShaderID = SampleUtils.createProgramFromShaderSrc(
-            VideoPlaybackShaders.VIDEO_PLAYBACK_VERTEX_SHADER,
-            VideoPlaybackShaders.VIDEO_PLAYBACK_FRAGMENT_SHADER);
-        videoPlaybackVertexHandle = GLES20.glGetAttribLocation(
-            videoPlaybackShaderID, "vertexPosition");
-        videoPlaybackNormalHandle = GLES20.glGetAttribLocation(
-            videoPlaybackShaderID, "vertexNormal");
-        videoPlaybackTexCoordHandle = GLES20.glGetAttribLocation(
-            videoPlaybackShaderID, "vertexTexCoord");
-        videoPlaybackMVPMatrixHandle = GLES20.glGetUniformLocation(
-            videoPlaybackShaderID, "modelViewProjectionMatrix");
-        videoPlaybackTexSamplerOESHandle = GLES20.glGetUniformLocation(
-            videoPlaybackShaderID, "texSamplerOES");
+        videoPlaybackShaderID = SampleUtils.createProgramFromShaderSrc(VideoPlaybackShaders.VIDEO_PLAYBACK_VERTEX_SHADER, VideoPlaybackShaders.VIDEO_PLAYBACK_FRAGMENT_SHADER);
+        videoPlaybackVertexHandle = GLES20.glGetAttribLocation(videoPlaybackShaderID, "vertexPosition");
+        videoPlaybackNormalHandle = GLES20.glGetAttribLocation(videoPlaybackShaderID, "vertexNormal");
+        videoPlaybackTexCoordHandle = GLES20.glGetAttribLocation(videoPlaybackShaderID, "vertexTexCoord");
+        videoPlaybackMVPMatrixHandle = GLES20.glGetUniformLocation(videoPlaybackShaderID, "modelViewProjectionMatrix");
+        videoPlaybackTexSamplerOESHandle = GLES20.glGetUniformLocation(videoPlaybackShaderID, "texSamplerOES");
         
         // This is a simpler shader with regular 2D textures
         keyframeShaderID = SampleUtils.createProgramFromShaderSrc(
@@ -411,7 +396,7 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
             keyframeShaderID, "texSampler2D");
         
         // EDITED - 
-        int offset = 0; // THE NUMBER OF CTRL IMAGES (was 3)
+        int offset = 3; // THE NUMBER OF CTRL IMAGES (was 3)
         keyframeQuadAspectRatio[VideoPlayback.BEEF] = (float) mTextures.get(offset).mHeight / (float) mTextures.get(offset).mWidth;
         keyframeQuadAspectRatio[VideoPlayback.BICYCLES] = (float) mTextures.get(offset + 1).mHeight / (float) mTextures.get(offset + 1).mWidth;
         keyframeQuadAspectRatio[VideoPlayback.GUN] = (float) mTextures.get(offset + 2).mHeight / (float) mTextures.get(offset + 2).mWidth;
@@ -529,26 +514,26 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
             	//Log.v(LOGTAG, " - found BEEF -");
                 currentTarget = VideoPlayback.BEEF;
             }
-            else if(imageTarget.getName().compareTo("bicycle") == 1) {
+            else if(imageTarget.getName().compareTo("bicycle") == 0) {
             	//Log.v(LOGTAG, " - found BIKE -");
                 currentTarget = VideoPlayback.BICYCLES;
             }
-            else if(imageTarget.getName().compareTo("gun") == 2) {
+            else if(imageTarget.getName().compareTo("gun") == 0) {
             	//Log.v(LOGTAG, " - found GUN -");
                 currentTarget = VideoPlayback.GUN;
             }
-            else if(imageTarget.getName().compareTo("pennies") == 3) {
+            else if(imageTarget.getName().compareTo("pennies") == 0) {
             	//Log.v(LOGTAG, " - found PENNIES -");
                 currentTarget = VideoPlayback.PENNIES;
             }
-            else if(imageTarget.getName().compareTo("suzyq") == 4) {
+            else if(imageTarget.getName().compareTo("suzyq") == 0) {
             	//Log.v(LOGTAG, " - found SUZY -");
                 currentTarget = VideoPlayback.SUZYQ;
             }
             else {
                 currentTarget = 0;
             }
-            
+            Log.v(LOGTAG, " Current Movie Target is " + currentTarget);
             modelViewMatrix[currentTarget] = Tool.convertPose2GLMatrix(trackableResult.getPose());
             
             isTracking[currentTarget] = true;
@@ -609,17 +594,14 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
                 
                 GLES20.glActiveTexture(GLES20.GL_TEXTURE0);
                 
-                // The first loaded texture from the assets folder is the
-                // keyframe
-                GLES20.glBindTexture(GLES20.GL_TEXTURE_2D,
-                    mTextures.get(currentTarget).mTextureID[0]); // still frame 
-                GLES20.glUniformMatrix4fv(keyframeMVPMatrixHandle, 1, false,
-                    modelViewProjectionKeyframe, 0);
+                // The first loaded texture from the assets folder is the keyframe
+                int offset = 3; // ADDED
+                GLES20.glBindTexture(GLES20.GL_TEXTURE_2D, mTextures.get(currentTarget + offset).mTextureID[0]); // still frame (EDIT)
+                GLES20.glUniformMatrix4fv(keyframeMVPMatrixHandle, 1, false, modelViewProjectionKeyframe, 0);
                 GLES20.glUniform1i(keyframeTexSampler2DHandle, 0);
                 
                 // Render
-                GLES20.glDrawElements(GLES20.GL_TRIANGLES, NUM_QUAD_INDEX,
-                    GLES20.GL_UNSIGNED_SHORT, quadIndices);
+                GLES20.glDrawElements(GLES20.GL_TRIANGLES, NUM_QUAD_INDEX, GLES20.GL_UNSIGNED_SHORT, quadIndices);
                 
                 GLES20.glDisableVertexAttribArray(keyframeVertexHandle);
                 GLES20.glDisableVertexAttribArray(keyframeNormalHandle);
@@ -627,11 +609,9 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
                 
                 GLES20.glUseProgram(0);
             } else
-            // In any other case, such as playing or paused, we render
-            // the actual contents
+            // In any other case, such as playing or paused, we render the actual contents
             {
-                float[] modelViewMatrixVideo = Tool.convertPose2GLMatrix(
-                    trackableResult.getPose()).getData();
+                float[] modelViewMatrixVideo = Tool.convertPose2GLMatrix(trackableResult.getPose()).getData();
                 float[] modelViewProjectionVideo = new float[16];
                 // Matrix.translateM(modelViewMatrixVideo, 0, 0.0f, 0.0f,
                 // targetPositiveDimensions[currentTarget].getData()[0]);
@@ -649,42 +629,33 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
                 GLES20.glUseProgram(videoPlaybackShaderID);
                 
                 // Prepare for rendering the keyframe
-                GLES20.glVertexAttribPointer(videoPlaybackVertexHandle, 3,
-                    GLES20.GL_FLOAT, false, 0, quadVertices);
-                GLES20.glVertexAttribPointer(videoPlaybackNormalHandle, 3,
-                    GLES20.GL_FLOAT, false, 0, quadNormals);
+                GLES20.glVertexAttribPointer(videoPlaybackVertexHandle, 3, GLES20.GL_FLOAT, false, 0, quadVertices);
+                GLES20.glVertexAttribPointer(videoPlaybackNormalHandle, 3, GLES20.GL_FLOAT, false, 0, quadNormals);
                 
                 // EDITED
-                if (imageTarget.getName().compareTo("stones") == 0)
-                    GLES20.glVertexAttribPointer(videoPlaybackTexCoordHandle,
-                        2, GLES20.GL_FLOAT, false, 0,
-                        fillBuffer(videoQuadTextureCoordsTransformedStones));
-                else
-                    GLES20.glVertexAttribPointer(videoPlaybackTexCoordHandle,
-                        2, GLES20.GL_FLOAT, false, 0,
-                        fillBuffer(videoQuadTextureCoordsTransformedChips));
-                
-                
                 if(imageTarget.getName().compareTo("beef") == 0) {
+                	Log.v(LOGTAG, " ---> buffering BEEF");
                 	GLES20.glVertexAttribPointer(videoPlaybackTexCoordHandle, 2, GLES20.GL_FLOAT, false, 0, fillBuffer(videoQuadTextureCoordsTransformedBeef));
                 }
                 else if(imageTarget.getName().compareTo("bicycle") == 1) {
+                	Log.v(LOGTAG, " ---> buffering BIKE");
                 	GLES20.glVertexAttribPointer(videoPlaybackTexCoordHandle, 2, GLES20.GL_FLOAT, false, 0, fillBuffer(videoQuadTextureCoordsTransformedBicycles));
                 }
                 else if(imageTarget.getName().compareTo("gun") == 2) {
+                	Log.v(LOGTAG, " ---> buffering GUN");
                 	GLES20.glVertexAttribPointer(videoPlaybackTexCoordHandle, 2, GLES20.GL_FLOAT, false, 0, fillBuffer(videoQuadTextureCoordsTransformedGun));
                 }
                 else if(imageTarget.getName().compareTo("pennies") == 3) {
+                	Log.v(LOGTAG, " ---> buffering PENNY");
                 	GLES20.glVertexAttribPointer(videoPlaybackTexCoordHandle, 2, GLES20.GL_FLOAT, false, 0, fillBuffer(videoQuadTextureCoordsTransformedPennies));
                 }
                 else if(imageTarget.getName().compareTo("suzyq") == 4) {
+                	Log.v(LOGTAG, " ---> buffering SUZY");
                 	GLES20.glVertexAttribPointer(videoPlaybackTexCoordHandle, 2, GLES20.GL_FLOAT, false, 0, fillBuffer(videoQuadTextureCoordsTransformedSuzy));
                 }
                 else {
                     currentTarget = 0;
                 }
-                
-                
                 
                 GLES20.glEnableVertexAttribArray(videoPlaybackVertexHandle);
                 GLES20.glEnableVertexAttribArray(videoPlaybackNormalHandle);
@@ -693,17 +664,13 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
                 GLES20.glActiveTexture(GLES20.GL_TEXTURE0);
                 
                 // IMPORTANT:
-                // Notice here that the texture that we are binding is not the
-                // typical GL_TEXTURE_2D but instead the GL_TEXTURE_EXTERNAL_OES
-                GLES20.glBindTexture(GLES11Ext.GL_TEXTURE_EXTERNAL_OES,
-                    videoPlaybackTextureID[currentTarget]);
-                GLES20.glUniformMatrix4fv(videoPlaybackMVPMatrixHandle, 1,
-                    false, modelViewProjectionVideo, 0);
+                // Notice here that the texture that we are binding is not the typical GL_TEXTURE_2D but instead the GL_TEXTURE_EXTERNAL_OES
+                GLES20.glBindTexture(GLES11Ext.GL_TEXTURE_EXTERNAL_OES, videoPlaybackTextureID[currentTarget]);
+                GLES20.glUniformMatrix4fv(videoPlaybackMVPMatrixHandle, 1, false, modelViewProjectionVideo, 0);
                 GLES20.glUniform1i(videoPlaybackTexSamplerOESHandle, 0);
                 
                 // Render
-                GLES20.glDrawElements(GLES20.GL_TRIANGLES, NUM_QUAD_INDEX,
-                    GLES20.GL_UNSIGNED_SHORT, quadIndices);
+                GLES20.glDrawElements(GLES20.GL_TRIANGLES, NUM_QUAD_INDEX, GLES20.GL_UNSIGNED_SHORT, quadIndices);
                 
                 GLES20.glDisableVertexAttribArray(videoPlaybackVertexHandle);
                 GLES20.glDisableVertexAttribArray(videoPlaybackNormalHandle);
@@ -713,8 +680,7 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
                 
             }
             
-            // The following section renders the icons. The actual textures used
-            // are loaded from the assets folder
+            // The following section renders the icons. The actual textures used are loaded from the assets folder
             
             if ((currentStatus[currentTarget] == VideoPlayerHelper.MEDIA_STATE.READY)
                 || (currentStatus[currentTarget] == VideoPlayerHelper.MEDIA_STATE.REACHED_END)
@@ -722,18 +688,14 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
                 || (currentStatus[currentTarget] == VideoPlayerHelper.MEDIA_STATE.NOT_READY)
                 || (currentStatus[currentTarget] == VideoPlayerHelper.MEDIA_STATE.ERROR))
             {
-                // If the movie is ready to be played, pause, has reached end or
-                // is not
-                // ready then we display one of the icons
-                float[] modelViewMatrixButton = Tool.convertPose2GLMatrix(
-                    trackableResult.getPose()).getData();
+                // If the movie is ready to be played, pause, has reached end or is not ready then we display one of the icons
+                float[] modelViewMatrixButton = Tool.convertPose2GLMatrix(trackableResult.getPose()).getData();
                 float[] modelViewProjectionButton = new float[16];
                 
                 GLES20.glDepthFunc(GLES20.GL_LEQUAL);
                 
                 GLES20.glEnable(GLES20.GL_BLEND);
-                GLES20.glBlendFunc(GLES20.GL_SRC_ALPHA,
-                    GLES20.GL_ONE_MINUS_SRC_ALPHA);
+                GLES20.glBlendFunc(GLES20.GL_SRC_ALPHA, GLES20.GL_ONE_MINUS_SRC_ALPHA);
                 
                 // The inacuracy of the rendering process in some devices means
                 // that
@@ -809,8 +771,7 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
                             mTextures.get(2).mTextureID[0]);
                         break;
                 }
-                GLES20.glUniformMatrix4fv(keyframeMVPMatrixHandle, 1, false,
-                    modelViewProjectionButton, 0);
+                GLES20.glUniformMatrix4fv(keyframeMVPMatrixHandle, 1, false, modelViewProjectionButton, 0);
                 GLES20.glUniform1i(keyframeTexSampler2DHandle, 0);
                 
                 // Render
