@@ -10,6 +10,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.text.format.Time;
 import android.util.Log;
 import android.widget.Toast;
 import android.os.AsyncTask;
@@ -17,8 +18,10 @@ import android.net.wifi.WifiConfiguration;
 import android.net.wifi.WifiManager;
 
 import java.io.BufferedOutputStream;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.SocketException;
@@ -37,7 +40,9 @@ public class WelcomeScreen extends Activity {
 	private static final String TAG = "SecondStory";
 	private static final String SSID = "43655C";
 	private static final String PWD = "248771039";
-	private static final String SD_DIRECTORY = "//sdcard//SecondStory";
+	private static final String SD_DIRECTORY = "//sdcard//SecondStory/BloodAlley";
+	private static final String MEDIA_DIRECTORY = "//sdcard//SecondStory/BloodAlley/MEDIA/";
+	private static final String LOG_DIRECTORY = "//sdcard//SecondStory/BloodAlley/LOGS/";
     public static final int DIALOG_DOWNLOAD_PROGRESS = 0;
     private ProgressDialog progressDialog;
 	
@@ -108,15 +113,17 @@ public class WelcomeScreen extends Activity {
 
 			// Check For Custom Directory
 			try{
-				final File directory = new File(SD_DIRECTORY);
-				if(directory.exists()) {
+				final File base_directory = new File(SD_DIRECTORY);
+				final File media_directory = new File(MEDIA_DIRECTORY);
+				final File log_directory = new File(LOG_DIRECTORY);
+				if(base_directory.exists()) {
 					Log.v(TAG, " - Path Exists - ");
-					if(directory.isDirectory()) {
+					if(base_directory.isDirectory()) {
 						Log.v(TAG, " - And Its A Directory - ");
 						
 						// How Many Files Are There ?
-						File[] listOfFiles = directory.listFiles();
-						Log.v(TAG, "Directory has " + listOfFiles.length + " Files");
+						File[] listOfFiles = media_directory.listFiles();
+						Log.v(TAG, "Media Directory has " + listOfFiles.length + " Files");
 
 						// TODO check actual time stamp of files
 						// If There's None
@@ -144,7 +151,8 @@ public class WelcomeScreen extends Activity {
 					
 					// Title
 					builder.setTitle("Content Doesn't Exist");
-					builder.setMessage("this app requires custom content - we need to make a directory & download some content to it - ok ?");
+					builder.setMessage("this app requires custom content - we need to make a directory & download some content to it - ok ?\n" +
+							"PLEASE TURN ON YOUR WIFI !!");
 					
 					// Buttons
 					builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -152,8 +160,10 @@ public class WelcomeScreen extends Activity {
 					               // User clicked OK button
 					        	   Log.v(TAG, " - User Said YES! - ");
 					        	   
-					        	   // Make The Directory
-					        	   directory.mkdirs();
+					        	   // Make The Directories
+					        	   base_directory.mkdirs();
+					        	   media_directory.mkdirs();
+					        	   log_directory.mkdirs();
 					        	   
 					        	   // Get The Files
 					        	   getFiles();
@@ -225,7 +235,7 @@ public class WelcomeScreen extends Activity {
 		switch(id) {
 			case DIALOG_DOWNLOAD_PROGRESS:
 				progressDialog = new ProgressDialog(this);
-				progressDialog.setMessage("Downloading files...");
+				progressDialog.setMessage("Downloading files... \nPlease be patient.");
 				progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
 				progressDialog.setCancelable(false);
 				progressDialog.show();
@@ -331,7 +341,7 @@ public class WelcomeScreen extends Activity {
 		
 		private Boolean navigateToPath() {
 			try {
-				ftp.changeWorkingDirectory(" /public_html/jessescott/storage/android");
+				ftp.changeWorkingDirectory("/public_html/jessescott/storage/android");
 				return true;
 			} catch (IOException e) {
 				e.printStackTrace();
@@ -346,19 +356,39 @@ public class WelcomeScreen extends Activity {
 			try {
 		    	FTPFile[] files = ftp.listFiles();
 				int totalFiles = files.length;
-
+				
+				File logFile = new File(LOG_DIRECTORY + "logfile.txt");
+				Log.v("FTP", "LOG should exist at " + logFile.getAbsolutePath());
+				if(!logFile.exists()) {
+					try {
+						logFile.createNewFile();
+					}
+					catch(Exception e) {
+						e.printStackTrace();
+					}
+				}
+				
 		    	for (FTPFile f : files) {
 
 					// Log Names
 					Log.v("FTP", f.toFormattedString());
 					
+					// Set Logger
+				    BufferedWriter logger = new BufferedWriter(new FileWriter(logFile, true)); 
+					
 					// Set Path
 					String remoteFile = f.getName();
-					Log.v("FTP", "REMOTE: " + remoteFile);
-					String localFile = "//sdcard//SecondStory//";
+					Log.v("FTP", "REMOTE file " + remoteFile);
+					String localFile = MEDIA_DIRECTORY;
 					localFile += remoteFile;
-					Log.v("FTP", "LOCAL: " + localFile);
+					Log.v("FTP", " is being put in LOCAL path " + localFile);
 				    output = new BufferedOutputStream(new FileOutputStream(localFile));
+				    
+				    // LogFile
+				    Time now = new Time(Time.getCurrentTimezone());
+				    now.setToNow();
+				    logger.append("SS: Download for " + localFile + " started at " + now.format("%k:%M:%S"));
+				    logger.newLine();
 				    
 				    // HTTP
 				    System.setProperty("http.keepAlive", "false");
@@ -367,13 +397,20 @@ public class WelcomeScreen extends Activity {
 	                Boolean success = ftp.retrieveFile(remoteFile, output);
 	                if(success) {
 	                	Log.v("FTP", "SUCCESS");
+	                	now.setToNow();
+					    logger.append("SS: Download for " + localFile + " finished at " + now.format("%k:%M:%S"));
+					    logger.newLine();
 	                }
 	                
 	                // Update Progress
-	                publishProgress((int) ((count / (float) totalFiles) * 100));
 	                count++;
+	                publishProgress((int) ((count / (float) totalFiles) * 100));
 	                
-	                // Close Buffer
+	                // Close Logger
+	                logger.flush();
+	                logger.close();
+	                
+	                // Close Buffer 
 	                output.close();
 				 }
 		     } 
@@ -428,7 +465,7 @@ public class WelcomeScreen extends Activity {
 			
 			// Start Tutorial Screens
 			Intent i = new Intent("android.intent.action.TUTORIAL");
-			startActivity(i);
+			//startActivity(i);
 			
 		}	
 
