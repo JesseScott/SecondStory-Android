@@ -70,12 +70,17 @@ public class VideoPlayback extends Activity implements
     private SimpleOnGestureListener mSimpleListener = null;
     
     // Movie for the Targets:
-    public static final int NUM_TARGETS = 5;
+    public static final int NUM_TARGETS = 8;
     public static final int BEEF = 0;
     public static final int BICYCLES = 1;
-    public static final int GUN = 2;
-    public static final int PENNIES = 3;
-    public static final int SUZYQ = 4;
+    public static final int COPPER = 2;
+    public static final int GUN = 3;
+    public static final int PENNIES = 4;
+    public static final int SHROOMS = 5;
+    public static final int SUZYQ = 6;
+    public static final int UMBRELLAS = 7;
+    
+    public static String MEDIA_PATH = "";
     
     private VideoPlayerHelper mVideoPlayerHelper[] = null;
     private int mSeekPosition[] = null;
@@ -150,16 +155,18 @@ public class VideoPlayback extends Activity implements
             mVideoPlayerHelper[i].setActivity(this);
         }
         
-        String rootPath = Environment.getExternalStorageDirectory().getPath();
-        rootPath += "/SecondStory/";
-        Log.v("SECONDSTORY", "ROOT PATH IS " + rootPath);
+        String SD_PATH = Environment.getExternalStorageDirectory().getPath();
+        MEDIA_PATH = SD_PATH + "/SecondStory/BloodAlley/MEDIA/";
+        Log.v("SECONDSTORY", "MEDIA PATH IS " + MEDIA_PATH);
                 
-        //mMovieName[BEEF] = "VideoPlayback/VuforiaSizzleReel_1.m4v";
-        mMovieName[BEEF] = rootPath + "beef.mp4";
-        mMovieName[BICYCLES] = rootPath + "bicycles.mp4";
-        mMovieName[GUN] = rootPath + "gun.mp4";
-        mMovieName[PENNIES] = rootPath + "pennies.mp4";
-        mMovieName[SUZYQ] = rootPath + "suzyq.mp4";
+        mMovieName[BEEF] 		= MEDIA_PATH + "beef.mp4";
+        mMovieName[BICYCLES] 	= MEDIA_PATH + "bicycles.mp4";
+        mMovieName[GUN] 		= MEDIA_PATH + "gun.mp4";
+        mMovieName[PENNIES] 	= MEDIA_PATH + "pennies.mp4";
+        mMovieName[COPPER] 		= MEDIA_PATH + "copperthief.mp4";
+        mMovieName[SUZYQ] 		= MEDIA_PATH + "sweeping.mp4";
+        mMovieName[SHROOMS] 	= MEDIA_PATH + "shrooms.mp4";
+        mMovieName[UMBRELLAS] 	= MEDIA_PATH + "umbrellas.mp4";
         
         // Set the double tap listener:
         mGestureDetector.setOnDoubleTapListener(new OnDoubleTapListener() {
@@ -238,9 +245,12 @@ public class VideoPlayback extends Activity implements
         mTextures.add(Texture.loadTextureFromApk("ctrl/error.png", getAssets()));
         mTextures.add(Texture.loadTextureFromApk("frames/beef.jpg", getAssets())); // 3
         mTextures.add(Texture.loadTextureFromApk("frames/bicycle.jpg", getAssets()));
+        mTextures.add(Texture.loadTextureFromApk("frames/copper.jpg", getAssets()));
         mTextures.add(Texture.loadTextureFromApk("frames/gun.jpg", getAssets()));
         mTextures.add(Texture.loadTextureFromApk("frames/pennies.jpg", getAssets()));
-        mTextures.add(Texture.loadTextureFromApk("frames/suzyq.jpg", getAssets())); // 7
+        mTextures.add(Texture.loadTextureFromApk("frames/shrooms.jpg", getAssets()));
+        mTextures.add(Texture.loadTextureFromApk("frames/suzyq.jpg", getAssets()));
+        mTextures.add(Texture.loadTextureFromApk("frames/umbrellas.jpg", getAssets())); // 10
     }
     
     
