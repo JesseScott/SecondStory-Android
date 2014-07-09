@@ -37,7 +37,7 @@ import com.theonlyanimal.secondstory.StorageHelper;
 public class WelcomeScreen extends Activity {
 
 	// GLOBALS
-	private static final String TAG = "SecondStory";
+	private static final String TAG = "SS WelcomeScreen";
 	private static final String SSID = "43655C";
 	private static final String PWD = "248771039";
 	private static final String SD_DIRECTORY = "//sdcard//SecondStory/BloodAlley";
@@ -116,9 +116,9 @@ public class WelcomeScreen extends Activity {
 				final File base_directory = new File(SD_DIRECTORY);
 				final File media_directory = new File(MEDIA_DIRECTORY);
 				final File log_directory = new File(LOG_DIRECTORY);
-				if(base_directory.exists()) {
-					Log.v(TAG, " - Path Exists - ");
-					if(base_directory.isDirectory()) {
+				if(media_directory.exists()) {
+					Log.v(TAG, " - MEDIA Path Exists - ");
+					if(media_directory.isDirectory()) {
 						Log.v(TAG, " - And Its A Directory - ");
 						
 						// How Many Files Are There ?
@@ -357,6 +357,7 @@ public class WelcomeScreen extends Activity {
 		    	FTPFile[] files = ftp.listFiles();
 				int totalFiles = files.length;
 				
+				// Set Log Directory & File
 				File logFile = new File(LOG_DIRECTORY + "logfile.txt");
 				Log.v("FTP", "LOG should exist at " + logFile.getAbsolutePath());
 				if(!logFile.exists()) {
@@ -368,13 +369,12 @@ public class WelcomeScreen extends Activity {
 					}
 				}
 				
+				
 		    	for (FTPFile f : files) {
 
 					// Log Names
 					Log.v("FTP", f.toFormattedString());
 					
-					// Set Logger
-				    BufferedWriter logger = new BufferedWriter(new FileWriter(logFile, true)); 
 					
 					// Set Path
 					String remoteFile = f.getName();
@@ -384,11 +384,15 @@ public class WelcomeScreen extends Activity {
 					Log.v("FTP", " is being put in LOCAL path " + localFile);
 				    output = new BufferedOutputStream(new FileOutputStream(localFile));
 				    
-				    // LogFile
+					// Set Time
 				    Time now = new Time(Time.getCurrentTimezone());
 				    now.setToNow();
-				    logger.append("SS: Download for " + localFile + " started at " + now.format("%k:%M:%S"));
+					
+					// Set Logger
+				    BufferedWriter logger = new BufferedWriter(new FileWriter(logFile, true)); 
+				    logger.append("Download for " + localFile + " started at " + now.format("%k:%M:%S"));
 				    logger.newLine();
+				    Long startTime = System.currentTimeMillis();
 				    
 				    // HTTP
 				    System.setProperty("http.keepAlive", "false");
@@ -397,8 +401,14 @@ public class WelcomeScreen extends Activity {
 	                Boolean success = ftp.retrieveFile(remoteFile, output);
 	                if(success) {
 	                	Log.v("FTP", "SUCCESS");
+	                	
 	                	now.setToNow();
-					    logger.append("SS: Download for " + localFile + " finished at " + now.format("%k:%M:%S"));
+	                	Long elapsedTime = (System.currentTimeMillis() - startTime) / 1000;
+	                	
+					    logger.append("Download for " + localFile + " finished at " + now.format("%k:%M:%S"));
+					    logger.newLine();
+					    logger.append("for an elapsedTime of " + elapsedTime + " seconds");
+					    logger.newLine();
 					    logger.newLine();
 	                }
 	                
@@ -426,6 +436,9 @@ public class WelcomeScreen extends Activity {
 					ftp.logout();
 					ftp.disconnect();
 					Log.v("FTP", "DISCONNECT");
+					
+					// TODO add end of logger
+					
 				} 
 				catch (IOException e) {
 					e.printStackTrace();
@@ -465,7 +478,7 @@ public class WelcomeScreen extends Activity {
 			
 			// Start Tutorial Screens
 			Intent i = new Intent("android.intent.action.TUTORIAL");
-			//startActivity(i);
+			startActivity(i);
 			
 		}	
 
