@@ -1,10 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
-    <ImageTarget name="pennies" size="100.000000 56.171875" />
-    <ImageTarget name="suzyq" size="100.000000 56.250000" />
-    <ImageTarget name="gun" size="100.000000 53.437500" />
-    <ImageTarget name="bicycle" size="100.000000 66.666664" />
-    <ImageTarget name="beef" size="100.000000 56.406250" />
+    <ImageTarget name="umbrellas_5" size="100.000000 63.200001" />
+    <ImageTarget name="umbrellas_4" size="100.000000 68.900002" />
+    <ImageTarget name="umbrellas_3" size="100.000000 73.699997" />
+    <ImageTarget name="umbrellas_2" size="100.000000 67.800003" />
+    <ImageTarget name="umbrellas_1" size="100.000000 65.800003" />
+    <ImageTarget name="sweeping_2" size="100.000000 82.199997" />
+    <ImageTarget name="sweeping_1" size="100.000000 98.099998" />
+    <ImageTarget name="sweeping_5" size="100.000000 62.500000" />
+    <ImageTarget name="sweeping_4" size="100.000000 68.199997" />
+    <ImageTarget name="sweeping_3" size="100.000000 78.400002" />
+    <ImageTarget name="shrooms_5" size="100.000000 54.275810" />
+    <ImageTarget name="shrooms_4" size="100.000000 99.800133" />
+    <ImageTarget name="shrooms_3" size="100.000000 100.200134" />
+    <ImageTarget name="shrooms_2" size="100.000000 99.933426" />
+    <ImageTarget name="shrooms_1" size="100.000000 99.952423" />
+    <ImageTarget name="pennies_5" size="100.000000 85.500000" />
+    <ImageTarget name="pennies_4" size="100.000000 88.000000" />
+    <ImageTarget name="pennies_1" size="100.000000 110.400002" />
+    <ImageTarget name="pennies_2" size="100.000000 82.000000" />
+    <ImageTarget name="pennies_3" size="100.000000 73.699997" />
+    <ImageTarget name="gun_5" size="100.000000 100.000000" />
+    <ImageTarget name="gun_4" size="100.000000 100.099998" />
+    <ImageTarget name="gun_3" size="100.000000 100.000000" />
+    <ImageTarget name="gun_2" size="100.000000 100.000000" />
+    <ImageTarget name="gun_1" size="100.000000 100.099998" />
+    <ImageTarget name="copper_5" size="100.000000 100.000000" />
+    <ImageTarget name="copper_4" size="100.000000 99.900002" />
+    <ImageTarget name="copper_3" size="100.000000 100.099998" />
+    <ImageTarget name="copper_2" size="100.000000 100.000000" />
+    <ImageTarget name="copper_1" size="100.000000 100.099998" />
+    <ImageTarget name="bike_5" size="100.000000 100.000000" />
+    <ImageTarget name="bike_4" size="100.000000 100.000000" />
+    <ImageTarget name="bike_3" size="100.000000 100.000000" />
+    <ImageTarget name="bike_2" size="100.000000 100.000000" />
+    <ImageTarget name="bike_1" size="100.000000 99.900002" />
+    <ImageTarget name="beef_5" size="100.000000 99.599998" />
+    <ImageTarget name="beef_4" size="100.000000 98.532356" />
+    <ImageTarget name="beef_3" size="100.000000 99.099907" />
+    <ImageTarget name="beef_2" size="100.000000 99.554565" />
+    <ImageTarget name="beef_1" size="100.000000 100.000000" />
   </Tracking>
 </QCARConfig>
