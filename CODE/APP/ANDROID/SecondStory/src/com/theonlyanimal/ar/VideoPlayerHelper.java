@@ -794,8 +794,7 @@ public class VideoPlayerHelper implements OnPreparedListener,
         
         // If requested an immediate play
         if (mShouldPlayImmediately)
-            play(false, mSeekPosition); // FULLSCREEN
-        	//play(true, mSeekPosition);
+            play(false, mSeekPosition); 
         mSeekPosition = 0;
     }
     

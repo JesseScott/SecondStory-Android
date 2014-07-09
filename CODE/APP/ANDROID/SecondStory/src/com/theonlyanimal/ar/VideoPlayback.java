@@ -489,7 +489,7 @@ public class VideoPlayback extends Activity implements
         for (int i = 0; i < NUM_TARGETS; i++)
         {
             mRenderer.setVideoPlayerHelper(i, mVideoPlayerHelper[i]);
-            mRenderer.requestLoad(i, mMovieName[i], 0, true); // UN-EDITED
+            mRenderer.requestLoad(i, mMovieName[i], 0, false); // UN-UN-EDITED
         }
         
         mGlView.setRenderer(mRenderer);
