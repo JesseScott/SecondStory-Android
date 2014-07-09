@@ -128,7 +128,7 @@ public class VideoPlayerHelper implements OnPreparedListener,
         // then we need to create a MediaPlayer:
         
         boolean canBeOnTexture = false;
-        boolean canBeFullscreen = true; // EDIT
+        boolean canBeFullscreen = false; // EDIT
         
         boolean result = false;
         mMediaPlayerLock.lock();
@@ -198,12 +198,12 @@ public class VideoPlayerHelper implements OnPreparedListener,
                 }
             }
             
-            // If the client requests that we should be able to play FULLSCREEN
-            // then we need to create a FullscreenPlaybackActivity
+            // If the client requests that we should be able to play FULLSCREEN then we need to create a FullscreenPlaybackActivity
             if ((requestedType == MEDIA_TYPE.FULLSCREEN) || (requestedType == MEDIA_TYPE.ON_TEXTURE_FULLSCREEN))
             {
-                //mPlayerHelperActivityIntent = new Intent(mParentActivity, FullscreenPlayback.class);
+                //mPlayerHelperActivityIntent = new Intent(mParentActivity, FullscreenPlayback.class); // EDIT
             	mPlayerHelperActivityIntent = new Intent("android.intent.action.FULLSCREEN");
+            	//mPlayerHelperActivityIntent.setAction(null);
             	mPlayerHelperActivityIntent.setAction(android.content.Intent.ACTION_VIEW);
                 canBeFullscreen = true;
             }
@@ -218,8 +218,7 @@ public class VideoPlayerHelper implements OnPreparedListener,
             {
                 mVideoType = MEDIA_TYPE.FULLSCREEN;
                 mCurrentState = MEDIA_STATE.READY;
-            } // If it is pure fullscreen then we're ready otherwise we let the
-              // MediaPlayer load first
+            } // If it is pure fullscreen then we're ready otherwise we let the MediaPlayer load first
             else if (canBeOnTexture)
                 mVideoType = MEDIA_TYPE.ON_TEXTURE;
             else
@@ -437,10 +436,8 @@ public class VideoPlayerHelper implements OnPreparedListener,
                         0);
             }
             
-            // We must pass the current playback orientation of the activity
-            // and the name of the movie currently being played
-            mPlayerHelperActivityIntent.putExtra("requestedOrientation",
-                ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+            // We must pass the current playback orientation of the activity and the name of the movie currently being played
+            mPlayerHelperActivityIntent.putExtra("requestedOrientation", ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
             mPlayerHelperActivityIntent.putExtra("movieName", mMovieName);
             if (Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB)
                 mParentActivity.startActivity(mPlayerHelperActivityIntent);
@@ -797,8 +794,8 @@ public class VideoPlayerHelper implements OnPreparedListener,
         
         // If requested an immediate play
         if (mShouldPlayImmediately)
-            //play(false, mSeekPosition);
-        	play(true, mSeekPosition);
+            play(false, mSeekPosition); // FULLSCREEN
+        	//play(true, mSeekPosition);
         mSeekPosition = 0;
     }
     

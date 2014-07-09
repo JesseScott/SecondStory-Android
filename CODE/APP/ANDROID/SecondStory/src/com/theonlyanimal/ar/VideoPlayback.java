@@ -101,14 +101,13 @@ public class VideoPlayback extends Activity implements
     private boolean mFlash = false;
     private boolean mContAutofocus = false;
     private boolean mExtendedTracking = false;
-    private boolean mPlayFullscreenVideo = true;
+    private boolean mPlayFullscreenVideo = false; // UN-EDITED
     
     private View mFlashOptionView;
     
     private SampleAppMenu mSampleAppMenu;
     
-    private LoadingDialogHandler loadingDialogHandler = new LoadingDialogHandler(
-        this);
+    private LoadingDialogHandler loadingDialogHandler = new LoadingDialogHandler(this);
     
     boolean mIsDroidDevice = false;
     boolean mIsInitialized = false;
@@ -302,7 +301,7 @@ public class VideoPlayback extends Activity implements
         if (requestCode == 1)
         {
             
-            mActivity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+            mActivity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT); // LANDSCAPE ???
             
             if (resultCode == RESULT_OK)
             {
@@ -490,7 +489,7 @@ public class VideoPlayback extends Activity implements
         for (int i = 0; i < NUM_TARGETS; i++)
         {
             mRenderer.setVideoPlayerHelper(i, mVideoPlayerHelper[i]);
-            mRenderer.requestLoad(i, mMovieName[i], 0, false); // EDITED
+            mRenderer.requestLoad(i, mMovieName[i], 0, true); // UN-EDITED
         }
         
         mGlView.setRenderer(mRenderer);
@@ -505,8 +504,7 @@ public class VideoPlayback extends Activity implements
     }
     
     
-    // We do not handle the touch event here, we just forward it to the
-    // gesture detector
+    // We do not handle the touch event here, we just forward it to the gesture detector
     public boolean onTouchEvent(MotionEvent event)
     {
         boolean result = false;
@@ -588,7 +586,7 @@ public class VideoPlayback extends Activity implements
         if (imageTracker != null)
         {
             imageTracker.start();
-            Vuforia.setHint(HINT.HINT_MAX_SIMULTANEOUS_IMAGE_TARGETS, 2);
+            Vuforia.setHint(HINT.HINT_MAX_SIMULTANEOUS_IMAGE_TARGETS, 2); // EDIT ???
         } else
             result = false;
         
@@ -847,8 +845,7 @@ public class VideoPlayback extends Activity implements
                     {
                         // If it is playing then we pause it
                         mVideoPlayerHelper[i].pause();
-                        mVideoPlayerHelper[i].play(true, 0);
-                        //mVideoPlayerHelper[i].play(true, mSeekPosition[i]);
+                        mVideoPlayerHelper[i].play(true, mSeekPosition[i]);
                     }
                 }
                 break;

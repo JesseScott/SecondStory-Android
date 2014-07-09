@@ -511,29 +511,24 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
             // We store the modelview matrix to be used later by the tap
             // calculation
             if(imageTarget.getName().compareTo("beef") == 0) {
-            	//Log.v(LOGTAG, " - found BEEF -");
                 currentTarget = VideoPlayback.BEEF;
             }
             else if(imageTarget.getName().compareTo("bicycle") == 0) {
-            	//Log.v(LOGTAG, " - found BIKE -");
                 currentTarget = VideoPlayback.BICYCLES;
             }
             else if(imageTarget.getName().compareTo("gun") == 0) {
-            	//Log.v(LOGTAG, " - found GUN -");
                 currentTarget = VideoPlayback.GUN;
             }
             else if(imageTarget.getName().compareTo("pennies") == 0) {
-            	//Log.v(LOGTAG, " - found PENNIES -");
                 currentTarget = VideoPlayback.PENNIES;
             }
             else if(imageTarget.getName().compareTo("suzyq") == 0) {
-            	//Log.v(LOGTAG, " - found SUZY -");
                 currentTarget = VideoPlayback.SUZYQ;
             }
             else {
                 currentTarget = 0;
             }
-            Log.v(LOGTAG, " Current Movie Target is " + currentTarget);
+
             modelViewMatrix[currentTarget] = Tool.convertPose2GLMatrix(trackableResult.getPose());
             
             isTracking[currentTarget] = true;
