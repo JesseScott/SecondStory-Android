@@ -12,6 +12,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.text.format.Time;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 import android.os.AsyncTask;
 import android.net.wifi.WifiConfiguration;
@@ -45,12 +47,34 @@ public class WelcomeScreen extends Activity {
 	private static final String LOG_DIRECTORY = "//sdcard//SecondStory/BloodAlley/LOGS/";
     public static final int DIALOG_DOWNLOAD_PROGRESS = 0;
     private ProgressDialog progressDialog;
+    private Button beginBtn;
+    
+    private Boolean readyForTutorial = false;
 	
 	// LifeCycle
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		// UI
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.welcome_layout);
+		
+		beginBtn = (Button) findViewById(R.id.welcome_begin);
+		beginBtn.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				if(readyForTutorial) {
+					// Start Tutorial Screens
+					Intent i = new Intent("android.intent.action.TUTORIAL");
+					startActivity(i);
+				}
+				else {
+					// Tell The User To Hold On
+					Toast.makeText(getApplicationContext(), "Not Finished Downloading", Toast.LENGTH_SHORT).show();
+				}
+			}
+		});
+		
 		
 		// Connect To WiFi
 		//connectToWifi();
@@ -133,9 +157,7 @@ public class WelcomeScreen extends Activity {
 						}
 						// All Good To Proceed
 						else {
-							// Start Tutorial Screens
-							Intent i = new Intent("android.intent.action.TUTORIAL");
-							startActivity(i);
+							readyForTutorial = true;
 						}
 						
 					} 
@@ -476,9 +498,7 @@ public class WelcomeScreen extends Activity {
 			dismissDialog(DIALOG_DOWNLOAD_PROGRESS);
 			Log.v(TAG, "ALL DONE!");
 			
-			// Start Tutorial Screens
-			Intent i = new Intent("android.intent.action.TUTORIAL");
-			startActivity(i);
+			readyForTutorial = true;
 			
 		}	
 
