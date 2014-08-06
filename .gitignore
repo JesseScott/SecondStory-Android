@@ -20,14 +20,14 @@
 ###############
 
 # built application files
-CODE/APP/ANDROID/*.apk
-CODE/APP/ANDROID/*.ap_
+*.apk
+*.ap_
 
 # files for the dex VM
-CODE/APP/ANDROID/*.dex
+*.dex
 
 # Java class files
-CODE/APP/ANDROID/*.class
+*.class
 
 # generated files
 bin/
@@ -44,32 +44,32 @@ local.properties
 ###############
 
 
-CODE/APP/ANDROID/*.pydevproject
-CODE/APP/ANDROID/.project
-CODE/APP/ANDROID/.metadata
-CODE/APP/ANDROID/bin/**
-CODE/APP/ANDROID/tmp/**
-CODE/APP/ANDROID/tmp/**/*
-CODE/APP/ANDROID/*.tmp
-CODE/APP/ANDROID/*.bak
-CODE/APP/ANDROID/*.swp
-CODE/APP/ANDROID/*~.nib
-CODE/APP/ANDROID/local.properties
-CODE/APP/ANDROID/.classpath
-CODE/APP/ANDROID/.settings/
-CODE/APP/ANDROID/.loadpath
+*.pydevproject
+.project
+.metadata
+SecondStory/bin/**
+SecondStory/tmp/**
+SecondStory/tmp/**/*
+SecondStory/*.tmp
+SecondStory/*.bak
+SecondStory/*.swp
+SecondStory/*~.nib
+SecondStory/local.properties
+SecondStory/.classpath
+SecondStory/.settings/
+SecondStory/.loadpath
 
 # External tool builders
-CODE/APP/ANDROID/.externalToolBuilders/
+SecondStory/.externalToolBuilders/
 
 # Locally stored "Eclipse launch configurations"
-CODE/APP/ANDROID/*.launch
+SecondStory/*.launch
 
 # CDT-specific
-CODE/APP/ANDROID/.cproject
+SecondStory/.cproject
 
 # PDT-specific
-CODE/APP/ANDROID/.buildpath
+SecondStory/.buildpath
 
 
 ############################################################
@@ -80,38 +80,11 @@ CODE/APP/ANDROID/.buildpath
 #
 ###############
 
-CODE/APP/ANDROID/.metadata/*
-CODE/APP/ANDROID/.plugins
-CODE/APP/ANDROID/.plugins/
-CODE/APP/ANDROID/.plugins/*
+SecondStory/.metadata/*
+SecondStory/.plugins
+SecondStory/.plugins/
+SecondStory/.plugins/*
 
 ############################################################
 
 
-###############
-#
-#	IOS
-#
-###############
-
-# Xcode
-.DS_Store
-*/build/*
-*.pbxuser
-!default.pbxuser
-*.mode1v3
-!default.mode1v3
-*.mode2v3
-!default.mode2v3
-*.perspectivev3
-!default.perspectivev3
-xcuserdata
-profile
-*.moved-aside
-DerivedData
-.idea/
-*.hmap
-*.xccheckout
-
-#CocoaPods
-Pods
