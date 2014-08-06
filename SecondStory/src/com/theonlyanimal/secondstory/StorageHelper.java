@@ -1,6 +1,7 @@
 package com.theonlyanimal.secondstory;
 
 import android.os.Environment;
+import android.os.StatFs;
 
 /**
  * Checks the state of the external storage of the device.
@@ -75,6 +76,24 @@ public class StorageHelper {
         } else {
             return true;
         }
+    }
+    
+    /**
+     * Checks the space available on the external storage.
+     * 
+     * @return A double of the GB available
+     */
+    public double getSpaceOnExternalStorage() {
+    	if(externalStorageAvailable & externalStorageWriteable) {
+    		StatFs stat = new StatFs(Environment.getExternalStorageDirectory().getPath());
+    		double sdAvailSize = (double)stat.getAvailableBlocksLong() * (double)stat.getBlockSizeLong();
+    		double gigaAvailable = sdAvailSize / 1073741824;
+    		return gigaAvailable;
+    	}
+    	else {
+        	return 0;
+    	}
+	
     }
 
 } /* EOC */

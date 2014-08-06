@@ -42,7 +42,7 @@ import com.theonlyanimal.secondstory.StorageHelper;
 public class WelcomeScreen extends Activity {
 
 	// GLOBALS
-	private static final String TAG = "SS WelcomeScreen";
+	private static final String TAG = "SS_WELCOME";
 	private static final String APP_ID = "7f9de1a2655e56f6c60c798cc7d2cdec";
 	private static final String SSID = "43655C";
 	private static final String PWD = "248771039";
@@ -54,6 +54,8 @@ public class WelcomeScreen extends Activity {
     private Button beginBtn;
     
     private Boolean readyForTutorial = false;
+    private Boolean hasEnoughSpace = false;
+    private double 	needsThisMuchSpace = 0.5;
 	
 	// LifeCycle
 	@Override
@@ -158,86 +160,114 @@ public class WelcomeScreen extends Activity {
 		
 		// Check For SD Card
 		if(storage.isExternalStorageAvailableAndWriteable()) {
-			Log.v(TAG, " - SD EXISTS - CHECKING FOR CONTENT - ");
-
-			// Check For Custom Directory
-			try{
-				final File base_directory = new File(SD_DIRECTORY);
-				final File media_directory = new File(MEDIA_DIRECTORY);
-				final File log_directory = new File(LOG_DIRECTORY);
-				if(media_directory.exists()) {
-					Log.v(TAG, " - MEDIA Path Exists - ");
-					if(media_directory.isDirectory()) {
-						Log.v(TAG, " - And Its A Directory - ");
-						
-						// How Many Files Are There ?
-						File[] listOfFiles = media_directory.listFiles();
-						Log.v(TAG, "Media Directory has " + listOfFiles.length + " Files");
-
-						// TODO check actual time stamp of files
-						// If There's None
-						if(listOfFiles.length == 0) {
-							// Get 'Em
-							getFiles();
-						}
-						// All Good To Proceed
+			Log.v(TAG, " - SD EXISTS - CHECKING SPACE - ");
+			
+			if(storage.getSpaceOnExternalStorage() > needsThisMuchSpace) {
+				Log.v(TAG, " - Free Space = " + storage.getSpaceOnExternalStorage());
+	
+				// Check For Custom Directory
+				try{
+					final File base_directory = new File(SD_DIRECTORY);
+					final File media_directory = new File(MEDIA_DIRECTORY);
+					final File log_directory = new File(LOG_DIRECTORY);
+					if(media_directory.exists()) {
+						Log.v(TAG, " - MEDIA Path Exists - ");
+						if(media_directory.isDirectory()) {
+							Log.v(TAG, " - And Its A Directory - ");
+							
+							// How Many Files Are There ?
+							File[] listOfFiles = media_directory.listFiles();
+							Log.v(TAG, "Media Directory has " + listOfFiles.length + " Files");
+	
+							// TODO check actual time stamp of files
+							// If There's None
+							if(listOfFiles.length == 0) {
+								// Get 'Em
+								getFiles();
+							}
+							// All Good To Proceed
+							else {
+								readyForTutorial = true;
+							}
+							
+						} 
 						else {
-							readyForTutorial = true;
+							Log.v(TAG, " - But Its Not Directory - ");
 						}
-						
 					} 
 					else {
-						Log.v(TAG, " - But Its Not Directory - ");
+						Log.v(TAG, " - Path Doesnt Exist - ");
+						
+						// Alert
+						AlertDialog.Builder builder = new AlertDialog.Builder(this);
+						
+						// Title
+						builder.setTitle("Content Doesn't Exist");
+						builder.setMessage("this app requires custom content - we need to make a directory & download some content to it - ok ?\n" +
+								"PLEASE TURN ON YOUR WIFI !!");
+						
+						// Buttons
+						builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+						           public void onClick(DialogInterface dialog, int id) {
+						               // User clicked OK button
+						        	   Log.v(TAG, " - User Said YES! - ");
+						        	   
+						        	   // Make The Directories
+						        	   base_directory.mkdirs();
+						        	   media_directory.mkdirs();
+						        	   log_directory.mkdirs();
+						        	   
+						        	   // Get The Files
+						        	   getFiles();
+						           }
+						       });
+						builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+						           public void onClick(DialogInterface dialog, int id) {
+						               // User cancelled the dialog - WERE GOING HOME
+						        	   Log.v(TAG, " - User Said No :( - ");
+						        	   Intent intent = new Intent(Intent.ACTION_MAIN);
+						        	   intent.addCategory(Intent.CATEGORY_HOME);
+						        	   intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+						        	   startActivity(intent);
+						        	   finish();
+						           }
+						       });
+	
+						// Show
+						AlertDialog dialog = builder.create();
+						dialog.show();
+						
 					}
-				} 
-				else {
-					Log.v(TAG, " - Path Doesnt Exist - ");
-					
-					// Alert
-					AlertDialog.Builder builder = new AlertDialog.Builder(this);
-					
-					// Title
-					builder.setTitle("Content Doesn't Exist");
-					builder.setMessage("this app requires custom content - we need to make a directory & download some content to it - ok ?\n" +
-							"PLEASE TURN ON YOUR WIFI !!");
-					
-					// Buttons
-					builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-					           public void onClick(DialogInterface dialog, int id) {
-					               // User clicked OK button
-					        	   Log.v(TAG, " - User Said YES! - ");
-					        	   
-					        	   // Make The Directories
-					        	   base_directory.mkdirs();
-					        	   media_directory.mkdirs();
-					        	   log_directory.mkdirs();
-					        	   
-					        	   // Get The Files
-					        	   getFiles();
-					           }
-					       });
-					builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
-					           public void onClick(DialogInterface dialog, int id) {
-					               // User cancelled the dialog - WERE GOING HOME
-					        	   Log.v(TAG, " - User Said No :( - ");
-					        	   Intent intent = new Intent(Intent.ACTION_MAIN);
-					        	   intent.addCategory(Intent.CATEGORY_HOME);
-					        	   intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-					        	   startActivity(intent);
-					        	   finish();
-					           }
-					       });
-
-					// Show
-					AlertDialog dialog = builder.create();
-					dialog.show();
-					
+				}
+				catch(Exception e) {
+					e.printStackTrace();
 				}
 			}
-			catch(Exception e) {
-				e.printStackTrace();
-			}
+			else {
+				Log.v(TAG, " - SD DOESNT HAVE ENOUGH SPACE - ALERTING USER - ");
+				// Alert
+				AlertDialog.Builder builder = new AlertDialog.Builder(this);
+				
+				// Title
+				builder.setTitle("NOT ENOUGH SPACE");
+				builder.setMessage("this app requires 1/2 gb for our content - please free up space and try again");
+				
+				// Buttons
+				builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+				           public void onClick(DialogInterface dialog, int id) {
+				               // User clicked OK button
+				        	   Log.v(TAG, " - User Said OK! - "); 
+				        	   Intent intent = new Intent(Intent.ACTION_MAIN);
+				        	   intent.addCategory(Intent.CATEGORY_HOME);
+				        	   intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+				        	   startActivity(intent);
+				        	   finish();
+				           }
+				       });;
 
+				AlertDialog dialog = builder.create();
+				dialog.show();
+			}
 
 		}
 		else {
@@ -246,7 +276,7 @@ public class WelcomeScreen extends Activity {
 			AlertDialog.Builder builder = new AlertDialog.Builder(this);
 			
 			// Title
-			builder.setTitle("Storage Isn't Accessible");
+			builder.setTitle("STORAGE ISNT ACCESSIBLE");
 			builder.setMessage("this app requires access to your phone's storage - please make sure it is mounted then relaunch the app");
 			
 			// Buttons
@@ -262,7 +292,6 @@ public class WelcomeScreen extends Activity {
 			           }
 			       });;
 
-			// Show
 			AlertDialog dialog = builder.create();
 			dialog.show();
 		}
