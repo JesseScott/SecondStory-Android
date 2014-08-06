@@ -30,6 +30,7 @@ public class SplashScreen extends Activity {
 					sleep(5000);
 					Intent i = new Intent("android.intent.action.WELCOME");
 					startActivity(i);
+					finish();
 				}
 				catch(InterruptedException e) {
 					e.printStackTrace();
