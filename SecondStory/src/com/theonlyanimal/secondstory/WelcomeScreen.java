@@ -20,13 +20,17 @@ import android.net.wifi.WifiConfiguration;
 import android.net.wifi.WifiManager;
 
 import java.io.BufferedOutputStream;
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.net.MalformedURLException;
 import java.net.SocketException;
+import java.net.URL;
 
 import org.apache.commons.net.ftp.FTPClient;
 import org.apache.commons.net.ftp.FTPFile;
@@ -49,6 +53,8 @@ public class WelcomeScreen extends Activity {
 	private static final String SD_DIRECTORY = "//sdcard//SecondStory/BloodAlley";
 	private static final String MEDIA_DIRECTORY = "//sdcard//SecondStory/BloodAlley/MEDIA/";
 	private static final String LOG_DIRECTORY = "//sdcard//SecondStory/BloodAlley/LOGS/";
+	private static final String REMOTE_MEDIA_DIRECTORY = "/public_html/jessescott/projects/second_story/blood_alley/media";
+	private static final String REMOTE_SETTINGS_DIRECTORY = "/public_html/jessescott/projects/second_story/blood_alley/settings";
     public static final int DIALOG_DOWNLOAD_PROGRESS = 0;
     private ProgressDialog progressDialog;
     private Button beginBtn;
@@ -80,6 +86,11 @@ public class WelcomeScreen extends Activity {
 				}
 			}
 		});
+		
+		// Get Settings
+		//RetrieveNecessarySize getSize = new RetrieveNecessarySize(); 
+		//getSize.execute();
+	
 		
 		// Check For Updates
 		checkForUpdates();
@@ -151,6 +162,7 @@ public class WelcomeScreen extends Activity {
 		 */
 		
 	}
+	
 	
 	// Check If Directory Exists
 	public void checkStorage() {
@@ -323,9 +335,50 @@ public class WelcomeScreen extends Activity {
 	
 	
 	/*
-	 * ASYNC FTP CLASS 
+	 * ASYNC FTP CLASSES
 	 */
+	
+	class RetrieveNecessarySize extends AsyncTask<Void, Void, String> {
 
+		Double size;
+		
+		protected void onPreExecute(String unused) {
+			Log.v(TAG, "PRE");
+		}
+
+		@Override
+	    protected String doInBackground(Void... params) {
+	    	Log.v(TAG, "BACKGROUND");
+			size = 0.0;
+			URL url = null;
+			try {
+				Log.v(TAG, "TRY");
+				url = new URL("http://jesses.co.tt/projects/second_story/blood_alley/settings/size_of_media.txt");
+				BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
+				String str;
+				Log.v(TAG, "Line reads " + in.readLine());
+				while ((str = in.readLine()) != null) {
+					Log.v(TAG, "File Reads " + str);
+				}
+			} 
+			catch (MalformedURLException e) {
+				e.printStackTrace();
+			}
+			catch(IOException e) {
+				e.printStackTrace();
+			}
+			return null;
+	    }
+
+		@Override
+	    protected void onPostExecute(String unused) {
+	    	Log.v(TAG, "POST");
+	    	needsThisMuchSpace = size;
+	    }
+
+
+	}
+	
 	class DownloadHelper extends AsyncTask<String, Integer, String> {
 		
 		private static final String TAG = "FTP";
@@ -417,6 +470,7 @@ public class WelcomeScreen extends Activity {
 		
 		private Boolean navigateToPath() {
 			try {
+				// TODO edit path / fix FTP
 				ftp.changeWorkingDirectory("/public_html/jessescott/storage/android");
 				return true;
 			} catch (IOException e) {
