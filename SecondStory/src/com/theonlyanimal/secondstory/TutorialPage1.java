@@ -1,7 +1,10 @@
 package com.theonlyanimal.secondstory;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.content.res.AssetFileDescriptor;
 import android.graphics.Typeface;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -13,6 +16,8 @@ import android.widget.TextView;
 
 public class TutorialPage1 extends Fragment {
 	
+	private static final String TAG = "SS_FRAG_1";
+	MediaPlayer player;
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -36,8 +41,28 @@ public class TutorialPage1 extends Fragment {
 			}
 		});
 		
+		Log.v(TAG, "OnCreateView");
+		// MediaPlayer
+		try {
+			AssetFileDescriptor descriptor = getActivity().getAssets().openFd("audio/audio_guide.mp3");
+			player = new MediaPlayer();
+			player.setDataSource(descriptor.getFileDescriptor(), descriptor.getStartOffset(), descriptor.getLength());
+			player.prepare();
+			player.start();
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		
 		return rootView;
 	}
+	
+    public void OnAttach(Activity frag){
+        super.onAttach(frag);
+        
+        Log.v(TAG, "OnAttach");
+
+    }
 
 
 }

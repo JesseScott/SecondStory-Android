@@ -16,7 +16,7 @@ import android.support.v4.view.ViewPager;
 public class TutorialScreen extends FragmentActivity {
 
 	// GLOBALS
-	//private static final String TAG = "SecondStory";
+	private static final String TAG = "SS_TUTORIAL";
 	private static final int NUM_PAGES = 3;
 	private ViewPager pager; 
 	private PagerAdapter adapter; 
