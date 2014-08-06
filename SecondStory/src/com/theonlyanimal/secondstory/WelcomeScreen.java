@@ -31,6 +31,9 @@ import java.net.SocketException;
 import org.apache.commons.net.ftp.FTPClient;
 import org.apache.commons.net.ftp.FTPFile;
 
+import net.hockeyapp.android.CrashManager;
+import net.hockeyapp.android.UpdateManager;
+
 import com.theonlyanimal.secondstory.StorageHelper;
 
 
@@ -40,6 +43,7 @@ public class WelcomeScreen extends Activity {
 
 	// GLOBALS
 	private static final String TAG = "SS WelcomeScreen";
+	private static final String APP_ID = "7f9de1a2655e56f6c60c798cc7d2cdec";
 	private static final String SSID = "43655C";
 	private static final String PWD = "248771039";
 	private static final String SD_DIRECTORY = "//sdcard//SecondStory/BloodAlley";
@@ -60,13 +64,13 @@ public class WelcomeScreen extends Activity {
 		
 		beginBtn = (Button) findViewById(R.id.welcome_begin);
 		beginBtn.setOnClickListener(new View.OnClickListener() {
-			
 			@Override
 			public void onClick(View v) {
 				if(readyForTutorial) {
 					// Start Tutorial Screens
 					Intent i = new Intent("android.intent.action.TUTORIAL");
 					startActivity(i);
+					finish();
 				}
 				else {
 					// Tell The User To Hold On
@@ -74,6 +78,9 @@ public class WelcomeScreen extends Activity {
 				}
 			}
 		});
+		
+		// Check For Updates
+		checkForUpdates();
 		
 		
 		// Connect To WiFi
@@ -84,6 +91,24 @@ public class WelcomeScreen extends Activity {
 
 		
 	} /* onCreate() */
+	
+	@Override
+	protected void onResume() {
+		super.onResume();
+		
+		// Check for Crashes
+		checkForCrashes();
+	}
+	
+	// Hockey App
+	private void checkForCrashes() {
+		CrashManager.register(this, APP_ID); 
+	}
+
+	private void checkForUpdates() {
+		// Remove this for store builds!
+		UpdateManager.register(this, APP_ID);
+	}
 	
 	// WiFi
 	public void connectToWifi() {
