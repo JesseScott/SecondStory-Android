@@ -20,6 +20,16 @@ public class SplashScreen extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash_layout);
         
+        // Check SD Card
+        	// Availabilty
+        	// Space
+        	// Existing Files
+        
+        // Check GPS
+        
+        // Etc
+        
+        
         // Timer
 		Thread timer = new Thread(){
 			@Override
