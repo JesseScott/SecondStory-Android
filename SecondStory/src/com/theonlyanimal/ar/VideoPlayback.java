@@ -70,7 +70,7 @@ public class VideoPlayback extends Activity implements
     private SimpleOnGestureListener mSimpleListener = null;
     
     // Movie for the Targets:
-    public static final int NUM_TARGETS = 8;
+    public static final int NUM_TARGETS = 9;
     public static final int BEEF = 0;
     public static final int BICYCLES = 1;
     public static final int COPPER = 2;
@@ -79,6 +79,7 @@ public class VideoPlayback extends Activity implements
     public static final int SHROOMS = 5;
     public static final int SUZYQ = 6;
     public static final int UMBRELLAS = 7;
+    public static final int ALLEY = 8;
     
     public static String MEDIA_PATH = "";
     
@@ -167,6 +168,7 @@ public class VideoPlayback extends Activity implements
         mMovieName[SUZYQ] 		= MEDIA_PATH + "sweeping.mp4";
         mMovieName[SHROOMS] 	= MEDIA_PATH + "shrooms.mp4";
         mMovieName[UMBRELLAS] 	= MEDIA_PATH + "umbrellas.mp4";
+        mMovieName[ALLEY]	 	= MEDIA_PATH + "bloodalley.mp4";
         
         // Set the double tap listener:
         mGestureDetector.setOnDoubleTapListener(new OnDoubleTapListener() {
@@ -251,6 +253,7 @@ public class VideoPlayback extends Activity implements
         mTextures.add(Texture.loadTextureFromApk("frames/shrooms.jpg", getAssets()));
         mTextures.add(Texture.loadTextureFromApk("frames/suzyq.jpg", getAssets()));
         mTextures.add(Texture.loadTextureFromApk("frames/umbrellas.jpg", getAssets())); // 10
+        mTextures.add(Texture.loadTextureFromApk("frames/alley.jpg", getAssets())); // 11
     }
     
     
@@ -461,8 +464,7 @@ public class VideoPlayback extends Activity implements
     private void startLoadingAnimation()
     {
         LayoutInflater inflater = LayoutInflater.from(this);
-        mUILayout = (RelativeLayout) inflater.inflate(R.layout.camera_overlay,
-            null, false);
+        mUILayout = (RelativeLayout) inflater.inflate(R.layout.camera_overlay, null, false);
         
         mUILayout.setVisibility(View.VISIBLE);
         mUILayout.setBackgroundColor(Color.BLACK);

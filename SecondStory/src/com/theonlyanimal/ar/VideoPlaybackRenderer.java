@@ -75,7 +75,7 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
     // This variable will hold the transformed coordinates (changes every frame)
     private float videoQuadTextureCoordsTransformedStones[] = 	{ 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f, 0.0f, 1.0f, };
     private float videoQuadTextureCoordsTransformedChips[] = 	{ 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f, 0.0f, 1.0f, };
-    
+    // TODO
     private float videoQuadTextureCoordsTransformedBeef[] = 	{ 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f, 0.0f, 1.0f, };
     private float videoQuadTextureCoordsTransformedBicycles[] = { 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f, 0.0f, 1.0f, };
     private float videoQuadTextureCoordsTransformedCopper[] = 		{ 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f, 0.0f, 1.0f, };
@@ -84,6 +84,7 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
     private float videoQuadTextureCoordsTransformedShrooms[] = 		{ 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f, 0.0f, 1.0f, };
     private float videoQuadTextureCoordsTransformedSuzy[] = 	{ 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f, 0.0f, 1.0f, };
     private float videoQuadTextureCoordsTransformedUmbrella[] = 		{ 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f, 0.0f, 1.0f, };
+    private float videoQuadTextureCoordsTransformedAlley[] = 		{ 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f, 0.0f, 1.0f, };
     
     // Trackable dimensions
     Vec2F targetPositiveDimensions[] = new Vec2F[VideoPlayback.NUM_TARGETS];
@@ -382,7 +383,7 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
         keyframeMVPMatrixHandle = GLES20.glGetUniformLocation(keyframeShaderID, "modelViewProjectionMatrix");
         keyframeTexSampler2DHandle = GLES20.glGetUniformLocation(keyframeShaderID, "texSampler2D");
         
-        // EDITED - 
+        // TODO
         int offset = 3; // THE NUMBER OF CTRL IMAGES (was 3)
         keyframeQuadAspectRatio[VideoPlayback.BEEF] = (float) mTextures.get(offset).mHeight / (float) mTextures.get(offset).mWidth;
         keyframeQuadAspectRatio[VideoPlayback.BICYCLES] = (float) mTextures.get(offset + 1).mHeight / (float) mTextures.get(offset + 1).mWidth;
@@ -392,6 +393,7 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
         keyframeQuadAspectRatio[VideoPlayback.SHROOMS] = (float) mTextures.get(offset + 5).mHeight / (float) mTextures.get(offset + 5).mWidth;
         keyframeQuadAspectRatio[VideoPlayback.SUZYQ] = (float) mTextures.get(offset + 6).mHeight / (float) mTextures.get(offset + 6).mWidth;
         keyframeQuadAspectRatio[VideoPlayback.UMBRELLAS] = (float) mTextures.get(offset + 7).mHeight / (float) mTextures.get(offset + 7).mWidth;
+        keyframeQuadAspectRatio[VideoPlayback.ALLEY] = (float) mTextures.get(offset + 8).mHeight / (float) mTextures.get(offset + 8).mWidth;
         
         quadVertices = fillBuffer(quadVerticesArray);
         quadTexCoords = fillBuffer(quadTexCoordsArray);
@@ -500,7 +502,7 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
             
             // TRIM THE UNDERSCORE
             String trimmedName = imageTarget.getName().substring(0, imageTarget.getName().length()-2);
-            
+            // TODO
             // We store the modelview matrix to be used later by the tap calculation
             if(trimmedName.compareTo("beef") == 0) {
                 currentTarget = VideoPlayback.BEEF;
@@ -525,6 +527,9 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
             }
             else if(trimmedName.compareTo("umbrellas") == 0) {
                 currentTarget = VideoPlayback.UMBRELLAS;
+            }
+            else if(trimmedName.compareTo("bloodalley") == 0) {
+                currentTarget = VideoPlayback.ALLEY;
             }
             else {
                 currentTarget = 0;
@@ -628,7 +633,7 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
                 GLES20.glVertexAttribPointer(videoPlaybackVertexHandle, 3, GLES20.GL_FLOAT, false, 0, quadVertices);
                 GLES20.glVertexAttribPointer(videoPlaybackNormalHandle, 3, GLES20.GL_FLOAT, false, 0, quadNormals);
                 
-                // EDITED
+                // TODO
                 
                 if(trimmedName.compareTo("beef") == 0) {
                 	Log.v(LOGTAG, " ---> buffering BEEF");
@@ -661,6 +666,10 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
                 else if(trimmedName.compareTo("umbrellas") == 0) {
                 	Log.v(LOGTAG, " ---> buffering UMBRELLAS");
                 	GLES20.glVertexAttribPointer(videoPlaybackTexCoordHandle, 2, GLES20.GL_FLOAT, false, 0, fillBuffer(videoQuadTextureCoordsTransformedUmbrella));
+                }
+                else if(trimmedName.compareTo("bloodalley") == 0) {
+                	Log.v(LOGTAG, " ---> buffering ALLEY");
+                	GLES20.glVertexAttribPointer(videoPlaybackTexCoordHandle, 2, GLES20.GL_FLOAT, false, 0, fillBuffer(videoQuadTextureCoordsTransformedAlley));
                 }
                 else {
                     currentTarget = 0;
@@ -853,7 +862,7 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
         
         float mtx[] = textureCoordMatrix;
         float tempUVMultRes[] = new float[2];
-        
+        // TODO
         if (target == VideoPlayback.BEEF) { 
             tempUVMultRes = uvMultMat4f(
                 videoQuadTextureCoordsTransformedStones[0],
@@ -1037,6 +1046,32 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
             videoQuadTextureCoordsTransformedChips[7] = tempUVMultRes[1];
         }
         else if (target == VideoPlayback.UMBRELLAS) {
+            tempUVMultRes = uvMultMat4f(
+                videoQuadTextureCoordsTransformedChips[0],
+                videoQuadTextureCoordsTransformedChips[1],
+                videoQuadTextureCoords[0], videoQuadTextureCoords[1], mtx);
+            videoQuadTextureCoordsTransformedChips[0] = tempUVMultRes[0];
+            videoQuadTextureCoordsTransformedChips[1] = tempUVMultRes[1];
+            tempUVMultRes = uvMultMat4f(
+                videoQuadTextureCoordsTransformedChips[2],
+                videoQuadTextureCoordsTransformedChips[3],
+                videoQuadTextureCoords[2], videoQuadTextureCoords[3], mtx);
+            videoQuadTextureCoordsTransformedChips[2] = tempUVMultRes[0];
+            videoQuadTextureCoordsTransformedChips[3] = tempUVMultRes[1];
+            tempUVMultRes = uvMultMat4f(
+                videoQuadTextureCoordsTransformedChips[4],
+                videoQuadTextureCoordsTransformedChips[5],
+                videoQuadTextureCoords[4], videoQuadTextureCoords[5], mtx);
+            videoQuadTextureCoordsTransformedChips[4] = tempUVMultRes[0];
+            videoQuadTextureCoordsTransformedChips[5] = tempUVMultRes[1];
+            tempUVMultRes = uvMultMat4f(
+                videoQuadTextureCoordsTransformedChips[6],
+                videoQuadTextureCoordsTransformedChips[7],
+                videoQuadTextureCoords[6], videoQuadTextureCoords[7], mtx);
+            videoQuadTextureCoordsTransformedChips[6] = tempUVMultRes[0];
+            videoQuadTextureCoordsTransformedChips[7] = tempUVMultRes[1];
+        }
+        else if (target == VideoPlayback.ALLEY) {
             tempUVMultRes = uvMultMat4f(
                 videoQuadTextureCoordsTransformedChips[0],
                 videoQuadTextureCoordsTransformedChips[1],
