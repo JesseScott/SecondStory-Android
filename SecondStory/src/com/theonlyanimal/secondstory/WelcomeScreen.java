@@ -76,7 +76,7 @@ public class WelcomeScreen extends Activity {
 			public void onClick(View v) {
 				if(readyForTutorial) {
 					// Start Tutorial Screens
-					Intent i = new Intent("android.intent.action.TUTORIAL");
+					Intent i = new Intent("android.intent.action.LOCATION");
 					startActivity(i);
 					finish();
 				}

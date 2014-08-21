@@ -119,8 +119,7 @@ public class VideoPlayback extends Activity implements
     boolean mIsInitialized = false;
     
     
-    // Called when the activity first starts or the user navigates back
-    // to an activity.
+    // Called when the activity first starts or the user navigates back to an activity.
     protected void onCreate(Bundle savedInstanceState)
     {
         Log.d(LOGTAG, "onCreate");
@@ -159,7 +158,7 @@ public class VideoPlayback extends Activity implements
         String SD_PATH = Environment.getExternalStorageDirectory().getPath();
         MEDIA_PATH = SD_PATH + "/SecondStory/BloodAlley/MEDIA/";
         Log.v("SECONDSTORY", "MEDIA PATH IS " + MEDIA_PATH);
-                
+        // TODO       
         mMovieName[BEEF] 		= MEDIA_PATH + "beef.mp4";
         mMovieName[BICYCLES] 	= MEDIA_PATH + "bicycles.mp4";
         mMovieName[GUN] 		= MEDIA_PATH + "gun.mp4";
@@ -238,8 +237,8 @@ public class VideoPlayback extends Activity implements
     }
     
     
-    // We want to load specific textures from the APK, which we will later
-    // use for rendering.
+    // We want to load specific textures from the APK, which we will later use for rendering.
+    // TODO
     private void loadTextures()
     {
         mTextures.add(Texture.loadTextureFromApk("ctrl/play.png", getAssets()));
@@ -465,7 +464,6 @@ public class VideoPlayback extends Activity implements
     {
         LayoutInflater inflater = LayoutInflater.from(this);
         mUILayout = (RelativeLayout) inflater.inflate(R.layout.camera_overlay, null, false);
-        
         mUILayout.setVisibility(View.VISIBLE);
         mUILayout.setBackgroundColor(Color.BLACK);
         
