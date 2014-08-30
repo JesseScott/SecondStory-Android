@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:text="Welcome"
+        android:text="@+string/label_welcome"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <Button
@@ -20,6 +20,6 @@
         android:layout_below="@+id/welcome_message"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="100dp"
-        android:text="Begin" />
+        android:text="@+string/button_start" />
 
 </RelativeLayout>
