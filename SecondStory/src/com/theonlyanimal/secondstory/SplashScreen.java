@@ -5,7 +5,10 @@ package com.theonlyanimal.secondstory;
 import android.os.Bundle;
 import android.util.Log;
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 
 
 // CLASS
@@ -13,6 +16,8 @@ public class SplashScreen extends Activity {
 
 	// GLOBALS
 	private static final String TAG = "SecondStory";
+    ProgressDialog progress;
+
 	
 	// LifeCycle
     @Override
@@ -20,15 +25,8 @@ public class SplashScreen extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash_layout);
         
-        // Check SD Card
-        	// Availabilty
-        	// Space
-        	// Existing Files
-        
-        // Check GPS
-        
-        // Etc
-        
+        // Progress Dialog
+        progress = ProgressDialog.show(this, "Checking Settings", "this will just take a second", true);
         
         // Timer
 		Thread timer = new Thread(){
@@ -36,22 +34,50 @@ public class SplashScreen extends Activity {
 			public void run() {
 				//super.run();
 				try { 
-					// Time for 5 seconds
-					sleep(5000);
-					Intent i = new Intent("android.intent.action.WELCOME");
-					startActivity(i);
-					finish();
+					sleep(2500);
+					checkSettings();
 				}
 				catch(InterruptedException e) {
 					e.printStackTrace();
 				}
-				finally {
-					Log.v(TAG, " - Ending The Splash Screen - ");
-					finish();
-				}
 			}
 		};
 		timer.start();
+    
     }
-	
+    
+    protected void checkSettings() {
+
+    	SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
+        boolean hasContent = settings.getBoolean("hasContent", false);
+        boolean hasSeenWaltkthru = settings.getBoolean("hasSeenWalkthru", false);
+        boolean isSharedDevice = settings.getBoolean("isSharedDevice", false);        
+        
+        if(hasContent && hasSeenWaltkthru && !isSharedDevice) {
+        	progress.dismiss();
+        	Intent i = new Intent("android.intent.action.VIDEO");
+			startActivity(i);
+			finish();
+        }
+        else if(!hasContent) {
+        	progress.dismiss();
+        	Intent i = new Intent("android.intent.action.WELCOME");
+    		startActivity(i);
+    		finish();
+        }
+        else if(!hasSeenWaltkthru) {
+        	progress.dismiss();
+        	Intent i = new Intent("android.intent.action.WELCOME");
+    		startActivity(i);
+    		finish();
+        }
+        else if(isSharedDevice) {
+        	progress.dismiss();
+        	Intent i = new Intent("android.intent.action.WELCOME");
+    		startActivity(i);
+    		finish();
+        }	
+    }
+    
+    
 } /* EOC */
