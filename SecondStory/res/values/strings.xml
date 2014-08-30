@@ -13,6 +13,14 @@
     <string name="label_pg2">Page 2</string>
     <string name="label_pg3">Page 3</string>
     
+    <string name="para_welcome">
+        \nWelcome to Second Story - Blood Alley edition.
+        \n
+        \nFirst things first, we need to check your phone for some settings.
+        \n
+        \nPlease click the start button to begin, and we will walk you through the steps.
+    </string>
+    
     
     <string name="menu_back">About</string>
     <string name="menu_extended_tracking">Extended Tracking</string>
