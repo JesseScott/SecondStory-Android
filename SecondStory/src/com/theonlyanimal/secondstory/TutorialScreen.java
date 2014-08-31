@@ -20,6 +20,7 @@ public class TutorialScreen extends FragmentActivity {
 	private static final int NUM_PAGES = 3;
 	private ViewPager pager; 
 	private PagerAdapter adapter; 
+	private static int instance;
 	
 	
 	// LifeCycle
@@ -27,6 +28,11 @@ public class TutorialScreen extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tutorial_layout);
+        
+        // Get Instance
+        if(getIntent().getExtras() != null){
+        	instance = getIntent().getExtras().getInt("instance");
+        }
         
         // Instantiate Pager & Adapter
         pager = (ViewPager) findViewById(R.id.pager);
