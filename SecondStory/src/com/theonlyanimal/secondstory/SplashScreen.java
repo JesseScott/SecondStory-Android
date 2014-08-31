@@ -15,7 +15,7 @@ import android.preference.PreferenceManager;
 public class SplashScreen extends Activity {
 
 	// GLOBALS
-	private static final String TAG = "SS_Splash";
+	private static final String TAG = "SS_SPLASH";
     ProgressDialog progress;
 
 	
@@ -23,7 +23,7 @@ public class SplashScreen extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        overridePendingTransition(0, 0);
+        overridePendingTransition(R.anim.anim_slide_in_left, R.anim.anim_stay_still);
         setContentView(R.layout.splash_layout);
         
         // Progress Dialog
