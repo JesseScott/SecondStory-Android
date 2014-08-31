@@ -23,7 +23,7 @@ public class SplashScreen extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        overridePendingTransition(R.anim.anim_slide_in_left, R.anim.anim_slide_out_right);
+        overridePendingTransition(0, 0);
         setContentView(R.layout.splash_layout);
         
         // Progress Dialog

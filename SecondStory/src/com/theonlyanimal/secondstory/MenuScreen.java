@@ -6,6 +6,7 @@ package com.theonlyanimal.secondstory;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 import android.app.Activity;
 import android.content.Intent;
 
@@ -16,6 +17,7 @@ public class MenuScreen extends Activity {
 
 	// GLOBALS
 	private static final String TAG = "SS_MENU";
+	boolean readyForLiveView = false;
 
 	
 	// LifeCycle
@@ -65,9 +67,14 @@ public class MenuScreen extends Activity {
 		liveBtn.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Intent i = new Intent("android.intent.action.LIVE");
-	    		startActivity(i);
-	    		finish();
+				if(readyForLiveView) {
+					Intent i = new Intent("android.intent.action.VIDEO");
+		    		startActivity(i);
+		    		finish();
+				}
+				else {
+					Toast.makeText(getApplicationContext(), "youre not ready for the big leagues yet, son", Toast.LENGTH_LONG).show();
+				}
 			}
 		});
 
