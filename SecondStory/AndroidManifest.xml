@@ -69,6 +69,54 @@
             </intent-filter>
         </activity>
         
+        <!-- GUIDE SCREEN  -->
+        <activity
+            android:name="com.theonlyanimal.secondstory.GuideScreen"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/app_name"
+         >
+            <intent-filter>
+                <action android:name="android.intent.action.GUIDE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <!-- MAPS SCREEN  -->
+        <activity
+            android:name="com.theonlyanimal.secondstory.MapsScreen"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/app_name"
+         >
+            <intent-filter>
+                <action android:name="android.intent.action.MAPS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <!-- SETTINGS SCREEN  -->
+        <activity
+            android:name="com.theonlyanimal.secondstory.SettingsScreen"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/app_name"
+         >
+            <intent-filter>
+                <action android:name="android.intent.action.SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <!-- ABOUT SCREEN  -->
+        <activity
+            android:name="com.theonlyanimal.secondstory.AboutScreen"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/app_name"
+         >
+            <intent-filter>
+                <action android:name="android.intent.action.ABOUT" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
         <!-- WELCOME SCREEN  -->
         <activity
             android:name="com.theonlyanimal.secondstory.WelcomeScreen"
