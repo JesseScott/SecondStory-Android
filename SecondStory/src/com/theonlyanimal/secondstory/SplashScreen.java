@@ -15,7 +15,7 @@ import android.preference.PreferenceManager;
 public class SplashScreen extends Activity {
 
 	// GLOBALS
-	private static final String TAG = "SecondStory";
+	private static final String TAG = "SS_Splash";
     ProgressDialog progress;
 
 	

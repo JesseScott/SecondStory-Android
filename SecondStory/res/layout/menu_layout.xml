@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:ignore="ContentDescription" >
+
+    <ImageView
+        android:id="@+id/menu_bg_img"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentTop="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/bg_2" />
+
+    <RelativeLayout
+        android:id="@+id/menu_top"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="@+color/red"
+        android:orientation="vertical"
+        android:padding="15dp" >
+
+        <Button
+            android:id="@+id/menu_guide_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@+string/button_guide" />
+
+        <Button
+            android:id="@+id/menu_maps_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@+string/button_maps" />
+
+        <Button
+            android:id="@+id/menu_settings_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@+string/button_settings" />
+
+        <Button
+            android:id="@+id/menu_about_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@+string/button_about" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/menu_bot"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/menu_top"
+        android:padding="15dp"
+        android:background="@+color/yellow"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@+string/button_live" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

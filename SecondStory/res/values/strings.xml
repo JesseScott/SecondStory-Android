@@ -7,6 +7,11 @@
     <string name="button_start">Start</string>
     <string name="button_skip">Skip</string>
     <string name="button_done">Done</string>
+    <string name="button_guide">GUIDE</string>
+    <string name="button_maps">MAPS</string>
+    <string name="button_settings">SETTINGS</string>
+    <string name="button_about">ABOUT</string>
+    <string name="button_live">LIVE VIEW</string>
     
     <string name="label_welcome">Welcome</string>
     <string name="label_pg1">Page 1</string>

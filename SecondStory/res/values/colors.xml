@@ -7,5 +7,7 @@
     <color name="gray">#575757</color>
     <color name="light_gray">#D3D3D3</color>
     <color name="semi_transparent_black">#C8000000</color>
+    <color name="red">#FF0000</color>
+    <color name="yellow">#FFFF00</color>
     
 </resources>
