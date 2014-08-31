@@ -105,14 +105,14 @@
             </intent-filter>
         </activity>
         
-        <!-- ABOUT SCREEN  -->
+        <!-- INSTANCE SCREEN  -->
         <activity
             android:name="com.theonlyanimal.secondstory.InstanceScreen"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/app_name"
          >
             <intent-filter>
-                <action android:name="android.intent.action.ABOUT" />
+                <action android:name="android.intent.action.INSTANCE" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -141,14 +141,14 @@
             </intent-filter>
         </activity>
         
-        <!-- TUTORIAL SCREEN  -->
+        <!-- ABOUT SCREEN  -->
         <activity
-            android:name="com.theonlyanimal.secondstory.TutorialScreen"
+            android:name="com.theonlyanimal.secondstory.AboutScreen"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/app_name"
          >
             <intent-filter>
-                <action android:name="android.intent.action.TUTORIAL" />
+                <action android:name="android.intent.action.ABOUT" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>

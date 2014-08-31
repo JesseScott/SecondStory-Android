@@ -38,7 +38,7 @@ public class InstanceScreen extends Activity {
 		locations.setOnItemClickListener(new OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-				Intent i = new Intent("android.intent.action.TUTORIAL");
+				Intent i = new Intent("android.intent.action.ABOUT");
 				i.putExtra("instance", position);
 				startActivity(i);
 			};

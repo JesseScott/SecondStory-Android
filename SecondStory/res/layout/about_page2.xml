@@ -7,31 +7,24 @@
     tools:ignore="ContentDescription" >
 
     <ImageView
-        android:id="@+id/splash_image"
+        android:id="@+id/about2_bg_img"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_alignParentTop="true"
         android:scaleType="fitXY"
-        android:src="@drawable/bg_1" />
+        android:src="@drawable/bg_6" />
 
     <TextView
-        android:id="@+id/textView_tutPg1"
+        android:id="@+id/about2_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:lineSpacingMultiplier="1.2"
-        android:padding="16dp"
-        android:text="@+string/label_pg1"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <Button
-        android:id="@+id/button_skipTutPg1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="30dp"
-        android:text="@+string/button_skip" />
+     	android:shadowColor="#000000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="2"
+        android:text="@+string/label_pg2"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
 </RelativeLayout>

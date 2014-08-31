@@ -14,10 +14,10 @@ import android.util.Log;
 
 
 // CLASS
-public class TutorialScreen extends FragmentActivity {
+public class AboutScreen extends FragmentActivity {
 
 	// GLOBALS
-	private static final String TAG = "SS_TUTORIAL";
+	private static final String TAG = "SS_ABOUT";
 	private static final int NUM_PAGES = 3;
 	private ViewPager pager; 
 	private PagerAdapter adapter; 
@@ -28,7 +28,7 @@ public class TutorialScreen extends FragmentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.tutorial_layout);
+        setContentView(R.layout.about_layout);
         
         // Get Instance
         if(getIntent().getExtras() != null){
@@ -38,7 +38,7 @@ public class TutorialScreen extends FragmentActivity {
         
         // Instantiate Pager & Adapter
         pager = (ViewPager) findViewById(R.id.pager);
-        adapter = new TutorialPagerAdapter(getSupportFragmentManager());
+        adapter = new AboutPagerAdapter(getSupportFragmentManager());
         pager.setAdapter(adapter);
     }
     
@@ -53,10 +53,10 @@ public class TutorialScreen extends FragmentActivity {
     }
     
     // Pager Adapter SubClass
-    private class TutorialPagerAdapter extends FragmentStatePagerAdapter {
+    private class AboutPagerAdapter extends FragmentStatePagerAdapter {
     	
     	// Constructor
-    	public TutorialPagerAdapter(FragmentManager fm) {
+    	public AboutPagerAdapter(FragmentManager fm) {
     		super(fm);
     	}
     	
@@ -65,16 +65,16 @@ public class TutorialScreen extends FragmentActivity {
     		Fragment fragment;
     		switch(position) {
     			case 0:
-    				fragment = new TutorialPage1();
+    				fragment = new AboutPage1();
     			break;
     			case 1:
-    				fragment = new TutorialPage2();
+    				fragment = new AboutPage2();
     			break;
     			case 2:
-    				fragment = new TutorialPage3();
+    				fragment = new AboutPage3();
     			break;
     			default:
-    				fragment = new TutorialPage1();
+    				fragment = new AboutPage1();
     			break;
     		}
     		return fragment;
