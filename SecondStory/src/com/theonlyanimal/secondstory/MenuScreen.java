@@ -24,7 +24,7 @@ public class MenuScreen extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		overridePendingTransition(R.anim.anim_slide_in_left, R.anim.anim_slide_out_right);
+		overridePendingTransition(R.anim.anim_slide_in_left, R.anim.anim_stay_still);
 		setContentView(R.layout.menu_layout);
 		
 		Button guideBtn = (Button) findViewById(R.id.menu_guide_btn);

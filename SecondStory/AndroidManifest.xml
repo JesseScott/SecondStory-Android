@@ -107,7 +107,7 @@
         
         <!-- ABOUT SCREEN  -->
         <activity
-            android:name="com.theonlyanimal.secondstory.AboutScreen"
+            android:name="com.theonlyanimal.secondstory.InstanceScreen"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/app_name"
          >

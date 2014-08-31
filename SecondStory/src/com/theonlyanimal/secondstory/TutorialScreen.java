@@ -9,6 +9,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 
 
 
@@ -32,6 +33,7 @@ public class TutorialScreen extends FragmentActivity {
         // Get Instance
         if(getIntent().getExtras() != null){
         	instance = getIntent().getExtras().getInt("instance");
+        	Log.d(TAG, "Instance is " + instance);
         }
         
         // Instantiate Pager & Adapter

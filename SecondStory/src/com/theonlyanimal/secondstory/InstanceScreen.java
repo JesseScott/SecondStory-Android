@@ -9,16 +9,15 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 
 //CLASS
-public class AboutScreen extends Activity {
+public class InstanceScreen extends Activity {
 
 	// GLOBALS
-	private static final String TAG = "SS_GUIDE";
+	private static final String TAG = "SS_INSTANCE";
 	private static Context context;
 	String[] instances;
 
@@ -28,7 +27,7 @@ public class AboutScreen extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		//overridePendingTransition(R.anim.anim_slide_in_left, R.anim.anim_slide_out_right);
-		setContentView(R.layout.about_layout);
+		setContentView(R.layout.instance_layout);
 		context = this;
 		
 		// ListView
@@ -39,7 +38,6 @@ public class AboutScreen extends Activity {
 		locations.setOnItemClickListener(new OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-				//Toast.makeText(context, "Row " + position + " selected", Toast.LENGTH_SHORT).show();       
 				Intent i = new Intent("android.intent.action.TUTORIAL");
 				i.putExtra("instance", position);
 				startActivity(i);
@@ -47,8 +45,5 @@ public class AboutScreen extends Activity {
 		});
 
 	}
- 
-
- 
  
 } /* EOC */
