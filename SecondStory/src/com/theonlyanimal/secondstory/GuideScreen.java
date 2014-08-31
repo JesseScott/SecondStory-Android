@@ -20,7 +20,7 @@ public class GuideScreen extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		//overridePendingTransition(R.anim.anim_slide_in_left, R.anim.anim_slide_out_right);
+		overridePendingTransition(R.anim.anim_slide_in_left, R.anim.anim_stay_still);
 		setContentView(R.layout.guide_layout);
 		
 		// MediaPlayer
@@ -37,7 +37,17 @@ public class GuideScreen extends Activity {
 		}
 
 	}
- 
+	
+	@Override
+	protected void onPause() {
+		overridePendingTransition(R.anim.anim_stay_still, R.anim.anim_slide_out_right);
+		super.onPause();
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+	}
 
  
  
