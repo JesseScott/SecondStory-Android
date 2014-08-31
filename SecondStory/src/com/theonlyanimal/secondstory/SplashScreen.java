@@ -23,10 +23,11 @@ public class SplashScreen extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        overridePendingTransition(R.anim.anim_slide_in_left, R.anim.anim_slide_out_right);
         setContentView(R.layout.splash_layout);
         
         // Progress Dialog
-        progress = ProgressDialog.show(this, "Checking Settings", "this will just take a second", true);
+        //progress = ProgressDialog.show(this, "Checking Settings", "this will just take a second", true);
         
         // Timer
 		Thread timer = new Thread(){
@@ -35,7 +36,11 @@ public class SplashScreen extends Activity {
 				//super.run();
 				try { 
 					sleep(2500);
-					checkSettings();
+					//checkSettings();
+					//Intent i = new Intent("android.intent.action.MENU");
+		    		Intent i = new Intent(SplashScreen.this, MenuScreen.class);
+					startActivity(i);
+		    		finish();
 				}
 				catch(InterruptedException e) {
 					e.printStackTrace();

@@ -14,12 +14,11 @@
         android:scaleType="fitXY"
         android:src="@drawable/bg_2" />
 
-    <RelativeLayout
+    <LinearLayout
         android:id="@+id/menu_top"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:background="@+color/red"
         android:orientation="vertical"
         android:padding="15dp" >
 
@@ -46,7 +45,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@+string/button_about" />
-    </RelativeLayout>
+    </LinearLayout>
 
     <RelativeLayout
         android:id="@+id/menu_bot"
@@ -54,11 +53,10 @@
         android:layout_height="fill_parent"
         android:layout_below="@+id/menu_top"
         android:padding="15dp"
-        android:background="@+color/yellow"
         android:orientation="vertical" >
 
         <Button
-            android:id="@+id/button1"
+            android:id="@+id/menu_live_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
