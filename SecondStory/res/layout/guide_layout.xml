@@ -11,7 +11,7 @@
         android:layout_height="fill_parent"
         android:layout_alignParentTop="true"
         android:scaleType="fitXY"
-        android:src="@drawable/bg_4" 
+        android:src="@drawable/splash_bg" 
     />
 
     <TextView
@@ -21,7 +21,7 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:gravity="center"
-        android:shadowColor="#000000"
+        android:shadowColor="@+colors/white"
         android:shadowDx="2"
         android:shadowDy="2"
         android:shadowRadius="2"

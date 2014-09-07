@@ -12,7 +12,7 @@
         android:layout_height="fill_parent"
         android:layout_alignParentTop="true"
         android:scaleType="fitXY"
-        android:src="@drawable/bg_6" />
+        android:src="@drawable/splash_bg" />
 
     <TextView
         android:id="@+id/about1_label"
