@@ -8,10 +8,13 @@
     
     <string name="button_start">Start</string>
     <string name="button_skip">Skip</string>
+    <string name="button_feedback">Give Feedback</string>
+    
     <string name="label_done">Done</string>
     <string name="label_guide">GUIDE</string>
     <string name="label_maps">MAPS</string>
     <string name="label_settings">SETTINGS</string>
+    <string name="label_feedback">FEEDBACK</string>
     <string name="label_about">ABOUT</string>
     <string name="label_live">LIVE VIEW</string>
     

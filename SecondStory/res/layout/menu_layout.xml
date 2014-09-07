@@ -35,16 +35,16 @@
             android:text="@+string/label_maps" />
 
         <Button
-            android:id="@+id/menu_settings_btn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@+string/label_settings" />
-
-        <Button
             android:id="@+id/menu_about_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@+string/label_about" />
+        
+        <Button
+            android:id="@+id/menu_feedback_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@+string/label_feedback" />
     </LinearLayout>
 
     <RelativeLayout

@@ -105,6 +105,18 @@
             </intent-filter>
         </activity>
         
+        <!-- FEEDBACK SCREEN  -->
+        <activity
+            android:name="com.theonlyanimal.secondstory.FeedbackScreen"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/app_name"
+         >
+            <intent-filter>
+                <action android:name="android.intent.action.FEEDBACK" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
         <!-- INSTANCE SCREEN  -->
         <activity
             android:name="com.theonlyanimal.secondstory.InstanceScreen"

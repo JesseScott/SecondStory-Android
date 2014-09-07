@@ -45,11 +45,11 @@ public class MenuScreen extends Activity {
 			}
 		});
 		
-		Button settingsBtn = (Button) findViewById(R.id.menu_settings_btn);
-		settingsBtn.setOnClickListener(new View.OnClickListener() {
+		Button feedbackBtn = (Button) findViewById(R.id.menu_feedback_btn);
+		feedbackBtn.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Intent i = new Intent("android.intent.action.SETTINGS");
+				Intent i = new Intent("android.intent.action.FEEDBACK");
 	    		startActivity(i);
 			}
 		});
