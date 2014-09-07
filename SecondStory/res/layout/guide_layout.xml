@@ -11,21 +11,43 @@
         android:layout_height="fill_parent"
         android:layout_alignParentTop="true"
         android:scaleType="fitXY"
-        android:src="@drawable/splash_bg" 
+        android:src="@drawable/guide_bg" 
     />
-
-    <TextView
-        android:id="@+id/guide_label"
+    
+    <RelativeLayout
+        android:id="@+id/guide_nav"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:gravity="center"
-        android:shadowColor="@+colors/white"
-        android:shadowDx="2"
-        android:shadowDy="2"
-        android:shadowRadius="2"
-        android:text="@+string/para_guide"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:layout_height="wrap_content" 
+        android:background="@+color/transparent_grey"
+    >
+
+        <ImageButton
+            android:id="@+id/guide_toggle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/guide_replay"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/guide_toggle_icon" />
+
+        <ImageButton
+            android:id="@+id/guide_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/guide_back_icon" />
+
+        <ImageButton
+            android:id="@+id/guide_replay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/guide_toggle"
+            android:src="@drawable/guide_replay_icon" />
+
+    </RelativeLayout>
+
+
 
 </RelativeLayout>
