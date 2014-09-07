@@ -12,7 +12,7 @@
         android:layout_height="fill_parent"
         android:layout_alignParentTop="true"
         android:scaleType="fitXY"
-        android:src="@drawable/splash_bg" />
+        android:src="@drawable/menu_bg" />
 
     <LinearLayout
         android:id="@+id/menu_top"
