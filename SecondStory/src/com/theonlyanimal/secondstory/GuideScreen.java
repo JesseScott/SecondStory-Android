@@ -5,6 +5,8 @@ package com.theonlyanimal.secondstory;
 
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 import android.app.Activity;
 import android.content.res.AssetFileDescriptor;
 
@@ -13,8 +15,15 @@ public class GuideScreen extends Activity {
 
 	// GLOBALS
 	private static final String TAG = "SS_GUIDE";
+	
 	MediaPlayer player;
 	boolean mediaIsPlaying = false;
+	boolean mediaHasVolume = true;
+	
+	ImageButton restartAudio;
+	ImageButton toggleVolume;
+	ImageButton backBtn;
+	
 	
 	// LifeCycle
 	@Override
@@ -24,29 +33,79 @@ public class GuideScreen extends Activity {
 		setContentView(R.layout.guide_layout);
 		
 		// MediaPlayer
-		try {
-			AssetFileDescriptor descriptor = getApplicationContext().getAssets().openFd("audio/audio_guide.mp3");
-			player = new MediaPlayer();
-			player.setDataSource(descriptor.getFileDescriptor(), descriptor.getStartOffset(), descriptor.getLength());
-			player.prepare();
-			player.start();
-			mediaIsPlaying = true;
-		}
-		catch(Exception e) {
-			e.printStackTrace();
-		}
+		prepAudio();
+		startAudio();
+		
+		// Buttons
+		backBtn = (ImageButton) findViewById(R.id.guide_back);
+		backBtn.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				finish();
+			}
+		});
+		
+		restartAudio = (ImageButton) findViewById(R.id.guide_replay);
+		restartAudio.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				if(mediaIsPlaying) {
+					player.pause();
+					player.seekTo(0);
+					player.start();
+				}
+				else {
+					player.seekTo(0);
+					player.start();
+				}
+			}
+		});
+		
+		toggleVolume = (ImageButton) findViewById(R.id.guide_toggle);
+		toggleVolume.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				if(mediaHasVolume) {
+					player.setVolume(0.0f, 0.0f);
+				}
+				else {
+					player.setVolume(1.0f, 1.0f);
+				}
+			}
+		});
+	
 
 	}
 	
 	@Override
 	protected void onPause() {
 		overridePendingTransition(R.anim.anim_stay_still, R.anim.anim_slide_out_right);
+		player.stop();
 		super.onPause();
 	}
 
 	@Override
 	protected void onResume() {
 		super.onResume();
+	}
+	
+	private void prepAudio() {
+		try {
+			AssetFileDescriptor descriptor = getApplicationContext().getAssets().openFd("audio/audio_guide.mp3");
+			player = new MediaPlayer();
+			player.setDataSource(descriptor.getFileDescriptor(), descriptor.getStartOffset(), descriptor.getLength());
+			player.prepare();
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	private void startAudio() {
+		player.setVolume(1.0f, 1.0f);
+		mediaHasVolume = true;
+		player.start();
+		mediaIsPlaying = true;
 	}
 
  

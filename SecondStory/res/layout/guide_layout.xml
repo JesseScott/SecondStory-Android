@@ -11,14 +11,15 @@
         android:layout_height="fill_parent"
         android:layout_alignParentTop="true"
         android:scaleType="fitXY"
-        android:src="@drawable/guide_bg" 
-    />
-    
+        android:src="@drawable/guide_bg" />
+
     <RelativeLayout
         android:id="@+id/guide_nav"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+		android:layout_centerHorizontal="true"
         android:background="@+color/transparent_grey"
+        android:padding="5dp" 
     >
 
         <ImageButton
@@ -46,8 +47,125 @@
             android:layout_toLeftOf="@+id/guide_toggle"
             android:src="@drawable/guide_replay_icon" />
 
+        <TextView
+            android:id="@+id/guide_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30dp"
+            android:layout_toLeftOf="@+id/guide_replay"
+            android:text="@+string/label_guide"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
     </RelativeLayout>
 
+    <RelativeLayout
+        android:id="@+id/guide_labels"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+		android:layout_centerHorizontal="true"
+		android:layout_centerVertical="true"
+        android:layout_below="@+id/guide_nav"
+        android:padding="5dp" >
 
+        <ImageView
+            android:id="@+id/guide_ear_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/guide_ear_icon" />
+
+        <TextView
+            android:id="@+id/guide_ear_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/guide_ear_icon"
+            android:layout_centerHorizontal="true"
+            android:padding="10dp"
+            android:text="@string/label_guide_ear"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <ImageView
+            android:id="@+id/guide_car_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/guide_ear_label"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/guide_cars_icon" />
+
+        <TextView
+            android:id="@+id/guide_car_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/guide_car_icon"
+            android:layout_centerHorizontal="true"
+            android:padding="10dp"
+            android:text="@string/label_guide_car"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <ImageView
+            android:id="@+id/guide_live_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/guide_car_label"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/guide_live_icon" />
+
+        <TextView
+            android:id="@+id/guide_live_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/guide_live_icon"
+            android:layout_centerHorizontal="true"
+            android:padding="10dp"
+            android:text="@string/label_guide_live"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <ImageView
+            android:id="@+id/guide_device_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/guide_live_label"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/guide_device_icon" />
+
+        <TextView
+            android:id="@+id/guide_device_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/guide_device_icon"
+            android:layout_centerHorizontal="true"
+            android:padding="10dp"
+            android:text="@string/label_guide_device"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+        
+        <ImageView
+            android:id="@+id/guide_explore_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/guide_device_label"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/guide_explore_icon" />
+
+	    <TextView
+	        android:id="@+id/guide_explore_label"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/guide_explore_icon"
+	        android:layout_centerHorizontal="true"
+	        android:padding="10dp"
+            android:text="@string/label_guide_explore"
+	        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	 <TextView
+	        android:id="@+id/guide_explore_enjoy"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/guide_explore_label"
+	        android:layout_centerHorizontal="true"
+	        android:padding="10dp"
+            android:text="@string/label_guide_enjoy"
+	        android:textAppearance="?android:attr/textAppearanceMedium" />
+        
+    </RelativeLayout>
 
 </RelativeLayout>
