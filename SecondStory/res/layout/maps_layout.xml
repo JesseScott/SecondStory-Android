@@ -36,13 +36,89 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="30dp"
-            android:text="@+string/label_maps"
-                        android:shadowColor="@+color/black"
+            android:shadowColor="@+color/black"
             android:shadowDx="2"
             android:shadowDy="2"
             android:shadowRadius="2"
+            android:text="@+string/label_maps"
             android:textAppearance="?android:attr/textAppearanceLarge" />
-
     </RelativeLayout>
-    
+
+    <ImageView
+        android:id="@+id/pin_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/pin_1"
+        android:layout_marginLeft="16dp"
+        android:layout_toRightOf="@+id/pin_1"
+        android:src="@drawable/map_pin" />
+
+    <ImageView
+        android:id="@+id/pin_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/pin_3"
+        android:layout_toRightOf="@+id/pin_2"
+        android:src="@drawable/map_pin" />
+
+    <ImageView
+        android:id="@+id/pin_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/pin_1"
+        android:layout_alignLeft="@+id/pin_1"
+        android:layout_marginBottom="14dp"
+        android:src="@drawable/map_pin" />
+
+    <ImageView
+        android:id="@+id/pin_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="155dp"
+        android:layout_marginLeft="62dp"
+        android:src="@drawable/map_pin" />
+
+    <ImageView
+        android:id="@+id/pin_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/pin_2"
+        android:layout_centerVertical="true"
+        android:src="@drawable/map_pin" />
+
+    <ImageView
+        android:id="@+id/pin_6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/pin_7"
+        android:layout_toRightOf="@+id/pin_3"
+        android:src="@drawable/map_pin" />
+
+    <ImageView
+        android:id="@+id/pin_7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/pin_5"
+        android:layout_marginBottom="16dp"
+        android:layout_toRightOf="@+id/pin_6"
+        android:src="@drawable/map_pin" />
+
+    <ImageView
+        android:id="@+id/pin_8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/pin_5"
+        android:layout_toRightOf="@+id/pin_7"
+        android:src="@drawable/map_pin" />
+
+    <ImageView
+        android:id="@+id/pin_9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/pin_7"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/map_pin" />
+
 </RelativeLayout>
