@@ -18,7 +18,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
 		android:layout_centerHorizontal="true"
-        android:background="@+color/transparent_grey"
+        android:background="@+color/semi_transparent_black"
         android:padding="5dp" 
     >
 
@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:src="@drawable/guide_back_icon" />
+            android:src="@drawable/global_back_icon" />
 
         <ImageButton
             android:id="@+id/guide_replay"
@@ -54,8 +54,13 @@
             android:layout_centerVertical="true"
             android:layout_marginRight="30dp"
             android:layout_toLeftOf="@+id/guide_replay"
+            android:shadowColor="@+color/black"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="2"
             android:text="@+string/label_guide"
             android:textAppearance="?android:attr/textAppearanceLarge" />
+
     </RelativeLayout>
 
     <RelativeLayout
