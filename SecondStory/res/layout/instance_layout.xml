@@ -12,26 +12,44 @@
         android:layout_alignParentTop="true"
         android:scaleType="fitXY"
         android:src="@drawable/splash_bg" />
-
-    <TextView
-        android:id="@+id/about_label"
-        android:layout_width="wrap_content"
+    
+    <RelativeLayout
+        android:id="@+id/instance_nav"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="25dp"
-        android:shadowColor="#000000"
-        android:shadowDx="2"
-        android:shadowDy="2"
-        android:shadowRadius="2"
-        android:text="@+string/button_about"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:background="@+color/semi_transparent_black"
+        android:padding="5dp" >
+
+        <ImageButton
+            android:id="@+id/guide_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:background="@null"
+            android:src="@drawable/global_back_icon" />
+
+        <TextView
+            android:id="@+id/guide_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30dp"
+            android:shadowColor="#000000"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="2"
+            android:text="@+string/label_about"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+    </RelativeLayout>
 
     <TextView
         android:id="@+id/about_sublabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/about_label"
+        android:layout_below="@+id/instance_nav"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:shadowColor="#000000"

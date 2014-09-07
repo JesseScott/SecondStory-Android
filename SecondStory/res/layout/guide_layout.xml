@@ -29,6 +29,7 @@
             android:layout_alignBottom="@+id/guide_replay"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
+            android:background="@null"
             android:src="@drawable/guide_toggle_icon" />
 
         <ImageButton
@@ -37,6 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
+            android:background="@null"
             android:src="@drawable/global_back_icon" />
 
         <ImageButton
@@ -45,6 +47,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_toLeftOf="@+id/guide_toggle"
+            android:background="@null"
             android:src="@drawable/guide_replay_icon" />
 
         <TextView
