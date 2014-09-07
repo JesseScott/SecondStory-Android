@@ -32,19 +32,19 @@
             android:id="@+id/menu_maps_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@+string/button_maps" />
+            android:text="@+string/label_maps" />
 
         <Button
             android:id="@+id/menu_settings_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@+string/button_settings" />
+            android:text="@+string/label_settings" />
 
         <Button
             android:id="@+id/menu_about_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@+string/button_about" />
+            android:text="@+string/label_about" />
     </LinearLayout>
 
     <RelativeLayout
@@ -60,7 +60,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="@+string/button_live" />
+            android:text="@+string/label_live" />
 
     </RelativeLayout>
 
