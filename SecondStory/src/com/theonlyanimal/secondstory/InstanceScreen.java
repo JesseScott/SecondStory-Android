@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.app.Activity;
 import android.content.Context;
@@ -20,6 +21,7 @@ public class InstanceScreen extends Activity {
 	private static final String TAG = "SS_INSTANCE";
 	private static Context context;
 	String[] instances;
+	ImageButton backBtn;
 
 	
 	// LifeCycle
@@ -42,6 +44,15 @@ public class InstanceScreen extends Activity {
 				i.putExtra("instance", position);
 				startActivity(i);
 			};
+		});
+		
+		// Buttons
+		backBtn = (ImageButton) findViewById(R.id.instance_back);
+		backBtn.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				finish();
+			}
 		});
 
 	}

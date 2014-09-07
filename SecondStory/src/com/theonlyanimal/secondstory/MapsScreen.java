@@ -4,6 +4,8 @@ package com.theonlyanimal.secondstory;
 //IMPORTS
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 import android.app.Activity;
 
 //CLASS
@@ -11,6 +13,7 @@ public class MapsScreen extends Activity {
 
 	// GLOBALS
 	private static final String TAG = "SS_GUIDE";
+	ImageButton backBtn;
 
 	
 	// LifeCycle
@@ -19,6 +22,16 @@ public class MapsScreen extends Activity {
 		super.onCreate(savedInstanceState);
 		overridePendingTransition(R.anim.anim_slide_in_left, R.anim.anim_stay_still);
 		setContentView(R.layout.maps_layout);
+		
+		// Buttons
+		backBtn = (ImageButton) findViewById(R.id.maps_back);
+		backBtn.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				finish();
+			}
+		});
+		
 	}
  
 	@Override

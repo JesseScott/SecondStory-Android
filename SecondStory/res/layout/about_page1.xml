@@ -12,7 +12,40 @@
         android:layout_height="fill_parent"
         android:layout_alignParentTop="true"
         android:scaleType="fitXY"
-        android:src="@drawable/splash_bg" />
+        android:src="@drawable/about_bg" />
+    
+    <RelativeLayout
+        android:id="@+id/about1_nav"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="@+color/semi_transparent_black"
+        android:padding="5dp" >
+
+        <ImageButton
+            android:id="@+id/about1_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:padding="10dp"
+            android:background="@null"
+            android:src="@drawable/global_back_icon" />
+
+        <TextView
+            android:id="@+id/about1_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30dp"
+            android:shadowColor="#000000"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="2"
+            android:text="@+string/label_about"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+    </RelativeLayout>
 
     <TextView
         android:id="@+id/about1_label"

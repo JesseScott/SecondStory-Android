@@ -23,12 +23,24 @@
     >
 
         <ImageButton
+            android:id="@+id/guide_replay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/guide_back"
+            android:layout_marginRight="10dp"
+            android:padding="10dp" 
+            android:layout_toLeftOf="@+id/guide_toggle"
+            android:background="@null"
+            android:src="@drawable/guide_replay_icon" />
+
+        <ImageButton
             android:id="@+id/guide_toggle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/guide_replay"
             android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
+            android:layout_alignTop="@+id/guide_replay"
+            android:layout_marginRight="10dp"
+            android:padding="10dp" 
             android:background="@null"
             android:src="@drawable/guide_toggle_icon" />
 
@@ -37,26 +49,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:padding="10dp" 
             android:background="@null"
             android:src="@drawable/global_back_icon" />
-
-        <ImageButton
-            android:id="@+id/guide_replay"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_toLeftOf="@+id/guide_toggle"
-            android:background="@null"
-            android:src="@drawable/guide_replay_icon" />
 
         <TextView
             android:id="@+id/guide_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:layout_marginRight="30dp"
-            android:layout_toLeftOf="@+id/guide_replay"
             android:shadowColor="@+color/black"
             android:shadowDx="2"
             android:shadowDy="2"
@@ -90,7 +94,8 @@
             android:layout_centerHorizontal="true"
             android:padding="10dp"
             android:text="@string/label_guide_ear"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/black" />
 
         <ImageView
             android:id="@+id/guide_car_icon"
@@ -108,7 +113,8 @@
             android:layout_centerHorizontal="true"
             android:padding="10dp"
             android:text="@string/label_guide_car"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/black" />
 
         <ImageView
             android:id="@+id/guide_live_icon"
@@ -126,7 +132,8 @@
             android:layout_centerHorizontal="true"
             android:padding="10dp"
             android:text="@string/label_guide_live"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/black" />
 
         <ImageView
             android:id="@+id/guide_device_icon"
@@ -144,7 +151,8 @@
             android:layout_centerHorizontal="true"
             android:padding="10dp"
             android:text="@string/label_guide_device"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/black" />
         
         <ImageView
             android:id="@+id/guide_explore_icon"
@@ -161,18 +169,20 @@
 	        android:layout_below="@+id/guide_explore_icon"
 	        android:layout_centerHorizontal="true"
 	        android:padding="10dp"
-            android:text="@string/label_guide_explore"
-	        android:textAppearance="?android:attr/textAppearanceMedium" />
+	        android:text="@string/label_guide_explore"
+	        android:textAppearance="?android:attr/textAppearanceMedium"
+	        android:textColor="@color/black" />
 
 	 <TextView
-	        android:id="@+id/guide_explore_enjoy"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_below="@+id/guide_explore_label"
-	        android:layout_centerHorizontal="true"
-	        android:padding="10dp"
-            android:text="@string/label_guide_enjoy"
-	        android:textAppearance="?android:attr/textAppearanceMedium" />
+	     android:id="@+id/guide_explore_enjoy"
+	     android:layout_width="wrap_content"
+	     android:layout_height="wrap_content"
+	     android:layout_below="@+id/guide_explore_label"
+	     android:layout_centerHorizontal="true"
+	     android:padding="10dp"
+	     android:text="@string/label_guide_enjoy"
+	     android:textAppearance="?android:attr/textAppearanceMedium"
+	     android:textColor="@color/black" />
         
     </RelativeLayout>
 
