@@ -17,7 +17,7 @@ public class MenuScreen extends Activity {
 
 	// GLOBALS
 	private static final String TAG = "SS_MENU";
-	boolean readyForLiveView = false;
+	boolean readyForLiveView = true;
 
 	
 	// LifeCycle
@@ -70,7 +70,7 @@ public class MenuScreen extends Activity {
 				if(readyForLiveView) {
 					Intent i = new Intent("android.intent.action.VIDEO");
 		    		startActivity(i);
-		    		finish();
+		    		//finish();
 				}
 				else {
 					Toast.makeText(getApplicationContext(), "youre not ready for the big leagues yet, son", Toast.LENGTH_LONG).show();
