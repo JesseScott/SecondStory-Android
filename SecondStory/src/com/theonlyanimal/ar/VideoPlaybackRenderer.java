@@ -521,10 +521,10 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
             else if(trimmedName.compareTo("pennies") == 0) {
                 currentTarget = VideoPlayback.PENNIES;
             }
-            else if(trimmedName.compareTo("suzyq") == 0) {
+            else if(trimmedName.compareTo("sweeping") == 0) {
                 currentTarget = VideoPlayback.SUZYQ;
             }
-            else if(trimmedName.compareTo("shrooms") == 0) {
+            else if(trimmedName.compareTo("shrooms") == 0 || trimmedName.compareTo("shroom_new") == 0) {
                 currentTarget = VideoPlayback.SHROOMS;
             }
             else if(trimmedName.compareTo("copper") == 0) {
