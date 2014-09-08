@@ -141,7 +141,7 @@ public class FullscreenPlayback extends Activity implements OnPreparedListener,
             mMediaPlayer = new MediaPlayer();
             mMediaController = new MediaController(this);
             
-            Log.v(LOGTAG, "loading " + mMovieName);
+            Log.v(LOGTAG, "loading " + mMovieName + " as FullScreen ");
             mMediaPlayer.setDataSource(mMovieName); // ???
             
             mMediaPlayer.setDisplay(mHolder);
@@ -185,7 +185,7 @@ public class FullscreenPlayback extends Activity implements OnPreparedListener,
     // playing
     public void onPrepared(MediaPlayer mediaplayer)
     {
-        // Log.d( LOGTAG, "Fullscreen.onPrepared");
+        Log.d( LOGTAG, "Fullscreen.onPrepared");
         
         mMediaControllerLock.lock();
         mMediaPlayerLock.lock();
