@@ -292,16 +292,19 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
         
         for (int i = 0; i < VideoPlayback.NUM_TARGETS; i++)
         {
-            // Ask whether the target is currently being tracked and if so react
-            // to it
+            // Ask whether the target is currently being tracked and if so react to it
             if (isTracking(i))
             {
                 // If it is tracking reset the timestamp for lost tracking
-                mLostTrackingSince[i] = -1;
-            } else
+                //mLostTrackingSince[i] = -1;
+            	// EDIT - AUTOPLAY
+            	if (mVideoPlayerHelper[i] != null) {
+                    mVideoPlayerHelper[i].play(false, -1);
+            	}
+            } 
+            else
             {
-                // If it isn't tracking
-                // check whether it just lost it or if it's been a while
+                // If it isn't tracking check whether it just lost it or if it's been a while
                 if (mLostTrackingSince[i] < 0)
                     mLostTrackingSince[i] = SystemClock.uptimeMillis();
                 else
@@ -309,8 +312,9 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
                     // If it's been more than 2 seconds then pause the player
                     if ((SystemClock.uptimeMillis() - mLostTrackingSince[i]) > 2000)
                     {
-                        if (mVideoPlayerHelper[i] != null)
-                            mVideoPlayerHelper[i].pause();
+                        if (mVideoPlayerHelper[i] != null) {
+                            //mVideoPlayerHelper[i].pause();
+                        }
                     }
                 }
             }
