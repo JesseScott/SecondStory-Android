@@ -141,12 +141,9 @@ public class VideoPlayerHelper implements OnPreparedListener,
             Log.d(LOGTAG, "Already loaded");
         } else
         {
-            if (((requestedType == MEDIA_TYPE.ON_TEXTURE) || // If the client requests on
-                                                             // texture only
+            if (((requestedType == MEDIA_TYPE.ON_TEXTURE) || // If the client requests on texture only
                 (requestedType == MEDIA_TYPE.ON_TEXTURE_FULLSCREEN)) &&   // or on texture with full screen
-                
-                (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH)) // and this is an
-                                                                                   // ICS device
+                (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH)) // and this is an ICS device
             {
                 if (mSurfaceTexture == null)
                 {

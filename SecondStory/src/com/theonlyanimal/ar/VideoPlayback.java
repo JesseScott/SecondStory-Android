@@ -137,8 +137,7 @@ public class VideoPlayback extends Activity implements
         mTextures = new Vector<Texture>();
         loadTextures();
         
-        // Create the gesture detector that will handle the single and
-        // double taps:
+        // Create the gesture detector that will handle the single and double taps:
         mSimpleListener = new SimpleOnGestureListener();
         mGestureDetector = new GestureDetector(getApplicationContext(), mSimpleListener);
         
@@ -192,8 +191,7 @@ public class VideoPlayback extends Activity implements
                         // Check if it is playable on texture
                         if (mVideoPlayerHelper[i].isPlayableOnTexture())
                         {
-                            // We can play only if the movie was paused, ready
-                            // or stopped
+                            // We can play only if the movie was paused, ready or stopped
                             if ((mVideoPlayerHelper[i].getStatus() == MEDIA_STATE.PAUSED)
                                 || (mVideoPlayerHelper[i].getStatus() == MEDIA_STATE.READY)
                                 || (mVideoPlayerHelper[i].getStatus() == MEDIA_STATE.STOPPED)
@@ -212,6 +210,7 @@ public class VideoPlayback extends Activity implements
                             {
                                 // If it is playing then we pause it
                                 mVideoPlayerHelper[i].pause();
+                                Log.v(LOGTAG, "-- this should pause the video -- ");
                             }
                         } else if (mVideoPlayerHelper[i].isPlayableFullscreen())
                         {
@@ -519,7 +518,7 @@ public class VideoPlayback extends Activity implements
     {
         boolean result = false;
         result = mGestureDetector.onTouchEvent(event);
-        
+        Log.v(LOGTAG, " GESTURE");
         // Process the Gestures
         if (!result && mSampleAppMenu != null )
             result = mSampleAppMenu.processEvent(event);

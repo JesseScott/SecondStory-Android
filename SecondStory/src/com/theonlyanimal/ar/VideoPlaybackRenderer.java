@@ -70,7 +70,7 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
     
     // We cannot use the default texture coordinates of the quad since these
     // will change depending on the video itself
-    private float videoQuadTextureCoords[] = { 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f, 0.0f, 1.0f, };
+    private float videoQuadTextureCoords[] = 					{ 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f, 0.0f, 1.0f, };
     
     // This variable will hold the transformed coordinates (changes every frame)
     private float videoQuadTextureCoordsTransformedStones[] = 	{ 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f, 0.0f, 1.0f, };
@@ -78,13 +78,13 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
     // TODO
     private float videoQuadTextureCoordsTransformedBeef[] = 	{ 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f, 0.0f, 1.0f, };
     private float videoQuadTextureCoordsTransformedBicycles[] = { 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f, 0.0f, 1.0f, };
-    private float videoQuadTextureCoordsTransformedCopper[] = 		{ 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f, 0.0f, 1.0f, };
+    private float videoQuadTextureCoordsTransformedCopper[] = 	{ 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f, 0.0f, 1.0f, };
     private float videoQuadTextureCoordsTransformedGun[] = 		{ 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f, 0.0f, 1.0f, };
     private float videoQuadTextureCoordsTransformedPennies[] = 	{ 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f, 0.0f, 1.0f, };
-    private float videoQuadTextureCoordsTransformedShrooms[] = 		{ 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f, 0.0f, 1.0f, };
+    private float videoQuadTextureCoordsTransformedShrooms[] = 	{ 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f, 0.0f, 1.0f, };
     private float videoQuadTextureCoordsTransformedSuzy[] = 	{ 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f, 0.0f, 1.0f, };
-    private float videoQuadTextureCoordsTransformedUmbrella[] = 		{ 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f, 0.0f, 1.0f, };
-    private float videoQuadTextureCoordsTransformedAlley[] = 		{ 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f, 0.0f, 1.0f, };
+    private float videoQuadTextureCoordsTransformedUmbrella[] = { 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f, 0.0f, 1.0f, };
+    private float videoQuadTextureCoordsTransformedAlley[] = 	{ 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f, 0.0f, 1.0f, };
     
     // Trackable dimensions
     Vec2F targetPositiveDimensions[] = new Vec2F[VideoPlayback.NUM_TARGETS];
@@ -168,8 +168,7 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
     
     
     // Store the Player Helper object passed from the main activity
-    public void setVideoPlayerHelper(int target,
-        VideoPlayerHelper newVideoPlayerHelper)
+    public void setVideoPlayerHelper(int target, VideoPlayerHelper newVideoPlayerHelper)
     {
         mVideoPlayerHelper[target] = newVideoPlayerHelper;
     }
@@ -834,6 +833,8 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
             .Matrix44FInverse(vuforiaAppSession.getProjectionMatrix()),
             modelViewMatrix[target], metrics.widthPixels, metrics.heightPixels,
             new Vec2F(x, y), new Vec3F(0, 0, 0), new Vec3F(0, 0, 1));
+        
+        Log.v(LOGTAG, " TAPPED ");
         
         // The target returns as pose the center of the trackable. The following
         // if-statement simply checks that the tap is within this range
