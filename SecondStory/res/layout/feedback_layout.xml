@@ -18,7 +18,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:background="@+color/semi_transparent_black"
+        android:background="@+color/feedback_nav_bg_color"
         android:padding="5dp" >
 
         <ImageButton
@@ -42,6 +42,8 @@
             android:shadowDx="2"
             android:shadowDy="2"
             android:shadowRadius="2"
+            android:textColor="@+color/feedback_nav_font_color"
+            android:textSize="30sp"
             android:text="@+string/label_feedback"
             android:textAppearance="?android:attr/textAppearanceLarge" />
     </RelativeLayout>
@@ -52,6 +54,12 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:text="@+string/button_feedback" />
+        android:padding="15dp"
+        android:background="@+color/feedback_nav_bg_color"
+        android:textColor="@+color/feedback_nav_font_color"
+        android:textAllCaps="true"
+        android:text="@+string/button_feedback" 
+        android:textSize="30sp"
+    />
 
 </RelativeLayout>
