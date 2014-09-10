@@ -14,10 +14,13 @@ public class AboutPage1 extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.about_page1, container, false);
 		
-		// Text
-		TextView txt = (TextView) rootView.findViewById(R.id.about1_label);  
-		Typeface font = Typeface.createFromAsset(getActivity().getAssets(), "fonts/din/din.ttf");  
-		txt.setTypeface(font); 
+		// Fonts
+		Typeface dinBlack = Typeface.createFromAsset(getActivity().getAssets(), "fonts/din alternate black.ttf");
+		Typeface dinMedium = Typeface.createFromAsset(getActivity().getAssets(), "fonts/din alternate medium.ttf"); 
+		
+		// Label
+		TextView navLabel = (TextView) rootView.findViewById(R.id.about1_title);
+		navLabel.setTypeface(dinBlack);
 		
 		
 		return rootView;
