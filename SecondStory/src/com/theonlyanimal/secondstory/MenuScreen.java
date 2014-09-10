@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.Toast;
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Typeface;
 
 
 
@@ -18,6 +19,7 @@ public class MenuScreen extends Activity {
 	// GLOBALS
 	private static final String TAG = "SS_MENU";
 	boolean readyForLiveView = true;
+	Typeface dinBlack, dinMedium;
 
 	
 	// LifeCycle
@@ -26,8 +28,13 @@ public class MenuScreen extends Activity {
 		super.onCreate(savedInstanceState);
 		overridePendingTransition(R.anim.anim_slide_in_left, R.anim.anim_stay_still);
 		setContentView(R.layout.menu_layout);
+
+		// Fonts
+		dinBlack = Typeface.createFromAsset(getAssets(), "fonts/din alternate black.ttf");
+		dinMedium = Typeface.createFromAsset(getAssets(), "fonts/din alternate medium.ttf"); 
 		
 		Button guideBtn = (Button) findViewById(R.id.menu_guide_btn);
+		guideBtn.setTypeface(dinBlack);
 		guideBtn.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -37,6 +44,7 @@ public class MenuScreen extends Activity {
 		});
 		
 		Button mapsBtn = (Button) findViewById(R.id.menu_maps_btn);
+		mapsBtn.setTypeface(dinBlack);
 		mapsBtn.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -46,6 +54,7 @@ public class MenuScreen extends Activity {
 		});
 		
 		Button feedbackBtn = (Button) findViewById(R.id.menu_feedback_btn);
+		feedbackBtn.setTypeface(dinBlack);
 		feedbackBtn.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -55,6 +64,7 @@ public class MenuScreen extends Activity {
 		});
 		
 		Button aboutBtn = (Button) findViewById(R.id.menu_about_btn);
+		aboutBtn.setTypeface(dinBlack);
 		aboutBtn.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -64,6 +74,7 @@ public class MenuScreen extends Activity {
 		});
 		
 		Button liveBtn = (Button) findViewById(R.id.menu_live_btn);
+		liveBtn.setTypeface(dinBlack);
 		liveBtn.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
