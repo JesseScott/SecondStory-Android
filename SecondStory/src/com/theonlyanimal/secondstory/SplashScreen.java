@@ -7,7 +7,9 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.preference.PreferenceManager;
+import android.widget.TextView;
 
 
 // CLASS
@@ -16,14 +18,22 @@ public class SplashScreen extends Activity {
 	// GLOBALS
 	private static final String TAG = "SS_SPLASH";
     ProgressDialog progress;
-
+    Typeface dinBlack, dinMedium;
+    TextView splashLabel;
 	
 	// LifeCycle
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //overridePendingTransition(R.anim.anim_slide_in_left, R.anim.anim_stay_still);
         setContentView(R.layout.splash_layout);
+        
+		// Fonts
+		dinBlack = Typeface.createFromAsset(getAssets(), "fonts/din alternate black.ttf");
+		dinMedium = Typeface.createFromAsset(getAssets(), "fonts/din alternate medium.ttf"); 
+		
+		// Label
+		splashLabel = (TextView) findViewById(R.id.splash_label);
+		splashLabel.setTypeface(dinMedium);
         
         // Progress Dialog
         //progress = ProgressDialog.show(this, "Checking Settings", "this will just take a second", true);
