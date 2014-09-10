@@ -6,7 +6,9 @@ package com.theonlyanimal.secondstory;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.app.Activity;
+import android.graphics.Typeface;
 
 //CLASS
 public class MapsScreen extends Activity {
@@ -14,6 +16,8 @@ public class MapsScreen extends Activity {
 	// GLOBALS
 	private static final String TAG = "SS_GUIDE";
 	ImageButton backBtn;
+	TextView navLabel;
+	Typeface dinBlack, dinMedium;
 
 	
 	// LifeCycle
@@ -22,6 +26,14 @@ public class MapsScreen extends Activity {
 		super.onCreate(savedInstanceState);
 		overridePendingTransition(R.anim.anim_slide_in_left, R.anim.anim_stay_still);
 		setContentView(R.layout.maps_layout);
+		
+		// Fonts
+		dinBlack = Typeface.createFromAsset(getAssets(), "fonts/din alternate black.ttf");
+		dinMedium = Typeface.createFromAsset(getAssets(), "fonts/din alternate medium.ttf"); 
+		
+		// Label
+		navLabel = (TextView) findViewById(R.id.maps_title);
+		navLabel.setTypeface(dinBlack);
 		
 		// Buttons
 		backBtn = (ImageButton) findViewById(R.id.maps_back);

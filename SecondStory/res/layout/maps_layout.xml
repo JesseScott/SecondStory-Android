@@ -18,7 +18,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:background="@+color/semi_transparent_black"
+        android:background="@+color/maps_nav_bg_color"
         android:padding="5dp" >
 
         <ImageButton
@@ -32,16 +32,14 @@
             android:src="@drawable/global_back_icon" />
 
         <TextView
-            android:id="@+id/maps_label"
+            android:id="@+id/maps_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="30dp"
-            android:shadowColor="@+color/black"
-            android:shadowDx="2"
-            android:shadowDy="2"
-            android:shadowRadius="2"
+            android:textColor="@+color/maps_nav_font_color"
+            android:textSize="30sp"
             android:text="@+string/label_maps"
             android:textAppearance="?android:attr/textAppearanceLarge" />
     </RelativeLayout>
