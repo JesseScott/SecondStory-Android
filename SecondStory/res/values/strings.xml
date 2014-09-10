@@ -22,15 +22,10 @@
     <string name="label_pg1">Page 1 of the credits</string>
     <string name="label_pg2">Page 2 of the credits</string>
     <string name="label_pg3">Page 3 of the credits</string>
-    <string name="label_choose_location">Choose Location</string>
     
-    <string name="para_welcome">
-        \nWelcome to Second Story - Blood Alley edition.
-        \n
-        \nFirst things first, we need to check your phone for some settings.
-        \n
-        \nPlease click the start button to begin, and we will walk you through the steps.
-    </string>
+    <string name="label_choose_location">Choose Location</string>
+    <string name="label_first_location">Blood Alley</string>
+    <string name="label_second_location">Soon&#8320;</string>
 
     <string name="label_guide_ear">Use one ear to listen</string>
     <string name="label_guide_car">Watch out for vehicles</string>
