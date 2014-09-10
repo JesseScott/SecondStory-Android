@@ -7,8 +7,10 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.app.Activity;
 import android.content.res.AssetFileDescriptor;
+import android.graphics.Typeface;
 
 //CLASS
 public class GuideScreen extends Activity {
@@ -24,6 +26,9 @@ public class GuideScreen extends Activity {
 	ImageButton toggleVolume;
 	ImageButton backBtn;
 	
+	Typeface dinBlack, dinMedium;
+	TextView navLabel;
+	
 	
 	// LifeCycle
 	@Override
@@ -35,6 +40,14 @@ public class GuideScreen extends Activity {
 		// MediaPlayer
 		prepAudio();
 		startAudio();
+		
+		// Fonts
+		dinBlack = Typeface.createFromAsset(getAssets(), "fonts/din alternate black.ttf");
+		dinMedium = Typeface.createFromAsset(getAssets(), "fonts/din alternate medium.ttf"); 
+		
+		// Label
+		navLabel = (TextView) findViewById(R.id.guide_title);
+		navLabel.setTypeface(dinBlack);
 		
 		// Buttons
 		backBtn = (ImageButton) findViewById(R.id.guide_back);
