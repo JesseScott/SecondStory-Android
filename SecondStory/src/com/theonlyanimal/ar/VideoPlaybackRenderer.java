@@ -547,8 +547,7 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
             
             targetPositiveDimensions[currentTarget] = imageTarget.getSize();
             
-            // The pose delivers the center of the target, thus the dimensions
-            // go from -width/2 to width/2, same for height
+            // The pose delivers the center of the target, thus the dimensions go from -width/2 to width/2, same for height
             temp[0] = targetPositiveDimensions[currentTarget].getData()[0] / 2.0f;
             temp[1] = targetPositiveDimensions[currentTarget].getData()[1] / 2.0f;
             targetPositiveDimensions[currentTarget].setData(temp);
