@@ -17,7 +17,7 @@
     <color name="menu_btn_bg_color">#A6FFFFCC</color>
     <color name="menu_btn_font_color">#333333</color>
     <color name="menu_live_font">#9B997C</color>
-    <color name="menu_live_bg">#33000000</color>
+    <color name="menu_live_bg">#80000000</color>
 
     <color name="guide_nav_bg_color">#A627313B</color>
     <color name="guide_nav_font_color">#D5DCE1</color>

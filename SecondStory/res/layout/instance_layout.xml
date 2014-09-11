@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:background="@+color/instance_nav_bg_color"
-        android:padding="5dp" >
+        android:padding="2dp" >
 
         <ImageButton
             android:id="@+id/instance_back"
@@ -56,7 +56,7 @@
             android:id="@+id/instance_btn_choose"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
+            android:layout_marginBottom="2dp"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
             android:textColor="@+color/instance_font_color"
@@ -70,26 +70,26 @@
             android:id="@+id/instance_btn_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
+            android:layout_marginBottom="2dp"
             android:paddingTop="40dp"
             android:paddingBottom="40dp"
             android:textColor="@+color/instance_font_color"
             android:background="@+color/instance_first_bg_color"
             android:text="@+string/label_first_location" 
-            android:textSize="30sp"
+            android:textSize="24sp"
         />
 
         <Button
             android:id="@+id/instance_btn_2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
+            android:layout_marginBottom="2dp"
             android:paddingTop="40dp"
             android:paddingBottom="40dp"
             android:textColor="@+color/instance_font_color"
             android:background="@+color/instance_second_bg_color"
             android:text="@+string/label_second_location" 
-            android:textSize="30sp"
+            android:textSize="24sp"
         />
 
     </LinearLayout>

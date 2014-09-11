@@ -26,53 +26,50 @@
             android:id="@+id/menu_guide_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:paddingTop="20dp"
-            android:paddingBottom="20dp"
-            android:textColor="@+color/menu_btn_font_color"
+            android:layout_marginBottom="2dp"
             android:background="@+color/menu_btn_bg_color"
-            android:text="@+string/label_guide" 
-            android:textSize="30sp"
-        />
+            android:paddingBottom="20dp"
+            android:paddingTop="20dp"
+            android:text="@+string/label_guide"
+            android:textColor="@+color/menu_btn_font_color"
+            android:textSize="24sp" />
 
         <Button
             android:id="@+id/menu_maps_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:paddingTop="20dp"
-            android:paddingBottom="20dp"
-            android:textColor="@+color/menu_btn_font_color"
+            android:layout_marginBottom="2dp"
             android:background="@+color/menu_btn_bg_color"
-            android:text="@+string/label_maps" 
-            android:textSize="30sp"
-        />
+            android:paddingBottom="20dp"
+            android:paddingTop="20dp"
+            android:text="@+string/label_maps"
+            android:textColor="@+color/menu_btn_font_color"
+            android:textSize="24sp" />
 
         <Button
             android:id="@+id/menu_about_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:paddingTop="20dp"
-            android:paddingBottom="20dp"
-            android:textColor="@+color/menu_btn_font_color"
+            android:layout_marginBottom="2dp"
             android:background="@+color/menu_btn_bg_color"
-            android:text="@+string/label_about" 
-            android:textSize="30sp"
-        />
+            android:paddingBottom="20dp"
+            android:paddingTop="20dp"
+            android:text="@+string/label_about"
+            android:textColor="@+color/menu_btn_font_color"
+            android:textSize="24sp" />
         
         <Button
             android:id="@+id/menu_feedback_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:paddingTop="20dp"
-            android:paddingBottom="20dp"
-            android:textColor="@+color/menu_btn_font_color"
+            android:layout_marginBottom="2dp"
             android:background="@+color/menu_btn_bg_color"
-            android:text="@+string/label_feedback" 
-            android:textSize="30sp"
-        />
+            android:paddingBottom="20dp"
+            android:paddingTop="20dp"
+            android:text="@+string/label_feedback"
+            android:textColor="@+color/menu_btn_font_color"
+            android:textSize="24sp" />
+
     </LinearLayout>
 
     <RelativeLayout
@@ -80,6 +77,7 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_below="@+id/menu_top"
+        android:layout_marginTop="15dp"
         android:padding="15dp"
         android:background="@+color/menu_live_bg"
         android:orientation="vertical" >
@@ -89,13 +87,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:paddingTop="20dp"
-            android:paddingBottom="20dp"
-            android:textColor="@+color/menu_live_font"
             android:background="@null"
-            android:text="@+string/label_live" 
-            android:textSize="60sp"
-        />
+            android:paddingBottom="20dp"
+            android:paddingTop="20dp"
+            android:text="@+string/label_live"
+            android:textColor="@+color/menu_live_font"
+            android:textSize="45sp" />
 
     </RelativeLayout>
 
