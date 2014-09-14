@@ -51,20 +51,19 @@
         	android:layout_marginTop="15dp"
         	android:orientation="vertical"
   		>
-            
-        <Button
-            android:id="@+id/instance_btn_choose"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="2dp"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:textColor="@+color/instance_font_color"
-            android:background="@+color/instance_choose_bg_color"
-            android:text="@+string/label_choose_location" 
-            android:textSize="20sp"
-            android:textAllCaps="true"
-        />
+
+            <Button
+                android:id="@+id/instance_btn_choose"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:background="@+color/instance_choose_bg_color"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:text="@+string/label_choose_location"
+                android:textAllCaps="true"
+                android:textColor="@+color/instance_font_color"
+                android:textSize="20sp" />
             
         <Button
             android:id="@+id/instance_btn_1"
