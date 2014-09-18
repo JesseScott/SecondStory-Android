@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="gen_sweeping_1" size="100.000000 100.000000" />
+    <ImageTarget name="gen_shrooms_2" size="100.000000 100.000000" />
+    <ImageTarget name="gen_pennies" size="100.000000 100.000000" />
+    <ImageTarget name="gen_shrooms_1" size="100.000000 100.000000" />
+    <ImageTarget name="gen_copper_3" size="100.000000 100.000000" />
+    <ImageTarget name="gen_copper_2" size="100.000000 100.000000" />
+    <ImageTarget name="gen_gun_1" size="100.000000 100.000000" />
+    <ImageTarget name="gen_gun_2" size="100.000000 100.000000" />
+    <ImageTarget name="gen_copper_1" size="100.000000 100.000000" />
+    <ImageTarget name="gen_bloodalley_2" size="100.000000 100.000000" />
+    <ImageTarget name="gen_bloodalley_1" size="100.000000 100.000000" />
+    <ImageTarget name="gen_beef_1" size="100.000000 100.000000" />
+    <ImageTarget name="gen_beef_2" size="100.000000 100.000000" />
+    <ImageTarget name="gen_beef_3" size="100.000000 100.000000" />
+    <ImageTarget name="gen_bike_1" size="100.000000 100.000000" />
+  </Tracking>
+</QCARConfig>

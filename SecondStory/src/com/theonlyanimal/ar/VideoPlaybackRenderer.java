@@ -509,31 +509,31 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
             Log.v(LOGTAG, "name is " + trimmedName);
             // TODO
             // We store the modelview matrix to be used later by the tap calculation
-            if(trimmedName.compareTo("beef") == 0 || trimmedName.compareTo("beef_pig") == 0) {
+            if(trimmedName.compareTo("beef") == 0 || trimmedName.compareTo("beef_pig") == 0 || trimmedName.compareTo("gen_beef") == 0) {
                 currentTarget = VideoPlayback.BEEF;
             }
-            else if(trimmedName.compareTo("bicycle") == 0) {
+            else if(trimmedName.compareTo("bicycle") == 0 || trimmedName.compareTo("gen_bike") == 0) {
                 currentTarget = VideoPlayback.BICYCLES;
             }
-            else if(trimmedName.compareTo("gun") == 0 || trimmedName.compareTo("gun_win") == 0) {
+            else if(trimmedName.compareTo("gun") == 0 || trimmedName.compareTo("gun_win") == 0 || trimmedName.compareTo("gen_gun") == 0) {
                 currentTarget = VideoPlayback.GUN;
             }
-            else if(trimmedName.compareTo("pennies") == 0) {
+            else if(trimmedName.compareTo("pennies") == 0 || trimmedName.compareTo("gen_pennies") == 0) {
                 currentTarget = VideoPlayback.PENNIES;
             }
-            else if(trimmedName.compareTo("sweeping") == 0) {
+            else if(trimmedName.compareTo("sweeping") == 0 || trimmedName.compareTo("gen_sweeping") == 0) {
                 currentTarget = VideoPlayback.SUZYQ;
             }
-            else if(trimmedName.compareTo("shrooms") == 0 || trimmedName.compareTo("shroom_new") == 0) {
+            else if(trimmedName.compareTo("shrooms") == 0 || trimmedName.compareTo("shroom_new") == 0 || trimmedName.compareTo("gen_shrooms") == 0) {
                 currentTarget = VideoPlayback.SHROOMS;
             }
-            else if(trimmedName.compareTo("copper") == 0) {
+            else if(trimmedName.compareTo("copper") == 0 || trimmedName.compareTo("gen_copper") == 0) {
                 currentTarget = VideoPlayback.COPPER;
             }
-            else if(trimmedName.compareTo("umbrellas") == 0) {
+            else if(trimmedName.compareTo("umbrellas") == 0 || trimmedName.compareTo("gen_umbrellas") == 0) {
                 currentTarget = VideoPlayback.UMBRELLAS;
             }
-            else if(trimmedName.compareTo("alley") == 0) {
+            else if(trimmedName.compareTo("alley") == 0 || trimmedName.compareTo("gen_bloodalley") == 0) {
                 currentTarget = VideoPlayback.ALLEY;
             }
             else {
