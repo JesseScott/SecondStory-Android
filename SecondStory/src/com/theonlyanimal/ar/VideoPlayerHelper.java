@@ -291,8 +291,7 @@ public class VideoPlayerHelper implements OnPreparedListener,
     {
         if (!isPlayableOnTexture())
         {
-            // Log.d( LOGTAG,
-            // "Cannot get the video width if it is not playable on texture");
+            // Log.d( LOGTAG, "Cannot get the video width if it is not playable on texture");
             return -1;
         }
         
@@ -318,8 +317,7 @@ public class VideoPlayerHelper implements OnPreparedListener,
     {
         if (!isPlayableOnTexture())
         {
-            // Log.d( LOGTAG,
-            // "Cannot get the video height if it is not playable on texture");
+            // Log.d( LOGTAG,  "Cannot get the video height if it is not playable on texture");
             return -1;
         }
         
@@ -345,8 +343,7 @@ public class VideoPlayerHelper implements OnPreparedListener,
     {
         if (!isPlayableOnTexture())
         {
-            // Log.d( LOGTAG,
-            // "Cannot get the video length if it is not playable on texture");
+            // Log.d( LOGTAG, "Cannot get the video length if it is not playable on texture");
             return -1;
         }
         
@@ -397,8 +394,7 @@ public class VideoPlayerHelper implements OnPreparedListener,
                     return false;
                 }
                 
-                mPlayerHelperActivityIntent.putExtra(
-                    "shouldPlayImmediately", true);
+                mPlayerHelperActivityIntent.putExtra("shouldPlayImmediately", true);
                 
                 try
                 {
@@ -410,11 +406,9 @@ public class VideoPlayerHelper implements OnPreparedListener,
                 }
                 
                 if (seekPosition != CURRENT_POSITION)
-                    mPlayerHelperActivityIntent.putExtra("currentSeekPosition",
-                        seekPosition);
+                    mPlayerHelperActivityIntent.putExtra("currentSeekPosition", seekPosition);
                 else
-                    mPlayerHelperActivityIntent.putExtra("currentSeekPosition",
-                        mMediaPlayer.getCurrentPosition());
+                    mPlayerHelperActivityIntent.putExtra("currentSeekPosition", mMediaPlayer.getCurrentPosition());
                 
                 mMediaPlayerLock.unlock();
             } else
@@ -426,8 +420,7 @@ public class VideoPlayerHelper implements OnPreparedListener,
                     true);
                 
                 if (seekPosition != CURRENT_POSITION)
-                    mPlayerHelperActivityIntent.putExtra("currentSeekPosition",
-                        seekPosition);
+                    mPlayerHelperActivityIntent.putExtra("currentSeekPosition", seekPosition);
                 else
                     mPlayerHelperActivityIntent.putExtra("currentSeekPosition",
                         0);

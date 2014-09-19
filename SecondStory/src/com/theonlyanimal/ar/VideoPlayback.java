@@ -59,7 +59,7 @@ import com.theonlyanimal.ar.SampleAppMenuInterface;
 public class VideoPlayback extends Activity implements
     SampleApplicationControl, SampleAppMenuInterface
 {
-    private static final String LOGTAG = "VideoPlayback";
+    private static final String LOGTAG = "SS_VideoPlayback";
     
     SampleApplicationSession vuforiaAppSession;
     
@@ -156,17 +156,34 @@ public class VideoPlayback extends Activity implements
         
         String SD_PATH = Environment.getExternalStorageDirectory().getPath();
         MEDIA_PATH = SD_PATH + "/SecondStory/BloodAlley/MEDIA/";
-        Log.v("SECONDSTORY", "MEDIA PATH IS " + MEDIA_PATH);
+        Log.v(LOGTAG, "MEDIA PATH IS " + MEDIA_PATH);
         // TODO       
         mMovieName[BEEF] 		= MEDIA_PATH + "beef.mp4";
+        Log.v(LOGTAG, "BEEF PATH IS " + mMovieName[BEEF]);
+        
         mMovieName[BICYCLES] 	= MEDIA_PATH + "bicycles.mp4";
+        Log.v(LOGTAG, "BICYCLES PATH IS " + mMovieName[BICYCLES]);
+        
         mMovieName[GUN] 		= MEDIA_PATH + "gun.mp4";
+        Log.v(LOGTAG, "GUN PATH IS " + mMovieName[GUN]);
+        
         mMovieName[PENNIES] 	= MEDIA_PATH + "pennies.mp4";
+        Log.v(LOGTAG, "PENNIES PATH IS " + mMovieName[PENNIES]);
+        
         mMovieName[COPPER] 		= MEDIA_PATH + "copperthief.mp4";
+        Log.v(LOGTAG, "COPPER PATH IS " + mMovieName[COPPER]);
+        
         mMovieName[SUZYQ] 		= MEDIA_PATH + "sweeping.mp4";
+        Log.v(LOGTAG, "SUZYQ PATH IS " + mMovieName[SUZYQ]);
+        
         mMovieName[SHROOMS] 	= MEDIA_PATH + "shrooms.mp4";
+        Log.v(LOGTAG, "SHROOMS PATH IS " + mMovieName[SHROOMS]);
+        
         mMovieName[UMBRELLAS] 	= MEDIA_PATH + "umbrellas.mp4";
+        Log.v(LOGTAG, "UMBRELLAS PATH IS " + mMovieName[UMBRELLAS]);
+        
         mMovieName[ALLEY]	 	= MEDIA_PATH + "bloodalley.mp4";
+        Log.v(LOGTAG, "ALLEY PATH IS " + mMovieName[ALLEY]);
         
         // Set the double tap listener:
         mGestureDetector.setOnDoubleTapListener(new OnDoubleTapListener() {
@@ -244,12 +261,12 @@ public class VideoPlayback extends Activity implements
         mTextures.add(Texture.loadTextureFromApk("ctrl/busy.png", getAssets()));
         mTextures.add(Texture.loadTextureFromApk("ctrl/error.png", getAssets()));
         mTextures.add(Texture.loadTextureFromApk("frames/beef.jpg", getAssets())); // 3
-        mTextures.add(Texture.loadTextureFromApk("frames/bicycle.jpg", getAssets()));
+        mTextures.add(Texture.loadTextureFromApk("frames/bicycles.jpg", getAssets()));
         mTextures.add(Texture.loadTextureFromApk("frames/copper.jpg", getAssets()));
         mTextures.add(Texture.loadTextureFromApk("frames/gun.jpg", getAssets()));
         mTextures.add(Texture.loadTextureFromApk("frames/pennies.jpg", getAssets()));
         mTextures.add(Texture.loadTextureFromApk("frames/shrooms.jpg", getAssets()));
-        mTextures.add(Texture.loadTextureFromApk("frames/suzyq.jpg", getAssets()));
+        mTextures.add(Texture.loadTextureFromApk("frames/sweeping.jpg", getAssets()));
         mTextures.add(Texture.loadTextureFromApk("frames/umbrellas.jpg", getAssets())); // 10
         mTextures.add(Texture.loadTextureFromApk("frames/alley.jpg", getAssets())); // 11
     }
