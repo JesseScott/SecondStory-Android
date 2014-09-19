@@ -104,7 +104,7 @@ public class GuideScreen extends Activity {
 	
 	private void prepAudio() {
 		try {
-			AssetFileDescriptor descriptor = getApplicationContext().getAssets().openFd("audio/audio_guide.mp3");
+			AssetFileDescriptor descriptor = getApplicationContext().getAssets().openFd("audio/guide.mp3");
 			player = new MediaPlayer();
 			player.setDataSource(descriptor.getFileDescriptor(), descriptor.getStartOffset(), descriptor.getLength());
 			player.prepare();
