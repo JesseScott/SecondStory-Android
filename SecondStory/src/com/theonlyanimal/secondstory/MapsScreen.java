@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.app.Activity;
+import android.content.Intent;
 import android.content.res.AssetFileDescriptor;
 import android.graphics.Typeface;
 
@@ -26,6 +27,8 @@ public class MapsScreen extends Activity {
 	boolean mediaHasPlayed = false;
 	boolean mediaIsPlaying = false;
 	boolean mediaHasVolume = true;
+	
+	boolean cameFromFullscreen = false;
 
 	
 	// LifeCycle
@@ -35,6 +38,9 @@ public class MapsScreen extends Activity {
 		Log.v(TAG, "SIS is " + savedInstanceState);
 		overridePendingTransition(R.anim.anim_slide_in_left, R.anim.anim_stay_still);
 		setContentView(R.layout.maps_layout);
+		
+		// Get Activity Lifecycle
+		cameFromFullscreen = getIntent().getBooleanExtra("cameFromFullscreen", false);
 		
 		// Fonts
 		dinBlack = Typeface.createFromAsset(getAssets(), "fonts/din alternate black.ttf");
@@ -57,6 +63,8 @@ public class MapsScreen extends Activity {
 		backBtn.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				Intent i = new Intent(MapsScreen.this, MenuScreen.class);
+				startActivity(i);
 				finish();
 			}
 		});
@@ -76,6 +84,14 @@ public class MapsScreen extends Activity {
 	    Log.v(TAG, "Resumed");
 	    mediaHasPlayed = savedInstanceState.getBoolean("played");
 	}
+	
+	@Override
+    public void onBackPressed() {
+		Intent i = new Intent(MapsScreen.this, MenuScreen.class);
+		startActivity(i);
+		finish();
+        super.onBackPressed();
+    }
  
 	@Override
 	protected void onPause() {

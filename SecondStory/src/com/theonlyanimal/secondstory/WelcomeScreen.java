@@ -3,6 +3,7 @@ package com.theonlyanimal.secondstory;
 //IMPORTS
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.app.Activity;
 import android.app.Dialog;
 import android.app.AlertDialog;
@@ -31,6 +32,8 @@ import java.io.OutputStream;
 import java.net.MalformedURLException;
 import java.net.SocketException;
 import java.net.URL;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import org.apache.commons.net.ftp.FTPClient;
 import org.apache.commons.net.ftp.FTPFile;
@@ -48,8 +51,10 @@ public class WelcomeScreen extends Activity {
 	// GLOBALS
 	private static final String TAG = "SS_WELCOME";
 	private static final String APP_ID = "7f9de1a2655e56f6c60c798cc7d2cdec";
-	private static final String SSID = "PHStheatre";
-	private static final String PWD = "2ndst0ry";
+	//private static final String SSID = "PHStheatre";
+	//private static final String PWD = "2ndst0ry";
+	private static final String SSID = "COFFEEBAR";
+	private static final String PWD = "coffeebar";
 	private static final String SD_DIRECTORY = "//sdcard//SecondStory/BloodAlley";
 	private static final String MEDIA_DIRECTORY = "//sdcard//SecondStory/BloodAlley/MEDIA/";
 	private static final String LOG_DIRECTORY = "//sdcard//SecondStory/BloodAlley/LOGS/";
@@ -97,10 +102,10 @@ public class WelcomeScreen extends Activity {
 		
 		
 		// Connect To WiFi
-		askForWifi();
+		//askForWifi();
 		
 		// Do We Have Content ?
-		//checkStorage();
+		checkStorage();
 
 		
 	} /* onCreate() */
@@ -162,6 +167,23 @@ public class WelcomeScreen extends Activity {
 			WifiInfo wifiInfo = wifiManager.getConnectionInfo();
 			supState = wifiInfo.getSupplicantState();
 		 */
+		
+		/*
+		new Timer().schedule(new TimerTask() {          
+		    @Override
+		    public void run() {
+		        getFiles();      
+		    }
+		}, 2000);
+		*/
+		
+		final Handler handler = new Handler();
+		handler.postDelayed(new Runnable() {
+		  @Override
+		  public void run() {
+			  getFiles(); 
+		  }
+		}, 500);
 		
 	}
 	
@@ -246,8 +268,7 @@ public class WelcomeScreen extends Activity {
 						
 						// Title
 						builder.setTitle("Content Doesn't Exist");
-						builder.setMessage("this app requires custom content - we need to make a directory & download some content to it - ok ?\n" +
-								"PLEASE TURN ON YOUR WIFI !!");
+						builder.setMessage("this app requires custom content - we need to make a directory & download some content to it - ok ?");
 						
 						// Buttons
 						builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -261,7 +282,8 @@ public class WelcomeScreen extends Activity {
 						        	   log_directory.mkdirs();
 						        	   
 						        	   // Get The Files
-						        	   getFiles();
+						        	   askForWifi();
+						        	   //getFiles();
 						           }
 						       });
 						builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {

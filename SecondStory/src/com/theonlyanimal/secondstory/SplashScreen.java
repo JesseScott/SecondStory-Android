@@ -20,6 +20,7 @@ public class SplashScreen extends Activity {
     ProgressDialog progress;
     Typeface dinBlack, dinMedium;
     TextView splashLabel;
+    Boolean manuallyPreppedDevice = true;
 	
 	// LifeCycle
     @Override
@@ -35,7 +36,7 @@ public class SplashScreen extends Activity {
 		splashLabel = (TextView) findViewById(R.id.splash_label);
 		splashLabel.setTypeface(dinMedium);
         
-        // Progress Dialog
+		// Progress Dialog
         progress = ProgressDialog.show(this, "Checking Settings", "this will just take a second", true);
         
         // Timer
@@ -45,11 +46,19 @@ public class SplashScreen extends Activity {
 				//super.run();
 				try { 
 					sleep(2500);
-					checkSettings();
-					//Intent i = new Intent("android.intent.action.MENU");
-		    		Intent i = new Intent(SplashScreen.this, MenuScreen.class);
-					//startActivity(i);
-		    		//finish();
+			       
+					// TODO progress here handler
+			        
+					if(manuallyPreppedDevice) {
+						//Intent i = new Intent("android.intent.action.MENU");
+			    		Intent i = new Intent(SplashScreen.this, MenuScreen.class);
+						startActivity(i);
+			    		finish();
+					}
+					else {
+						checkSettings();
+					}
+			
 				}
 				catch(InterruptedException e) {
 					e.printStackTrace();

@@ -586,8 +586,7 @@ public class FullscreenPlayback extends Activity implements OnPreparedListener,
                 + "Unloading the media player (" + errorDescription + ", "
                 + extra + ")");
             
-            // If something failed then prepare for termination and
-            // request a finish:
+            // If something failed then prepare for termination and  request a finish:
             prepareForTermination();
             
             // Release the resources of the media player:
@@ -606,6 +605,9 @@ public class FullscreenPlayback extends Activity implements OnPreparedListener,
     @Override
     public void onCompletion(MediaPlayer mp)
     {
+    	Intent i = new Intent("android.intent.action.MAPS");
+    	i.putExtra("cameFromFullscreen", true);
+		startActivity(i);
         finish();
     }
 }
