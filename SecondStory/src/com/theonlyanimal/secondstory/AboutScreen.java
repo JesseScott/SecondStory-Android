@@ -18,7 +18,7 @@ public class AboutScreen extends FragmentActivity {
 
 	// GLOBALS
 	private static final String TAG = "SS_ABOUT";
-	private static final int NUM_PAGES = 3;
+	private static final int NUM_PAGES = 4;
 	private ViewPager pager; 
 	private PagerAdapter adapter; 
 	private static int instance;
@@ -85,6 +85,9 @@ public class AboutScreen extends FragmentActivity {
     			break;
     			case 2:
     				fragment = new AboutPage3();
+    			break;
+    			case 3:
+    				fragment = new AboutPage4();
     			break;
     			default:
     				fragment = new AboutPage1();
