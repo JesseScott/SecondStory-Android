@@ -535,7 +535,7 @@ public class VideoPlayback extends Activity implements
     {
         boolean result = false;
         result = mGestureDetector.onTouchEvent(event);
-        Log.v(LOGTAG, " GESTURE");
+
         // Process the Gestures
         if (!result && mSampleAppMenu != null )
             result = mSampleAppMenu.processEvent(event);

@@ -155,7 +155,7 @@ public class VideoPlayerHelper implements OnPreparedListener,
                     {
                         mMediaPlayer = new MediaPlayer();
                   
-                        Log.v(LOGTAG, "VPH Loading " + filename);
+                        //Log.d(LOGTAG, "VPH Loading " + filename);
                         mMediaPlayer.setDataSource(filename);
                         
                         mMediaPlayer.prepareAsync();

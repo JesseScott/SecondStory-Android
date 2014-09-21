@@ -648,39 +648,39 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
                 // TODO
                 
                 if(trimmedName.compareTo("beef") == 0) {
-                	Log.v(LOGTAG, " ---> buffering BEEF");
+                	Log.d(LOGTAG, " ---> buffering BEEF");
                 	GLES20.glVertexAttribPointer(videoPlaybackTexCoordHandle, 2, GLES20.GL_FLOAT, false, 0, fillBuffer(videoQuadTextureCoordsTransformed));
                 }
                 else if(trimmedName.compareTo("bicycle") == 0) {
-                	Log.v(LOGTAG, " ---> buffering BIKE");
+                	Log.d(LOGTAG, " ---> buffering BIKE");
                 	GLES20.glVertexAttribPointer(videoPlaybackTexCoordHandle, 2, GLES20.GL_FLOAT, false, 0, fillBuffer(videoQuadTextureCoordsTransformed));
                 }
                 else if(trimmedName.compareTo("gun") == 0) {
-                	Log.v(LOGTAG, " ---> buffering GUN");
+                	Log.d(LOGTAG, " ---> buffering GUN");
                 	GLES20.glVertexAttribPointer(videoPlaybackTexCoordHandle, 2, GLES20.GL_FLOAT, false, 0, fillBuffer(videoQuadTextureCoordsTransformed));
                 }
                 else if(trimmedName.compareTo("pennies") == 0) {
-                	Log.v(LOGTAG, " ---> buffering PENNY");
+                	Log.d(LOGTAG, " ---> buffering PENNY");
                 	GLES20.glVertexAttribPointer(videoPlaybackTexCoordHandle, 2, GLES20.GL_FLOAT, false, 0, fillBuffer(videoQuadTextureCoordsTransformed));
                 }
                 else if(trimmedName.compareTo("suzyq") == 0) {
-                	Log.v(LOGTAG, " ---> buffering SUZY");
+                	Log.d(LOGTAG, " ---> buffering SUZY");
                 	GLES20.glVertexAttribPointer(videoPlaybackTexCoordHandle, 2, GLES20.GL_FLOAT, false, 0, fillBuffer(videoQuadTextureCoordsTransformed));
                 }
                 else if(trimmedName.compareTo("shrooms") == 0) {
-                	Log.v(LOGTAG, " ---> buffering SHROOMS");
+                	Log.d(LOGTAG, " ---> buffering SHROOMS");
                 	GLES20.glVertexAttribPointer(videoPlaybackTexCoordHandle, 2, GLES20.GL_FLOAT, false, 0, fillBuffer(videoQuadTextureCoordsTransformed));
                 }
                 else if(trimmedName.compareTo("copper") == 0) {
-                	Log.v(LOGTAG, " ---> buffering COPPER");
+                	Log.d(LOGTAG, " ---> buffering COPPER");
                 	GLES20.glVertexAttribPointer(videoPlaybackTexCoordHandle, 2, GLES20.GL_FLOAT, false, 0, fillBuffer(videoQuadTextureCoordsTransformed));
                 }
                 else if(trimmedName.compareTo("umbrellas") == 0) {
-                	Log.v(LOGTAG, " ---> buffering UMBRELLAS");
+                	Log.d(LOGTAG, " ---> buffering UMBRELLAS");
                 	GLES20.glVertexAttribPointer(videoPlaybackTexCoordHandle, 2, GLES20.GL_FLOAT, false, 0, fillBuffer(videoQuadTextureCoordsTransformed));
                 }
                 else if(trimmedName.compareTo("bloodalley") == 0) {
-                	Log.v(LOGTAG, " ---> buffering ALLEY");
+                	Log.d(LOGTAG, " ---> buffering ALLEY");
                 	GLES20.glVertexAttribPointer(videoPlaybackTexCoordHandle, 2, GLES20.GL_FLOAT, false, 0, fillBuffer(videoQuadTextureCoordsTransformed));
                 }
                 else {
@@ -843,7 +843,6 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
             modelViewMatrix[target], metrics.widthPixels, metrics.heightPixels,
             new Vec2F(x, y), new Vec3F(0, 0, 0), new Vec3F(0, 0, 1));
         
-        Log.v(LOGTAG, " TAPPED ");
         
         // The target returns as pose the center of the trackable. The following
         // if-statement simply checks that the tap is within this range
@@ -928,215 +927,7 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
             videoQuadTextureCoordsTransformed[6] = tempUVMultRes[0];
             videoQuadTextureCoordsTransformed[7] = tempUVMultRes[1];
         } 
-        else if (target == VideoPlayback.BICYCLES) { 
-            tempUVMultRes = uvMultMat4f(
-                videoQuadTextureCoordsTransformedChips[0],
-                videoQuadTextureCoordsTransformedChips[1],
-                videoQuadTextureCoords[0], videoQuadTextureCoords[1], mtx);
-            videoQuadTextureCoordsTransformedChips[0] = tempUVMultRes[0];
-            videoQuadTextureCoordsTransformedChips[1] = tempUVMultRes[1];
-            tempUVMultRes = uvMultMat4f(
-                videoQuadTextureCoordsTransformedChips[2],
-                videoQuadTextureCoordsTransformedChips[3],
-                videoQuadTextureCoords[2], videoQuadTextureCoords[3], mtx);
-            videoQuadTextureCoordsTransformedChips[2] = tempUVMultRes[0];
-            videoQuadTextureCoordsTransformedChips[3] = tempUVMultRes[1];
-            tempUVMultRes = uvMultMat4f(
-                videoQuadTextureCoordsTransformedChips[4],
-                videoQuadTextureCoordsTransformedChips[5],
-                videoQuadTextureCoords[4], videoQuadTextureCoords[5], mtx);
-            videoQuadTextureCoordsTransformedChips[4] = tempUVMultRes[0];
-            videoQuadTextureCoordsTransformedChips[5] = tempUVMultRes[1];
-            tempUVMultRes = uvMultMat4f(
-                videoQuadTextureCoordsTransformedChips[6],
-                videoQuadTextureCoordsTransformedChips[7],
-                videoQuadTextureCoords[6], videoQuadTextureCoords[7], mtx);
-            videoQuadTextureCoordsTransformedChips[6] = tempUVMultRes[0];
-            videoQuadTextureCoordsTransformedChips[7] = tempUVMultRes[1];
-        }
-        else if (target == VideoPlayback.GUN) { 
-            tempUVMultRes = uvMultMat4f(
-                videoQuadTextureCoordsTransformedChips[0],
-                videoQuadTextureCoordsTransformedChips[1],
-                videoQuadTextureCoords[0], videoQuadTextureCoords[1], mtx);
-            videoQuadTextureCoordsTransformedChips[0] = tempUVMultRes[0];
-            videoQuadTextureCoordsTransformedChips[1] = tempUVMultRes[1];
-            tempUVMultRes = uvMultMat4f(
-                videoQuadTextureCoordsTransformedChips[2],
-                videoQuadTextureCoordsTransformedChips[3],
-                videoQuadTextureCoords[2], videoQuadTextureCoords[3], mtx);
-            videoQuadTextureCoordsTransformedChips[2] = tempUVMultRes[0];
-            videoQuadTextureCoordsTransformedChips[3] = tempUVMultRes[1];
-            tempUVMultRes = uvMultMat4f(
-                videoQuadTextureCoordsTransformedChips[4],
-                videoQuadTextureCoordsTransformedChips[5],
-                videoQuadTextureCoords[4], videoQuadTextureCoords[5], mtx);
-            videoQuadTextureCoordsTransformedChips[4] = tempUVMultRes[0];
-            videoQuadTextureCoordsTransformedChips[5] = tempUVMultRes[1];
-            tempUVMultRes = uvMultMat4f(
-                videoQuadTextureCoordsTransformedChips[6],
-                videoQuadTextureCoordsTransformedChips[7],
-                videoQuadTextureCoords[6], videoQuadTextureCoords[7], mtx);
-            videoQuadTextureCoordsTransformedChips[6] = tempUVMultRes[0];
-            videoQuadTextureCoordsTransformedChips[7] = tempUVMultRes[1];
-        }
-        else if (target == VideoPlayback.PENNIES) { 
-            tempUVMultRes = uvMultMat4f(
-                videoQuadTextureCoordsTransformedChips[0],
-                videoQuadTextureCoordsTransformedChips[1],
-                videoQuadTextureCoords[0], videoQuadTextureCoords[1], mtx);
-            videoQuadTextureCoordsTransformedChips[0] = tempUVMultRes[0];
-            videoQuadTextureCoordsTransformedChips[1] = tempUVMultRes[1];
-            tempUVMultRes = uvMultMat4f(
-                videoQuadTextureCoordsTransformedChips[2],
-                videoQuadTextureCoordsTransformedChips[3],
-                videoQuadTextureCoords[2], videoQuadTextureCoords[3], mtx);
-            videoQuadTextureCoordsTransformedChips[2] = tempUVMultRes[0];
-            videoQuadTextureCoordsTransformedChips[3] = tempUVMultRes[1];
-            tempUVMultRes = uvMultMat4f(
-                videoQuadTextureCoordsTransformedChips[4],
-                videoQuadTextureCoordsTransformedChips[5],
-                videoQuadTextureCoords[4], videoQuadTextureCoords[5], mtx);
-            videoQuadTextureCoordsTransformedChips[4] = tempUVMultRes[0];
-            videoQuadTextureCoordsTransformedChips[5] = tempUVMultRes[1];
-            tempUVMultRes = uvMultMat4f(
-                videoQuadTextureCoordsTransformedChips[6],
-                videoQuadTextureCoordsTransformedChips[7],
-                videoQuadTextureCoords[6], videoQuadTextureCoords[7], mtx);
-            videoQuadTextureCoordsTransformedChips[6] = tempUVMultRes[0];
-            videoQuadTextureCoordsTransformedChips[7] = tempUVMultRes[1];
-        }
-        else if (target == VideoPlayback.SUZYQ) {
-            tempUVMultRes = uvMultMat4f(
-                videoQuadTextureCoordsTransformedChips[0],
-                videoQuadTextureCoordsTransformedChips[1],
-                videoQuadTextureCoords[0], videoQuadTextureCoords[1], mtx);
-            videoQuadTextureCoordsTransformedChips[0] = tempUVMultRes[0];
-            videoQuadTextureCoordsTransformedChips[1] = tempUVMultRes[1];
-            tempUVMultRes = uvMultMat4f(
-                videoQuadTextureCoordsTransformedChips[2],
-                videoQuadTextureCoordsTransformedChips[3],
-                videoQuadTextureCoords[2], videoQuadTextureCoords[3], mtx);
-            videoQuadTextureCoordsTransformedChips[2] = tempUVMultRes[0];
-            videoQuadTextureCoordsTransformedChips[3] = tempUVMultRes[1];
-            tempUVMultRes = uvMultMat4f(
-                videoQuadTextureCoordsTransformedChips[4],
-                videoQuadTextureCoordsTransformedChips[5],
-                videoQuadTextureCoords[4], videoQuadTextureCoords[5], mtx);
-            videoQuadTextureCoordsTransformedChips[4] = tempUVMultRes[0];
-            videoQuadTextureCoordsTransformedChips[5] = tempUVMultRes[1];
-            tempUVMultRes = uvMultMat4f(
-                videoQuadTextureCoordsTransformedChips[6],
-                videoQuadTextureCoordsTransformedChips[7],
-                videoQuadTextureCoords[6], videoQuadTextureCoords[7], mtx);
-            videoQuadTextureCoordsTransformedChips[6] = tempUVMultRes[0];
-            videoQuadTextureCoordsTransformedChips[7] = tempUVMultRes[1];
-        }
-        else if (target == VideoPlayback.SHROOMS) {
-            tempUVMultRes = uvMultMat4f(
-                videoQuadTextureCoordsTransformedChips[0],
-                videoQuadTextureCoordsTransformedChips[1],
-                videoQuadTextureCoords[0], videoQuadTextureCoords[1], mtx);
-            videoQuadTextureCoordsTransformedChips[0] = tempUVMultRes[0];
-            videoQuadTextureCoordsTransformedChips[1] = tempUVMultRes[1];
-            tempUVMultRes = uvMultMat4f(
-                videoQuadTextureCoordsTransformedChips[2],
-                videoQuadTextureCoordsTransformedChips[3],
-                videoQuadTextureCoords[2], videoQuadTextureCoords[3], mtx);
-            videoQuadTextureCoordsTransformedChips[2] = tempUVMultRes[0];
-            videoQuadTextureCoordsTransformedChips[3] = tempUVMultRes[1];
-            tempUVMultRes = uvMultMat4f(
-                videoQuadTextureCoordsTransformedChips[4],
-                videoQuadTextureCoordsTransformedChips[5],
-                videoQuadTextureCoords[4], videoQuadTextureCoords[5], mtx);
-            videoQuadTextureCoordsTransformedChips[4] = tempUVMultRes[0];
-            videoQuadTextureCoordsTransformedChips[5] = tempUVMultRes[1];
-            tempUVMultRes = uvMultMat4f(
-                videoQuadTextureCoordsTransformedChips[6],
-                videoQuadTextureCoordsTransformedChips[7],
-                videoQuadTextureCoords[6], videoQuadTextureCoords[7], mtx);
-            videoQuadTextureCoordsTransformedChips[6] = tempUVMultRes[0];
-            videoQuadTextureCoordsTransformedChips[7] = tempUVMultRes[1];
-        }
-        else if (target == VideoPlayback.COPPER) {
-            tempUVMultRes = uvMultMat4f(
-                videoQuadTextureCoordsTransformedChips[0],
-                videoQuadTextureCoordsTransformedChips[1],
-                videoQuadTextureCoords[0], videoQuadTextureCoords[1], mtx);
-            videoQuadTextureCoordsTransformedChips[0] = tempUVMultRes[0];
-            videoQuadTextureCoordsTransformedChips[1] = tempUVMultRes[1];
-            tempUVMultRes = uvMultMat4f(
-                videoQuadTextureCoordsTransformedChips[2],
-                videoQuadTextureCoordsTransformedChips[3],
-                videoQuadTextureCoords[2], videoQuadTextureCoords[3], mtx);
-            videoQuadTextureCoordsTransformedChips[2] = tempUVMultRes[0];
-            videoQuadTextureCoordsTransformedChips[3] = tempUVMultRes[1];
-            tempUVMultRes = uvMultMat4f(
-                videoQuadTextureCoordsTransformedChips[4],
-                videoQuadTextureCoordsTransformedChips[5],
-                videoQuadTextureCoords[4], videoQuadTextureCoords[5], mtx);
-            videoQuadTextureCoordsTransformedChips[4] = tempUVMultRes[0];
-            videoQuadTextureCoordsTransformedChips[5] = tempUVMultRes[1];
-            tempUVMultRes = uvMultMat4f(
-                videoQuadTextureCoordsTransformedChips[6],
-                videoQuadTextureCoordsTransformedChips[7],
-                videoQuadTextureCoords[6], videoQuadTextureCoords[7], mtx);
-            videoQuadTextureCoordsTransformedChips[6] = tempUVMultRes[0];
-            videoQuadTextureCoordsTransformedChips[7] = tempUVMultRes[1];
-        }
-        else if (target == VideoPlayback.UMBRELLAS) {
-            tempUVMultRes = uvMultMat4f(
-                videoQuadTextureCoordsTransformedChips[0],
-                videoQuadTextureCoordsTransformedChips[1],
-                videoQuadTextureCoords[0], videoQuadTextureCoords[1], mtx);
-            videoQuadTextureCoordsTransformedChips[0] = tempUVMultRes[0];
-            videoQuadTextureCoordsTransformedChips[1] = tempUVMultRes[1];
-            tempUVMultRes = uvMultMat4f(
-                videoQuadTextureCoordsTransformedChips[2],
-                videoQuadTextureCoordsTransformedChips[3],
-                videoQuadTextureCoords[2], videoQuadTextureCoords[3], mtx);
-            videoQuadTextureCoordsTransformedChips[2] = tempUVMultRes[0];
-            videoQuadTextureCoordsTransformedChips[3] = tempUVMultRes[1];
-            tempUVMultRes = uvMultMat4f(
-                videoQuadTextureCoordsTransformedChips[4],
-                videoQuadTextureCoordsTransformedChips[5],
-                videoQuadTextureCoords[4], videoQuadTextureCoords[5], mtx);
-            videoQuadTextureCoordsTransformedChips[4] = tempUVMultRes[0];
-            videoQuadTextureCoordsTransformedChips[5] = tempUVMultRes[1];
-            tempUVMultRes = uvMultMat4f(
-                videoQuadTextureCoordsTransformedChips[6],
-                videoQuadTextureCoordsTransformedChips[7],
-                videoQuadTextureCoords[6], videoQuadTextureCoords[7], mtx);
-            videoQuadTextureCoordsTransformedChips[6] = tempUVMultRes[0];
-            videoQuadTextureCoordsTransformedChips[7] = tempUVMultRes[1];
-        }
-        else if (target == VideoPlayback.ALLEY) {
-            tempUVMultRes = uvMultMat4f(
-                videoQuadTextureCoordsTransformedChips[0],
-                videoQuadTextureCoordsTransformedChips[1],
-                videoQuadTextureCoords[0], videoQuadTextureCoords[1], mtx);
-            videoQuadTextureCoordsTransformedChips[0] = tempUVMultRes[0];
-            videoQuadTextureCoordsTransformedChips[1] = tempUVMultRes[1];
-            tempUVMultRes = uvMultMat4f(
-                videoQuadTextureCoordsTransformedChips[2],
-                videoQuadTextureCoordsTransformedChips[3],
-                videoQuadTextureCoords[2], videoQuadTextureCoords[3], mtx);
-            videoQuadTextureCoordsTransformedChips[2] = tempUVMultRes[0];
-            videoQuadTextureCoordsTransformedChips[3] = tempUVMultRes[1];
-            tempUVMultRes = uvMultMat4f(
-                videoQuadTextureCoordsTransformedChips[4],
-                videoQuadTextureCoordsTransformedChips[5],
-                videoQuadTextureCoords[4], videoQuadTextureCoords[5], mtx);
-            videoQuadTextureCoordsTransformedChips[4] = tempUVMultRes[0];
-            videoQuadTextureCoordsTransformedChips[5] = tempUVMultRes[1];
-            tempUVMultRes = uvMultMat4f(
-                videoQuadTextureCoordsTransformedChips[6],
-                videoQuadTextureCoordsTransformedChips[7],
-                videoQuadTextureCoords[6], videoQuadTextureCoords[7], mtx);
-            videoQuadTextureCoordsTransformedChips[6] = tempUVMultRes[0];
-            videoQuadTextureCoordsTransformedChips[7] = tempUVMultRes[1];
-        }
-        */
+ 		*/
         
         textureCoordMatrix = mtx;
     }
