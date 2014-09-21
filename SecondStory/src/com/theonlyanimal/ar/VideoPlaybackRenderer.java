@@ -296,10 +296,10 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
             if (isTracking(i))
             {
                 // If it is tracking reset the timestamp for lost tracking
-                mLostTrackingSince[i] = -1;
+                //mLostTrackingSince[i] = -1;
             	// EDIT - AUTOPLAY
             	if (mVideoPlayerHelper[i] != null) {
-                    mVideoPlayerHelper[i].play(false, -1);
+                    mVideoPlayerHelper[i].play(true, -1); // 
             	}
             } 
             else
@@ -313,13 +313,13 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
                     if ((SystemClock.uptimeMillis() - mLostTrackingSince[i]) > 2000)
                     {
                         if (mVideoPlayerHelper[i] != null) {
-                            mVideoPlayerHelper[i].pause();
+                            //mVideoPlayerHelper[i].pause();
                         }
                     }
                 }
             }
         }
-        
+
         // If you would like the video to start playing as soon as it starts
         // tracking
         // and pause as soon as tracking is lost you can do that here by

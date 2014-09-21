@@ -227,7 +227,6 @@ public class VideoPlayback extends Activity implements
                             {
                                 // If it is playing then we pause it
                                 mVideoPlayerHelper[i].pause();
-                                Log.v(LOGTAG, "-- this should pause the video -- ");
                             }
                         } else if (mVideoPlayerHelper[i].isPlayableFullscreen())
                         {
