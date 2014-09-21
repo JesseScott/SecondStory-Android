@@ -23,7 +23,6 @@ public class AboutScreen extends FragmentActivity {
 	private PagerAdapter adapter; 
 	private static int instance;
 	
-	
 	// LifeCycle
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +53,8 @@ public class AboutScreen extends FragmentActivity {
 		super.onResume();
 		overridePendingTransition(R.anim.anim_slide_in_left, R.anim.anim_stay_still);
 	}
+	
+	// TODO back pressed buttons
     
     @Override
     public void onBackPressed() {
