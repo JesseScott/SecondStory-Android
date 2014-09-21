@@ -198,8 +198,7 @@ public class VideoPlayerHelper implements OnPreparedListener,
             // If the client requests that we should be able to play FULLSCREEN then we need to create a FullscreenPlaybackActivity
             if ((requestedType == MEDIA_TYPE.FULLSCREEN) || (requestedType == MEDIA_TYPE.ON_TEXTURE_FULLSCREEN))
             {
-                mPlayerHelperActivityIntent = new Intent(mParentActivity, FullscreenPlayback.class); // EDIT
-                //mPlayerHelperActivityIntent = new Intent(mParentActivity, FullscreenPlayback.class);
+                mPlayerHelperActivityIntent = new Intent(mParentActivity, FullscreenPlayback.class);
             	//mPlayerHelperActivityIntent = new Intent("android.intent.action.FULLSCREEN");
             	//mPlayerHelperActivityIntent.setAction(null);
             	mPlayerHelperActivityIntent.setAction(android.content.Intent.ACTION_VIEW);
@@ -210,9 +209,9 @@ public class VideoPlayerHelper implements OnPreparedListener,
             mMovieName = filename;
             mSeekPosition = seekPosition;
             
-            if (canBeFullscreen && canBeOnTexture)
-                mVideoType = MEDIA_TYPE.ON_TEXTURE_FULLSCREEN;
-            else if (canBeFullscreen)
+            //if (canBeFullscreen && canBeOnTexture)
+            //    mVideoType = MEDIA_TYPE.ON_TEXTURE_FULLSCREEN;
+            if (canBeFullscreen)
             {
                 mVideoType = MEDIA_TYPE.FULLSCREEN;
                 mCurrentState = MEDIA_STATE.READY;
@@ -272,10 +271,11 @@ public class VideoPlayerHelper implements OnPreparedListener,
     // Indicates whether the movie can be played fullscreen
     public boolean isPlayableFullscreen()
     {
+    	Log.d(LOGTAG, "mVideoType is " + mVideoType);
         if ((mVideoType == MEDIA_TYPE.FULLSCREEN) || (mVideoType == MEDIA_TYPE.ON_TEXTURE_FULLSCREEN))
             return true;
         
-        return false;
+        return true; // DIRTY HACK
     }
     
     

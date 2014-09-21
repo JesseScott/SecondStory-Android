@@ -465,8 +465,7 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
         // Clear color and depth buffer
         GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT | GLES20.GL_DEPTH_BUFFER_BIT);
         
-        // Get the state from Vuforia and mark the beginning of a rendering
-        // section
+        // Get the state from Vuforia and mark the beginning of a rendering section
         State state = Renderer.getInstance().begin();
         
         // Explicitly render the Video Background
