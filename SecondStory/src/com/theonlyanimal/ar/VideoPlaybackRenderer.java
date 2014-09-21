@@ -299,7 +299,7 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
                 mLostTrackingSince[i] = -1;
             	// EDIT - AUTOPLAY
             	if (mVideoPlayerHelper[i] != null) {
-                    //mVideoPlayerHelper[i].play(false, -1);
+                    mVideoPlayerHelper[i].play(false, -1);
             	}
             } 
             else
