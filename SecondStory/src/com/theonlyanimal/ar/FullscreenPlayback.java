@@ -84,15 +84,12 @@ public class FullscreenPlayback extends Activity implements OnPreparedListener,
         // Collect all of the data passed by the launching activity:
         mSeekPosition = getIntent().getIntExtra("currentSeekPosition", 0);
         mMovieName = getIntent().getStringExtra("movieName");
-        mRequestedOrientation = getIntent().getIntExtra("requestedOrientation",
-            0);
-        mShouldPlayImmediately = getIntent().getBooleanExtra(
-            "shouldPlayImmediately", false);
+        mRequestedOrientation = getIntent().getIntExtra("requestedOrientation", 0);
+        mShouldPlayImmediately = getIntent().getBooleanExtra("shouldPlayImmediately", false);
         
         // Create a gesture detector that will handle single and double taps:
         mSimpleListener = new SimpleOnGestureListener();
-        mGestureDetector = new GestureDetector(getApplicationContext(),
-            mSimpleListener);
+        mGestureDetector = new GestureDetector(getApplicationContext(), mSimpleListener);
         
         // We assign the actions for the single and double taps:
         mGestureDetector.setOnDoubleTapListener(new OnDoubleTapListener()
@@ -116,10 +113,10 @@ public class FullscreenPlayback extends Activity implements OnPreparedListener,
                 // This simply toggles the MediaController visibility:
                 if (mMediaController != null)
                 {
-                    if (mMediaController.isShowing())
-                        mMediaController.hide();
-                    else
+                    if (!mMediaController.isShowing())
                         mMediaController.show();
+                    else
+                        mMediaController.hide();
                     
                     result = true;
                 }
@@ -143,8 +140,9 @@ public class FullscreenPlayback extends Activity implements OnPreparedListener,
             // Create the MediaPlayer and its controller:
             mMediaPlayer = new MediaPlayer();
             mMediaController = new MediaController(this);
+            mMediaController.hide();
             
-            Log.v(LOGTAG, "loading " + mMovieName + " as FullScreen ");
+            Log.d(LOGTAG, "loading " + mMovieName + " as FullScreen ");
             mMediaPlayer.setDataSource(mMovieName); // ???
             
             mMediaPlayer.setDisplay(mHolder);
