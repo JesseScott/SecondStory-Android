@@ -1,5 +1,6 @@
 package com.theonlyanimal.secondstory;
 
+import android.annotation.SuppressLint;
 import android.os.Environment;
 import android.os.StatFs;
 
@@ -83,10 +84,18 @@ public class StorageHelper {
      * 
      * @return A double of the GB available
      */
-    public double getSpaceOnExternalStorage() {
+    @SuppressLint("NewApi")
+	public double getSpaceOnExternalStorage() {
     	if(externalStorageAvailable & externalStorageWriteable) {
     		StatFs stat = new StatFs(Environment.getExternalStorageDirectory().getPath());
-    		double sdAvailSize = (double)stat.getAvailableBlocksLong() * (double)stat.getBlockSizeLong();
+    		double sdAvailSize = 0;
+    		int currentapiVersion = android.os.Build.VERSION.SDK_INT;
+    		if (currentapiVersion >= 18){
+    			sdAvailSize = (double)stat.getAvailableBlocksLong() * (double)stat.getBlockSizeLong();
+    		} else{
+    			sdAvailSize = (double)stat.getAvailableBlocks() * (double)stat.getBlockSize();
+    		}
+    		//double sdAvailSize = (double)stat.getAvailableBlocksLong() * (double)stat.getBlockSizeLong();
     		double gigaAvailable = sdAvailSize / 1073741824;
     		return gigaAvailable;
     	}

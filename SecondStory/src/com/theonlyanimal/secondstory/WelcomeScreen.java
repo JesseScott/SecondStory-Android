@@ -48,8 +48,8 @@ public class WelcomeScreen extends Activity {
 	// GLOBALS
 	private static final String TAG = "SS_WELCOME";
 	private static final String APP_ID = "7f9de1a2655e56f6c60c798cc7d2cdec";
-	private static final String SSID = "43655C";
-	private static final String PWD = "248771039";
+	private static final String SSID = "PHStheatre";
+	private static final String PWD = "2ndst0ry";
 	private static final String SD_DIRECTORY = "//sdcard//SecondStory/BloodAlley";
 	private static final String MEDIA_DIRECTORY = "//sdcard//SecondStory/BloodAlley/MEDIA/";
 	private static final String LOG_DIRECTORY = "//sdcard//SecondStory/BloodAlley/LOGS/";
@@ -93,14 +93,14 @@ public class WelcomeScreen extends Activity {
 	
 		
 		// Check For Updates
-		checkForUpdates();
+		//checkForUpdates();
 		
 		
 		// Connect To WiFi
-		//connectToWifi();
+		askForWifi();
 		
 		// Do We Have Content ?
-		checkStorage();
+		//checkStorage();
 
 		
 	} /* onCreate() */
@@ -143,9 +143,11 @@ public class WelcomeScreen extends Activity {
 		networkID = manager.addNetwork(config);		
 		if(networkID < 0) {
 			Log.v(TAG, "couldnt connect");
+			Toast.makeText(this, "Couldn't Connec To SecondStory Network", Toast.LENGTH_SHORT).show();
 		}
 		else {
 			Log.v(TAG, "added network");
+			Toast.makeText(this, "Added SecondStory Network To Saved Networks", Toast.LENGTH_SHORT).show();
 		}
 		
 		manager.enableNetwork(networkID, true);
@@ -161,6 +163,35 @@ public class WelcomeScreen extends Activity {
 			supState = wifiInfo.getSupplicantState();
 		 */
 		
+	}
+	
+	public void askForWifi() {
+		// Alert
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		
+		// Title
+		builder.setTitle("About To Download Content");
+		builder.setMessage("This app requires 500mb of content - can we turn on your WiFi and connect to our network?");
+		
+		// Buttons
+		builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+		           public void onClick(DialogInterface dialog, int id) {
+		               // User clicked OK button
+		        	   Log.v(TAG, " - User Said YES! - ");
+		        	   Toast.makeText(getApplicationContext(), "Thanks!", Toast.LENGTH_SHORT).show();
+		        	   connectToWifi();
+		           }
+		       });
+		builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+		           public void onClick(DialogInterface dialog, int id) {
+		               // User cancelled the dialog 
+		        	   Toast.makeText(getApplicationContext(), "Ok.... We Warned You.", Toast.LENGTH_SHORT).show();
+		           }
+		       });
+
+		// Show
+		AlertDialog dialog = builder.create();
+		dialog.show();
 	}
 	
 	

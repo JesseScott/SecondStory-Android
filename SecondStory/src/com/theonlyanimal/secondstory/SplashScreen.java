@@ -36,7 +36,7 @@ public class SplashScreen extends Activity {
 		splashLabel.setTypeface(dinMedium);
         
         // Progress Dialog
-        //progress = ProgressDialog.show(this, "Checking Settings", "this will just take a second", true);
+        progress = ProgressDialog.show(this, "Checking Settings", "this will just take a second", true);
         
         // Timer
 		Thread timer = new Thread(){
@@ -45,11 +45,11 @@ public class SplashScreen extends Activity {
 				//super.run();
 				try { 
 					sleep(2500);
-					//checkSettings();
+					checkSettings();
 					//Intent i = new Intent("android.intent.action.MENU");
 		    		Intent i = new Intent(SplashScreen.this, MenuScreen.class);
-					startActivity(i);
-		    		finish();
+					//startActivity(i);
+		    		//finish();
 				}
 				catch(InterruptedException e) {
 					e.printStackTrace();
@@ -69,8 +69,9 @@ public class SplashScreen extends Activity {
         
         if(hasContent && hasSeenWaltkthru && !isSharedDevice) {
         	progress.dismiss();
-        	Intent i = new Intent("android.intent.action.VIDEO");
-			startActivity(i);
+        	//Intent i = new Intent("android.intent.action.VIDEO");
+        	Intent i = new Intent(SplashScreen.this, MenuScreen.class);
+        	startActivity(i);
 			finish();
         }
         else if(!hasContent) {
