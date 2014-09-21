@@ -506,7 +506,7 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
             
             // TRIM THE UNDERSCORE
             String trimmedName = imageTarget.getName().substring(0, imageTarget.getName().length()-2);
-            Log.v(LOGTAG, "name is " + trimmedName);
+            //Log.v(LOGTAG, "name is " + imageTarget.getName());
             
             // TODO
             // We store the modelview matrix to be used later by the tap calculation
@@ -549,7 +549,7 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
             else {
                 currentTarget = 0;
             }
-            Log.v(LOGTAG, "currentTarget is " + currentTarget);
+            //Log.v(LOGTAG, "currentTarget is " + currentTarget);
 
             modelViewMatrix[currentTarget] = Tool.convertPose2GLMatrix(trackableResult.getPose());
             

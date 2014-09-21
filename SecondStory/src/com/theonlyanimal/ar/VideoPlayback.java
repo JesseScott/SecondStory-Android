@@ -107,7 +107,7 @@ public class VideoPlayback extends Activity implements
     private boolean mFlash = false;
     private boolean mContAutofocus = false;
     private boolean mExtendedTracking = false;
-    private boolean mPlayFullscreenVideo = false; // UN-EDITED
+    private boolean mPlayFullscreenVideo = true; // EDITED
     
     private View mFlashOptionView;
     
