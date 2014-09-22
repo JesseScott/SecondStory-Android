@@ -13,9 +13,11 @@ import com.theonlyanimal.secondstory.R;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 //import android.content.res.AssetFileDescriptor;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnCompletionListener;
@@ -52,6 +54,8 @@ public class FullscreenPlayback extends Activity implements OnPreparedListener,
     private ReentrantLock mMediaPlayerLock = null;
     private ReentrantLock mMediaControllerLock = null;
     
+    private boolean hasContent = false;
+    
     
     // This is called when we need to prepare the view for the media player
     protected void prepareViewForMediaPlayer()
@@ -86,6 +90,10 @@ public class FullscreenPlayback extends Activity implements OnPreparedListener,
         mMovieName = getIntent().getStringExtra("movieName");
         mRequestedOrientation = getIntent().getIntExtra("requestedOrientation", 0);
         mShouldPlayImmediately = getIntent().getBooleanExtra("shouldPlayImmediately", false);
+        
+        // Check for SharedPreferences
+        SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
+        hasContent = settings.getBoolean("hasContent", false);
         
         // Create a gesture detector that will handle single and double taps:
         mSimpleListener = new SimpleOnGestureListener();
@@ -142,8 +150,13 @@ public class FullscreenPlayback extends Activity implements OnPreparedListener,
             mMediaController = new MediaController(this);
             mMediaController.hide();
             
-            Log.d(LOGTAG, "loading " + mMovieName + " as FullScreen ");
-            mMediaPlayer.setDataSource(mMovieName); // ???
+            if(hasContent) {
+            	mMediaPlayer.setDataSource(mMovieName);
+            }
+            else {
+            	String url = "https://www.youtube.com/watch?v=N0L1xyy8tqA&feature=youtu.be";
+            	mMediaPlayer.setDataSource(url);
+            }
             
             mMediaPlayer.setDisplay(mHolder);
             mMediaPlayer.prepareAsync();
