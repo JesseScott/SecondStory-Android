@@ -20,7 +20,6 @@ public class AboutPage1 extends Fragment {
 		
 		// Fonts
 		Typeface dinBlack = Typeface.createFromAsset(getActivity().getAssets(), "fonts/din alternate black.ttf");
-		Typeface dinMedium = Typeface.createFromAsset(getActivity().getAssets(), "fonts/din alternate medium.ttf"); 
 		
 		// Label
 		TextView navLabel = (TextView) rootView.findViewById(R.id.about1_title);
