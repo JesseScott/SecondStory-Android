@@ -68,7 +68,7 @@ public class MenuScreen extends Activity {
 		aboutBtn.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Intent i = new Intent("android.intent.action.INSTANCE");
+				Intent i = new Intent("android.intent.action.ABOUT");
 	    		startActivity(i);
 			}
 		});
