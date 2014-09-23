@@ -54,8 +54,7 @@ public class FullscreenPlayback extends Activity implements OnPreparedListener,
     private ReentrantLock mMediaPlayerLock = null;
     private ReentrantLock mMediaControllerLock = null;
     
-    private boolean hasContent = false;
-    
+    private boolean hasContent = true;
     
     // This is called when we need to prepare the view for the media player
     protected void prepareViewForMediaPlayer()
@@ -93,7 +92,7 @@ public class FullscreenPlayback extends Activity implements OnPreparedListener,
         
         // Check for SharedPreferences
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
-        hasContent = settings.getBoolean("hasContent", false);
+        //hasContent = settings.getBoolean("hasContent", false);
         
         // Create a gesture detector that will handle single and double taps:
         mSimpleListener = new SimpleOnGestureListener();
