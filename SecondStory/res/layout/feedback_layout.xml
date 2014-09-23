@@ -28,7 +28,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:background="@null"
-            android:padding="10dp"
+            android:padding="15dp"
             android:src="@drawable/global_back_icon" />
 
         <TextView
