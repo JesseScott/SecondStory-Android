@@ -45,17 +45,7 @@
 
     </RelativeLayout>
 
-    <ImageView
-        android:id="@+id/pin_beef"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/maps_nav"
-        android:layout_marginRight="48dp"
-        android:layout_marginTop="54dp"
-        android:src="@drawable/map_pin" />
-
-    <ImageView
+    <ImageButton
         android:id="@+id/pin_pennies"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -63,43 +53,48 @@
         android:layout_marginRight="18dp"
         android:layout_marginTop="24dp"
         android:layout_toLeftOf="@+id/pin_beef"
+        android:background="@null"
         android:src="@drawable/map_pin" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/pin_sweeping"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/pin_copper"
         android:layout_toLeftOf="@+id/pin_pennies"
+        android:background="@null"
         android:src="@drawable/map_pin" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/pin_alley"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/pin_gun"
         android:layout_marginBottom="74dp"
         android:layout_toLeftOf="@+id/pin_gun"
+        android:background="@null"
         android:src="@drawable/map_pin" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/pin_umbrellas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/pin_shrooms"
         android:layout_marginTop="27dp"
         android:layout_toLeftOf="@+id/pin_shrooms"
+        android:background="@null"
         android:src="@drawable/map_pin" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/pin_shrooms"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_toLeftOf="@+id/pin_copper"
+        android:background="@null"
         android:src="@drawable/map_pin" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/pin_gun"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -107,23 +102,36 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="26dp"
         android:layout_marginLeft="8dp"
+        android:background="@null"
         android:src="@drawable/map_pin" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/pin_bicycles"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/pin_alley"
         android:layout_centerHorizontal="true"
+        android:background="@null"
         android:src="@drawable/map_pin" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/pin_copper"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignRight="@+id/pin_bicycles"
         android:layout_alignTop="@+id/pin_pennies"
         android:layout_marginRight="17dp"
+        android:background="@null"
+        android:src="@drawable/map_pin" />
+
+    <ImageButton
+        android:id="@+id/pin_beef"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/pin_sweeping"
+        android:layout_marginRight="65dp"
+        android:background="@null"
         android:src="@drawable/map_pin" />
 
 </RelativeLayout>
