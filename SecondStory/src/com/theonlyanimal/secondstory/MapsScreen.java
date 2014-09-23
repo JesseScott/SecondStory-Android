@@ -89,7 +89,7 @@ public class MapsScreen extends Activity {
     public void onBackPressed() {
 		Intent i = new Intent(MapsScreen.this, MenuScreen.class);
 		startActivity(i);
-		finish();
+		//finish();
         super.onBackPressed();
     }
  
@@ -97,6 +97,7 @@ public class MapsScreen extends Activity {
 	protected void onPause() {
 		overridePendingTransition(R.anim.anim_stay_still, R.anim.anim_slide_out_right);
 		player.stop();
+		//finish();
 		super.onPause();
 	}
 
