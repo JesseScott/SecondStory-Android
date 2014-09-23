@@ -20,7 +20,7 @@ public class SplashScreen extends Activity {
     ProgressDialog progress;
     Typeface dinBlack, dinMedium;
     TextView splashLabel;
-    Boolean manuallyPreppedDevice = true;
+    Boolean manuallyPreppedDevice = false;
 	
 	// LifeCycle
     @Override
@@ -72,11 +72,9 @@ public class SplashScreen extends Activity {
     protected void checkSettings() {
 
     	SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
-        boolean hasContent = settings.getBoolean("hasContent", false);
-        boolean hasSeenWaltkthru = settings.getBoolean("hasSeenWalkthru", false);
-        boolean isSharedDevice = settings.getBoolean("isSharedDevice", false);        
+        boolean hasContent = settings.getBoolean("hasContent", false);   
         
-        if(hasContent && hasSeenWaltkthru && !isSharedDevice) {
+        if(hasContent) {
         	progress.dismiss();
         	//Intent i = new Intent("android.intent.action.VIDEO");
         	Intent i = new Intent(SplashScreen.this, MenuScreen.class);
@@ -89,18 +87,6 @@ public class SplashScreen extends Activity {
     		startActivity(i);
     		finish();
         }
-        else if(!hasSeenWaltkthru) {
-        	progress.dismiss();
-        	Intent i = new Intent("android.intent.action.WELCOME");
-    		startActivity(i);
-    		finish();
-        }
-        else if(isSharedDevice) {
-        	progress.dismiss();
-        	Intent i = new Intent("android.intent.action.WELCOME");
-    		startActivity(i);
-    		finish();
-        }	
     }
     
     

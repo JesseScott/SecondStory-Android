@@ -48,10 +48,8 @@ public class WelcomeScreen extends Activity {
 	// GLOBALS
 	private static final String TAG = "SS_WELCOME";
 	private static final String APP_ID = "7f9de1a2655e56f6c60c798cc7d2cdec";
-	//private static final String SSID = "PHStheatre";
-	//private static final String PWD = "2ndst0ry";
-	private static final String SSID = "COFFEEBAR";
-	private static final String PWD = "coffeebar";
+	private static final String SSID = "PHStheatre";
+	private static final String PWD = "2ndst0ry";
 	private static final String SD_DIRECTORY = "//sdcard//SecondStory/BloodAlley";
 	private static final String MEDIA_DIRECTORY = "//sdcard//SecondStory/BloodAlley/MEDIA/";
 	private static final String LOG_DIRECTORY = "//sdcard//SecondStory/BloodAlley/LOGS/";
@@ -78,7 +76,7 @@ public class WelcomeScreen extends Activity {
 			public void onClick(View v) {
 				if(readyForTutorial) {
 					// Start Tutorial Screens
-					Intent i = new Intent("android.intent.action.LOCATION");
+					Intent i = new Intent(WelcomeScreen.this, MenuScreen.class);
 					startActivity(i);
 					finish();
 				}
@@ -356,6 +354,9 @@ public class WelcomeScreen extends Activity {
 		Log.v(TAG, " - getFiles() - ");
 		DownloadHelper downloadHelper = new DownloadHelper(); 
 		downloadHelper.execute();
+		//Intent i= new Intent(WelcomeScreen.this,FTPService.class);
+		//startService(i);
+		//stopService(i);
 	}
 
 	// Show Progress
