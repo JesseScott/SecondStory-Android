@@ -23,26 +23,38 @@
     >
 
         <ImageButton
+            android:id="@+id/guide_toggle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/guide_replay"
+            android:layout_marginRight="10dp"
+            android:background="@null"
+            android:padding="15dp"
+            android:src="@drawable/guide_toggle_icon" />
+
+        <ImageButton
             android:id="@+id/guide_replay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignTop="@+id/guide_back"
-            android:layout_marginRight="10dp"
-            android:padding="10dp" 
             android:layout_toLeftOf="@+id/guide_toggle"
             android:background="@null"
+            android:padding="15dp"
             android:src="@drawable/guide_replay_icon" />
 
-        <ImageButton
-            android:id="@+id/guide_toggle"
+        <TextView
+            android:id="@+id/guide_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_alignTop="@+id/guide_replay"
-            android:layout_marginRight="10dp"
-            android:padding="10dp" 
-            android:background="@null"
-            android:src="@drawable/guide_toggle_icon" />
+            android:layout_centerVertical="true"
+            android:layout_marginRight="35dp"
+            android:layout_toLeftOf="@+id/guide_replay"
+            android:text="@+string/label_guide"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@+color/guide_nav_font_color"
+            android:textSize="30sp" />
 
         <ImageButton
             android:id="@+id/guide_back"
@@ -50,22 +62,9 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"
-            android:padding="10dp" 
             android:background="@null"
-            android:src="@drawable/global_back_icon" />
-
-        <TextView
-            android:id="@+id/guide_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:text="@+string/label_guide"
-            android:textAppearance="?android:attr/textAppearanceLarge" 
-            android:textColor="@+color/guide_nav_font_color"
-            android:textSize="30sp"
-        />
+            android:padding="15dp"
+            android:src="@drawable/guide_back_icon" />
 
     </RelativeLayout>
 
