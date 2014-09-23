@@ -4,7 +4,6 @@ import com.theonlyanimal.secondstory.R;
 
 import android.os.Bundle;
 import android.app.Activity;
-import android.view.Menu;
 import android.view.View;
 import android.content.Context;
 
@@ -12,8 +11,7 @@ import android.content.Context;
 import android.location.Location;
 import android.location.LocationManager;
 import android.location.LocationListener;
-import android.location.GpsStatus.Listener;
-import android.location.GpsStatus.NmeaListener;
+
 
 // Screen-Specific
 import android.graphics.Canvas;

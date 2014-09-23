@@ -16,7 +16,7 @@ import android.widget.TextView;
 public class SplashScreen extends Activity {
 
 	// GLOBALS
-	private static final String TAG = "SS_SPLASH";
+	//private static final String TAG = "SS_SPLASH";
     ProgressDialog progress;
     Typeface dinBlack, dinMedium;
     TextView splashLabel;

@@ -5,15 +5,10 @@ package com.theonlyanimal.secondstory;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
 
@@ -21,8 +16,8 @@ import android.graphics.Typeface;
 public class InstanceScreen extends Activity {
 
 	// GLOBALS
-	private static final String TAG = "SS_INSTANCE";
-	private static Context context;
+	//private static final String TAG = "SS_INSTANCE";
+	//private static Context context;
 	String[] instances;
 	ImageButton backBtn;
 	Button firstChoice, secondChoice, choose;
@@ -36,7 +31,6 @@ public class InstanceScreen extends Activity {
 		super.onCreate(savedInstanceState);
 		//overridePendingTransition(R.anim.anim_slide_in_left, R.anim.anim_stay_still);
 		setContentView(R.layout.instance_layout);
-		context = this;
 		
 		// ListView
 		/*

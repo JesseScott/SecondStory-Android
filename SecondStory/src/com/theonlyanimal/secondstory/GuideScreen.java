@@ -16,7 +16,7 @@ import android.graphics.Typeface;
 public class GuideScreen extends Activity {
 
 	// GLOBALS
-	private static final String TAG = "SS_GUIDE";
+	//private static final String TAG = "SS_GUIDE";
 	
 	MediaPlayer player;
 	boolean mediaIsPlaying = false;

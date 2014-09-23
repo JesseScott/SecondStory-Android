@@ -32,14 +32,11 @@ import java.io.OutputStream;
 import java.net.MalformedURLException;
 import java.net.SocketException;
 import java.net.URL;
-import java.util.Timer;
-import java.util.TimerTask;
 
 import org.apache.commons.net.ftp.FTPClient;
 import org.apache.commons.net.ftp.FTPFile;
 
 import net.hockeyapp.android.CrashManager;
-import net.hockeyapp.android.UpdateManager;
 
 import com.theonlyanimal.secondstory.StorageHelper;
 
@@ -94,12 +91,7 @@ public class WelcomeScreen extends Activity {
 		
 		// Get Settings
 		//RetrieveNecessarySize getSize = new RetrieveNecessarySize(); 
-		//getSize.execute();
-	
-		
-		// Check For Updates
-		//checkForUpdates();
-		
+		//getSize.execute();		
 		
 		// Connect To WiFi
 		//askForWifi();
@@ -123,10 +115,6 @@ public class WelcomeScreen extends Activity {
 		CrashManager.register(this, APP_ID); 
 	}
 
-	private void checkForUpdates() {
-		// Remove this for store builds!
-		UpdateManager.register(this, APP_ID);
-	}
 	
 	// WiFi
 	public void connectToWifi() {

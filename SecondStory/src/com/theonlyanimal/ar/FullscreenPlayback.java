@@ -91,7 +91,7 @@ public class FullscreenPlayback extends Activity implements OnPreparedListener,
         mShouldPlayImmediately = getIntent().getBooleanExtra("shouldPlayImmediately", false);
         
         // Check for SharedPreferences
-        SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
+        //SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
         //hasContent = settings.getBoolean("hasContent", false);
         
         // Create a gesture detector that will handle single and double taps:

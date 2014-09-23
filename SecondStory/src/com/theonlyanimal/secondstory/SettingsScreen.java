@@ -10,7 +10,7 @@ import android.app.Activity;
 public class SettingsScreen extends Activity {
 
 	// GLOBALS
-	private static final String TAG = "SS_GUIDE";
+	//private static final String TAG = "SS_GUIDE";
 
 	
 	// LifeCycle

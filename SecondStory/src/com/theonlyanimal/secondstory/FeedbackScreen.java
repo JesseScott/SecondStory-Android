@@ -16,7 +16,7 @@ import android.graphics.Typeface;
 public class FeedbackScreen extends Activity {
 
 	// GLOBALS
-	private static final String TAG = "SS_GUIDE";
+	//private static final String TAG = "SS_GUIDE";
 	private static final String HOCKEY_APP_ID = "7f9de1a2655e56f6c60c798cc7d2cdec";
 	
 	private Button feedbackBtn;

@@ -17,7 +17,7 @@ import android.graphics.Typeface;
 public class MenuScreen extends Activity {
 
 	// GLOBALS
-	private static final String TAG = "SS_MENU";
+	//private static final String TAG = "SS_MENU";
 	boolean readyForLiveView = true;
 	Typeface dinBlack, dinMedium;
 
