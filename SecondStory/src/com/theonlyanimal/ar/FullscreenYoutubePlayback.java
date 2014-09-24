@@ -23,8 +23,8 @@ public class FullscreenYoutubePlayback extends YouTubeBaseActivity implements Yo
 	public static String VIDEO_ID_PLAYABLE = "";
 	
 	public static final String VIDEO_ID_BEEF = "N0L1xyy8tqA";
-	public static final String VIDEO_ID_BICYCLES = "5npVxU_FMxg";
-	public static final String VIDEO_ID_ALLEY = "zHUf_d3tUM";
+	public static final String VIDEO_ID_BICYCLES = "-zHUf_d3tUM"; //5npVxU_FMxg
+	public static final String VIDEO_ID_ALLEY = "-zHUf_d3tUM";
 	public static final String VIDEO_ID_COPPER = "ZaM6fWMAu-Q";
 	public static final String VIDEO_ID_GUN = "VqKuwHpkI4o";
 	public static final String VIDEO_ID_PENNIES = "UA_T7eHy8mM";
@@ -147,7 +147,7 @@ public class FullscreenYoutubePlayback extends YouTubeBaseActivity implements Yo
 
 		@Override
 		public void onError(ErrorReason arg0) {
-
+			Log.d("SS YT", "Error: " + arg0);
 		}
 
 		@Override
