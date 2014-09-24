@@ -59,7 +59,7 @@ public class WelcomeScreen extends Activity {
     private ProgressDialog progressDialog;
     private Button beginBtn;
     
-    private Boolean readyForTutorial = false;
+    private Boolean readyForTutorial = true;
     private Boolean hasEnoughSpace = false;
     private double 	needsThisMuchSpace = 0.5;
 	
@@ -167,7 +167,7 @@ public class WelcomeScreen extends Activity {
 		handler.postDelayed(new Runnable() {
 		  @Override
 		  public void run() {
-			  getFiles(); 
+			  //getFiles(); 
 		  }
 		}, 500);
 		

@@ -192,6 +192,19 @@
             </intent-filter>
         </activity>
         
+                <!-- FULLSCREEN YOUTUBE -->
+        <activity 
+            android:name="com.theonlyanimal.ar.FullscreenYoutubePlayback"
+            android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize"
+ 	        android:launchMode="singleTask"
+ 	        android:screenOrientation="landscape"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+        
         <!-- FTP SERVICE -->
         <service android:name="FTPService" >
             <intent-filter>
