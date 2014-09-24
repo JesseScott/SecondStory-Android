@@ -11,6 +11,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.text.format.Time;
 import android.util.Log;
 import android.view.View;
@@ -58,8 +59,6 @@ public class WelcomeScreen extends Activity {
     public static final int DIALOG_DOWNLOAD_PROGRESS = 0;
     private ProgressDialog progressDialog;
     private Button beginBtn;
-    
-    private Boolean readyForTutorial = false;
     private Boolean hasEnoughSpace = false;
     private double 	needsThisMuchSpace = 0.5;
 	
@@ -215,7 +214,6 @@ public class WelcomeScreen extends Activity {
 							}
 							// All Good To Proceed
 							else {
-								readyForTutorial = true;
 								Intent intent = new Intent(WelcomeScreen.this, MenuScreen.class);
 								startActivity(intent);
 								finish();
@@ -313,13 +311,18 @@ public class WelcomeScreen extends Activity {
 		        	   // Get The Files
 		        	   askForWifi();
 		        	   //getFiles();
+		        	   SharedPreferences prefs = getSharedPreferences(
+		        			      "com.theonlyanimal.secondstory", Context.MODE_PRIVATE);
+		        	   prefs.edit().putBoolean("com.theonlyanimal.secondstory.stream", false).apply();
+		        	   
 		           }
 		       });
 		builder.setNegativeButton("Stream", new DialogInterface.OnClickListener() {
 		           public void onClick(DialogInterface dialog, int id) {
 		               // User cancelled the dialog - WERE GOING HOME
 		        	   Log.v(TAG, " - User Said Steam");
-						readyForTutorial = true;
+			        	   SharedPreferences prefs = getSharedPreferences("com.theonlyanimal.secondstory", Context.MODE_PRIVATE);
+			        	   prefs.edit().putBoolean("com.theonlyanimal.secondstory.stream", true).apply();
 						Intent intent = new Intent(WelcomeScreen.this, MenuScreen.class);
 						startActivity(intent);
 						finish();
@@ -634,8 +637,6 @@ public class WelcomeScreen extends Activity {
 		protected void onPostExecute(String unused) {
 			dismissDialog(DIALOG_DOWNLOAD_PROGRESS);
 			Log.v(TAG, "ALL DONE!");
-			
-			readyForTutorial = true;
 			Intent intent = new Intent(WelcomeScreen.this, MenuScreen.class);
 			startActivity(intent);
 			finish();

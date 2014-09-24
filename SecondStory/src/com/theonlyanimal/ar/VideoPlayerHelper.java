@@ -9,8 +9,11 @@ package com.theonlyanimal.ar;
 
 import java.util.concurrent.locks.ReentrantLock;
 
+import com.theonlyanimal.secondstory.Constants;
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.res.AssetFileDescriptor;
@@ -198,7 +201,24 @@ public class VideoPlayerHelper implements OnPreparedListener,
             // If the client requests that we should be able to play FULLSCREEN then we need to create a FullscreenPlaybackActivity
             if ((requestedType == MEDIA_TYPE.FULLSCREEN) || (requestedType == MEDIA_TYPE.ON_TEXTURE_FULLSCREEN))
             {
-                mPlayerHelperActivityIntent = new Intent(mParentActivity, FullscreenYoutubePlayback.class);
+            	//check if user wants to stream
+            	if(mParentActivity.getApplicationContext().getSharedPreferences("com.theonlyanimal.secondstory", Context.MODE_PRIVATE).getBoolean("com.theonlyanimal.secondstory.stream", true)){
+            		//lets start youtube video
+            		mPlayerHelperActivityIntent = new Intent(mParentActivity, FullscreenYoutubePlayback.class);
+            	}
+            	else {
+            		//if downloaded check if videos already downloaded
+            		if(Constants.downloadedAllVideos){
+            			//show from storage
+            			mPlayerHelperActivityIntent = new Intent(mParentActivity, FullscreenPlayback.class);
+            		}
+            		else{
+            			//if not yet downloaded show from youtube
+            			mPlayerHelperActivityIntent = new Intent(mParentActivity, FullscreenYoutubePlayback.class);
+            		}
+            		
+            	}
+                
             	//mPlayerHelperActivityIntent = new Intent(mParentActivity, FullscreenPlayback.class);
             	//mPlayerHelperActivityIntent = new Intent("android.intent.action.FULLSCREEN");
             	//mPlayerHelperActivityIntent.setAction(null);
