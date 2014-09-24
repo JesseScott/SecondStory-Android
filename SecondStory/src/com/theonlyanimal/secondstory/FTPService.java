@@ -8,6 +8,7 @@ import android.os.Environment;
 import android.os.IBinder;
 import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
+import android.widget.Toast;
 
 public class FTPService extends Service {
 	
@@ -71,6 +72,8 @@ public class FTPService extends Service {
 					e.printStackTrace();
 				}
 			}
+			Toast.makeText(FTPService.this, "Downloaded all movies", Toast.LENGTH_SHORT).show();
+			//TODO: set global variable to downloaded
 		}
 		
 		private void fileDownload() {

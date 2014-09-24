@@ -62,7 +62,6 @@ public class FullscreenYoutubePlayback extends YouTubeBaseActivity implements Yo
 		player.setPlayerStateChangeListener(playerStateChangeListener);
 		player.setPlaybackEventListener(playbackEventListener);
 		player.setFullscreen(true);
-		
 		/** Start buffering **/
 		if (!wasRestored) {
 			player.cueVideo(VIDEO_ID_PLAYABLE);

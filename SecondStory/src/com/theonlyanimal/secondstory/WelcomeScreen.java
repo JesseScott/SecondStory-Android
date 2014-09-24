@@ -59,7 +59,7 @@ public class WelcomeScreen extends Activity {
     private ProgressDialog progressDialog;
     private Button beginBtn;
     
-    private Boolean readyForTutorial = true;
+    private Boolean readyForTutorial = false;
     private Boolean hasEnoughSpace = false;
     private double 	needsThisMuchSpace = 0.5;
 	
@@ -69,24 +69,6 @@ public class WelcomeScreen extends Activity {
 		// UI
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.welcome_layout);
-		
-		beginBtn = (Button) findViewById(R.id.welcome_begin);
-		beginBtn.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				if(readyForTutorial) {
-					// Start Tutorial Screens
-					Intent i = new Intent(WelcomeScreen.this, MenuScreen.class);
-					startActivity(i);
-					finish();
-				}
-				else {
-					// Tell The User To Hold On
-					Toast.makeText(getApplicationContext(), "Not Finished Downloading", Toast.LENGTH_SHORT).show();
-				}
-			}
-		});
-		
 		// Get Settings
 		//RetrieveNecessarySize getSize = new RetrieveNecessarySize(); 
 		//getSize.execute();		
@@ -167,7 +149,7 @@ public class WelcomeScreen extends Activity {
 		handler.postDelayed(new Runnable() {
 		  @Override
 		  public void run() {
-			  //getFiles(); 
+			  getFiles(); 
 		  }
 		}, 500);
 		
@@ -180,7 +162,7 @@ public class WelcomeScreen extends Activity {
 		// Title
 		builder.setTitle("About To Download Content");
 		builder.setMessage("This app requires 500mb of content - can we turn on your WiFi and connect to our network?");
-		
+		builder.setCancelable(false);
 		// Buttons
 		builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
 		           public void onClick(DialogInterface dialog, int id) {
@@ -234,59 +216,31 @@ public class WelcomeScreen extends Activity {
 							// If There's None
 							if(listOfFiles.length == 0) {
 								// Get 'Em
-								getFiles();
+								//getFiles();
+								 showStreamOrDownloadDialog();
 							}
 							// All Good To Proceed
 							else {
 								readyForTutorial = true;
+								Intent intent = new Intent(WelcomeScreen.this, MenuScreen.class);
+								startActivity(intent);
+								finish();
 							}
 							
 						} 
 						else {
 							Log.v(TAG, " - But Its Not Directory - ");
+				        	   // Make The Directories
+				        	   base_directory.mkdirs();
+				        	   media_directory.mkdirs();
+				        	   log_directory.mkdirs();
+				        	   showStreamOrDownloadDialog();
 						}
 					} 
 					else {
 						Log.v(TAG, " - Path Doesnt Exist - ");
 						
-						// Alert
-						AlertDialog.Builder builder = new AlertDialog.Builder(this);
 						
-						// Title
-						builder.setTitle("Content Doesn't Exist");
-						builder.setMessage("this app requires custom content - we need to make a directory & download some content to it - ok ?");
-						
-						// Buttons
-						builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-						           public void onClick(DialogInterface dialog, int id) {
-						               // User clicked OK button
-						        	   Log.v(TAG, " - User Said YES! - ");
-						        	   
-						        	   // Make The Directories
-						        	   base_directory.mkdirs();
-						        	   media_directory.mkdirs();
-						        	   log_directory.mkdirs();
-						        	   
-						        	   // Get The Files
-						        	   askForWifi();
-						        	   //getFiles();
-						           }
-						       });
-						builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
-						           public void onClick(DialogInterface dialog, int id) {
-						               // User cancelled the dialog - WERE GOING HOME
-						        	   Log.v(TAG, " - User Said No :( - ");
-						        	   Intent intent = new Intent(Intent.ACTION_MAIN);
-						        	   intent.addCategory(Intent.CATEGORY_HOME);
-						        	   intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-						        	   startActivity(intent);
-						        	   finish();
-						           }
-						       });
-	
-						// Show
-						AlertDialog dialog = builder.create();
-						dialog.show();
 						
 					}
 				}
@@ -349,13 +303,53 @@ public class WelcomeScreen extends Activity {
 			
 	} /* checkStorage() */
 	
+	private void showStreamOrDownloadDialog(){
+		// Alert
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		
+		// Title
+		builder.setTitle("Content Doesn't Exist");
+		builder.setMessage("this app requires custom content. You can download it upfront or stream it.");
+		builder.setCancelable(false);
+		// Buttons
+		builder.setPositiveButton("Download now", new DialogInterface.OnClickListener() {
+		           public void onClick(DialogInterface dialog, int id) {
+		               // User clicked OK button
+		        	   Log.v(TAG, " - User Said YES! - ");
+		        	   
+		        	   // Get The Files
+		        	   askForWifi();
+		        	   //getFiles();
+		           }
+		       });
+		builder.setNegativeButton("Stream", new DialogInterface.OnClickListener() {
+		           public void onClick(DialogInterface dialog, int id) {
+		               // User cancelled the dialog - WERE GOING HOME
+		        	   Log.v(TAG, " - User Said Steam");
+						readyForTutorial = true;
+						Intent intent = new Intent(WelcomeScreen.this, MenuScreen.class);
+						startActivity(intent);
+						finish();
+		           }
+		       });
+
+		// Show
+		AlertDialog dialog = builder.create();
+		dialog.show();
+	}
+	
 	// Download Files
 	public void getFiles() {
 		Log.v(TAG, " - getFiles() - ");
+		Toast.makeText(getApplicationContext(), "Dowloading Files", Toast.LENGTH_SHORT).show();
 		//DownloadHelper downloadHelper = new DownloadHelper(); 
 		//downloadHelper.execute();
 		Intent i= new Intent(WelcomeScreen.this,FTPService.class);
 		startService(i);
+		// Start Tutorial Screens
+		Intent intent = new Intent(WelcomeScreen.this, MenuScreen.class);
+		startActivity(intent);
+		finish();
 		//stopService(i);
 	}
 
@@ -649,6 +643,9 @@ public class WelcomeScreen extends Activity {
 			Log.v(TAG, "ALL DONE!");
 			
 			readyForTutorial = true;
+			Intent intent = new Intent(WelcomeScreen.this, MenuScreen.class);
+			startActivity(intent);
+			finish();
 			
 		}	
 
