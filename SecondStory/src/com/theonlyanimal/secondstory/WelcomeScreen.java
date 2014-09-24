@@ -69,12 +69,6 @@ public class WelcomeScreen extends Activity {
 		// UI
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.welcome_layout);
-		// Get Settings
-		//RetrieveNecessarySize getSize = new RetrieveNecessarySize(); 
-		//getSize.execute();		
-		
-		// Connect To WiFi
-		//askForWifi();
 		
 		// Do We Have Content ?
 		checkStorage();
@@ -116,7 +110,7 @@ public class WelcomeScreen extends Activity {
 		networkID = manager.addNetwork(config);		
 		if(networkID < 0) {
 			Log.v(TAG, "couldnt connect");
-			Toast.makeText(this, "Couldn't Connec To SecondStory Network", Toast.LENGTH_SHORT).show();
+			Toast.makeText(this, "Couldn't Connect To SecondStory Network", Toast.LENGTH_SHORT).show();
 		}
 		else {
 			Log.v(TAG, "added network");
@@ -239,8 +233,7 @@ public class WelcomeScreen extends Activity {
 					} 
 					else {
 						Log.v(TAG, " - Path Doesnt Exist - ");
-						
-						
+
 						
 					}
 				}
