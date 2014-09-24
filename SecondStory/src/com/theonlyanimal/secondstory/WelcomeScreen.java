@@ -162,7 +162,7 @@ public class WelcomeScreen extends Activity {
 		// Title
 		builder.setTitle("About To Download Content");
 		builder.setMessage("This app requires 500mb of content - can we turn on your WiFi and connect to our network?");
-		
+		builder.setCancelable(false);
 		// Buttons
 		builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
 		           public void onClick(DialogInterface dialog, int id) {
@@ -216,7 +216,8 @@ public class WelcomeScreen extends Activity {
 							// If There's None
 							if(listOfFiles.length == 0) {
 								// Get 'Em
-								getFiles();
+								//getFiles();
+								 showStreamOrDownloadDialog();
 							}
 							// All Good To Proceed
 							else {
@@ -229,48 +230,17 @@ public class WelcomeScreen extends Activity {
 						} 
 						else {
 							Log.v(TAG, " - But Its Not Directory - ");
+				        	   // Make The Directories
+				        	   base_directory.mkdirs();
+				        	   media_directory.mkdirs();
+				        	   log_directory.mkdirs();
+				        	   showStreamOrDownloadDialog();
 						}
 					} 
 					else {
 						Log.v(TAG, " - Path Doesnt Exist - ");
 						
-						// Alert
-						AlertDialog.Builder builder = new AlertDialog.Builder(this);
 						
-						// Title
-						builder.setTitle("Content Doesn't Exist");
-						builder.setMessage("this app requires custom content. You can download it upfront or stream it.");
-						
-						// Buttons
-						builder.setPositiveButton("Download now", new DialogInterface.OnClickListener() {
-						           public void onClick(DialogInterface dialog, int id) {
-						               // User clicked OK button
-						        	   Log.v(TAG, " - User Said YES! - ");
-						        	   
-						        	   // Make The Directories
-						        	   base_directory.mkdirs();
-						        	   media_directory.mkdirs();
-						        	   log_directory.mkdirs();
-						        	   
-						        	   // Get The Files
-						        	   askForWifi();
-						        	   //getFiles();
-						           }
-						       });
-						builder.setNegativeButton("Stream", new DialogInterface.OnClickListener() {
-						           public void onClick(DialogInterface dialog, int id) {
-						               // User cancelled the dialog - WERE GOING HOME
-						        	   Log.v(TAG, " - User Said Steam");
-										readyForTutorial = true;
-										Intent intent = new Intent(WelcomeScreen.this, MenuScreen.class);
-										startActivity(intent);
-										finish();
-						           }
-						       });
-	
-						// Show
-						AlertDialog dialog = builder.create();
-						dialog.show();
 						
 					}
 				}
@@ -332,6 +302,41 @@ public class WelcomeScreen extends Activity {
 		}
 			
 	} /* checkStorage() */
+	
+	private void showStreamOrDownloadDialog(){
+		// Alert
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		
+		// Title
+		builder.setTitle("Content Doesn't Exist");
+		builder.setMessage("this app requires custom content. You can download it upfront or stream it.");
+		builder.setCancelable(false);
+		// Buttons
+		builder.setPositiveButton("Download now", new DialogInterface.OnClickListener() {
+		           public void onClick(DialogInterface dialog, int id) {
+		               // User clicked OK button
+		        	   Log.v(TAG, " - User Said YES! - ");
+		        	   
+		        	   // Get The Files
+		        	   askForWifi();
+		        	   //getFiles();
+		           }
+		       });
+		builder.setNegativeButton("Stream", new DialogInterface.OnClickListener() {
+		           public void onClick(DialogInterface dialog, int id) {
+		               // User cancelled the dialog - WERE GOING HOME
+		        	   Log.v(TAG, " - User Said Steam");
+						readyForTutorial = true;
+						Intent intent = new Intent(WelcomeScreen.this, MenuScreen.class);
+						startActivity(intent);
+						finish();
+		           }
+		       });
+
+		// Show
+		AlertDialog dialog = builder.create();
+		dialog.show();
+	}
 	
 	// Download Files
 	public void getFiles() {

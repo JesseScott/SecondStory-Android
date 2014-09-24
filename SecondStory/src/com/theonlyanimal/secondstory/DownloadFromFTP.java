@@ -91,6 +91,7 @@ public class DownloadFromFTP {
 				    logger.append("for an elapsedTime of " + elapsedTime + " seconds");
 				    logger.newLine();
 				    logger.newLine();
+				    
                 }
                 
                 // Close Logger
