@@ -192,7 +192,7 @@
             </intent-filter>
         </activity>
         
-                <!-- FULLSCREEN YOUTUBE -->
+        <!-- FULLSCREEN YOUTUBE -->
         <activity 
             android:name="com.theonlyanimal.ar.FullscreenYoutubePlayback"
             android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize"
