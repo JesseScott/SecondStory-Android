@@ -352,10 +352,10 @@ public class WelcomeScreen extends Activity {
 	// Download Files
 	public void getFiles() {
 		Log.v(TAG, " - getFiles() - ");
-		DownloadHelper downloadHelper = new DownloadHelper(); 
-		downloadHelper.execute();
-		//Intent i= new Intent(WelcomeScreen.this,FTPService.class);
-		//startService(i);
+		//DownloadHelper downloadHelper = new DownloadHelper(); 
+		//downloadHelper.execute();
+		Intent i= new Intent(WelcomeScreen.this,FTPService.class);
+		startService(i);
 		//stopService(i);
 	}
 
