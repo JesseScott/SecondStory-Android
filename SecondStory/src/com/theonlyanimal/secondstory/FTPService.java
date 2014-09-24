@@ -73,7 +73,7 @@ public class FTPService extends Service {
 				}
 			}
 			Toast.makeText(FTPService.this, "Downloaded all movies", Toast.LENGTH_SHORT).show();
-			//TODO: set global variable to downloaded
+			Constants.downloadedAllVideos = true;
 		}
 		
 		private void fileDownload() {
