@@ -214,6 +214,7 @@ public class WelcomeScreen extends Activity {
 							}
 							// All Good To Proceed
 							else {
+								Constants.downloadedAllVideos = true;
 								Intent intent = new Intent(WelcomeScreen.this, MenuScreen.class);
 								startActivity(intent);
 								finish();
@@ -309,8 +310,8 @@ public class WelcomeScreen extends Activity {
 		        	   Log.v(TAG, " - User Said YES! - ");
 		        	   
 		        	   // Get The Files
-		        	   askForWifi();
-		        	   //getFiles();
+		        	   //askForWifi();
+		        	   getFiles();
 		        	   SharedPreferences prefs = getSharedPreferences(
 		        			      "com.theonlyanimal.secondstory", Context.MODE_PRIVATE);
 		        	   prefs.edit().putBoolean("com.theonlyanimal.secondstory.stream", false).apply();

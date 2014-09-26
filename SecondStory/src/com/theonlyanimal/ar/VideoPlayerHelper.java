@@ -202,7 +202,7 @@ public class VideoPlayerHelper implements OnPreparedListener,
             if ((requestedType == MEDIA_TYPE.FULLSCREEN) || (requestedType == MEDIA_TYPE.ON_TEXTURE_FULLSCREEN))
             {
             	//check if user wants to stream
-            	if(mParentActivity.getApplicationContext().getSharedPreferences("com.theonlyanimal.secondstory", Context.MODE_PRIVATE).getBoolean("com.theonlyanimal.secondstory.stream", true)){
+            	if(mParentActivity.getApplicationContext().getSharedPreferences("com.theonlyanimal.secondstory", Context.MODE_PRIVATE).getBoolean("com.theonlyanimal.secondstory.stream", false)){
             		//lets start youtube video
             		mPlayerHelperActivityIntent = new Intent(mParentActivity, FullscreenYoutubePlayback.class);
             	}

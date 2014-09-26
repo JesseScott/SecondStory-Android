@@ -80,6 +80,7 @@ public class FTPService extends Service {
 			if(checkInternetConnection()){
 				boolean get = new DownloadFromFTP().ftpDownload("", "");
 				Log.d("SS", "getting ?  " + get);
+				// Stop Thread ???
 			}
 		}
 	}
