@@ -359,6 +359,7 @@ public class MapsScreen extends Activity {
 		}
         	
     		intentToPreview.putExtra("movieName", mMovieName);
+    		intentToPreview.putExtra("shouldPlayImmediately", true);
         	intentToPreview.setAction(android.content.Intent.ACTION_VIEW);
         	MapsScreen.this.startActivityForResult(intentToPreview, 1);
       }
