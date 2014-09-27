@@ -170,17 +170,6 @@
 	        android:text="@string/label_guide_explore"
 	        android:textAppearance="?android:attr/textAppearanceMedium"
 	        android:textColor="@color/black" />
-
-	 <TextView
-	     android:id="@+id/guide_explore_enjoy"
-	     android:layout_width="wrap_content"
-	     android:layout_height="wrap_content"
-	     android:layout_below="@+id/guide_explore_label"
-	     android:layout_centerHorizontal="true"
-	     android:padding="10dp"
-	     android:text="@string/label_guide_enjoy"
-	     android:textAppearance="?android:attr/textAppearanceMedium"
-	     android:textColor="@color/black" />
         
     </RelativeLayout>
 
