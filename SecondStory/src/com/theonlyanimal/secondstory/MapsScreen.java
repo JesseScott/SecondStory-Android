@@ -53,7 +53,6 @@ public class MapsScreen extends Activity {
 		
 		// MediaPlayer
 		prepAudio();
-		Log.v(TAG, "played ?" + mediaHasPlayed);
 		if(savedInstanceState == null) {
 			startAudio();
 			mediaHasPlayed = true;
@@ -72,7 +71,7 @@ public class MapsScreen extends Activity {
 				showPreview = false;
 				frame.setVisibility(View.INVISIBLE);
 				preview.setVisibility(View.INVISIBLE);
-				
+				Log.v(TAG, "There Not Here");
 				return false;
 			}
 		});
@@ -84,6 +83,13 @@ public class MapsScreen extends Activity {
 			frame.setVisibility(View.INVISIBLE);
 			preview.setVisibility(View.INVISIBLE);
 		}
+		preview.setOnTouchListener(new View.OnTouchListener() {
+			@Override
+			public boolean onTouch(View arg0, MotionEvent arg1) {
+				Log.v(TAG, "Here Not There");
+				return false;
+			}
+		});
 		
 		// Buttons
 		backBtn = (ImageButton) findViewById(R.id.maps_back);
