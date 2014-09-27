@@ -3,8 +3,13 @@ package com.theonlyanimal.secondstory;
 
 //IMPORTS
 
+import com.theonlyanimal.ar.FullscreenPlayback;
+import com.theonlyanimal.ar.FullscreenYoutubePlayback;
+import com.theonlyanimal.ar.VideoPlayerHelper.MEDIA_TYPE;
+
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Environment;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -12,6 +17,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.AssetFileDescriptor;
 import android.graphics.Typeface;
@@ -36,6 +42,8 @@ public class MapsScreen extends Activity {
 	boolean mediaIsPlaying = false;
 	boolean mediaHasVolume = true;	
 	boolean cameFromFullscreen = false;
+	int whichVideo = 0;
+	Intent intentToPreview;
 	
 	// LifeCycle
 	@Override
@@ -68,9 +76,9 @@ public class MapsScreen extends Activity {
 			@Override
 			public boolean onTouch(View v, MotionEvent event) {
 				// Hide Image
-				showPreview = false;
-				frame.setVisibility(View.INVISIBLE);
-				preview.setVisibility(View.INVISIBLE);
+				//showPreview = false;
+				//frame.setVisibility(View.INVISIBLE);
+				//preview.setVisibility(View.INVISIBLE);
 				Log.v(TAG, "There Not Here");
 				return false;
 			}
@@ -87,6 +95,7 @@ public class MapsScreen extends Activity {
 			@Override
 			public boolean onTouch(View arg0, MotionEvent arg1) {
 				Log.v(TAG, "Here Not There");
+				fireVideo(whichVideo);
 				return false;
 			}
 		});
@@ -117,6 +126,7 @@ public class MapsScreen extends Activity {
 			@Override
 			public void onClick(View v) {
 				togglePreview(1);
+				whichVideo = 1;
 			}
 		});
 		
@@ -125,6 +135,7 @@ public class MapsScreen extends Activity {
 			@Override
 			public void onClick(View v) {
 				togglePreview(2);
+				whichVideo = 2;
 			}
 		});
 		
@@ -133,6 +144,7 @@ public class MapsScreen extends Activity {
 			@Override
 			public void onClick(View v) {
 				togglePreview(3);
+				whichVideo = 3;
 			}
 		});
 		
@@ -141,6 +153,7 @@ public class MapsScreen extends Activity {
 			@Override
 			public void onClick(View v) {
 				togglePreview(4);
+				whichVideo = 4;
 			}
 		});
 		
@@ -149,6 +162,7 @@ public class MapsScreen extends Activity {
 			@Override
 			public void onClick(View v) {
 				togglePreview(5);
+				whichVideo = 5;
 			}
 		});
 		
@@ -157,6 +171,7 @@ public class MapsScreen extends Activity {
 			@Override
 			public void onClick(View v) {
 				togglePreview(6);
+				whichVideo = 6;
 			}
 		});
 		
@@ -165,6 +180,7 @@ public class MapsScreen extends Activity {
 			@Override
 			public void onClick(View v) {
 				togglePreview(7);
+				whichVideo = 7;
 			}
 		});
 		
@@ -173,6 +189,7 @@ public class MapsScreen extends Activity {
 			@Override
 			public void onClick(View v) {
 				togglePreview(8);
+				whichVideo = 8;
 			}
 		});
 		
@@ -181,6 +198,7 @@ public class MapsScreen extends Activity {
 			@Override
 			public void onClick(View v) {
 				togglePreview(9);
+				whichVideo = 9;
 			}
 		});
 		
@@ -282,6 +300,69 @@ public class MapsScreen extends Activity {
 			}
 		}
 	}
+	
+	public void fireVideo(int which) {
+  
+        	//check if user wants to stream
+        	if(getApplicationContext().getSharedPreferences("com.theonlyanimal.secondstory", Context.MODE_PRIVATE).getBoolean("com.theonlyanimal.secondstory.stream", false)){
+        		//lets start youtube video
+        		intentToPreview = new Intent(MapsScreen.this, FullscreenYoutubePlayback.class);
+        	}
+        	else {
+        		//if downloaded check if videos already downloaded
+        		if(Constants.downloadedAllVideos){
+        			//show from storage
+        			intentToPreview = new Intent(MapsScreen.this, FullscreenPlayback.class);
+        		}
+        		else{
+        			//if not yet downloaded show from youtube
+        			intentToPreview = new Intent(MapsScreen.this, FullscreenYoutubePlayback.class);
+        		}
+        		
+        	}
+        	
+            String mMovieName = "";
+            String MEDIA_PATH = "";
+            String SD_PATH = Environment.getExternalStorageDirectory().getPath();
+            MEDIA_PATH = SD_PATH + "/SecondStory/BloodAlley/MEDIA/";
+
+    		switch (which) {
+			case 1: // Beef
+				mMovieName = MEDIA_PATH + "beef.mp4";
+				break;
+			case 2: // Pennies
+				mMovieName = MEDIA_PATH + "pennies.mp4";
+				break;
+			case 3: // Sweeping
+				mMovieName = MEDIA_PATH + "sweeping.mp4";
+				break;
+			case 4: // Copper
+				mMovieName = MEDIA_PATH + "copperthief.mp4";
+				break;
+			case 5: // Shrooms
+				mMovieName = MEDIA_PATH + "shrooms.mp4";
+				break;
+			case 6: // Umbrellas
+				mMovieName = MEDIA_PATH + "umbrellas.mp4";
+				break;
+			case 7: // Alley
+				mMovieName = MEDIA_PATH + "bloodalley.mp4";
+				break;
+			case 8: // Bicycles
+				mMovieName = MEDIA_PATH + "bicycles.mp4";
+				break;
+			case 9: // Gun
+				mMovieName = MEDIA_PATH + "gun.mp4";
+				break;
+			default:
+				mMovieName = MEDIA_PATH + "";
+		}
+        	
+    		intentToPreview.putExtra("movieName", mMovieName);
+        	intentToPreview.setAction(android.content.Intent.ACTION_VIEW);
+        	MapsScreen.this.startActivityForResult(intentToPreview, 1);
+      }
+
 
  
 } /* EOC */

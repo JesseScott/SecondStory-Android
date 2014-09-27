@@ -178,6 +178,8 @@ public class WelcomeScreen extends Activity {
 	}
 	
     protected void checkSettings() {
+		progress.dismiss();
+
 		if(manuallyPreppedDevice) {
 			//Intent i = new Intent("android.intent.action.MENU");
     		Intent i = new Intent(WelcomeScreen.this, MenuScreen.class);
