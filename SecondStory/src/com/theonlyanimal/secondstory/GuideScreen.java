@@ -23,7 +23,7 @@ public class GuideScreen extends Activity {
 	boolean mediaHasVolume = true;
 	
 	ImageButton restartAudio;
-	ImageButton toggleVolume;
+	//ImageButton toggleVolume;
 	ImageButton backBtn;
 	
 	Typeface dinBlack, dinMedium;
@@ -43,7 +43,7 @@ public class GuideScreen extends Activity {
 		
 		// Fonts
 		dinBlack = Typeface.createFromAsset(getAssets(), "fonts/din alternate black.ttf");
-		dinMedium = Typeface.createFromAsset(getAssets(), "fonts/din alternate medium.ttf"); 
+		//dinMedium = Typeface.createFromAsset(getAssets(), "fonts/din alternate medium.ttf"); 
 		
 		// Label
 		navLabel = (TextView) findViewById(R.id.guide_title);
@@ -73,7 +73,7 @@ public class GuideScreen extends Activity {
 				}
 			}
 		});
-		
+		/*
 		toggleVolume = (ImageButton) findViewById(R.id.guide_toggle);
 		toggleVolume.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -86,7 +86,7 @@ public class GuideScreen extends Activity {
 				}
 			}
 		});
-	
+		*/
 
 	}
 	

@@ -14,8 +14,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.text.format.Time;
 import android.util.Log;
-import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 import android.os.AsyncTask;
 import android.net.wifi.WifiConfiguration;
@@ -54,12 +52,8 @@ public class WelcomeScreen extends Activity {
 	private static final String SD_DIRECTORY = "//sdcard//SecondStory/BloodAlley";
 	private static final String MEDIA_DIRECTORY = "//sdcard//SecondStory/BloodAlley/MEDIA/";
 	private static final String LOG_DIRECTORY = "//sdcard//SecondStory/BloodAlley/LOGS/";
-	private static final String REMOTE_MEDIA_DIRECTORY = "/public_html/jessescott/projects/second_story/blood_alley/media";
-	private static final String REMOTE_SETTINGS_DIRECTORY = "/public_html/jessescott/projects/second_story/blood_alley/settings";
     public static final int DIALOG_DOWNLOAD_PROGRESS = 0;
     private ProgressDialog progressDialog;
-    private Button beginBtn;
-    private Boolean hasEnoughSpace = false;
     private double 	needsThisMuchSpace = 0.5;
 	
 	// LifeCycle

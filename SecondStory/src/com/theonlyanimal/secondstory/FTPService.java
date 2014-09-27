@@ -4,7 +4,6 @@ import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
-import android.os.Environment;
 import android.os.IBinder;
 import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
@@ -72,7 +71,7 @@ public class FTPService extends Service {
 					e.printStackTrace();
 				}
 			}
-			Toast.makeText(FTPService.this, "Downloaded all movies", Toast.LENGTH_SHORT).show();
+			Toast.makeText(FTPService.this, "2nd Story has downloaded all content", Toast.LENGTH_LONG).show();
 			Constants.downloadedAllVideos = true;
 		}
 		
