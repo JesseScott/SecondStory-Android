@@ -71,7 +71,8 @@ public class FTPService extends Service {
 					e.printStackTrace();
 				}
 			}
-			Toast.makeText(FTPService.this, "2nd Story has downloaded all content", Toast.LENGTH_LONG).show();
+			//Toast.makeText(FTPService.this.getBaseContext(), "2nd Story has downloaded all content", Toast.LENGTH_LONG).show();
+			isRunning = false;
 			Log.d("SS", "CONTENT DONE");
 			Constants.downloadedAllVideos = true;
 		}
@@ -81,6 +82,9 @@ public class FTPService extends Service {
 				boolean get = new DownloadFromFTP().ftpDownload("", "");
 				Log.d("SS", "getting ?  " + get);
 				// Stop Thread ???
+				//mythread.interrupt();
+				//myythread.stop();
+				//mythread = null;
 			}
 		}
 	}
