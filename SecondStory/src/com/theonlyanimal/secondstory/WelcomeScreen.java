@@ -16,6 +16,7 @@ import android.text.format.Time;
 import android.util.Log;
 import android.widget.Toast;
 import android.os.AsyncTask;
+import android.preference.PreferenceManager;
 import android.net.wifi.WifiConfiguration;
 import android.net.wifi.WifiManager;
 
@@ -53,8 +54,11 @@ public class WelcomeScreen extends Activity {
 	private static final String MEDIA_DIRECTORY = "//sdcard//SecondStory/BloodAlley/MEDIA/";
 	private static final String LOG_DIRECTORY = "//sdcard//SecondStory/BloodAlley/LOGS/";
     public static final int DIALOG_DOWNLOAD_PROGRESS = 0;
-    private ProgressDialog progressDialog;
+    
+    private ProgressDialog progressDialog, progress;
     private double 	needsThisMuchSpace = 0.5;
+    boolean manuallyPreppedDevice = false;
+
 	
 	// LifeCycle
 	@Override
@@ -63,8 +67,26 @@ public class WelcomeScreen extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.welcome_layout);
 		
-		// Do We Have Content ?
-		checkStorage();
+		// Progress Dialog
+        progress = ProgressDialog.show(this, "Checking Settings", "", true);
+        
+        // Delay Check
+		Thread timer = new Thread(){
+			@Override
+			public void run() {
+				//super.run();
+				try { 
+					sleep(500);	
+					progress.dismiss();
+				}
+				catch(InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+		};
+		timer.start();
+		
+		checkSettings();	
 
 		
 	} /* onCreate() */
@@ -115,23 +137,7 @@ public class WelcomeScreen extends Activity {
 		manager.reconnect();
 		
 		Toast.makeText(this, "Connecting To SecondStory Network", Toast.LENGTH_SHORT).show();
-		
-		/*
-		 	SupplicantState supState; 
-			wifiManager = (WifiManager) getSystemService(Context.WIFI_SERVICE);
-			WifiInfo wifiInfo = wifiManager.getConnectionInfo();
-			supState = wifiInfo.getSupplicantState();
-		 */
-		
-		/*
-		new Timer().schedule(new TimerTask() {          
-		    @Override
-		    public void run() {
-		        getFiles();      
-		    }
-		}, 2000);
-		*/
-		
+
 		final Handler handler = new Handler();
 		handler.postDelayed(new Runnable() {
 		  @Override
@@ -170,6 +176,27 @@ public class WelcomeScreen extends Activity {
 		AlertDialog dialog = builder.create();
 		dialog.show();
 	}
+	
+    protected void checkSettings() {
+		if(manuallyPreppedDevice) {
+			//Intent i = new Intent("android.intent.action.MENU");
+    		Intent i = new Intent(WelcomeScreen.this, MenuScreen.class);
+			startActivity(i);
+    		finish();
+		}
+		else {
+		 	SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
+	        boolean hasContent = settings.getBoolean("hasContent", false);   	        
+	        if(hasContent) {
+	        	Intent i = new Intent(WelcomeScreen.this, MenuScreen.class);
+	        	startActivity(i);
+				finish();
+	        }
+	        else if(!hasContent) {
+	        	checkStorage();
+	        }	
+		}
+    }
 	
 	
 	// Check If Directory Exists
@@ -226,7 +253,11 @@ public class WelcomeScreen extends Activity {
 					} 
 					else {
 						Log.v(TAG, " - Path Doesnt Exist - ");
-
+				    	   // Make The Directories
+			        	   base_directory.mkdirs();
+			        	   media_directory.mkdirs();
+			        	   log_directory.mkdirs();
+			        	   showStreamOrDownloadDialog();
 						
 					}
 				}
@@ -306,8 +337,7 @@ public class WelcomeScreen extends Activity {
 		        	   // Get The Files
 		        	   //askForWifi();
 		        	   getFiles();
-		        	   SharedPreferences prefs = getSharedPreferences(
-		        			      "com.theonlyanimal.secondstory", Context.MODE_PRIVATE);
+		        	   SharedPreferences prefs = getSharedPreferences("com.theonlyanimal.secondstory", Context.MODE_PRIVATE);
 		        	   prefs.edit().putBoolean("com.theonlyanimal.secondstory.stream", false).apply();
 		        	   
 		           }
@@ -315,12 +345,12 @@ public class WelcomeScreen extends Activity {
 		builder.setNegativeButton("Stream", new DialogInterface.OnClickListener() {
 		           public void onClick(DialogInterface dialog, int id) {
 		               // User cancelled the dialog - WERE GOING HOME
-		        	   Log.v(TAG, " - User Said Steam");
-			        	   SharedPreferences prefs = getSharedPreferences("com.theonlyanimal.secondstory", Context.MODE_PRIVATE);
-			        	   prefs.edit().putBoolean("com.theonlyanimal.secondstory.stream", true).apply();
-						Intent intent = new Intent(WelcomeScreen.this, MenuScreen.class);
-						startActivity(intent);
-						finish();
+		        	   Log.d(TAG, " - User Said Steam");
+		        	   SharedPreferences prefs = getSharedPreferences("com.theonlyanimal.secondstory", Context.MODE_PRIVATE);
+		        	   prefs.edit().putBoolean("com.theonlyanimal.secondstory.stream", true).apply();
+			           Intent intent = new Intent(WelcomeScreen.this, MenuScreen.class);
+					   startActivity(intent);
+					   finish();
 		           }
 		       });
 
@@ -331,7 +361,7 @@ public class WelcomeScreen extends Activity {
 	
 	// Download Files
 	public void getFiles() {
-		Log.v(TAG, " - getFiles() - ");
+		Log.d(TAG, " - getFiles() - ");
 		Toast.makeText(getApplicationContext(), "Dowloading Files", Toast.LENGTH_SHORT).show();
 		//DownloadHelper downloadHelper = new DownloadHelper(); 
 		//downloadHelper.execute();

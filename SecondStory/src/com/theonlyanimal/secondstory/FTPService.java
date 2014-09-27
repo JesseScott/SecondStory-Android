@@ -72,6 +72,7 @@ public class FTPService extends Service {
 				}
 			}
 			Toast.makeText(FTPService.this, "2nd Story has downloaded all content", Toast.LENGTH_LONG).show();
+			Log.d("SS", "CONTENT DONE");
 			Constants.downloadedAllVideos = true;
 		}
 		
