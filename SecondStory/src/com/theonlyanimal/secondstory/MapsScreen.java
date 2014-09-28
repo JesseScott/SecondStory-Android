@@ -5,7 +5,6 @@ package com.theonlyanimal.secondstory;
 
 import com.theonlyanimal.ar.FullscreenPlayback;
 import com.theonlyanimal.ar.FullscreenYoutubePlayback;
-import com.theonlyanimal.ar.VideoPlayerHelper.MEDIA_TYPE;
 
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -31,6 +30,8 @@ public class MapsScreen extends Activity {
 	Typeface dinBlack, dinMedium;
 	
 	ImageView frame, preview, background;
+	TextView label;
+	String caption;
 	boolean showPreview = false;
 	
 	ImageButton backBtn;
@@ -52,9 +53,6 @@ public class MapsScreen extends Activity {
 		overridePendingTransition(R.anim.anim_slide_in_left, R.anim.anim_stay_still);
 		setContentView(R.layout.maps_layout);
 		
-		// Get Activity Lifecycle
-		cameFromFullscreen = getIntent().getBooleanExtra("cameFromFullscreen", false);
-		
 		// Fonts
 		dinBlack = Typeface.createFromAsset(getAssets(), "fonts/din alternate black.ttf");
 		dinMedium = Typeface.createFromAsset(getAssets(), "fonts/din alternate medium.ttf"); 
@@ -66,30 +64,23 @@ public class MapsScreen extends Activity {
 			mediaHasPlayed = true;
 		}
 		
-		// Label
+		// Labels
 		navLabel = (TextView) findViewById(R.id.maps_title);
 		navLabel.setTypeface(dinBlack);
+		label = (TextView) findViewById(R.id.movie_label);
+		label.setTypeface(dinMedium);
 		
 		// BG
 		background = (ImageView) findViewById(R.id.maps_bg_img);
-		background.setOnTouchListener(new View.OnTouchListener() {
-			@Override
-			public boolean onTouch(View v, MotionEvent event) {
-				// Hide Image
-				//showPreview = false;
-				//frame.setVisibility(View.INVISIBLE);
-				//preview.setVisibility(View.INVISIBLE);
-				Log.v(TAG, "There Not Here");
-				return false;
-			}
-		});
 		
 		// Preview
 		frame = (ImageView) findViewById(R.id.movie_frame);
+		
 		preview = (ImageView) findViewById(R.id.movie_preview);
 		if(!showPreview) {
 			frame.setVisibility(View.INVISIBLE);
 			preview.setVisibility(View.INVISIBLE);
+			label.setVisibility(View.INVISIBLE);
 		}
 		preview.setOnTouchListener(new View.OnTouchListener() {
 			@Override
@@ -126,7 +117,6 @@ public class MapsScreen extends Activity {
 			@Override
 			public void onClick(View v) {
 				togglePreview(1);
-				whichVideo = 1;
 			}
 		});
 		
@@ -135,7 +125,6 @@ public class MapsScreen extends Activity {
 			@Override
 			public void onClick(View v) {
 				togglePreview(2);
-				whichVideo = 2;
 			}
 		});
 		
@@ -144,7 +133,6 @@ public class MapsScreen extends Activity {
 			@Override
 			public void onClick(View v) {
 				togglePreview(3);
-				whichVideo = 3;
 			}
 		});
 		
@@ -153,7 +141,6 @@ public class MapsScreen extends Activity {
 			@Override
 			public void onClick(View v) {
 				togglePreview(4);
-				whichVideo = 4;
 			}
 		});
 		
@@ -162,7 +149,6 @@ public class MapsScreen extends Activity {
 			@Override
 			public void onClick(View v) {
 				togglePreview(5);
-				whichVideo = 5;
 			}
 		});
 		
@@ -171,7 +157,6 @@ public class MapsScreen extends Activity {
 			@Override
 			public void onClick(View v) {
 				togglePreview(6);
-				whichVideo = 6;
 			}
 		});
 		
@@ -180,7 +165,6 @@ public class MapsScreen extends Activity {
 			@Override
 			public void onClick(View v) {
 				togglePreview(7);
-				whichVideo = 7;
 			}
 		});
 		
@@ -189,7 +173,6 @@ public class MapsScreen extends Activity {
 			@Override
 			public void onClick(View v) {
 				togglePreview(8);
-				whichVideo = 8;
 			}
 		});
 		
@@ -198,7 +181,6 @@ public class MapsScreen extends Activity {
 			@Override
 			public void onClick(View v) {
 				togglePreview(9);
-				whichVideo = 9;
 			}
 		});
 		
@@ -258,46 +240,63 @@ public class MapsScreen extends Activity {
 		mediaIsPlaying = true;
 	}
 	
-	private void togglePreview(int pin) {		
+	private void togglePreview(int pin) {	
+		whichVideo = pin;
 		showPreview = !showPreview;
+		
 		if(!showPreview) {
 			frame.setVisibility(View.INVISIBLE);
 			preview.setVisibility(View.INVISIBLE);
+			label.setVisibility(View.INVISIBLE);
 		}
 		else if(showPreview) {
 			frame.setVisibility(View.VISIBLE);
-			preview.setVisibility(View.VISIBLE);		
+			preview.setVisibility(View.VISIBLE);
+			label.setVisibility(View.VISIBLE);
 			switch (pin) {
 				case 1: // Beef
 					preview.setImageResource(R.drawable.beef);
+					caption = "Beef Tongue";
 					break;
 				case 2: // Pennies
 					preview.setImageResource(R.drawable.pennies);
+					caption = "Pennies";
 					break;
 				case 3: // Sweeping
 					preview.setImageResource(R.drawable.sweeping);
+					caption = "Sweeping";
 					break;
 				case 4: // Copper
 					preview.setImageResource(R.drawable.copper);
+					caption = "Copper Thief";
 					break;
 				case 5: // Shrooms
 					preview.setImageResource(R.drawable.shrooms);
+					caption = "Macrame";
 					break;
 				case 6: // Umbrellas
 					preview.setImageResource(R.drawable.umbrellas);
+					caption = "Umbrellas";
 					break;
 				case 7: // Alley
 					preview.setImageResource(R.drawable.alley);
+					caption = "Blood Alley";
 					break;
 				case 8: // Bicycles
 					preview.setImageResource(R.drawable.bicycles);
+					caption = "Bicycles";
 					break;
 				case 9: // Gun
 					preview.setImageResource(R.drawable.gun);
+					caption = "Gun";
 					break;
 				default:
 					preview.setImageResource(0);
+					caption = "";
 			}
+			
+			// Set Label
+			label.setText(caption.toUpperCase());
 		}
 	}
 	

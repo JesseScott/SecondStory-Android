@@ -155,8 +155,8 @@
     
 	    <ImageView
 	        android:id="@+id/movie_frame"
-	        android:layout_width="fill_parent"
-	        android:layout_height="fill_parent"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
 	        android:padding="20dp"
 	        android:src="@drawable/map_frame" />
 	    
@@ -167,6 +167,22 @@
 	        android:layout_alignBottom="@+id/movie_frame"
 	        android:src="@drawable/ic_launcher"
 	        android:padding="40dp" />
+
+	    <TextView
+	        android:id="@+id/movie_label"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignBottom="@+id/movie_frame"
+	        android:layout_marginBottom="60dp"
+	        android:layout_centerHorizontal="true"
+	        android:text="caption"
+	        android:textSize="30sp"
+	        android:textColor="@+color/white"
+	        android:shadowColor="@+color/black"
+    		android:shadowDx="-2"
+    		android:shadowDy="2"
+    		android:shadowRadius="0.01"
+	        android:textAppearance="?android:attr/textAppearanceLarge" />
     
      </RelativeLayout>
 
