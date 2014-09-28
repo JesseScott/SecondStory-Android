@@ -16,7 +16,7 @@ import com.theonlyanimal.secondstory.R;
 
 public class FullscreenYoutubePlayback extends YouTubeBaseActivity implements YouTubePlayer.OnInitializedListener{
 	
-	public static final String API_KEY = "AIzaSyC6yA82mS3VWCWXZQZ_zgiSC_lItLukSfY";
+	public static final String API_KEY = "AIzaSyB461pDdFFm_ZOVxdx_rx7cUrN5mhp3ynE"; // GPS
 
 	//http://youtu.be/<VIDEO_ID>
 	private String mMovieName = "";
@@ -42,7 +42,7 @@ public class FullscreenYoutubePlayback extends YouTubeBaseActivity implements Yo
 		
 		/** Getting Movie Name **/
 		mMovieName = getIntent().getStringExtra("movieName");
-		Log.v("SS YT", "Name is " + mMovieName);
+		Log.d("SS YT", "Name is " + mMovieName);
 		determineVideoID(mMovieName);
 
 		/** Initializing YouTube player view **/
@@ -53,6 +53,7 @@ public class FullscreenYoutubePlayback extends YouTubeBaseActivity implements Yo
 	
 	@Override
 	public void onInitializationFailure(Provider arg0, YouTubeInitializationResult arg1) {
+		Log.d("SS YT", "Error: " + arg1);
 		Toast.makeText(this, "Failured to Initialize!", Toast.LENGTH_LONG).show();
 	}
 
