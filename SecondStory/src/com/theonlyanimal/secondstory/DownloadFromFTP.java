@@ -44,7 +44,7 @@ public class DownloadFromFTP {
 			
 			// Set Log Directory & File
 			File logFile = new File(LOG_DIRECTORY + "logfile.txt");
-			Log.v("FTP", "LOG should exist at " + logFile.getAbsolutePath());
+			Log.d("FTP", "LOG should exist at " + logFile.getAbsolutePath());
 			if(!logFile.exists()) {
 				try {
 					logFile.createNewFile();
@@ -56,14 +56,14 @@ public class DownloadFromFTP {
 			
 			for (FTPFile f : files) {
 				// Log Names
-				Log.v("FTP", f.toFormattedString());
+				Log.d("FTP", f.toFormattedString());
 				
 				// Set Path
 				String remoteFile = f.getName();
-				Log.v("FTP", "REMOTE file " + remoteFile);
+				Log.d("FTP", "REMOTE file " + remoteFile);
 				String localFile = MEDIA_DIRECTORY;
 				localFile += remoteFile;
-				Log.v("FTP", " is being put in LOCAL path " + localFile);
+				Log.d("FTP", " is being put in LOCAL path " + localFile);
 			    output = new BufferedOutputStream(new FileOutputStream(localFile));
 			    
 				// Set Time
@@ -83,7 +83,7 @@ public class DownloadFromFTP {
                 Boolean success = ftp.retrieveFile(remoteFile, output);
                 status = success;
                 if(success) {
-                	Log.v("FTP", "SUCCESS");
+                	Log.d("FTP", "SUCCESS");
                 	now.setToNow();
                 	Long elapsedTime = (System.currentTimeMillis() - startTime) / 1000;
 				    logger.append("Download for " + localFile + " finished at " + now.format("%k:%M:%S"));
