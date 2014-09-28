@@ -106,9 +106,12 @@ public class MapsScreen extends Activity {
 		cameraBtn.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				frame.setVisibility(View.INVISIBLE);
+				preview.setVisibility(View.INVISIBLE);
+				label.setVisibility(View.INVISIBLE);
 				Intent i = new Intent("android.intent.action.VIDEO");
 	    		startActivity(i);
-				finish();
+				//finish();
 			}
 		});
 		

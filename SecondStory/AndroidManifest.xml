@@ -40,7 +40,8 @@
         android:launchMode="singleTask"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/NoActionBarFullscreen" >
+        android:theme="@style/NoActionBarFullscreen" 
+        android:largeHeap="true" >
         
         <!-- HOCKEY APP -->
         <activity android:name="net.hockeyapp.android.UpdateActivity" />
