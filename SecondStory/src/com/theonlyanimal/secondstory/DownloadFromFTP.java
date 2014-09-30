@@ -19,7 +19,7 @@ public class DownloadFromFTP {
 	private static final String MEDIA_DIRECTORY = "//sdcard//SecondStory/BloodAlley/MEDIA/";
 	private static final String LOG_DIRECTORY = "//sdcard//SecondStory/BloodAlley/LOGS/";
 	
-	public boolean ftpDownload(String srcFilePath,String desFileName) {
+	public boolean ftpDownload() {
 		
 		boolean status = false;
 		final String username = "ghostlight"; 
@@ -91,7 +91,6 @@ public class DownloadFromFTP {
 				    logger.append("for an elapsedTime of " + elapsedTime + " seconds");
 				    logger.newLine();
 				    logger.newLine();
-				    
                 }
                 
                 // Close Logger

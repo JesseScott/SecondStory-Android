@@ -218,10 +218,6 @@ public class VideoPlayerHelper implements OnPreparedListener,
             		}
             		
             	}
-                
-            	//mPlayerHelperActivityIntent = new Intent(mParentActivity, FullscreenPlayback.class);
-            	//mPlayerHelperActivityIntent = new Intent("android.intent.action.FULLSCREEN");
-            	//mPlayerHelperActivityIntent.setAction(null);
             	mPlayerHelperActivityIntent.setAction(android.content.Intent.ACTION_VIEW);
                 canBeFullscreen = true;
             }

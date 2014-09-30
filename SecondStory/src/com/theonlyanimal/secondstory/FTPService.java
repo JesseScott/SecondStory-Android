@@ -35,7 +35,7 @@ public class FTPService extends Service {
 	@Override
 	public synchronized void onDestroy() {
 		super.onDestroy();
-		if(!isRunning){
+		if(isRunning){
 			mythread.interrupt();
 			//myythread.stop();
 			mythread = null;
@@ -53,6 +53,7 @@ public class FTPService extends Service {
 	}
 	
 	class MyThread extends Thread {
+		private static final String TAG = "FTP";
 		long interval;
 		public MyThread(long interval){
 			this.interval = interval;
@@ -64,6 +65,7 @@ public class FTPService extends Service {
 				System.out.println("Service running");
 				try {
 					fileDownload();
+					Log.d(TAG, "trying");
 					Thread.sleep(interval);
 				} catch (InterruptedException e) {
 					isRunning = false;
@@ -72,18 +74,17 @@ public class FTPService extends Service {
 			}
 			//Toast.makeText(FTPService.this.getBaseContext(), "2nd Story has downloaded all content", Toast.LENGTH_LONG).show();
 			isRunning = false;
-			Log.d("SS", "CONTENT DONE");
+			Log.d(TAG, "CONTENT DONE");
 			Constants.downloadedAllVideos = true;
 		}
 		
 		private void fileDownload() {
 			if(checkInternetConnection()){
-				boolean get = new DownloadFromFTP().ftpDownload("", "");
-				Log.d("SS", "getting ?  " + get);
-				// Stop Thread ???
-				//mythread.interrupt();
-				//myythread.stop();
-				//mythread = null;
+				boolean get = new DownloadFromFTP().ftpDownload();
+				Log.d(TAG, "DOWNLOAD COMPLETE " + get);
+				// Stop Thread
+				mythread.interrupt();
+				stopSelf();
 			}
 		}
 	}
