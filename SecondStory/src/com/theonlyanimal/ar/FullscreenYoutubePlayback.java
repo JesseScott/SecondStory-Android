@@ -42,12 +42,18 @@ public class FullscreenYoutubePlayback extends YouTubeBaseActivity implements Yo
 		
 		/** Getting Movie Name **/
 		mMovieName = getIntent().getStringExtra("movieName");
-		Log.d("SS YT", "Name is " + mMovieName);
-		determineVideoID(mMovieName);
-
-		/** Initializing YouTube player view **/
-		YouTubePlayerView youTubePlayerView = (YouTubePlayerView) findViewById(R.id.youtube_player);
-		youTubePlayerView.initialize(API_KEY, this);
+		if(mMovieName.length() > 0) {
+			Log.d("SS YT", "Name is " + mMovieName);
+			determineVideoID(mMovieName);
+			
+			/** Initializing YouTube player view **/
+			YouTubePlayerView youTubePlayerView = (YouTubePlayerView) findViewById(R.id.youtube_player);
+			youTubePlayerView.initialize(API_KEY, this);
+		}
+		else {
+			Log.d("SS YT", "BAD NAME");
+			Toast.makeText(this, "Failed To Load Youtube Player", Toast.LENGTH_LONG).show();
+		}
 		
 	}
 	

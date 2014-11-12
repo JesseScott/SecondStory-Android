@@ -174,6 +174,11 @@ public class VideoPlayerHelper implements OnPreparedListener,
                     {
                         Log.e(LOGTAG, "Error while creating the MediaPlayer: " + e.toString());
                         
+                        // STILL NEED THE DATASOURCE FOR YOUTUBE
+                        mPlayerHelperActivityIntent = new Intent(mParentActivity, FullscreenYoutubePlayback.class);
+                        mMovieName = filename;
+                        mSeekPosition = seekPosition;
+                        
                         mCurrentState = MEDIA_STATE.ERROR;
                         mMediaPlayerLock.unlock();
                         mSurfaceTextureLock.unlock();
@@ -202,7 +207,7 @@ public class VideoPlayerHelper implements OnPreparedListener,
             if ((requestedType == MEDIA_TYPE.FULLSCREEN) || (requestedType == MEDIA_TYPE.ON_TEXTURE_FULLSCREEN))
             {
             	//check if user wants to stream
-            	if(mParentActivity.getApplicationContext().getSharedPreferences("com.theonlyanimal.secondstory", Context.MODE_PRIVATE).getBoolean("com.theonlyanimal.secondstory.stream", false)){
+            	if(mParentActivity.getApplicationContext().getSharedPreferences("com.theonlyanimal.secondstory", Context.MODE_PRIVATE).getBoolean("com.theonlyanimal.secondstory.stream", true)){
             		//lets start youtube video
             		mPlayerHelperActivityIntent = new Intent(mParentActivity, FullscreenYoutubePlayback.class);
             	}
@@ -434,8 +439,7 @@ public class VideoPlayerHelper implements OnPreparedListener,
             {
                 // If it cannot play on texture then we set these values to default
                 mPlayerHelperActivityIntent.putExtra("currentSeekPosition", 0);
-                mPlayerHelperActivityIntent.putExtra("shouldPlayImmediately",
-                    true);
+                mPlayerHelperActivityIntent.putExtra("shouldPlayImmediately", true);
                 
                 if (seekPosition != CURRENT_POSITION)
                     mPlayerHelperActivityIntent.putExtra("currentSeekPosition", seekPosition);
