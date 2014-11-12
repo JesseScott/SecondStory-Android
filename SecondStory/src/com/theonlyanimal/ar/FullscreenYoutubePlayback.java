@@ -52,9 +52,25 @@ public class FullscreenYoutubePlayback extends YouTubeBaseActivity implements Yo
 	}
 	
 	@Override
-	public void onInitializationFailure(Provider arg0, YouTubeInitializationResult arg1) {
-		Log.d("SS YT", "Error: " + arg1);
-		Toast.makeText(this, "Failured to Initialize!", Toast.LENGTH_LONG).show();
+	public void onInitializationFailure(Provider arg0, YouTubeInitializationResult error) {
+		String msg = "Youtube Failured to Initialize!";
+		if(error == YouTubeInitializationResult.SERVICE_MISSING) {
+			msg = "Please Install Youtube In Order To Stream Videos";
+		}
+		else if(error == YouTubeInitializationResult.SERVICE_VERSION_UPDATE_REQUIRED) {
+			msg = "Please Update Your Version Of Youtube In Order To Stream Videos";
+		}
+		else if(error == YouTubeInitializationResult.SERVICE_INVALID) {
+			msg = "Please Update Your Version Of Youtube In Order To Stream Videos";
+		}
+		else if(error == YouTubeInitializationResult.SERVICE_DISABLED) {
+			msg = "Please Enable Your Version Of Youtube In Order To Stream Videos";
+		}
+		else if(error == YouTubeInitializationResult.NETWORK_ERROR) {
+			msg = "I'm Sorry, There Was A Network Error";
+		}
+		Log.d("SS YT", "Error: " + error);
+		Toast.makeText(this, msg, Toast.LENGTH_LONG).show();
 	}
 
 	@Override

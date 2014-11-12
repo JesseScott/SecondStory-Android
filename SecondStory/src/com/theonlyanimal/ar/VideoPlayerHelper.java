@@ -158,7 +158,7 @@ public class VideoPlayerHelper implements OnPreparedListener,
                     {
                         mMediaPlayer = new MediaPlayer();
                   
-                        //Log.d(LOGTAG, "VPH Loading " + filename);
+                        Log.d(LOGTAG, "VPH Loading " + filename);
                         mMediaPlayer.setDataSource(filename);
                         
                         mMediaPlayer.prepareAsync();
@@ -429,10 +429,10 @@ public class VideoPlayerHelper implements OnPreparedListener,
                     mPlayerHelperActivityIntent.putExtra("currentSeekPosition", mMediaPlayer.getCurrentPosition());
                 
                 mMediaPlayerLock.unlock();
-            } else
+            } 
+            else
             {
-                // If it cannot play on texture then we set these values to
-                // default
+                // If it cannot play on texture then we set these values to default
                 mPlayerHelperActivityIntent.putExtra("currentSeekPosition", 0);
                 mPlayerHelperActivityIntent.putExtra("shouldPlayImmediately",
                     true);
