@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.theonlyanimal.secondstory"
     android:versionCode="16"
-    android:versionName="0.5.2" >
+    android:versionName="0.5.5" >
 
     <!-- SDK  -->
     <uses-sdk
