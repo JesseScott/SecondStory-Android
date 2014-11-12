@@ -48,7 +48,7 @@ public class FullscreenYoutubePlayback extends YouTubeBaseActivity implements Yo
 		/** Initializing YouTube player view **/
 		YouTubePlayerView youTubePlayerView = (YouTubePlayerView) findViewById(R.id.youtube_player);
 		youTubePlayerView.initialize(API_KEY, this);
-
+		
 	}
 	
 	@Override
@@ -81,7 +81,7 @@ public class FullscreenYoutubePlayback extends YouTubeBaseActivity implements Yo
 		player.setFullscreen(true);
 		/** Start buffering **/
 		if (!wasRestored) {
-			player.cueVideo(VIDEO_ID_PLAYABLE);
+			player.loadVideo(VIDEO_ID_PLAYABLE);			
 		}
 		
 	}
