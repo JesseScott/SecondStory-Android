@@ -90,7 +90,8 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
     */
     
     // Trackable dimensions
-    Vec2F targetPositiveDimensions[] = new Vec2F[VideoPlayback.NUM_TARGETS];
+    //Vec2F targetPositiveDimensions[] = new Vec2F[VideoPlayback.NUM_TARGETS];
+    Vec3F targetPositiveDimensions[] = new Vec3F[VideoPlayback.NUM_TARGETS];
     
     static int NUM_QUAD_VERTEX = 4;
     static int NUM_QUAD_INDEX = 6;
@@ -163,7 +164,7 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
         }
         
         for (int i = 0; i < VideoPlayback.NUM_TARGETS; i++)
-            targetPositiveDimensions[i] = new Vec2F();
+            targetPositiveDimensions[i] = new Vec3F();
         
         for (int i = 0; i < VideoPlayback.NUM_TARGETS; i++)
             modelViewMatrix[i] = new Matrix44F();

@@ -35,7 +35,7 @@ import android.widget.Toast;
 import com.qualcomm.vuforia.CameraDevice;
 import com.qualcomm.vuforia.DataSet;
 import com.qualcomm.vuforia.HINT;
-import com.qualcomm.vuforia.ImageTracker;
+import com.qualcomm.vuforia.ObjectTracker;
 import com.qualcomm.vuforia.State;
 import com.qualcomm.vuforia.STORAGE_TYPE;
 import com.qualcomm.vuforia.Trackable;
@@ -551,7 +551,7 @@ public class VideoPlayback extends Activity implements
         
         // Initialize the image tracker:
         TrackerManager trackerManager = TrackerManager.getInstance();
-        Tracker tracker = trackerManager.initTracker(ImageTracker.getClassType());
+        Tracker tracker = trackerManager.initTracker(ObjectTracker.getClassType());
         if (tracker == null)
         {
             Log.d(LOGTAG, "Failed to initialize ImageTracker.");
@@ -567,7 +567,7 @@ public class VideoPlayback extends Activity implements
     {
         // Get the image tracker:
         TrackerManager trackerManager = TrackerManager.getInstance();
-        ImageTracker imageTracker = (ImageTracker) trackerManager.getTracker(ImageTracker.getClassType());
+        ObjectTracker imageTracker = (ObjectTracker) trackerManager.getTracker(ObjectTracker.getClassType());
         if (imageTracker == null)
         {
             Log.d(LOGTAG, "Failed to load tracking data set because the ImageTracker has not been initialized.");
@@ -607,7 +607,7 @@ public class VideoPlayback extends Activity implements
         // Indicate if the trackers were started correctly
         boolean result = true;
         
-        Tracker imageTracker = TrackerManager.getInstance().getTracker(ImageTracker.getClassType());
+        Tracker imageTracker = TrackerManager.getInstance().getTracker(ObjectTracker.getClassType());
         if (imageTracker != null)
         {
             imageTracker.start();
@@ -625,7 +625,7 @@ public class VideoPlayback extends Activity implements
         // Indicate if the trackers were stopped correctly
         boolean result = true;
         
-        Tracker imageTracker = TrackerManager.getInstance().getTracker(ImageTracker.getClassType());
+        Tracker imageTracker = TrackerManager.getInstance().getTracker(ObjectTracker.getClassType());
         if (imageTracker != null)
             imageTracker.stop();
         else
@@ -643,7 +643,7 @@ public class VideoPlayback extends Activity implements
         
         // Get the image tracker:
         TrackerManager trackerManager = TrackerManager.getInstance();
-        ImageTracker imageTracker = (ImageTracker) trackerManager.getTracker(ImageTracker.getClassType());
+        ObjectTracker imageTracker = (ObjectTracker) trackerManager.getTracker(ObjectTracker.getClassType());
         if (imageTracker == null)
         {
             Log.d(
@@ -682,7 +682,7 @@ public class VideoPlayback extends Activity implements
         
         // Deinit the image tracker:
         TrackerManager trackerManager = TrackerManager.getInstance();
-        trackerManager.deinitTracker(ImageTracker.getClassType());
+        trackerManager.deinitTracker(ObjectTracker.getClassType());
         
         return result;
     }
