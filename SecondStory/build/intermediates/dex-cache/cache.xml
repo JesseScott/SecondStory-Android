@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/jessescott/Documents/Development/_CODE_/GIT/_TOA/SecondStory-Android copy/SecondStory/libs/HockeySDK-3.0.2.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="5555e301018d384c571778367189402e78924888">
+        <dex dex="/Users/jessescott/Documents/Development/_CODE_/GIT/_TOA/SecondStory-Android copy/SecondStory/build/intermediates/pre-dexed/debug/HockeySDK-3.0.2-bd2fa9c98c943b806c2d1305126286b114dbb285.jar" />
+    </item>
+    <item
+        jar="/Users/jessescott/Documents/Development/_CODE_/GIT/_TOA/SecondStory-Android copy/SecondStory/libs/YouTubeAndroidPlayerApi.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="29ccfbddf99584bddbaab62c0cf50dcd1c564e43">
+        <dex dex="/Users/jessescott/Documents/Development/_CODE_/GIT/_TOA/SecondStory-Android copy/SecondStory/build/intermediates/pre-dexed/debug/YouTubeAndroidPlayerApi-5d2ce09a11225d8d6acc286873642e6b90b5fa6f.jar" />
+    </item>
+    <item
+        jar="/Users/jessescott/Documents/Development/_CODE_/GIT/_TOA/SecondStory-Android copy/SecondStory/libs/Vuforia.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="dc574f68d5776268181756e656458f20604240af">
+        <dex dex="/Users/jessescott/Documents/Development/_CODE_/GIT/_TOA/SecondStory-Android copy/SecondStory/build/intermediates/pre-dexed/debug/Vuforia-9711a4e0445801ca77415729648762d983f2f062.jar" />
+    </item>
+    <item
+        jar="/Users/jessescott/Documents/Development/_CODE_/GIT/_TOA/SecondStory-Android copy/SecondStory/libs/android-support-v4.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="bd6479f5dd592790607e0504e66e0f31c2b4d308">
+        <dex dex="/Users/jessescott/Documents/Development/_CODE_/GIT/_TOA/SecondStory-Android copy/SecondStory/build/intermediates/pre-dexed/debug/android-support-v4-4bdd4582b93b1bc5cd63d1a730dc93b9a0b36133.jar" />
+    </item>
+    <item
+        jar="/Users/jessescott/Documents/Development/_CODE_/GIT/_TOA/SecondStory-Android copy/SecondStory/libs/commons-net-3.3.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="cd0d5510908225f76c5fe5a3f1df4fa44866f81e">
+        <dex dex="/Users/jessescott/Documents/Development/_CODE_/GIT/_TOA/SecondStory-Android copy/SecondStory/build/intermediates/pre-dexed/debug/commons-net-3.3-4eaa2e0ec8c26805216d0e3109fbb5c8f950c3e5.jar" />
+    </item>
+
+</items>

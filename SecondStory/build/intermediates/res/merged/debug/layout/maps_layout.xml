@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    tools:ignore="ContentDescription" >
+
+    <ImageView
+        android:id="@+id/maps_bg_img"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentTop="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/map_bg" />
+
+    <RelativeLayout
+        android:id="@+id/maps_nav"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="@+color/maps_nav_bg_color"
+        android:padding="5dp" >
+
+        <TextView
+            android:id="@+id/maps_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30dp"
+            android:textColor="@+color/maps_nav_font_color"
+            android:textSize="30sp"
+            android:text="@+string/label_maps"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <ImageButton
+            android:id="@+id/maps_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:padding="15dp"
+            android:src="@drawable/map_back_icon" />
+
+        <ImageButton
+            android:id="@+id/maps_camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="19dp"
+            android:background="@null"
+            android:src="@drawable/map_camera_icon" />
+
+    </RelativeLayout>
+
+    <ImageButton
+        android:id="@+id/pin_pennies"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/maps_nav"
+        android:layout_marginRight="18dp"
+        android:layout_marginTop="24dp"
+        android:layout_toLeftOf="@+id/pin_beef"
+        android:background="@null"
+        android:src="@drawable/map_pin" />
+
+    <ImageButton
+        android:id="@+id/pin_sweeping"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pin_copper"
+        android:layout_toLeftOf="@+id/pin_pennies"
+        android:background="@null"
+        android:src="@drawable/map_pin" />
+
+    <ImageButton
+        android:id="@+id/pin_alley"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/pin_gun"
+        android:layout_marginBottom="74dp"
+        android:layout_toLeftOf="@+id/pin_gun"
+        android:background="@null"
+        android:src="@drawable/map_pin" />
+
+    <ImageButton
+        android:id="@+id/pin_umbrellas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pin_shrooms"
+        android:layout_marginTop="27dp"
+        android:layout_toLeftOf="@+id/pin_shrooms"
+        android:background="@null"
+        android:src="@drawable/map_pin" />
+
+    <ImageButton
+        android:id="@+id/pin_shrooms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/pin_copper"
+        android:background="@null"
+        android:src="@drawable/map_pin" />
+
+    <ImageButton
+        android:id="@+id/pin_gun"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/pin_shrooms"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="26dp"
+        android:layout_marginLeft="8dp"
+        android:background="@null"
+        android:src="@drawable/map_pin" />
+
+    <ImageButton
+        android:id="@+id/pin_bicycles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/pin_alley"
+        android:layout_centerHorizontal="true"
+        android:background="@null"
+        android:src="@drawable/map_pin" />
+
+    <ImageButton
+        android:id="@+id/pin_copper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/pin_bicycles"
+        android:layout_alignTop="@+id/pin_pennies"
+        android:layout_marginRight="17dp"
+        android:background="@null"
+        android:src="@drawable/map_pin" />
+
+    <ImageButton
+        android:id="@+id/pin_beef"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/pin_sweeping"
+        android:layout_marginRight="65dp"
+        android:background="@null"
+        android:src="@drawable/map_pin" />
+
+    <RelativeLayout
+        android:id="@+id/maps_preview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+    >
+    
+	    <ImageView
+	        android:id="@+id/movie_frame"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:padding="20dp"
+	        android:src="@drawable/map_frame" />
+	    
+	    <ImageView
+	        android:id="@+id/movie_preview"
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:layout_alignBottom="@+id/movie_frame"
+	        android:src="@drawable/ic_launcher"
+	        android:padding="40dp" />
+
+	    <TextView
+	        android:id="@+id/movie_label"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignBottom="@+id/movie_frame"
+	        android:layout_marginBottom="60dp"
+	        android:layout_centerHorizontal="true"
+	        android:text="caption"
+	        android:textSize="30sp"
+	        android:textColor="@+color/white"
+	        android:shadowColor="@+color/black"
+    		android:shadowDx="-2"
+    		android:shadowDy="2"
+    		android:shadowRadius="0.01"
+	        android:textAppearance="?android:attr/textAppearanceLarge" />
+    
+     </RelativeLayout>
+
+</RelativeLayout><!-- From: file:/Users/jessescott/Documents/Development/_CODE_/GIT/_TOA/SecondStory-Android%20copy/SecondStory/res/layout/maps_layout.xml -->
