@@ -1,0 +1,32 @@
+<resources>
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+    </style>
+    
+    <!-- Custom theme: No Action Bar But With Fullscreen -->
+    <style name="NoActionBar" parent="@android:style/Theme.Holo.Light">
+    	<item name="android:windowActionBar">false</item>
+    	<item name="android:windowNoTitle">true</item>
+	</style> 
+	
+    <!-- Custom theme: No Action Bar And Fullscreen -->
+    <style name="NoActionBarFullscreen" parent="@android:style/Theme.Holo.NoActionBar.Fullscreen">
+
+	</style> 
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+
+    </style>
+    
+    <!-- Base Text Style -->
+    <style name="TextStyle">
+        
+    </style>
+    
+
+</resources>

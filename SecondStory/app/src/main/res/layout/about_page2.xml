@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="ContentDescription" >
+
+    <ImageView
+        android:id="@+id/about2_bg_img"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentTop="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/about_pg2" />
+    
+    <RelativeLayout
+        android:id="@+id/about2_nav"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="@+color/about_nav_bg_color"
+    >
+
+        <ImageButton
+            android:id="@+id/about2_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:padding="15dp"
+            android:background="@null"
+            android:src="@drawable/global_back_icon" />
+
+        <TextView
+            android:id="@+id/about2_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30dp"
+            android:textColor="@+color/about_nav_font_color"
+            android:textSize="24sp"
+            android:text="@+string/label_about"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+    </RelativeLayout>
+
+</RelativeLayout>

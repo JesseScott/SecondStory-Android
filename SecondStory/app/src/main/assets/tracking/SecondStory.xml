@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="ba_bicycles" size="720.000000 720.000000" />
+    <ImageTarget name="ba_alley" size="720.000000 720.000000" />
+    <ImageTarget name="ba_beef" size="720.000000 960.000000" />
+    <ImageTarget name="ba_pennies" size="720.000000 723.012573" />
+    <ImageTarget name="ba_copper" size="720.000000 720.000000" />
+    <ImageTarget name="ba_gun" size="720.000000 720.000000" />
+    <ImageTarget name="ba_shrooms" size="720.000000 720.000000" />
+    <ImageTarget name="ba_umbrellas" size="720.000000 720.000000" />
+    <ImageTarget name="ba_sweeping" size="720.000000 720.000000" />
+  </Tracking>
+</QCARConfig>
