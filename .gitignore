@@ -29,6 +29,7 @@ gen/
 
 # Gradle files
 .gradle/
+SecondStory/.gradle/
 build/
 /*/build/
 
