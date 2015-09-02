@@ -19,7 +19,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:background="@+color/about_nav_bg_color"
+        android:background="@color/about_nav_bg_color"
     >
 
         <ImageButton
@@ -39,9 +39,9 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="30dp"
-            android:textColor="@+color/about_nav_font_color"
+            android:textColor="@color/about_nav_font_color"
             android:textSize="24sp"
-            android:text="@+string/label_about"
+            android:text="@string/label_about"
             android:textAppearance="?android:attr/textAppearanceLarge" />
     </RelativeLayout>
 

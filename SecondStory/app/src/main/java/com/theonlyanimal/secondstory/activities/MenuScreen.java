@@ -44,16 +44,26 @@ public class MenuScreen extends Activity {
 			}
 		});
 		
-		Button mapsBtn = (Button) findViewById(R.id.menu_maps_btn);
-		mapsBtn.setTypeface(dinBlack);
-		mapsBtn.setOnClickListener(new View.OnClickListener() {
+		Button galleryBtn = (Button) findViewById(R.id.menu_gallery_btn);
+        galleryBtn.setTypeface(dinBlack);
+        galleryBtn.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Intent i = new Intent("android.intent.action.MAPS");
+				Intent i = new Intent("android.intent.action.GALLERY");
 	    		startActivity(i);
 			}
 		});
-		
+        /*
+        Button mapsBtn = (Button) findViewById(R.id.menu_maps_btn);
+        mapsBtn.setTypeface(dinBlack);
+        mapsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent("android.intent.action.MAPS");
+                startActivity(i);
+            }
+        });
+		*/
 		Button feedbackBtn = (Button) findViewById(R.id.menu_feedback_btn);
 		feedbackBtn.setTypeface(dinBlack);
 		feedbackBtn.setOnClickListener(new View.OnClickListener() {

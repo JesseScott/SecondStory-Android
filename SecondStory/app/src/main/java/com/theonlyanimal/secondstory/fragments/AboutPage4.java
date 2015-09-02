@@ -1,4 +1,4 @@
-package com.theonlyanimal.secondstory.activities;
+package com.theonlyanimal.secondstory.fragments;
 
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -12,23 +12,23 @@ import android.widget.TextView;
 
 import com.theonlyanimal.secondstory.R;
 
-public class AboutPage1 extends Fragment {
+public class AboutPage4 extends Fragment {
 	
 	ImageButton backBtn;
-		
+	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.about_page1, container, false);
-		
+		ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.about_page4, container, false);
+
 		// Fonts
 		Typeface dinBlack = Typeface.createFromAsset(getActivity().getAssets(), "fonts/din alternate black.ttf");
 		
 		// Label
-		TextView navLabel = (TextView) rootView.findViewById(R.id.about1_title);
+		TextView navLabel = (TextView) rootView.findViewById(R.id.about4_title);
 		navLabel.setTypeface(dinBlack);
 		
 		// Buttons
-		backBtn = (ImageButton) rootView.findViewById(R.id.about1_back);
+		backBtn = (ImageButton) rootView.findViewById(R.id.about4_back);
 		backBtn.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {

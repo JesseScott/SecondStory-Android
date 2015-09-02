@@ -1,4 +1,4 @@
-package com.theonlyanimal.secondstory.activities;
+package com.theonlyanimal.secondstory.fragments;
 
 import android.content.Intent;
 import android.graphics.Typeface;

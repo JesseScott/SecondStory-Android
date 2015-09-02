@@ -12,6 +12,10 @@ import android.support.v4.view.ViewPager;
 import android.util.Log;
 
 import com.theonlyanimal.secondstory.R;
+import com.theonlyanimal.secondstory.fragments.AboutPage1;
+import com.theonlyanimal.secondstory.fragments.AboutPage2;
+import com.theonlyanimal.secondstory.fragments.AboutPage3;
+import com.theonlyanimal.secondstory.fragments.AboutPage4;
 
 
 // CLASS
@@ -38,7 +42,7 @@ public class AboutScreen extends FragmentActivity {
         }
         
         // Instantiate Pager & Adapter
-        pager = (ViewPager) findViewById(R.id.pager);
+        pager = (ViewPager) findViewById(R.id.about_pager);
         adapter = new AboutPagerAdapter(getSupportFragmentManager());
         pager.setAdapter(adapter);
     }

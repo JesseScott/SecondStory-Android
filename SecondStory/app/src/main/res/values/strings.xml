@@ -13,6 +13,7 @@
     <string name="label_done">Done</string>
     <string name="label_guide">GUIDE</string>
     <string name="label_maps">MAPS</string>
+    <string name="label_gallery">GALLERY</string>
     <string name="label_settings">SETTINGS</string>
     <string name="label_feedback">FEEDBACK</string>
     <string name="label_about">ABOUT</string>
@@ -48,5 +49,7 @@
     <string name="menu_camera_back">Rear</string>
         
     <string name="splash_screen_description">Vuforia Splash</string>
+
+    <string name="title_template_step">Step </string>
 
 </resources>
