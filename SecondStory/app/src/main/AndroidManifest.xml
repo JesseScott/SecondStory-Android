@@ -183,7 +183,7 @@
 
         <!-- FULLSCREEN  -->
         <activity
-            android:name="com.theonlyanimal.ar.FullscreenPlayback"
+            android:name="com.theonlyanimal.secondstory.ar.FullscreenPlayback"
             android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize"
             android:launchMode="singleTask"
             android:screenOrientation="landscape"
@@ -196,7 +196,7 @@
 
         <!-- FULLSCREEN YOUTUBE -->
         <activity
-            android:name="com.theonlyanimal.ar.FullscreenYoutubePlayback"
+            android:name="com.theonlyanimal.secondstory.ar.FullscreenYoutubePlayback"
             android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize"
             android:launchMode="singleTask"
             android:screenOrientation="landscape"
@@ -210,7 +210,7 @@
         <!-- FTP SERVICE -->
         <service android:name="FTPService" >
             <intent-filter>
-                <action android:name="com.theonlyanimal.FTPService" >
+                <action android:name="com.theonlyanimal.secondstory.ftp.FTPService" >
                 </action>
             </intent-filter>
         </service>
