@@ -13,7 +13,7 @@ import com.theonlyanimal.secondstory.fragments.GallerySlidePageFragment;
 
 public class GalleryScreen extends FragmentActivity {
 
-    private static final int NUM_PAGES = 7;
+    private static final int NUM_PAGES = 8;
     private ViewPager mPager;
     private PagerAdapter mPagerAdapter;
 

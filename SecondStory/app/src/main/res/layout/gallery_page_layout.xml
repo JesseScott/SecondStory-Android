@@ -13,8 +13,7 @@
             android:id="@+id/gallery_page_bg"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="fitXY"
-            android:src="@drawable/splash_bg"
+            android:scaleType="fitCenter"
         />
 
         <TextView
