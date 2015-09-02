@@ -5,25 +5,53 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Dummy content. -->
-    <LinearLayout android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        <TextView android:id="@android:id/text1"
+        <ImageView
+            android:id="@+id/gallery_page_bg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/splash_bg"
+        />
+
+        <TextView
+            android:id="@+id/gallery_page_title"
             style="?android:textAppearanceLarge"
             android:textStyle="bold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp" />
+            android:text="TITLE"
+            android:textColor="@color/gray"
+            android:layout_margin="16dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"/>
 
-        <TextView style="?android:textAppearanceMedium"
+        <TextView
+            android:id="@+id/gallery_page_director"
+            style="?android:textAppearanceMedium"
             android:lineSpacingMultiplier="1.2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/splash_screen_description" />
+            android:text="subtitle"
+            android:textColor="@color/gray"
+            android:layout_margin="16dp"
+            android:layout_below="@+id/gallery_page_title"
+            android:layout_alignParentStart="true"/>
 
-    </LinearLayout>
+        <ImageButton
+            android:id="@+id/gallery_page_playBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/icon_play"
+            android:background="@null"
+        />
+
+    </RelativeLayout>
+
 
 </ScrollView>

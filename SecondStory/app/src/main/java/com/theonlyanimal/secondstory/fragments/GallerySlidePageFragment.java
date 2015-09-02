@@ -36,11 +36,10 @@ public class GallerySlidePageFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // Inflate the layout containing a title and body text.
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.gallery_page_layout, container, false);
 
-        // Set the title view to show the page number.
-        ((TextView) rootView.findViewById(android.R.id.text1)).setText(getString(R.string.title_template_step, mPageNumber + 1));
+        ((TextView) rootView.findViewById(R.id.gallery_page_title)).setText(getResources().getStringArray(R.array.vid_title)[mPageNumber]);
+        ((TextView) rootView.findViewById(R.id.gallery_page_director)).setText(getResources().getStringArray(R.array.vid_directors)[mPageNumber]);
 
         return rootView;
     }

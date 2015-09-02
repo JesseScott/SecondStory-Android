@@ -21,23 +21,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="35bf6096-e430-4b73-8751-be67de82450b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/activities/GalleryScreen.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/fragments/GallerySlidePageFragment.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/gallery_layout.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/activities/AboutPage1.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/fragments/AboutPage1.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/activities/AboutPage2.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/fragments/AboutPage2.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/activities/AboutPage3.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/fragments/AboutPage3.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/activities/AboutPage4.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/fragments/AboutPage4.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/menu_bg.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/menu_bg.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/outputFileStates.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/outputFileStates.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/activities/AboutScreen.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/activities/AboutScreen.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/activities/MenuScreen.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/activities/MenuScreen.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/about_layout.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/about_layout.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/about_page1.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/about_page1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/menu_layout.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/menu_layout.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/fragments/GallerySlidePageFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/fragments/GallerySlidePageFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/arrays.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/arrays.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/gallery_page_layout.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/gallery_page_layout.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SecondStory.iws" />
@@ -83,25 +69,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="menu_layout.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/menu_layout.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.103448">
-              <caret line="37" column="41" selection-start-line="37" selection-start-column="41" selection-end-line="37" selection-end-column="41" />
-              <folding>
-                <element signature="e#1170#1191#0" expanded="true" />
-                <element signature="e#1652#1675#0" expanded="true" />
-                <element signature="e#2134#2155#0" expanded="true" />
-                <element signature="e#2625#2649#0" expanded="true" />
-                <element signature="e#3468#3488#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="GalleryScreen.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/activities/GalleryScreen.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -122,6 +89,20 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="GallerySlidePageFragment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/fragments/GallerySlidePageFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="41" column="130" selection-start-line="41" selection-start-column="130" selection-end-line="41" selection-end-column="130" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1514#1515#0" expanded="true" />
+                <element signature="e#1548#1549#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="gallery_page_layout.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/gallery_page_layout.xml">
           <provider selected="true" editor-type-id="android-designer">
@@ -129,34 +110,8 @@
           </provider>
           <provider editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#894#929#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="strings.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-19.11111">
-              <caret line="50" column="43" selection-start-line="50" selection-start-column="18" selection-end-line="50" selection-end-column="43" />
+              <caret line="14" column="47" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GallerySlidePageFragment.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/fragments/GallerySlidePageFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="42" column="82" selection-start-line="42" selection-start-column="82" selection-end-line="42" selection-end-column="109" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1476#1477#0" expanded="true" />
-                <element signature="e#1510#1511#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -1599,7 +1554,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/helpers/StorageHelper.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/activities/LocationScreen.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/maps_layout.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/VideoPlayerHelper.java" />
@@ -1646,9 +1600,10 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/gallery_layout.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/about_page1.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/activities/AboutScreen.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/fragments/GallerySlidePageFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/activities/GalleryScreen.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/fragments/GallerySlidePageFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/arrays.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/gallery_page_layout.xml" />
       </list>
     </option>
@@ -2263,7 +2218,7 @@
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32923368" sideWeight="0.5021299" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32923368" sideWeight="0.4978701" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32923368" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23368023" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -2411,14 +2366,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/SampleApplicationException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.08746356">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/SampleApplicationGLView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.8717201">
@@ -2753,20 +2700,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="27" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/activities/MapsScreen.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.97084546">
           <caret line="373" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="373" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2776,51 +2715,12 @@
         <state vertical-scroll-proportion="0.48104957">
           <caret line="65" column="10" selection-start-line="65" selection-start-column="10" selection-end-line="65" selection-end-column="10" />
           <folding>
-            <element signature="e#2055#2224#0" expanded="true" />
-            <element signature="e#2223#2224#0" expanded="true" />
-            <element signature="e#2358#2524#0" expanded="true" />
-            <element signature="e#2523#2524#0" expanded="true" />
-            <element signature="e#2654#3012#0" expanded="true" />
-            <element signature="e#3011#3012#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/menu_layout.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.103448">
-          <caret line="37" column="41" selection-start-line="37" selection-start-column="41" selection-end-line="37" selection-end-column="41" />
-          <folding>
-            <element signature="e#1170#1191#0" expanded="true" />
-            <element signature="e#1652#1675#0" expanded="true" />
-            <element signature="e#2134#2155#0" expanded="true" />
-            <element signature="e#2625#2649#0" expanded="true" />
-            <element signature="e#3468#3488#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="93" column="67" selection-start-line="93" selection-start-column="67" selection-end-line="93" selection-end-column="67" />
-          <folding>
-            <element signature="e#1399#1417#0" expanded="true" />
-            <element signature="e#1755#1773#0" expanded="true" />
-            <element signature="e#2214#2232#0" expanded="true" />
-            <element signature="e#2674#2692#0" expanded="true" />
-            <element signature="e#3133#3151#0" expanded="true" />
-            <element signature="e#3597#3615#0" expanded="true" />
-            <element signature="e#4066#4084#0" expanded="true" />
-            <element signature="e#4536#4554#0" expanded="true" />
-            <element signature="e#5006#5024#0" expanded="true" />
-            <element signature="e#5474#5492#0" expanded="true" />
-            <element signature="e#5943#5961#0" expanded="true" />
-            <element signature="e#6407#6425#0" expanded="true" />
-            <element signature="e#6999#7017#0" expanded="true" />
+            <element signature="e#2055#2224#0" expanded="false" />
+            <element signature="e#2223#2224#0" expanded="false" />
+            <element signature="e#2358#2524#0" expanded="false" />
+            <element signature="e#2523#2524#0" expanded="false" />
+            <element signature="e#2654#3012#0" expanded="false" />
+            <element signature="e#3011#3012#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2832,17 +2732,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.06">
           <caret line="4" column="26" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/about_page1.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.645">
-          <caret line="43" column="27" selection-start-line="43" selection-start-column="27" selection-end-line="43" selection-end-column="27" />
           <folding />
         </state>
       </provider>
@@ -2882,18 +2771,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/fragments/GallerySlidePageFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="42" column="82" selection-start-line="42" selection-start-column="82" selection-end-line="42" selection-end-column="109" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1476#1477#0" expanded="true" />
-            <element signature="e#1510#1511#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/activities/GalleryScreen.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2920,16 +2797,94 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/menu_layout.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.12">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="14" selection-end-column="42" />
+          <folding>
+            <element signature="e#1170#1191#0" expanded="true" />
+            <element signature="e#1652#1675#0" expanded="true" />
+            <element signature="e#2134#2155#0" expanded="true" />
+            <element signature="e#2625#2649#0" expanded="true" />
+            <element signature="e#3468#3488#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="93" column="67" selection-start-line="93" selection-start-column="67" selection-end-line="93" selection-end-column="67" />
+          <folding>
+            <element signature="e#1399#1417#0" expanded="true" />
+            <element signature="e#1755#1773#0" expanded="true" />
+            <element signature="e#2214#2232#0" expanded="true" />
+            <element signature="e#2674#2692#0" expanded="true" />
+            <element signature="e#3133#3151#0" expanded="true" />
+            <element signature="e#3597#3615#0" expanded="true" />
+            <element signature="e#4066#4084#0" expanded="true" />
+            <element signature="e#4536#4554#0" expanded="true" />
+            <element signature="e#5006#5024#0" expanded="true" />
+            <element signature="e#5474#5492#0" expanded="true" />
+            <element signature="e#5943#5961#0" expanded="true" />
+            <element signature="e#6407#6425#0" expanded="true" />
+            <element signature="e#6999#7017#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/about_page1.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24">
+          <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+          <folding>
+            <element signature="e#1657#1678#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/arrays.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4028133">
+          <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/fragments/GallerySlidePageFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="41" column="130" selection-start-line="41" selection-start-column="130" selection-end-line="41" selection-end-column="130" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1514#1515#0" expanded="true" />
+            <element signature="e#1548#1549#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19181585">
+          <caret line="10" column="27" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/gallery_page_layout.xml">
       <provider selected="true" editor-type-id="android-designer">
         <state />
       </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#894#929#0" expanded="true" />
-          </folding>
+          <caret line="14" column="47" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
+          <folding />
         </state>
       </provider>
     </entry>

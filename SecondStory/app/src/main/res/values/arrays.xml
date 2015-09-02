@@ -7,4 +7,28 @@
         <item>Soon...</item>
     </string-array>
 
+    <!-- TITLES -->
+    <string-array name="vid_title">
+        <item>Cirque Dystopic</item>
+        <item>Exhibit A</item>
+        <item>Leaving the House</item>
+        <item>A Letter Too Late Pt1</item>
+        <item>A Letter Too Late Pt2</item>
+        <item>Plant</item>
+        <item>Portability</item>
+        <item>Stall 43</item>
+    </string-array>
+
+    <!-- DIRECTORS -->
+    <string-array name="vid_directors">
+        <item>Milly Mumford</item>
+        <item>Claire Love Wilson</item>
+        <item>Amy Dauer</item>
+        <item>Sultan Owaisi</item>
+        <item>Sultan Owaisi</item>
+        <item>Marcela Amaya</item>
+        <item>Jess Amy Shead</item>
+        <item>Baraka Ramini</item>
+    </string-array>
+
 </resources>
