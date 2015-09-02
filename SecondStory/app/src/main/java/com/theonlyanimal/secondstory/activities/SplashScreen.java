@@ -50,14 +50,19 @@ public class SplashScreen extends Activity {
         query.getFirstInBackground(new GetCallback<ParseObject>() {
             public void done(ParseObject object, ParseException e) {
                 if (object == null) {
-                    Log.d(TAG, "The getFirst request failed.");
+                    Log.d(TAG, "The Current Show Request Failed");
                     navigate(null);
                 }
                 else {
-                    Log.d(TAG, "Retrieved the object.");
+                    Log.d(TAG, "Retrieved the Current Show");
                     ParseObject ptr = (ParseObject) object.get("currentEvent");
-                    String name = ptr.get("name").toString();
-                    navigate(name);
+                    if(ptr != null) {
+                        String name = ptr.get("name").toString();
+                        navigate(name);
+                    }
+                    else {
+                        navigate(null);
+                    }
                 }
             }
         });
