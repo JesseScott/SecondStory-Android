@@ -45,5 +45,8 @@ proguard/
 # Metadata
 .metadata/*
 
+# Idea
+.idea/*
+
 
 
