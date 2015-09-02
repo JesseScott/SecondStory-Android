@@ -98,6 +98,10 @@ public class WelcomeScreen extends Activity {
         {
             currentEvent = Event.DAREU;
             eventName = currentEvent.toString();
+        }
+        else
+        {
+            eventName = getIntent().getStringExtra(Constants.kSSSharedPrefsShow);
             ParseQuery<ParseObject> query = ParseQuery.getQuery(Constants.kSSClassNameMedia);
             //query.whereEqualTo()
             try {
@@ -105,10 +109,6 @@ public class WelcomeScreen extends Activity {
             } catch (ParseException e) {
                 e.printStackTrace();
             }
-        }
-        else
-        {
-            eventName = getIntent().getStringExtra(Constants.kSSSharedPrefsShow);
         }
 		
 		if(checkForSD()) {
