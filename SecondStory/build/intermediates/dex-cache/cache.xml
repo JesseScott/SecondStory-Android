@@ -2,39 +2,53 @@
 <items version="2" >
 
     <item
-        jar="/Users/jessescott/Documents/Development/_CODE_/GIT/_TOA/SecondStory-Android copy/SecondStory/libs/HockeySDK-3.0.2.jar"
+        jar="/Users/jessescott/Documents/Development/_CODE_/GIT/_TOA/SecondStory-Android/SecondStory/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/jars/classes.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="5555e301018d384c571778367189402e78924888">
-        <dex dex="/Users/jessescott/Documents/Development/_CODE_/GIT/_TOA/SecondStory-Android copy/SecondStory/build/intermediates/pre-dexed/debug/HockeySDK-3.0.2-bd2fa9c98c943b806c2d1305126286b114dbb285.jar" />
+        sha1="d84409890828e07d344a3b9b1da545dba9897b51">
+        <dex dex="/Users/jessescott/Documents/Development/_CODE_/GIT/_TOA/SecondStory-Android/SecondStory/app/build/intermediates/pre-dexed/debug/classes-51d6ee4e8c4239e2e212599fe6f92e303a791197.jar" />
     </item>
     <item
-        jar="/Users/jessescott/Documents/Development/_CODE_/GIT/_TOA/SecondStory-Android copy/SecondStory/libs/YouTubeAndroidPlayerApi.jar"
+        jar="/Users/jessescott/Documents/Development/_CODE_/GIT/_TOA/SecondStory-Android/SecondStory/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/jars/classes.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="29ccfbddf99584bddbaab62c0cf50dcd1c564e43">
-        <dex dex="/Users/jessescott/Documents/Development/_CODE_/GIT/_TOA/SecondStory-Android copy/SecondStory/build/intermediates/pre-dexed/debug/YouTubeAndroidPlayerApi-5d2ce09a11225d8d6acc286873642e6b90b5fa6f.jar" />
+        sha1="4e86306289ace4aa0cfec44a05ed2b410d36989d">
+        <dex dex="/Users/jessescott/Documents/Development/_CODE_/GIT/_TOA/SecondStory-Android/SecondStory/app/build/intermediates/pre-dexed/debug/classes-d4afdfadd8b5d8cf2a2b71452bb88e54b4905d1b.jar" />
     </item>
     <item
-        jar="/Users/jessescott/Documents/Development/_CODE_/GIT/_TOA/SecondStory-Android copy/SecondStory/libs/Vuforia.jar"
+        jar="/Users/jessescott/Documents/Development/_CODE_/GIT/_TOA/SecondStory-Android/SecondStory/app/libs/Vuforia.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="dc574f68d5776268181756e656458f20604240af">
-        <dex dex="/Users/jessescott/Documents/Development/_CODE_/GIT/_TOA/SecondStory-Android copy/SecondStory/build/intermediates/pre-dexed/debug/Vuforia-9711a4e0445801ca77415729648762d983f2f062.jar" />
+        <dex dex="/Users/jessescott/Documents/Development/_CODE_/GIT/_TOA/SecondStory-Android/SecondStory/app/build/intermediates/pre-dexed/debug/Vuforia-249731b44cfd1bb0f3c5918d9b8832fc2de98cb1.jar" />
     </item>
     <item
-        jar="/Users/jessescott/Documents/Development/_CODE_/GIT/_TOA/SecondStory-Android copy/SecondStory/libs/android-support-v4.jar"
+        jar="/Users/jessescott/Documents/Development/_CODE_/GIT/_TOA/SecondStory-Android/SecondStory/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/jars/libs/internal_impl-22.0.0.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="bd6479f5dd592790607e0504e66e0f31c2b4d308">
-        <dex dex="/Users/jessescott/Documents/Development/_CODE_/GIT/_TOA/SecondStory-Android copy/SecondStory/build/intermediates/pre-dexed/debug/android-support-v4-4bdd4582b93b1bc5cd63d1a730dc93b9a0b36133.jar" />
+        sha1="b5b92f469d515a13d778900f6d50c03d12f35504">
+        <dex dex="/Users/jessescott/Documents/Development/_CODE_/GIT/_TOA/SecondStory-Android/SecondStory/app/build/intermediates/pre-dexed/debug/internal_impl-22.0.0-03298649d0485e3434e2cb789316e54fd87378d3.jar" />
     </item>
     <item
-        jar="/Users/jessescott/Documents/Development/_CODE_/GIT/_TOA/SecondStory-Android copy/SecondStory/libs/commons-net-3.3.jar"
+        jar="/Users/jessescott/Documents/Development/Android/SDK/android-sdk-macosx/extras/android/m2repository/com/android/support/support-annotations/22.0.0/support-annotations-22.0.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
+        <dex dex="/Users/jessescott/Documents/Development/_CODE_/GIT/_TOA/SecondStory-Android/SecondStory/app/build/intermediates/pre-dexed/debug/support-annotations-22.0.0-686813933975654bc99cfcc0fbbfd7df52c25177.jar" />
+    </item>
+    <item
+        jar="/Users/jessescott/Documents/Development/_CODE_/GIT/_TOA/SecondStory-Android/SecondStory/app/libs/YouTubeAndroidPlayerApi.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="29ccfbddf99584bddbaab62c0cf50dcd1c564e43">
+        <dex dex="/Users/jessescott/Documents/Development/_CODE_/GIT/_TOA/SecondStory-Android/SecondStory/app/build/intermediates/pre-dexed/debug/YouTubeAndroidPlayerApi-2e7049e545e7ed2c11e56c9e6a70350e635c4d6f.jar" />
+    </item>
+    <item
+        jar="/Users/jessescott/Documents/Development/_CODE_/GIT/_TOA/SecondStory-Android/SecondStory/app/libs/commons-net-3.3.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="cd0d5510908225f76c5fe5a3f1df4fa44866f81e">
-        <dex dex="/Users/jessescott/Documents/Development/_CODE_/GIT/_TOA/SecondStory-Android copy/SecondStory/build/intermediates/pre-dexed/debug/commons-net-3.3-4eaa2e0ec8c26805216d0e3109fbb5c8f950c3e5.jar" />
+        <dex dex="/Users/jessescott/Documents/Development/_CODE_/GIT/_TOA/SecondStory-Android/SecondStory/app/build/intermediates/pre-dexed/debug/commons-net-3.3-328db454046e64e06cb1d28742cae7cb8d2e42a8.jar" />
     </item>
 
 </items>
