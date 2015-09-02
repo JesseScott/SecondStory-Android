@@ -5,6 +5,7 @@ package com.theonlyanimal.secondstory.activities;
 import java.io.File;
 
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -19,26 +20,56 @@ import android.preference.PreferenceManager;
 import android.net.wifi.WifiConfiguration;
 import android.net.wifi.WifiManager;
 
+import com.parse.CountCallback;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
 import com.theonlyanimal.secondstory.helpers.Constants;
 import com.theonlyanimal.secondstory.helpers.StorageHelper;
 import com.theonlyanimal.secondstory.ftp.FTPService;
 import com.theonlyanimal.secondstory.R;
 
 
+
+
 // ACTIVITY CLASS
 
 public class WelcomeScreen extends Activity {
 
+    // Event Enum
+    private enum Event {
+        DAREU("dareu", 0),
+        GHOSTLIGHT("ghostlight", 1);
+
+        private String stringValue;
+        private int intValue;
+        private Event(String toString, int value) {
+            stringValue = toString;
+            intValue = value;
+        }
+        @Override
+        public String toString() {
+            return stringValue;
+        }
+    }
+
 	// GLOBALS
 	private static final String TAG = "SS_WELCOME";
+
 	private static final String APP_ID = "7f9de1a2655e56f6c60c798cc7d2cdec";
 	private static final String SSID = "PHStheatre";
 	private static final String PWD = "2ndst0ry";
+
 	private static final String SD_DIRECTORY = "//sdcard//SecondStory/BloodAlley";
 	private static final String MEDIA_DIRECTORY = "//sdcard//SecondStory/BloodAlley/MEDIA/";
 	private static final String LOG_DIRECTORY = "//sdcard//SecondStory/BloodAlley/LOGS/";
+
     public static final int DIALOG_DOWNLOAD_PROGRESS = 0;
-    
+
+    String eventName = "";
+    Event currentEvent;
+    Integer numFiles = 0;
+
     private ProgressDialog progress;
     StorageHelper storage;
     private double 	needsThisMuchSpace = 0.5;
@@ -59,28 +90,29 @@ public class WelcomeScreen extends Activity {
         storage = new StorageHelper();
         
         // MANUAL
-        Constants.downloadedAllVideos = true;
+        //Constants.downloadedAllVideos = true;
         manuallyPreppedDevice = true;
 
-        
-        // Delay Check
-		Thread timer = new Thread(){
-			@Override
-			public void run() {
-				//super.run();
-				try { 
-					sleep(500);	
-					progress.dismiss();
-				}
-				catch(InterruptedException e) {
-					e.printStackTrace();
-				}
-			}
-		};
-		timer.start();
+
+        if(manuallyPreppedDevice)
+        {
+            currentEvent = Event.DAREU;
+            eventName = currentEvent.toString();
+            ParseQuery<ParseObject> query = ParseQuery.getQuery(Constants.kSSClassNameMedia);
+            //query.whereEqualTo()
+            try {
+                numFiles = query.count();
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+        }
+        else
+        {
+            eventName = getIntent().getStringExtra(Constants.kSSSharedPrefsShow);
+        }
 		
 		if(checkForSD()) {
-			if(checkForContent()) {
+			if(checkForContent(eventName)) {
 				setContentPrefs(true, false);
 				progress.dismiss();
 				moveOn();
@@ -99,7 +131,13 @@ public class WelcomeScreen extends Activity {
 
 		
 	} /* onCreate() */
-	
+
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        setIntent(intent);
+    }
 	
 	@Override
 	protected void onResume() {
@@ -110,6 +148,7 @@ public class WelcomeScreen extends Activity {
 	private void moveOn() {
 		Intent intent = new Intent(WelcomeScreen.this, MenuScreen.class);
 		startActivity(intent);
+        overridePendingTransition(R.anim.anim_slide_in_right, R.anim.anim_slide_out_left);
 		finish();
 	}
 	
@@ -243,15 +282,15 @@ public class WelcomeScreen extends Activity {
 	}
 		
 
-	public boolean checkForContent() {
+	public boolean checkForContent(String _event) {
 		try{
-			final File base_directory = new File(SD_DIRECTORY);
-			final File media_directory = new File(MEDIA_DIRECTORY);
-			final File log_directory = new File(LOG_DIRECTORY);
+			final File base_directory = new File(Environment.getExternalStorageDirectory().getPath());   //SD_DIRECTORY);
+			final File media_directory = new File(base_directory.getPath() + "/SecondStory/" + _event + "/media/");  //MEDIA_DIRECTORY);
+			final File log_directory = new File(base_directory.getPath() + "/SecondStory/" + _event + "/logs/");    //LOG_DIRECTORY);
 			if(media_directory.exists()) {
 				if(media_directory.isDirectory()) {
 					File[] listOfFiles = media_directory.listFiles();
-					if(listOfFiles.length < 2) {
+					if(listOfFiles.length < numFiles) {
 						return false;
 					}
 					else {
