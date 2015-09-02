@@ -19,8 +19,6 @@ import android.preference.PreferenceManager;
 import android.net.wifi.WifiConfiguration;
 import android.net.wifi.WifiManager;
 
-//import net.hockeyapp.android.CrashManager;
-
 import com.theonlyanimal.secondstory.helpers.Constants;
 import com.theonlyanimal.secondstory.helpers.StorageHelper;
 import com.theonlyanimal.secondstory.ftp.FTPService;
