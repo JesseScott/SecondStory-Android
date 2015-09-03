@@ -17,11 +17,18 @@
     </layouts>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="35bf6096-e430-4b73-8751-be67de82450b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/outputFileStates.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/outputFileStates.bin" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/assets/frames/dareu/sultan.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/assets/tracking/_SecondStory.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/assets/tracking/_SecondStory.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/tracking/SecondStory.dat" afterPath="$PROJECT_DIR$/app/src/main/assets/tracking/SecondStory.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/FullscreenPlayback.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/FullscreenPlayback.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/tracking/SecondStory.xml" afterPath="$PROJECT_DIR$/app/src/main/assets/tracking/SecondStory.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/VideoPlayback.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/VideoPlayback.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/VideoPlaybackRenderer.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/VideoPlaybackRenderer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SecondStory.iws" />
@@ -69,7 +76,7 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/VideoPlayback.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="518" column="0" selection-start-line="518" selection-start-column="0" selection-end-line="518" selection-end-column="0" />
+              <caret line="258" column="97" selection-start-line="258" selection-start-column="97" selection-end-line="258" selection-end-column="97" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#onResume#0;class#VideoPlayback#0" expanded="false" />
@@ -81,7 +88,6 @@
                 <element signature="method#onBackPressed#0;class#VideoPlayback#0" expanded="false" />
                 <element signature="method#startLoadingAnimation#0;class#VideoPlayback#0" expanded="false" />
                 <element signature="method#onTouchEvent#0;class#VideoPlayback#0" expanded="false" />
-                <element signature="method#doLoadTrackersData#0;class#VideoPlayback#0" expanded="false" />
                 <element signature="method#doStartTrackers#0;class#VideoPlayback#0" expanded="false" />
                 <element signature="method#doStopTrackers#0;class#VideoPlayback#0" expanded="false" />
                 <element signature="method#doUnloadTrackersData#0;class#VideoPlayback#0" expanded="false" />
@@ -94,26 +100,53 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="VideoPlaybackRenderer.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="VideoPlaybackRenderer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/VideoPlaybackRenderer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33278418">
-              <caret line="359" column="0" selection-start-line="359" selection-start-column="0" selection-end-line="359" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="599" column="38" selection-start-line="599" selection-start-column="35" selection-end-line="599" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#49027#49028#0" expanded="true" />
-                <element signature="e#49063#49064#0" expanded="true" />
+                <element signature="method#requestLoad#0;class#VideoPlaybackRenderer#0" expanded="false" />
+                <element signature="method#onSurfaceCreated#0;class#VideoPlaybackRenderer#0" expanded="false" />
+                <element signature="method#onSurfaceChanged#0;class#VideoPlaybackRenderer#0" expanded="false" />
+                <element signature="method#onDrawFrame#0;class#VideoPlaybackRenderer#0" expanded="false" />
+                <element signature="method#isTapOnScreenInsideTarget#0;class#VideoPlaybackRenderer#0" expanded="false" />
+                <element signature="method#setVideoDimensions#0;class#VideoPlaybackRenderer#0" expanded="false" />
+                <element signature="method#uvMultMat4f#0;class#VideoPlaybackRenderer#0" expanded="false" />
+                <element signature="method#setStatus#0;class#VideoPlaybackRenderer#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="VideoPlayerHelper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/VideoPlayerHelper.java">
+      <file leaf-file-name="FullscreenPlayback.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/FullscreenPlayback.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="160" column="0" selection-start-line="160" selection-start-column="0" selection-end-line="160" selection-end-column="0" />
-              <folding />
+            <state vertical-scroll-proportion="0.7468944">
+              <caret line="168" column="71" selection-start-line="168" selection-start-column="71" selection-end-line="168" selection-end-column="71" />
+              <folding>
+                <element signature="method#prepareViewForMediaPlayer#0;class#FullscreenPlayback#0" expanded="false" />
+                <element signature="class#4281:5261" expanded="false" />
+                <element signature="method#onTouchEvent#0;class#FullscreenPlayback#0" expanded="false" />
+                <element signature="method#onPrepared#0;class#FullscreenPlayback#0" expanded="false" />
+                <element signature="method#destroyMediaPlayer#0;class#FullscreenPlayback#0" expanded="false" />
+                <element signature="method#destroyView#0;class#FullscreenPlayback#0" expanded="false" />
+                <element signature="method#onDestroy#0;class#FullscreenPlayback#0" expanded="false" />
+                <element signature="method#prepareForTermination#0;class#FullscreenPlayback#0" expanded="false" />
+                <element signature="method#onBackPressed#0;class#FullscreenPlayback#0" expanded="false" />
+                <element signature="method#onPause#0;class#FullscreenPlayback#0" expanded="false" />
+                <element signature="method#surfaceCreated#0;class#FullscreenPlayback#0" expanded="false" />
+                <element signature="class#14241:17608" expanded="false" />
+                <element signature="method#getCurrentPosition#0;class#14241:17608" expanded="false" />
+                <element signature="method#getDuration#0;class#14241:17608" expanded="false" />
+                <element signature="method#isPlaying#0;class#14241:17608" expanded="false" />
+                <element signature="method#pause#0;class#14241:17608" expanded="false" />
+                <element signature="method#seekTo#0;class#14241:17608" expanded="false" />
+                <element signature="method#start#0;class#14241:17608" expanded="false" />
+                <element signature="method#onVideoSizeChanged#0;class#FullscreenPlayback#0" expanded="false" />
+                <element signature="method#onError#0;class#FullscreenPlayback#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -1562,7 +1595,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/SampleApplicationGLView.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/SampleApplicationException.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/SampleApplicationControl.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/FullscreenPlayback.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/FullscreenYoutubePlayback.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/KeyFrameShaders.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/Texture.java" />
@@ -1605,8 +1637,9 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/SampleApplicationSession.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/SampleAppMenu.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/sample_app_menu_layer.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/VideoPlayback.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/VideoPlaybackRenderer.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/VideoPlayback.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/FullscreenPlayback.java" />
       </list>
     </option>
   </component>
@@ -1769,62 +1802,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SecondStory" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SecondStory" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SecondStory" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SecondStory" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layout" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -2181,23 +2158,24 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1173" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.49763483" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39924315" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39924315" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32923368" sideWeight="0.5021299" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32923368" sideWeight="0.4978701" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42857143" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3642384" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24973376" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24973376" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -2207,7 +2185,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32923368" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -2226,18 +2203,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/activities/WelcomeScreen.java</url>
-          <line>276</line>
-          <properties />
-          <option name="timeStamp" value="28" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/activities/WelcomeScreen.java</url>
-          <line>279</line>
-          <properties />
-          <option name="timeStamp" value="30" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/activities/GalleryScreen.java</url>
           <line>56</line>
@@ -2288,63 +2253,9 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/VideoPlaybackRenderer.java</url>
-          <line>353</line>
-          <properties />
-          <option name="timeStamp" value="66" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/VideoPlaybackRenderer.java</url>
-          <line>1000</line>
+          <line>978</line>
           <properties />
           <option name="timeStamp" value="67" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/VideoPlaybackRenderer.java</url>
-          <line>402</line>
-          <properties />
-          <option name="timeStamp" value="70" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/VideoPlaybackRenderer.java</url>
-          <line>409</line>
-          <properties />
-          <option name="timeStamp" value="71" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/VideoPlaybackRenderer.java</url>
-          <line>359</line>
-          <properties />
-          <option name="timeStamp" value="72" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/VideoPlayback.java</url>
-          <line>271</line>
-          <properties />
-          <option name="timeStamp" value="73" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/VideoPlayback.java</url>
-          <line>518</line>
-          <properties />
-          <option name="timeStamp" value="74" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/VideoPlayback.java</url>
-          <line>140</line>
-          <properties />
-          <option name="timeStamp" value="76" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/VideoPlayback.java</url>
-          <line>261</line>
-          <properties />
-          <option name="timeStamp" value="77" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/VideoPlayback.java</url>
-          <line>265</line>
-          <properties />
-          <option name="timeStamp" value="78" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/Texture.java</url>
@@ -2353,119 +2264,127 @@
           <option name="timeStamp" value="79" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/VideoPlayerHelper.java</url>
-          <line>160</line>
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/VideoPlaybackRenderer.java</url>
+          <line>542</line>
           <properties />
-          <option name="timeStamp" value="81" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/VideoPlayback.java</url>
-          <line>266</line>
-          <properties />
-          <option name="timeStamp" value="82" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/VideoPlayback.java</url>
-          <line>267</line>
-          <properties />
-          <option name="timeStamp" value="83" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/VideoPlayback.java</url>
-          <line>262</line>
-          <properties />
-          <option name="timeStamp" value="84" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/VideoPlayback.java</url>
-          <line>263</line>
-          <properties />
-          <option name="timeStamp" value="85" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/VideoPlayback.java</url>
-          <line>268</line>
-          <properties />
-          <option name="timeStamp" value="86" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/VideoPlayback.java</url>
-          <line>269</line>
-          <properties />
-          <option name="timeStamp" value="87" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/VideoPlayback.java</url>
-          <line>270</line>
-          <properties />
-          <option name="timeStamp" value="88" />
+          <option name="timeStamp" value="98" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/VideoPlaybackRenderer.java</url>
-          <line>370</line>
+          <line>513</line>
           <properties />
-          <option name="timeStamp" value="90" />
+          <option name="timeStamp" value="102" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/VideoPlaybackRenderer.java</url>
-          <line>395</line>
+          <line>538</line>
           <properties />
-          <option name="timeStamp" value="91" />
+          <option name="timeStamp" value="104" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/VideoPlaybackRenderer.java</url>
-          <line>396</line>
+          <line>535</line>
           <properties />
-          <option name="timeStamp" value="92" />
+          <option name="timeStamp" value="107" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/VideoPlaybackRenderer.java</url>
-          <line>401</line>
+          <line>532</line>
           <properties />
-          <option name="timeStamp" value="93" />
+          <option name="timeStamp" value="108" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/VideoPlaybackRenderer.java</url>
-          <line>400</line>
+          <line>529</line>
           <properties />
-          <option name="timeStamp" value="94" />
+          <option name="timeStamp" value="109" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/VideoPlaybackRenderer.java</url>
-          <line>398</line>
+          <line>526</line>
           <properties />
-          <option name="timeStamp" value="95" />
+          <option name="timeStamp" value="110" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/VideoPlaybackRenderer.java</url>
-          <line>397</line>
+          <line>520</line>
           <properties />
-          <option name="timeStamp" value="96" />
+          <option name="timeStamp" value="111" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/VideoPlaybackRenderer.java</url>
-          <line>399</line>
+          <line>517</line>
           <properties />
-          <option name="timeStamp" value="97" />
+          <option name="timeStamp" value="112" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/VideoPlayback.java</url>
-          <line>274</line>
-          <option name="timeStamp" value="89" />
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/VideoPlaybackRenderer.java</url>
+          <line>668</line>
+          <properties />
+          <option name="timeStamp" value="113" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/VideoPlaybackRenderer.java</url>
+          <line>664</line>
+          <properties />
+          <option name="timeStamp" value="114" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/VideoPlaybackRenderer.java</url>
+          <line>660</line>
+          <properties />
+          <option name="timeStamp" value="115" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/VideoPlaybackRenderer.java</url>
+          <line>656</line>
+          <properties />
+          <option name="timeStamp" value="116" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/VideoPlaybackRenderer.java</url>
+          <line>652</line>
+          <properties />
+          <option name="timeStamp" value="117" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/VideoPlaybackRenderer.java</url>
+          <line>648</line>
+          <properties />
+          <option name="timeStamp" value="118" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/VideoPlaybackRenderer.java</url>
+          <line>644</line>
+          <properties />
+          <option name="timeStamp" value="119" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/VideoPlaybackRenderer.java</url>
+          <line>640</line>
+          <properties />
+          <option name="timeStamp" value="120" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/FullscreenPlayback.java</url>
+          <line>158</line>
+          <properties />
+          <option name="timeStamp" value="121" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="98" />
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+      <default-breakpoints>
+        <breakpoint enabled="true" log-message="true" suspend="ALL" type="CidrExceptionBreakpoint">
+          <properties />
+        </breakpoint>
+      </default-breakpoints>
+      <option name="time" value="122" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/fragments/AboutPage2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26431718">
-          <caret line="12" column="39" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/fragments/AboutPage3.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.26431718">
@@ -2548,13 +2467,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/FullscreenYoutubePlayback.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="43" column="21" selection-start-line="43" selection-start-column="21" selection-end-line="43" selection-end-column="61" />
         </state>
       </provider>
     </entry>
@@ -2726,13 +2638,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/FullscreenPlayback.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16216215">
-          <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/../../../../../Android/SDK/android-sdk-macosx/extras/android/m2repository/com/android/support/support-v4/22.0.0/support-v4-22.0.0-sources.jar!/android/support/v4/app/FragmentActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33243242">
@@ -2744,14 +2649,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="149" column="8" selection-start-line="149" selection-start-column="8" selection-end-line="149" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#setContentPrefs#0;class#WelcomeScreen#0" expanded="false" />
-            <element signature="method#connectToWifi#0;class#WelcomeScreen#0" expanded="false" />
-            <element signature="method#askForWifi#0;class#WelcomeScreen#0" expanded="false" />
-            <element signature="method#showStreamOrDownloadDialog#0;class#WelcomeScreen#0" expanded="false" />
-            <element signature="method#checkForSpace#0;class#WelcomeScreen#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2815,14 +2713,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="212" column="72" selection-start-line="212" selection-start-column="72" selection-end-line="212" selection-end-column="72" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/SampleAppMenuView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2874,10 +2764,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../../Android/SDK/android-sdk-macosx/sources/android-22/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.50576603">
+          <caret line="540" column="22" selection-start-line="540" selection-start-column="22" selection-end-line="540" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/VideoPlayerHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.37037">
+          <caret line="55" column="19" selection-start-line="55" selection-start-column="8" selection-end-line="55" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="212" column="72" selection-start-line="212" selection-start-column="72" selection-end-line="212" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/FullscreenYoutubePlayback.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="43" column="21" selection-start-line="43" selection-start-column="21" selection-end-line="43" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/VideoPlayback.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="518" column="0" selection-start-line="518" selection-start-column="0" selection-end-line="518" selection-end-column="0" />
+          <caret line="258" column="97" selection-start-line="258" selection-start-column="97" selection-end-line="258" selection-end-column="97" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#onResume#0;class#VideoPlayback#0" expanded="false" />
@@ -2889,7 +2811,6 @@
             <element signature="method#onBackPressed#0;class#VideoPlayback#0" expanded="false" />
             <element signature="method#startLoadingAnimation#0;class#VideoPlayback#0" expanded="false" />
             <element signature="method#onTouchEvent#0;class#VideoPlayback#0" expanded="false" />
-            <element signature="method#doLoadTrackersData#0;class#VideoPlayback#0" expanded="false" />
             <element signature="method#doStartTrackers#0;class#VideoPlayback#0" expanded="false" />
             <element signature="method#doStopTrackers#0;class#VideoPlayback#0" expanded="false" />
             <element signature="method#doUnloadTrackersData#0;class#VideoPlayback#0" expanded="false" />
@@ -2901,22 +2822,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/VideoPlayerHelper.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/VideoPlaybackRenderer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="160" column="0" selection-start-line="160" selection-start-column="0" selection-end-line="160" selection-end-column="0" />
-          <folding />
+          <caret line="599" column="38" selection-start-line="599" selection-start-column="35" selection-end-line="599" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#requestLoad#0;class#VideoPlaybackRenderer#0" expanded="false" />
+            <element signature="method#onSurfaceCreated#0;class#VideoPlaybackRenderer#0" expanded="false" />
+            <element signature="method#onSurfaceChanged#0;class#VideoPlaybackRenderer#0" expanded="false" />
+            <element signature="method#onDrawFrame#0;class#VideoPlaybackRenderer#0" expanded="false" />
+            <element signature="method#isTapOnScreenInsideTarget#0;class#VideoPlaybackRenderer#0" expanded="false" />
+            <element signature="method#setVideoDimensions#0;class#VideoPlaybackRenderer#0" expanded="false" />
+            <element signature="method#uvMultMat4f#0;class#VideoPlaybackRenderer#0" expanded="false" />
+            <element signature="method#setStatus#0;class#VideoPlaybackRenderer#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/VideoPlaybackRenderer.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/FullscreenPlayback.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33278418">
-          <caret line="359" column="0" selection-start-line="359" selection-start-column="0" selection-end-line="359" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.7468944">
+          <caret line="168" column="71" selection-start-line="168" selection-start-column="71" selection-end-line="168" selection-end-column="71" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#49027#49028#0" expanded="true" />
-            <element signature="e#49063#49064#0" expanded="true" />
+            <element signature="method#prepareViewForMediaPlayer#0;class#FullscreenPlayback#0" expanded="false" />
+            <element signature="class#4281:5261" expanded="false" />
+            <element signature="method#onTouchEvent#0;class#FullscreenPlayback#0" expanded="false" />
+            <element signature="method#onPrepared#0;class#FullscreenPlayback#0" expanded="false" />
+            <element signature="method#destroyMediaPlayer#0;class#FullscreenPlayback#0" expanded="false" />
+            <element signature="method#destroyView#0;class#FullscreenPlayback#0" expanded="false" />
+            <element signature="method#onDestroy#0;class#FullscreenPlayback#0" expanded="false" />
+            <element signature="method#prepareForTermination#0;class#FullscreenPlayback#0" expanded="false" />
+            <element signature="method#onBackPressed#0;class#FullscreenPlayback#0" expanded="false" />
+            <element signature="method#onPause#0;class#FullscreenPlayback#0" expanded="false" />
+            <element signature="method#surfaceCreated#0;class#FullscreenPlayback#0" expanded="false" />
+            <element signature="class#14241:17608" expanded="false" />
+            <element signature="method#getCurrentPosition#0;class#14241:17608" expanded="false" />
+            <element signature="method#getDuration#0;class#14241:17608" expanded="false" />
+            <element signature="method#isPlaying#0;class#14241:17608" expanded="false" />
+            <element signature="method#pause#0;class#14241:17608" expanded="false" />
+            <element signature="method#seekTo#0;class#14241:17608" expanded="false" />
+            <element signature="method#start#0;class#14241:17608" expanded="false" />
+            <element signature="method#onVideoSizeChanged#0;class#FullscreenPlayback#0" expanded="false" />
+            <element signature="method#onError#0;class#FullscreenPlayback#0" expanded="false" />
           </folding>
         </state>
       </provider>

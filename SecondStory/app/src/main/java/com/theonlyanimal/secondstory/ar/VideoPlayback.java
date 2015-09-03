@@ -44,15 +44,6 @@ import com.qualcomm.vuforia.TrackerManager;
 import com.qualcomm.vuforia.Vuforia;
 
 import com.theonlyanimal.secondstory.ar.VideoPlayerHelper.MEDIA_STATE;
-import com.theonlyanimal.secondstory.ar.SampleApplicationControl;
-import com.theonlyanimal.secondstory.ar.SampleApplicationException;
-import com.theonlyanimal.secondstory.ar.SampleApplicationSession;
-import com.theonlyanimal.secondstory.ar.LoadingDialogHandler;
-import com.theonlyanimal.secondstory.ar.SampleApplicationGLView;
-import com.theonlyanimal.secondstory.ar.Texture;
-import com.theonlyanimal.secondstory.ar.SampleAppMenu;
-import com.theonlyanimal.secondstory.ar.SampleAppMenuGroup;
-import com.theonlyanimal.secondstory.ar.SampleAppMenuInterface;
 
 import com.theonlyanimal.secondstory.R;
 
@@ -74,13 +65,14 @@ public class VideoPlayback extends Activity implements
     
     // Movie for the Targets:
     public static final int NUM_TARGETS = 7;
-    public static final int BEEF = 0;
-    public static final int BICYCLES = 1;
-    public static final int COPPER = 2;
-    public static final int GUN = 3;
-    public static final int PENNIES = 4;
-    public static final int SHROOMS = 5;
-    public static final int SUZYQ = 6;
+    public static final int CLAIRE = 0;
+    public static final int AMY = 1;
+    public static final int MARCI = 2;
+    public static final int SULTAN1 = 3;
+    public static final int SULTAN2 = 4;
+    public static final int JESS = 5;
+    public static final int KIKI = 6;
+
     //public static final int UMBRELLAS = 7;
     //public static final int ALLEY = 8;
     
@@ -160,33 +152,27 @@ public class VideoPlayback extends Activity implements
         String SD_PATH = Environment.getExternalStorageDirectory().getPath();
         MEDIA_PATH = SD_PATH + "/SecondStory/dareu/media/";
         Log.v(LOGTAG, "MEDIA PATH IS " + MEDIA_PATH);
-        // TODO       
-        mMovieName[BEEF] 		= MEDIA_PATH + "exhibita.mp4";
-        Log.v(LOGTAG, "BEEF PATH IS " + mMovieName[BEEF]);
+
+        mMovieName[CLAIRE] 		= MEDIA_PATH + "exhibita.mp4";
+        Log.v(LOGTAG, "CLAIRE PATH IS " + mMovieName[CLAIRE]);
         
-        mMovieName[BICYCLES] 	= MEDIA_PATH + "leaving.mp4";
-        Log.v(LOGTAG, "BICYCLES PATH IS " + mMovieName[BICYCLES]);
+        mMovieName[AMY] 	= MEDIA_PATH + "leaving.mp4";
+        Log.v(LOGTAG, "AMY PATH IS " + mMovieName[AMY]);
+
+        mMovieName[MARCI] 		= MEDIA_PATH + "plant.mp4";
+        Log.v(LOGTAG, "MARCI PATH IS " + mMovieName[MARCI]);
         
-        mMovieName[GUN] 		= MEDIA_PATH + "letter pt1.mp4";
-        Log.v(LOGTAG, "GUN PATH IS " + mMovieName[GUN]);
+        mMovieName[SULTAN1] 		= MEDIA_PATH + "letter pt1.mp4";
+        Log.v(LOGTAG, "SULTAN1 PATH IS " + mMovieName[SULTAN1]);
         
-        mMovieName[PENNIES] 	= MEDIA_PATH + "letter pt2.mp4";
-        Log.v(LOGTAG, "PENNIES PATH IS " + mMovieName[PENNIES]);
+        mMovieName[SULTAN2] 	= MEDIA_PATH + "letter pt2.mp4";
+        Log.v(LOGTAG, "SULTAN2 PATH IS " + mMovieName[SULTAN2]);
+
+        mMovieName[JESS] 		= MEDIA_PATH + "portability.mp4";
+        Log.v(LOGTAG, "JESS PATH IS " + mMovieName[JESS]);
         
-        mMovieName[COPPER] 		= MEDIA_PATH + "plant.mp4";
-        Log.v(LOGTAG, "COPPER PATH IS " + mMovieName[COPPER]);
-        
-        mMovieName[SUZYQ] 		= MEDIA_PATH + "portability.mp4";
-        Log.v(LOGTAG, "SUZYQ PATH IS " + mMovieName[SUZYQ]);
-        
-        mMovieName[SHROOMS] 	= MEDIA_PATH + "stall.mp4";
-        Log.v(LOGTAG, "SHROOMS PATH IS " + mMovieName[SHROOMS]);
-        
-//        mMovieName[UMBRELLAS] 	= MEDIA_PATH + "umbrellas.mp4";
-//        Log.v(LOGTAG, "UMBRELLAS PATH IS " + mMovieName[UMBRELLAS]);
-//
-//        mMovieName[ALLEY]	 	= MEDIA_PATH + "bloodalley.mp4";
-//        Log.v(LOGTAG, "ALLEY PATH IS " + mMovieName[ALLEY]);
+        mMovieName[KIKI] 	= MEDIA_PATH + "stall.mp4";
+        Log.v(LOGTAG, "KIKI PATH IS " + mMovieName[KIKI]);
         
         // Set the double tap listener:
         mGestureDetector.setOnDoubleTapListener(new OnDoubleTapListener() {
@@ -264,12 +250,13 @@ public class VideoPlayback extends Activity implements
         mTextures.add(Texture.loadTextureFromApk("ctrl/error.png", getAssets()));
 
         mTextures.add(Texture.loadTextureFromApk("frames/dareu/amy.jpg", getAssets())); // 3
-        mTextures.add(Texture.loadTextureFromApk("frames/dareu/claire.jpg", getAssets())); // 3
-        mTextures.add(Texture.loadTextureFromApk("frames/dareu/jess.jpg", getAssets())); // 3
-        mTextures.add(Texture.loadTextureFromApk("frames/dareu/kiki.jpg", getAssets())); // 3
-        mTextures.add(Texture.loadTextureFromApk("frames/dareu/marci.jpg", getAssets())); // 3
-        mTextures.add(Texture.loadTextureFromApk("frames/dareu/mily.jpg", getAssets())); // 3
-        mTextures.add(Texture.loadTextureFromApk("frames/dareu/sultan.jpg", getAssets())); // 3
+        mTextures.add(Texture.loadTextureFromApk("frames/dareu/claire.jpg", getAssets())); // 4
+        mTextures.add(Texture.loadTextureFromApk("frames/dareu/jess.jpg", getAssets())); // 5
+        mTextures.add(Texture.loadTextureFromApk("frames/dareu/kiki.jpg", getAssets())); // 6
+        mTextures.add(Texture.loadTextureFromApk("frames/dareu/marci.jpg", getAssets())); // 7
+        mTextures.add(Texture.loadTextureFromApk("frames/dareu/mily.jpg", getAssets())); // 8
+        mTextures.add(Texture.loadTextureFromApk("frames/dareu/sultan1.jpg", getAssets())); // 9
+        mTextures.add(Texture.loadTextureFromApk("frames/dareu/sultan2.jpg", getAssets())); // 10
 
 
 //        mTextures.add(Texture.loadTextureFromApk("frames/beef.jpg", getAssets())); // 3
@@ -594,7 +581,7 @@ public class VideoPlayback extends Activity implements
         }
         
         // Load the data sets:
-        if (!dataSet.load("tracking/SecondStory.xml", STORAGE_TYPE.STORAGE_APPRESOURCE))
+        if (!dataSet.load("tracking/DAREU.xml", STORAGE_TYPE.STORAGE_APPRESOURCE))
         {
             Log.d(LOGTAG, "Failed to load data set.");
             return false;

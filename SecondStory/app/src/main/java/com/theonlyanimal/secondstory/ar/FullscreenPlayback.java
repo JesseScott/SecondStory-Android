@@ -18,6 +18,7 @@ import android.content.SharedPreferences;
 //import android.content.res.AssetFileDescriptor;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
@@ -88,10 +89,11 @@ public class FullscreenPlayback extends Activity implements OnPreparedListener,
         // Collect all of the data passed by the launching activity:
         mSeekPosition = getIntent().getIntExtra("currentSeekPosition", 0);
         mMovieName = getIntent().getStringExtra("movieName");
+        Log.v(LOGTAG, "Movie name is " + mMovieName);
         mRequestedOrientation = getIntent().getIntExtra("requestedOrientation", 0);
         mShouldPlayImmediately = getIntent().getBooleanExtra("shouldPlayImmediately", false);
         
-        // Check for SharedPreferences
+        // Check for SharedPreferences // TODO:
         //SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
         //hasContent = settings.getBoolean("hasContent", false);
         
@@ -618,7 +620,8 @@ public class FullscreenPlayback extends Activity implements OnPreparedListener,
     @Override
     public void onCompletion(MediaPlayer mp)
     {
-    	Intent i = new Intent("android.intent.action.MAPS");
+        Log.v(LOGTAG, "Playback Finished, goint to MENU");
+    	Intent i = new Intent("android.intent.action.MENU");
     	i.putExtra("cameFromFullscreen", true);
 		startActivity(i);
         finish();

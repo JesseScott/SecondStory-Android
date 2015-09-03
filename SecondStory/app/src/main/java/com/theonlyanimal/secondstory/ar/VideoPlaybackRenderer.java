@@ -36,10 +36,6 @@ import com.qualcomm.vuforia.Vec2F;
 import com.qualcomm.vuforia.Vec3F;
 import com.qualcomm.vuforia.Vuforia;
 
-import com.theonlyanimal.secondstory.ar.SampleApplicationSession;
-import com.theonlyanimal.secondstory.ar.SampleMath;
-import com.theonlyanimal.secondstory.ar.SampleUtils;
-import com.theonlyanimal.secondstory.ar.Texture;
 import com.theonlyanimal.secondstory.ar.VideoPlayerHelper.MEDIA_STATE;
 import com.theonlyanimal.secondstory.ar.VideoPlayerHelper.MEDIA_TYPE;
 
@@ -394,13 +390,13 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
         
         // TODO
         int offset = 3; // THE NUMBER OF CTRL IMAGES (was 3)
-        keyframeQuadAspectRatio[VideoPlayback.BEEF] = (float) mTextures.get(offset).mHeight / (float) mTextures.get(offset).mWidth;
-        keyframeQuadAspectRatio[VideoPlayback.BICYCLES] = (float) mTextures.get(offset + 1).mHeight / (float) mTextures.get(offset + 1).mWidth;
-        keyframeQuadAspectRatio[VideoPlayback.COPPER] = (float) mTextures.get(offset + 2).mHeight / (float) mTextures.get(offset + 2).mWidth;
-        keyframeQuadAspectRatio[VideoPlayback.GUN] = (float) mTextures.get(offset + 3).mHeight / (float) mTextures.get(offset + 3).mWidth;
-        keyframeQuadAspectRatio[VideoPlayback.PENNIES] = (float) mTextures.get(offset + 4).mHeight / (float) mTextures.get(offset + 4).mWidth;
-        keyframeQuadAspectRatio[VideoPlayback.SHROOMS] = (float) mTextures.get(offset + 5).mHeight / (float) mTextures.get(offset + 5).mWidth;
-        keyframeQuadAspectRatio[VideoPlayback.SUZYQ] = (float) mTextures.get(offset + 6).mHeight / (float) mTextures.get(offset + 6).mWidth;
+        keyframeQuadAspectRatio[VideoPlayback.CLAIRE] = (float) mTextures.get(offset).mHeight / (float) mTextures.get(offset).mWidth;
+        keyframeQuadAspectRatio[VideoPlayback.AMY] = (float) mTextures.get(offset + 1).mHeight / (float) mTextures.get(offset + 1).mWidth;
+        keyframeQuadAspectRatio[VideoPlayback.MARCI] = (float) mTextures.get(offset + 2).mHeight / (float) mTextures.get(offset + 2).mWidth;
+        keyframeQuadAspectRatio[VideoPlayback.SULTAN1] = (float) mTextures.get(offset + 3).mHeight / (float) mTextures.get(offset + 3).mWidth;
+        keyframeQuadAspectRatio[VideoPlayback.SULTAN2] = (float) mTextures.get(offset + 4).mHeight / (float) mTextures.get(offset + 4).mWidth;
+        keyframeQuadAspectRatio[VideoPlayback.KIKI] = (float) mTextures.get(offset + 5).mHeight / (float) mTextures.get(offset + 5).mWidth;
+        keyframeQuadAspectRatio[VideoPlayback.JESS] = (float) mTextures.get(offset + 6).mHeight / (float) mTextures.get(offset + 6).mWidth;
         //keyframeQuadAspectRatio[VideoPlayback.UMBRELLAS] = (float) mTextures.get(offset + 7).mHeight / (float) mTextures.get(offset + 7).mWidth;
         //keyframeQuadAspectRatio[VideoPlayback.ALLEY] = (float) mTextures.get(offset + 8).mHeight / (float) mTextures.get(offset + 8).mWidth;
         
@@ -508,52 +504,41 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
             
             int currentTarget;
             
-            // TRIM THE UNDERSCORE
-            String trimmedName = imageTarget.getName().substring(0, imageTarget.getName().length()-2);
-            //Log.v(LOGTAG, "name is " + imageTarget.getName());
-            
-            // TODO
-            // We store the modelview matrix to be used later by the tap calculation
-            if(imageTarget.getName().compareTo("ba_beef") == 0) {
-            //if(trimmedName.compareTo("beef") == 0 || trimmedName.compareTo("beef_pig") == 0 || trimmedName.compareTo("gen_beef") == 0) {
-                currentTarget = VideoPlayback.BEEF;
+            /*
+                TRIM
+                targets come like this: "NAME_01"
+                we need to get ANY target associated with a certain media and trigger that...
+                we need to get ANY target associated with a certain media and trigger that...
+             */
+            Log.i(LOGTAG, "Target is " + imageTarget.getName());
+            String trimmedName = imageTarget.getName().substring(0, imageTarget.getName().length()-3);
+            Log.i(LOGTAG, "Target is " + trimmedName);
+
+            if(trimmedName.compareTo("CLAIRE") == 0) {
+                currentTarget = VideoPlayback.CLAIRE;
             }
-            else if(imageTarget.getName().compareTo("ba_bicycles") == 0) {
-            //else if(trimmedName.compareTo("bicycle") == 0 || trimmedName.compareTo("gen_bike") == 0) {
-                currentTarget = VideoPlayback.BICYCLES;
+            else if(trimmedName.compareTo("AMY") == 0) {
+                currentTarget = VideoPlayback.AMY;
             }
-            else if(imageTarget.getName().compareTo("ba_gun") == 0) {
-            //else if(trimmedName.compareTo("gun") == 0 || trimmedName.compareTo("gun_win") == 0 || trimmedName.compareTo("gen_gun") == 0) {
-                currentTarget = VideoPlayback.GUN;
+            else if(trimmedName.compareTo("MARCI") == 0) {
+                currentTarget = VideoPlayback.MARCI;
             }
-            else if(imageTarget.getName().compareTo("ba_pennies") == 0) {
-            //else if(trimmedName.compareTo("pennies") == 0 || trimmedName.compareTo("gen_pennies") == 0) {
-                currentTarget = VideoPlayback.PENNIES;
+            else if(trimmedName.compareTo("SULTAN1") == 0) {
+                currentTarget = VideoPlayback.SULTAN1;
             }
-            else if(imageTarget.getName().compareTo("ba_sweeping") == 0) {
-            //else if(trimmedName.compareTo("sweeping") == 0 || trimmedName.compareTo("gen_sweeping") == 0) {
-                currentTarget = VideoPlayback.SUZYQ;
+            else if(trimmedName.compareTo("SULTAN2") == 0) {
+                currentTarget = VideoPlayback.SULTAN2;
             }
-            else if(imageTarget.getName().compareTo("ba_shrooms") == 0) {
-            //else if(trimmedName.compareTo("shrooms") == 0 || trimmedName.compareTo("shroom_new") == 0 || trimmedName.compareTo("gen_shrooms") == 0) {
-                currentTarget = VideoPlayback.SHROOMS;
+            else if(trimmedName.compareTo("JESS") == 0) {
+                currentTarget = VideoPlayback.JESS;
             }
-            else if(imageTarget.getName().compareTo("ba_copper") == 0) {
-            //else if(trimmedName.compareTo("copper") == 0 || trimmedName.compareTo("gen_copper") == 0) {
-                currentTarget = VideoPlayback.COPPER;
+            else if(trimmedName.compareTo("KIKI") == 0) {
+                currentTarget = VideoPlayback.KIKI;
             }
-//            else if(imageTarget.getName().compareTo("ba_umbrellas") == 0) {
-//            //else if(trimmedName.compareTo("umbrellas") == 0 || trimmedName.compareTo("gen_umbrellas") == 0) {
-//                //currentTarget = VideoPlayback.UMBRELLAS;
-//            }
-//            else if(imageTarget.getName().compareTo("ba_alley") == 0) {
-//            //else if(trimmedName.compareTo("alley") == 0 || trimmedName.compareTo("gen_bloodalley") == 0) {
-//                //currentTarget = VideoPlayback.ALLEY;
-//            }
             else {
                 currentTarget = 0;
             }
-            //Log.v(LOGTAG, "currentTarget is " + currentTarget);
+            Log.v(LOGTAG, "currentTarget is " + currentTarget);
 
             modelViewMatrix[currentTarget] = Tool.convertPose2GLMatrix(trackableResult.getPose());
             
@@ -651,43 +636,36 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
                 
                 // TODO
                 
-                if(trimmedName.compareTo("beef") == 0) {
-                	Log.d(LOGTAG, " ---> buffering BEEF");
+                if(trimmedName.compareTo("CLAIRE") == 0) {
+                	Log.d(LOGTAG, " ---> buffering CLAIRE");
                 	GLES20.glVertexAttribPointer(videoPlaybackTexCoordHandle, 2, GLES20.GL_FLOAT, false, 0, fillBuffer(videoQuadTextureCoordsTransformed));
                 }
-                else if(trimmedName.compareTo("bicycle") == 0) {
-                	Log.d(LOGTAG, " ---> buffering BIKE");
+                else if(trimmedName.compareTo("AMY") == 0) {
+                	Log.d(LOGTAG, " ---> buffering AMY");
                 	GLES20.glVertexAttribPointer(videoPlaybackTexCoordHandle, 2, GLES20.GL_FLOAT, false, 0, fillBuffer(videoQuadTextureCoordsTransformed));
                 }
-                else if(trimmedName.compareTo("gun") == 0) {
-                	Log.d(LOGTAG, " ---> buffering GUN");
+                else if(trimmedName.compareTo("SULTAN1") == 0) {
+                	Log.d(LOGTAG, " ---> buffering SULTAN1");
                 	GLES20.glVertexAttribPointer(videoPlaybackTexCoordHandle, 2, GLES20.GL_FLOAT, false, 0, fillBuffer(videoQuadTextureCoordsTransformed));
                 }
-                else if(trimmedName.compareTo("pennies") == 0) {
-                	Log.d(LOGTAG, " ---> buffering PENNY");
+                else if(trimmedName.compareTo("SULTAN2") == 0) {
+                    Log.d(LOGTAG, " ---> buffering SULTAN2");
+                    GLES20.glVertexAttribPointer(videoPlaybackTexCoordHandle, 2, GLES20.GL_FLOAT, false, 0, fillBuffer(videoQuadTextureCoordsTransformed));
+                }
+                else if(trimmedName.compareTo("KIKI") == 0) {
+                	Log.d(LOGTAG, " ---> buffering KIKI");
                 	GLES20.glVertexAttribPointer(videoPlaybackTexCoordHandle, 2, GLES20.GL_FLOAT, false, 0, fillBuffer(videoQuadTextureCoordsTransformed));
                 }
-                else if(trimmedName.compareTo("suzyq") == 0) {
-                	Log.d(LOGTAG, " ---> buffering SUZY");
+                else if(trimmedName.compareTo("MARCI") == 0) {
+                	Log.d(LOGTAG, " ---> buffering MARCI");
                 	GLES20.glVertexAttribPointer(videoPlaybackTexCoordHandle, 2, GLES20.GL_FLOAT, false, 0, fillBuffer(videoQuadTextureCoordsTransformed));
                 }
-                else if(trimmedName.compareTo("shrooms") == 0) {
-                	Log.d(LOGTAG, " ---> buffering SHROOMS");
-                	GLES20.glVertexAttribPointer(videoPlaybackTexCoordHandle, 2, GLES20.GL_FLOAT, false, 0, fillBuffer(videoQuadTextureCoordsTransformed));
-                }
-                else if(trimmedName.compareTo("copper") == 0) {
-                	Log.d(LOGTAG, " ---> buffering COPPER");
-                	GLES20.glVertexAttribPointer(videoPlaybackTexCoordHandle, 2, GLES20.GL_FLOAT, false, 0, fillBuffer(videoQuadTextureCoordsTransformed));
-                }
-                else if(trimmedName.compareTo("umbrellas") == 0) {
-                	Log.d(LOGTAG, " ---> buffering UMBRELLAS");
-                	GLES20.glVertexAttribPointer(videoPlaybackTexCoordHandle, 2, GLES20.GL_FLOAT, false, 0, fillBuffer(videoQuadTextureCoordsTransformed));
-                }
-                else if(trimmedName.compareTo("bloodalley") == 0) {
-                	Log.d(LOGTAG, " ---> buffering ALLEY");
+                else if(trimmedName.compareTo("JESS") == 0) {
+                	Log.d(LOGTAG, " ---> buffering JESS");
                 	GLES20.glVertexAttribPointer(videoPlaybackTexCoordHandle, 2, GLES20.GL_FLOAT, false, 0, fillBuffer(videoQuadTextureCoordsTransformed));
                 }
                 else {
+                    Log.d(LOGTAG, " ---> not buffering...");
                     currentTarget = 0;
                 }
                 
@@ -905,7 +883,7 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
         
         // TODO
         /*
-        if (target == VideoPlayback.BEEF) { 
+        if (target == VideoPlayback.CLAIRE) {
             tempUVMultRes = uvMultMat4f(
             		videoQuadTextureCoordsTransformed[0],
             		videoQuadTextureCoordsTransformed[1],
