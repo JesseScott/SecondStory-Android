@@ -26,7 +26,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.theonlyanimal.secondstory.R;
-
+import com.theonlyanimal.secondstory.ar.SampleAppMenuView;
 
 // Handles the sample apps menu settings
 public class SampleAppMenu
@@ -80,8 +80,7 @@ public class SampleAppMenu
         mAdditionalViews = additionalViewsToHide;
         
         LayoutInflater inflater = LayoutInflater.from(mActivity);
-        mParentMenuView = (SampleAppMenuView) inflater.inflate(
-            R.layout.sample_app_menu_layer, null, false);
+        mParentMenuView = (SampleAppMenuView) inflater.inflate(R.layout.sample_app_menu_layer, null, false);
         parentView.addView(mParentMenuView);
         
         mMovableListView = (LinearLayout) mParentMenuView

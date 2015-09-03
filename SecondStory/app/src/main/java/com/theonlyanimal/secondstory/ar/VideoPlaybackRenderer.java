@@ -401,8 +401,8 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
         keyframeQuadAspectRatio[VideoPlayback.PENNIES] = (float) mTextures.get(offset + 4).mHeight / (float) mTextures.get(offset + 4).mWidth;
         keyframeQuadAspectRatio[VideoPlayback.SHROOMS] = (float) mTextures.get(offset + 5).mHeight / (float) mTextures.get(offset + 5).mWidth;
         keyframeQuadAspectRatio[VideoPlayback.SUZYQ] = (float) mTextures.get(offset + 6).mHeight / (float) mTextures.get(offset + 6).mWidth;
-        keyframeQuadAspectRatio[VideoPlayback.UMBRELLAS] = (float) mTextures.get(offset + 7).mHeight / (float) mTextures.get(offset + 7).mWidth;
-        keyframeQuadAspectRatio[VideoPlayback.ALLEY] = (float) mTextures.get(offset + 8).mHeight / (float) mTextures.get(offset + 8).mWidth;
+        //keyframeQuadAspectRatio[VideoPlayback.UMBRELLAS] = (float) mTextures.get(offset + 7).mHeight / (float) mTextures.get(offset + 7).mWidth;
+        //keyframeQuadAspectRatio[VideoPlayback.ALLEY] = (float) mTextures.get(offset + 8).mHeight / (float) mTextures.get(offset + 8).mWidth;
         
         quadVertices = fillBuffer(quadVerticesArray);
         quadTexCoords = fillBuffer(quadTexCoordsArray);
@@ -491,7 +491,7 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
         else
             GLES20.glFrontFace(GLES20.GL_CCW); // Back camera
             
-        float temp[] = { 0.0f, 0.0f };
+        float temp[] = { 0.0f, 0.0f, 0.0f };
         for (int i = 0; i < VideoPlayback.NUM_TARGETS; i++)
         {
             isTracking[i] = false;
@@ -542,14 +542,14 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
             //else if(trimmedName.compareTo("copper") == 0 || trimmedName.compareTo("gen_copper") == 0) {
                 currentTarget = VideoPlayback.COPPER;
             }
-            else if(imageTarget.getName().compareTo("ba_umbrellas") == 0) {
-            //else if(trimmedName.compareTo("umbrellas") == 0 || trimmedName.compareTo("gen_umbrellas") == 0) {
-                currentTarget = VideoPlayback.UMBRELLAS;
-            }
-            else if(imageTarget.getName().compareTo("ba_alley") == 0) {
-            //else if(trimmedName.compareTo("alley") == 0 || trimmedName.compareTo("gen_bloodalley") == 0) {
-                currentTarget = VideoPlayback.ALLEY;
-            }
+//            else if(imageTarget.getName().compareTo("ba_umbrellas") == 0) {
+//            //else if(trimmedName.compareTo("umbrellas") == 0 || trimmedName.compareTo("gen_umbrellas") == 0) {
+//                //currentTarget = VideoPlayback.UMBRELLAS;
+//            }
+//            else if(imageTarget.getName().compareTo("ba_alley") == 0) {
+//            //else if(trimmedName.compareTo("alley") == 0 || trimmedName.compareTo("gen_bloodalley") == 0) {
+//                //currentTarget = VideoPlayback.ALLEY;
+//            }
             else {
                 currentTarget = 0;
             }

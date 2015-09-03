@@ -73,7 +73,7 @@ public class VideoPlayback extends Activity implements
     private SimpleOnGestureListener mSimpleListener = null;
     
     // Movie for the Targets:
-    public static final int NUM_TARGETS = 9;
+    public static final int NUM_TARGETS = 7;
     public static final int BEEF = 0;
     public static final int BICYCLES = 1;
     public static final int COPPER = 2;
@@ -81,8 +81,8 @@ public class VideoPlayback extends Activity implements
     public static final int PENNIES = 4;
     public static final int SHROOMS = 5;
     public static final int SUZYQ = 6;
-    public static final int UMBRELLAS = 7;
-    public static final int ALLEY = 8;
+    //public static final int UMBRELLAS = 7;
+    //public static final int ALLEY = 8;
     
     public static String MEDIA_PATH = "";
     
@@ -158,35 +158,35 @@ public class VideoPlayback extends Activity implements
         }
         
         String SD_PATH = Environment.getExternalStorageDirectory().getPath();
-        MEDIA_PATH = SD_PATH + "/SecondStory/BloodAlley/MEDIA/";
+        MEDIA_PATH = SD_PATH + "/SecondStory/dareu/media/";
         Log.v(LOGTAG, "MEDIA PATH IS " + MEDIA_PATH);
         // TODO       
-        mMovieName[BEEF] 		= MEDIA_PATH + "beef.mp4";
+        mMovieName[BEEF] 		= MEDIA_PATH + "exhibita.mp4";
         Log.v(LOGTAG, "BEEF PATH IS " + mMovieName[BEEF]);
         
-        mMovieName[BICYCLES] 	= MEDIA_PATH + "bicycles.mp4";
+        mMovieName[BICYCLES] 	= MEDIA_PATH + "leaving.mp4";
         Log.v(LOGTAG, "BICYCLES PATH IS " + mMovieName[BICYCLES]);
         
-        mMovieName[GUN] 		= MEDIA_PATH + "gun.mp4";
+        mMovieName[GUN] 		= MEDIA_PATH + "letter pt1.mp4";
         Log.v(LOGTAG, "GUN PATH IS " + mMovieName[GUN]);
         
-        mMovieName[PENNIES] 	= MEDIA_PATH + "pennies.mp4";
+        mMovieName[PENNIES] 	= MEDIA_PATH + "letter pt2.mp4";
         Log.v(LOGTAG, "PENNIES PATH IS " + mMovieName[PENNIES]);
         
-        mMovieName[COPPER] 		= MEDIA_PATH + "copperthief.mp4";
+        mMovieName[COPPER] 		= MEDIA_PATH + "plant.mp4";
         Log.v(LOGTAG, "COPPER PATH IS " + mMovieName[COPPER]);
         
-        mMovieName[SUZYQ] 		= MEDIA_PATH + "sweeping.mp4";
+        mMovieName[SUZYQ] 		= MEDIA_PATH + "portability.mp4";
         Log.v(LOGTAG, "SUZYQ PATH IS " + mMovieName[SUZYQ]);
         
-        mMovieName[SHROOMS] 	= MEDIA_PATH + "shrooms.mp4";
+        mMovieName[SHROOMS] 	= MEDIA_PATH + "stall.mp4";
         Log.v(LOGTAG, "SHROOMS PATH IS " + mMovieName[SHROOMS]);
         
-        mMovieName[UMBRELLAS] 	= MEDIA_PATH + "umbrellas.mp4";
-        Log.v(LOGTAG, "UMBRELLAS PATH IS " + mMovieName[UMBRELLAS]);
-        
-        mMovieName[ALLEY]	 	= MEDIA_PATH + "bloodalley.mp4";
-        Log.v(LOGTAG, "ALLEY PATH IS " + mMovieName[ALLEY]);
+//        mMovieName[UMBRELLAS] 	= MEDIA_PATH + "umbrellas.mp4";
+//        Log.v(LOGTAG, "UMBRELLAS PATH IS " + mMovieName[UMBRELLAS]);
+//
+//        mMovieName[ALLEY]	 	= MEDIA_PATH + "bloodalley.mp4";
+//        Log.v(LOGTAG, "ALLEY PATH IS " + mMovieName[ALLEY]);
         
         // Set the double tap listener:
         mGestureDetector.setOnDoubleTapListener(new OnDoubleTapListener() {
@@ -262,15 +262,25 @@ public class VideoPlayback extends Activity implements
         mTextures.add(Texture.loadTextureFromApk("ctrl/play.png", getAssets()));
         mTextures.add(Texture.loadTextureFromApk("ctrl/busy.png", getAssets()));
         mTextures.add(Texture.loadTextureFromApk("ctrl/error.png", getAssets()));
-        mTextures.add(Texture.loadTextureFromApk("frames/beef.jpg", getAssets())); // 3
-        mTextures.add(Texture.loadTextureFromApk("frames/bicycles.jpg", getAssets()));
-        mTextures.add(Texture.loadTextureFromApk("frames/copper.jpg", getAssets()));
-        mTextures.add(Texture.loadTextureFromApk("frames/gun.jpg", getAssets()));
-        mTextures.add(Texture.loadTextureFromApk("frames/pennies.jpg", getAssets()));
-        mTextures.add(Texture.loadTextureFromApk("frames/shrooms.jpg", getAssets()));
-        mTextures.add(Texture.loadTextureFromApk("frames/sweeping.jpg", getAssets()));
-        mTextures.add(Texture.loadTextureFromApk("frames/umbrellas.jpg", getAssets())); // 10
-        mTextures.add(Texture.loadTextureFromApk("frames/alley.jpg", getAssets())); // 11
+
+        mTextures.add(Texture.loadTextureFromApk("frames/dareu/amy.jpg", getAssets())); // 3
+        mTextures.add(Texture.loadTextureFromApk("frames/dareu/claire.jpg", getAssets())); // 3
+        mTextures.add(Texture.loadTextureFromApk("frames/dareu/jess.jpg", getAssets())); // 3
+        mTextures.add(Texture.loadTextureFromApk("frames/dareu/kiki.jpg", getAssets())); // 3
+        mTextures.add(Texture.loadTextureFromApk("frames/dareu/marci.jpg", getAssets())); // 3
+        mTextures.add(Texture.loadTextureFromApk("frames/dareu/mily.jpg", getAssets())); // 3
+        mTextures.add(Texture.loadTextureFromApk("frames/dareu/sultan.jpg", getAssets())); // 3
+
+
+//        mTextures.add(Texture.loadTextureFromApk("frames/beef.jpg", getAssets())); // 3
+//        mTextures.add(Texture.loadTextureFromApk("frames/bicycles.jpg", getAssets()));
+//        mTextures.add(Texture.loadTextureFromApk("frames/copper.jpg", getAssets()));
+//        mTextures.add(Texture.loadTextureFromApk("frames/gun.jpg", getAssets()));
+//        mTextures.add(Texture.loadTextureFromApk("frames/pennies.jpg", getAssets()));
+//        mTextures.add(Texture.loadTextureFromApk("frames/shrooms.jpg", getAssets()));
+//        mTextures.add(Texture.loadTextureFromApk("frames/sweeping.jpg", getAssets()));
+//        mTextures.add(Texture.loadTextureFromApk("frames/umbrellas.jpg", getAssets())); // 10
+//        mTextures.add(Texture.loadTextureFromApk("frames/alley.jpg", getAssets())); // 11
     }
     
     
@@ -330,9 +340,7 @@ public class VideoPlayback extends Activity implements
     {
         if (requestCode == 1)
         {
-            
             mActivity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT); // LANDSCAPE ???
-            
             if (resultCode == RESULT_OK)
             {
                 // The following values are used to indicate the position in
@@ -524,7 +532,7 @@ public class VideoPlayback extends Activity implements
         
         for (int i = 0; i < NUM_TARGETS; i++)
         {
-            float[] temp = { 0f, 0f };
+            float[] temp = { 0f, 0f, 0f };
             mRenderer.targetPositiveDimensions[i].setData(temp);
             mRenderer.videoPlaybackTextureID[i] = -1;
         }
@@ -614,7 +622,7 @@ public class VideoPlayback extends Activity implements
         if (imageTracker != null)
         {
             imageTracker.start();
-            Vuforia.setHint(HINT.HINT_MAX_SIMULTANEOUS_IMAGE_TARGETS, 2); // EDIT ???
+            Vuforia.setHint(HINT.HINT_MAX_SIMULTANEOUS_IMAGE_TARGETS, 2); // TODO: EDIT ???
         } else
             result = false;
         
@@ -649,9 +657,7 @@ public class VideoPlayback extends Activity implements
         ObjectTracker imageTracker = (ObjectTracker) trackerManager.getTracker(ObjectTracker.getClassType());
         if (imageTracker == null)
         {
-            Log.d(
-                LOGTAG,
-                "Failed to destroy the tracking data set because the ImageTracker has not been initialized.");
+            Log.d(LOGTAG, "Failed to destroy the tracking data set because the ImageTracker has not been initialized.");
             return false;
         }
         
@@ -659,17 +665,13 @@ public class VideoPlayback extends Activity implements
         {
             if (imageTracker.getActiveDataSet() == dataSet && !imageTracker.deactivateDataSet(dataSet))
             {
-                Log.d(
-                    LOGTAG,
-                    "Failed to destroy the tracking data set because the data set could not be deactivated.");
+                Log.d(LOGTAG, "Failed to destroy the tracking data set because the data set could not be deactivated.");
                 result = false;
             } else if (!imageTracker.destroyDataSet(dataSet))
             {
-                Log.d(LOGTAG,
-                    "Failed to destroy the tracking data set.");
+                Log.d(LOGTAG, "Failed to destroy the tracking data set.");
                 result = false;
             }
-            
             dataSet = null;
         }
         
