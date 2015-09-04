@@ -11,14 +11,14 @@
         android:layout_height="fill_parent"
         android:layout_alignParentTop="true"
         android:scaleType="fitXY"
-        android:src="@drawable/splash_bg" />
+        android:src="@drawable/feedback_bg" />
 
     <RelativeLayout
         android:id="@+id/feedback_nav"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:background="@+color/feedback_nav_bg_color"
+        android:background="@color/feedback_nav_bg_color"
         android:padding="5dp" >
 
         <ImageButton
@@ -38,28 +38,72 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="30dp"
-            android:shadowColor="@+color/black"
+            android:shadowColor="@color/black"
             android:shadowDx="2"
             android:shadowDy="2"
             android:shadowRadius="2"
-            android:textColor="@+color/feedback_nav_font_color"
+            android:textColor="@color/feedback_nav_font_color"
             android:textSize="30sp"
-            android:text="@+string/label_feedback"
+            android:text="@string/label_feedback"
             android:textAppearance="?android:attr/textAppearanceLarge" />
     </RelativeLayout>
+
+
+    <EditText
+        android:id="@+id/feedback_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Name (optional)"
+        android:textColorHint="@color/black"
+        android:textColor="@color/black"
+        android:ems="10"
+        android:layout_above="@+id/feedback_email"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/feedback_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:hint="Email (optional)"
+        android:textColorHint="@color/black"
+        android:textColor="@color/black"
+        android:layout_above="@+id/feedback_message"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        />
+
+    <EditText
+        android:id="@+id/feedback_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:hint="Feedback"
+        android:textColorHint="@color/black"
+        android:textColor="@color/black"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:maxLines="5"
+        android:maxLength="500"
+    />
 
     <Button
         android:id="@+id/feedback_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
         android:padding="15dp"
-        android:background="@+color/feedback_nav_bg_color"
-        android:textColor="@+color/feedback_nav_font_color"
+        android:layout_marginBottom="30dp"
+        android:background="@color/transparent_grey"
+        android:textColor="@color/feedback_nav_font_color"
         android:textAllCaps="true"
-        android:text="@+string/button_feedback" 
+        android:text="@string/button_feedback"
         android:textSize="30sp"
-    />
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"/>
+
 
 </RelativeLayout>

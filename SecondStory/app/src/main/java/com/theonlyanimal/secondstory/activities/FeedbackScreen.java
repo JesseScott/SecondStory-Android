@@ -4,24 +4,29 @@ package com.theonlyanimal.secondstory.activities;
 //IMPORTS
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.app.Activity;
 import android.graphics.Typeface;
+import android.widget.Toast;
 
+import com.parse.ParseObject;
 import com.theonlyanimal.secondstory.R;
+import com.theonlyanimal.secondstory.helpers.Constants;
 
 //CLASS
 public class FeedbackScreen extends Activity {
 
 	// GLOBALS
-	//private static final String TAG = "SS_GUIDE";
-	private static final String HOCKEY_APP_ID = "7f9de1a2655e56f6c60c798cc7d2cdec";
-	
+	private static final String TAG = "SS_GUIDE";
+
 	private Button feedbackBtn;
 	private ImageButton backBtn;
+	private EditText nameField, emailField, messageField;
 	TextView navLabel;
 	Typeface dinBlack, dinMedium;
 
@@ -55,9 +60,16 @@ public class FeedbackScreen extends Activity {
 		feedbackBtn.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				showFeedbackActivity();
+                submitFeedback();
 			}
 		});
+
+		// EditText
+        nameField = (EditText) findViewById(R.id.feedback_name);
+
+        emailField = (EditText) findViewById(R.id.feedback_email);
+
+        messageField = (EditText) findViewById(R.id.feedback_message);
 		
 	}
  
@@ -72,9 +84,21 @@ public class FeedbackScreen extends Activity {
 		super.onResume();
 	}
 	
-	public void showFeedbackActivity() {
-		  //FeedbackManager.register(this, HOCKEY_APP_ID, null);
-		  //FeedbackManager.showFeedbackActivity(this);
+	private void submitFeedback() {
+
+        ParseObject feedback = new ParseObject(Constants.kSSClassNameFeedback);
+        feedback.put(Constants.kSSFeedbackFieldName, nameField.getText().toString());
+        feedback.put(Constants.kSSFeedbackFieldEmail, emailField.getText().toString());
+        feedback.put(Constants.kSSFeedbackFieldMessage, messageField.getText().toString());
+        feedback.saveEventually();
+
+        Log.v(TAG, "Feedback Submitted");
+
+        nameField.setText("");
+        emailField.setText("");
+        messageField.setText("");
+
+        Toast.makeText(this, "Thank You for your feedback!", Toast.LENGTH_SHORT).show();
 	}
  
  
