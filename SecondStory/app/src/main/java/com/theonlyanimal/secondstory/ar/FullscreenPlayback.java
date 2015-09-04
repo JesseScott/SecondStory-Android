@@ -624,6 +624,6 @@ public class FullscreenPlayback extends Activity implements OnPreparedListener,
     	Intent i = new Intent("android.intent.action.MENU");
     	i.putExtra("cameFromFullscreen", true);
 		startActivity(i);
-        finish();
+        //finish();
     }
 }
