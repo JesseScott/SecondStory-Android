@@ -123,6 +123,7 @@ public class GuideScreen extends Activity {
 		mediaIsPlaying = true;
 	}
 
+	// TODO: completion listener
  
  
 } /* EOC */

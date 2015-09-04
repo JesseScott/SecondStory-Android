@@ -23,16 +23,30 @@
   	>
 
         <Button
-            android:id="@+id/menu_guide_btn"
+            android:id="@+id/menu_about_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="2dp"
             android:background="@color/light_gray"
             android:paddingBottom="20dp"
             android:paddingTop="20dp"
-            android:text="@string/label_guide"
+            android:text="@string/label_about"
             android:textColor="@color/menu_btn_font_color"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+        />
+
+        <Button
+            android:id="@+id/menu_feedback_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:background="@color/light_gray"
+            android:paddingBottom="20dp"
+            android:paddingTop="20dp"
+            android:text="@string/label_feedback"
+            android:textColor="@color/menu_btn_font_color"
+            android:textSize="24sp"
+        />
 
         <Button
             android:id="@+id/menu_gallery_btn"
@@ -44,31 +58,21 @@
             android:paddingTop="20dp"
             android:text="@string/label_gallery"
             android:textColor="@color/menu_btn_font_color"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+        />
 
         <Button
-            android:id="@+id/menu_about_btn"
+            android:id="@+id/menu_guide_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="2dp"
             android:background="@color/light_gray"
             android:paddingBottom="20dp"
             android:paddingTop="20dp"
-            android:text="@string/label_about"
+            android:text="@string/label_guide"
             android:textColor="@color/menu_btn_font_color"
-            android:textSize="24sp" />
-        
-        <Button
-            android:id="@+id/menu_feedback_btn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="2dp"
-            android:background="@color/light_gray"
-            android:paddingBottom="20dp"
-            android:paddingTop="20dp"
-            android:text="@string/label_feedback"
-            android:textColor="@color/menu_btn_font_color"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+        />
 
     </LinearLayout>
 
