@@ -95,33 +95,30 @@ public class GalleryScreen extends FragmentActivity {
         MEDIA_PATH = SD_PATH + "/SecondStory/dareu/media/"; // TODO: getIntent
 
         switch (index) { // TODO: smart index
-//            case 0: // Beef
-//                mMovieName = MEDIA_PATH + "beef.mp4";
-//                break;
-            case 1: // Pennies
-                mMovieName = MEDIA_PATH + "exhibita.mp4";
-                break;
-            case 2: // Sweeping
-                mMovieName = MEDIA_PATH + "leaving.mp4";
-                break;
-            case 3: // Copper
-                mMovieName = MEDIA_PATH + "letter pt1.mp4";
-                break;
-            case 4: // Shrooms
-                mMovieName = MEDIA_PATH + "letter pt2.mp4";
-                break;
-            case 5: // Umbrellas
-                mMovieName = MEDIA_PATH + "plant.mp4";
-                break;
-            case 6: // Alley
-                mMovieName = MEDIA_PATH + "portability.mp4";
-                break;
-            case 7: // Bicycles
+            case 0: // KIKI
                 mMovieName = MEDIA_PATH + "stall.mp4";
                 break;
-//            case 9: // Gun
-//                mMovieName = MEDIA_PATH + "gun.mp4";
-//                break;
+            case 1: // AMY
+                mMovieName = MEDIA_PATH + "leaving.mp4";
+                break;
+            case 2: // CLAIRE
+                mMovieName = MEDIA_PATH + "exhibita.mp4";
+                break;
+            case 3: // SULTAN1
+                mMovieName = MEDIA_PATH + "letter pt1.mp4";
+                break;
+            case 4: // SULTAN2
+                mMovieName = MEDIA_PATH + "letter pt2.mp4";
+                break;
+            case 5: // MILY
+                mMovieName = MEDIA_PATH + "cirque.mp4";
+                break;
+            case 6: // JESS
+                mMovieName = MEDIA_PATH + "portability.mp4";
+                break;
+            case 7: // MARCI
+                mMovieName = MEDIA_PATH + "plant.mp4";
+                break;
             default:
                 mMovieName = MEDIA_PATH + "";
         }

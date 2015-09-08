@@ -9,38 +9,38 @@
 
     <!-- TITLES -->
     <string-array name="vid_title">
-        <item>Cirque Dystopic</item>
-        <item>Exhibit A</item>
+        <item>Stall 43</item>
         <item>Leaving the House</item>
+        <item>Exhibit A</item>
         <item>A Letter Too Late Pt1</item>
         <item>A Letter Too Late Pt2</item>
-        <item>Plant</item>
+        <item>Cirque Dystopic</item>
         <item>Portability</item>
-        <item>Stall 43</item>
+        <item>Plant</item>
     </string-array>
 
     <!-- DIRECTORS -->
     <string-array name="vid_directors">
-        <item>Mily Mumford</item>
-        <item>Claire Love Wilson</item>
-        <item>Amy Dauer</item>
-        <item>Sultan Owaisi</item>
-        <item>Sultan Owaisi</item>
-        <item>Marcela Amaya</item>
-        <item>Jess Amy Shead</item>
         <item>Baraka Ramini</item>
+        <item>Amy Dauer</item>
+        <item>Claire Love Wilson</item>
+        <item>Sultan Owaisi</item>
+        <item>Sultan Owaisi</item>
+        <item>Mily Mumford</item>
+        <item>Jess Amy Head</item>
+        <item>Marcela Amaya</item>
     </string-array>
 
     <!-- FRAMES -->
     <string-array name="vid_thumbs">
-        <item>@drawable/frame_mily</item>
-        <item>@drawable/frame_claire</item>
+        <item>@drawable/frame_kiki</item>
         <item>@drawable/frame_amy</item>
+        <item>@drawable/frame_claire</item>
         <item>@drawable/frame_sultan1</item>
         <item>@drawable/frame_sultan2</item>
-        <item>@drawable/frame_marci</item>
+        <item>@drawable/frame_mily</item>
         <item>@drawable/frame_jess</item>
-        <item>@drawable/frame_kiki</item>
+        <item>@drawable/frame_marci</item>
     </string-array>
 
 </resources>

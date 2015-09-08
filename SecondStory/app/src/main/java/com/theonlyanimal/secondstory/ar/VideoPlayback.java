@@ -64,17 +64,16 @@ public class VideoPlayback extends Activity implements
     private SimpleOnGestureListener mSimpleListener = null;
     
     // Movie for the Targets:
-    public static final int NUM_TARGETS = 7;
-    public static final int CLAIRE = 0;
+    public static final int NUM_TARGETS = 8;
+    public static final int KIKI = 0;
     public static final int AMY = 1;
-    public static final int MARCI = 2;
+    public static final int CLAIRE = 2;
     public static final int SULTAN1 = 3;
     public static final int SULTAN2 = 4;
-    public static final int JESS = 5;
-    public static final int KIKI = 6;
+    public static final int MILY = 5;
+    public static final int JESS = 6;
+    public static final int MARCI = 7;
 
-    //public static final int UMBRELLAS = 7;
-    //public static final int ALLEY = 8;
     
     public static String MEDIA_PATH = "";
     
@@ -153,14 +152,14 @@ public class VideoPlayback extends Activity implements
         MEDIA_PATH = SD_PATH + "/SecondStory/dareu/media/";
         Log.v(LOGTAG, "MEDIA PATH IS " + MEDIA_PATH);
 
-        mMovieName[CLAIRE] 		= MEDIA_PATH + "exhibita.mp4";
-        Log.v(LOGTAG, "CLAIRE PATH IS " + mMovieName[CLAIRE]);
-        
+        mMovieName[KIKI] 	= MEDIA_PATH + "stall.mp4";
+        Log.v(LOGTAG, "KIKI PATH IS " + mMovieName[KIKI]);
+
         mMovieName[AMY] 	= MEDIA_PATH + "leaving.mp4";
         Log.v(LOGTAG, "AMY PATH IS " + mMovieName[AMY]);
 
-        mMovieName[MARCI] 		= MEDIA_PATH + "plant.mp4";
-        Log.v(LOGTAG, "MARCI PATH IS " + mMovieName[MARCI]);
+        mMovieName[CLAIRE] 		= MEDIA_PATH + "exhibita.mp4";
+        Log.v(LOGTAG, "CLAIRE PATH IS " + mMovieName[CLAIRE]);
         
         mMovieName[SULTAN1] 		= MEDIA_PATH + "letter pt1.mp4";
         Log.v(LOGTAG, "SULTAN1 PATH IS " + mMovieName[SULTAN1]);
@@ -168,11 +167,16 @@ public class VideoPlayback extends Activity implements
         mMovieName[SULTAN2] 	= MEDIA_PATH + "letter pt2.mp4";
         Log.v(LOGTAG, "SULTAN2 PATH IS " + mMovieName[SULTAN2]);
 
+        mMovieName[MILY] 		= MEDIA_PATH + "cirque.mp4";
+        Log.v(LOGTAG, "MILY PATH IS " + mMovieName[MILY]);
+
         mMovieName[JESS] 		= MEDIA_PATH + "portability.mp4";
         Log.v(LOGTAG, "JESS PATH IS " + mMovieName[JESS]);
+
+        mMovieName[MARCI] 		= MEDIA_PATH + "plant.mp4";
+        Log.v(LOGTAG, "MARCI PATH IS " + mMovieName[MARCI]);
         
-        mMovieName[KIKI] 	= MEDIA_PATH + "stall.mp4";
-        Log.v(LOGTAG, "KIKI PATH IS " + mMovieName[KIKI]);
+
         
         // Set the double tap listener:
         mGestureDetector.setOnDoubleTapListener(new OnDoubleTapListener() {
@@ -249,14 +253,15 @@ public class VideoPlayback extends Activity implements
         mTextures.add(Texture.loadTextureFromApk("ctrl/busy.png", getAssets()));
         mTextures.add(Texture.loadTextureFromApk("ctrl/error.png", getAssets()));
 
+        mTextures.add(Texture.loadTextureFromApk("frames/dareu/kiki.jpg", getAssets())); // 6
         mTextures.add(Texture.loadTextureFromApk("frames/dareu/amy.jpg", getAssets())); // 3
         mTextures.add(Texture.loadTextureFromApk("frames/dareu/claire.jpg", getAssets())); // 4
-        mTextures.add(Texture.loadTextureFromApk("frames/dareu/jess.jpg", getAssets())); // 5
-        mTextures.add(Texture.loadTextureFromApk("frames/dareu/kiki.jpg", getAssets())); // 6
-        mTextures.add(Texture.loadTextureFromApk("frames/dareu/marci.jpg", getAssets())); // 7
-        mTextures.add(Texture.loadTextureFromApk("frames/dareu/mily.jpg", getAssets())); // 8
         mTextures.add(Texture.loadTextureFromApk("frames/dareu/sultan1.jpg", getAssets())); // 9
         mTextures.add(Texture.loadTextureFromApk("frames/dareu/sultan2.jpg", getAssets())); // 10
+        mTextures.add(Texture.loadTextureFromApk("frames/dareu/mily.jpg", getAssets())); // 8
+        mTextures.add(Texture.loadTextureFromApk("frames/dareu/jess.jpg", getAssets())); // 5
+        mTextures.add(Texture.loadTextureFromApk("frames/dareu/marci.jpg", getAssets())); // 7
+
 
 
 //        mTextures.add(Texture.loadTextureFromApk("frames/beef.jpg", getAssets())); // 3

@@ -390,15 +390,14 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
         
         // TODO
         int offset = 3; // THE NUMBER OF CTRL IMAGES (was 3)
-        keyframeQuadAspectRatio[VideoPlayback.CLAIRE] = (float) mTextures.get(offset).mHeight / (float) mTextures.get(offset).mWidth;
+        keyframeQuadAspectRatio[VideoPlayback.KIKI] = (float) mTextures.get(offset + 0).mHeight / (float) mTextures.get(offset + 5).mWidth;
         keyframeQuadAspectRatio[VideoPlayback.AMY] = (float) mTextures.get(offset + 1).mHeight / (float) mTextures.get(offset + 1).mWidth;
-        keyframeQuadAspectRatio[VideoPlayback.MARCI] = (float) mTextures.get(offset + 2).mHeight / (float) mTextures.get(offset + 2).mWidth;
+        keyframeQuadAspectRatio[VideoPlayback.CLAIRE] = (float) mTextures.get(offset + 2).mHeight / (float) mTextures.get(offset).mWidth;
         keyframeQuadAspectRatio[VideoPlayback.SULTAN1] = (float) mTextures.get(offset + 3).mHeight / (float) mTextures.get(offset + 3).mWidth;
         keyframeQuadAspectRatio[VideoPlayback.SULTAN2] = (float) mTextures.get(offset + 4).mHeight / (float) mTextures.get(offset + 4).mWidth;
-        keyframeQuadAspectRatio[VideoPlayback.KIKI] = (float) mTextures.get(offset + 5).mHeight / (float) mTextures.get(offset + 5).mWidth;
+        keyframeQuadAspectRatio[VideoPlayback.MILY] = (float) mTextures.get(offset + 5).mHeight / (float) mTextures.get(offset + 6).mWidth;
         keyframeQuadAspectRatio[VideoPlayback.JESS] = (float) mTextures.get(offset + 6).mHeight / (float) mTextures.get(offset + 6).mWidth;
-        //keyframeQuadAspectRatio[VideoPlayback.UMBRELLAS] = (float) mTextures.get(offset + 7).mHeight / (float) mTextures.get(offset + 7).mWidth;
-        //keyframeQuadAspectRatio[VideoPlayback.ALLEY] = (float) mTextures.get(offset + 8).mHeight / (float) mTextures.get(offset + 8).mWidth;
+        keyframeQuadAspectRatio[VideoPlayback.MARCI] = (float) mTextures.get(offset + 7).mHeight / (float) mTextures.get(offset + 2).mWidth;
         
         quadVertices = fillBuffer(quadVerticesArray);
         quadTexCoords = fillBuffer(quadTexCoordsArray);
@@ -514,14 +513,17 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
             String trimmedName = imageTarget.getName().substring(0, imageTarget.getName().length()-3);
             Log.i(LOGTAG, "Target is " + trimmedName);
 
-            if(trimmedName.compareTo("CLAIRE") == 0) {
-                currentTarget = VideoPlayback.CLAIRE;
+            if(trimmedName.compareTo("KIKI") == 0) {
+                currentTarget = VideoPlayback.KIKI;
             }
             else if(trimmedName.compareTo("AMY") == 0) {
                 currentTarget = VideoPlayback.AMY;
             }
-            else if(trimmedName.compareTo("MARCI") == 0) {
-                currentTarget = VideoPlayback.MARCI;
+            else if(trimmedName.compareTo("CLAIRE") == 0) {
+                currentTarget = VideoPlayback.CLAIRE;
+            }
+            else if(trimmedName.compareTo("MILY") == 0) {
+                currentTarget = VideoPlayback.MILY;
             }
             else if(trimmedName.compareTo("SULTAN1") == 0) {
                 currentTarget = VideoPlayback.SULTAN1;
@@ -532,8 +534,8 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
             else if(trimmedName.compareTo("JESS") == 0) {
                 currentTarget = VideoPlayback.JESS;
             }
-            else if(trimmedName.compareTo("KIKI") == 0) {
-                currentTarget = VideoPlayback.KIKI;
+            else if(trimmedName.compareTo("MARCI") == 0) {
+                currentTarget = VideoPlayback.MARCI;
             }
             else {
                 currentTarget = 0;
