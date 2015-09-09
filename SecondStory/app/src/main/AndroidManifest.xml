@@ -88,7 +88,7 @@
         <activity
             android:name="com.theonlyanimal.secondstory.activities.GalleryScreen"
             android:label="@string/app_name"
-            android:screenOrientation="portrait"
+            android:screenOrientation="landscape"
             >
             <intent-filter>
                 <action android:name="android.intent.action.GALLERY" />

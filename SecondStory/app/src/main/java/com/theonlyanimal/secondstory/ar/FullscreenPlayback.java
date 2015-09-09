@@ -201,7 +201,7 @@ public class FullscreenPlayback extends Activity implements OnPreparedListener,
     // playing
     public void onPrepared(MediaPlayer mediaplayer)
     {
-        Log.d( LOGTAG, "Fullscreen.onPrepared");
+        Log.d(LOGTAG, "Fullscreen.onPrepared");
         
         mMediaControllerLock.lock();
         mMediaPlayerLock.lock();
@@ -236,8 +236,26 @@ public class FullscreenPlayback extends Activity implements OnPreparedListener,
                 {
                     try
                     {
-                        mMediaPlayer.start();
-                        mShouldPlayImmediately = false;
+                        Log.v(LOGTAG, "MP SIZE: " + mMediaPlayer.getVideoWidth() + " x " + mMediaPlayer.getVideoHeight());
+
+                        if (mMediaPlayer.getVideoHeight() == 0) {
+                            final Handler handler = new Handler();
+                            handler.postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    //mVideoView.stopPlayback();
+                                    //mMediaController = null;
+                                    //mMediaPlayerLock.unlock();
+                                    //mMediaControllerLock.unlock();
+                                    Log.e(LOGTAG, "Could not start playback - trying again");
+                                    createMediaPlayer();
+                                }
+                            }, 1000);
+                        }
+                        else {
+                            mMediaPlayer.start();
+                            mShouldPlayImmediately = false;
+                        }
                     } catch (Exception e)
                     {
                         mMediaPlayerLock.unlock();
@@ -564,7 +582,7 @@ public class FullscreenPlayback extends Activity implements OnPreparedListener,
         int videoWidth = mMediaPlayer.getVideoWidth();
         int videoHeight = mMediaPlayer.getVideoHeight();
         int screenWidth = this.getResources().getDisplayMetrics().widthPixels;
-        
+
         // Apply aspect ratio:
         mVideoView.getLayoutParams().height = (int) (((float) videoHeight / (float) videoWidth) * (float) screenWidth);
         mVideoView.getLayoutParams().width = screenWidth;
@@ -620,6 +638,13 @@ public class FullscreenPlayback extends Activity implements OnPreparedListener,
     @Override
     public void onCompletion(MediaPlayer mp)
     {
+
+        // If something failed then prepare for termination and  request a finish:
+        prepareForTermination();
+
+        // Release the resources of the media player:
+        destroyMediaPlayer();
+
         Log.v(LOGTAG, "Playback Finished, goint to MENU");
     	Intent i = new Intent("android.intent.action.MENU");
     	i.putExtra("cameFromFullscreen", true);

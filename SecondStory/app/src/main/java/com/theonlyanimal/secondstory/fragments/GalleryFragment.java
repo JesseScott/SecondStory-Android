@@ -3,13 +3,17 @@ package com.theonlyanimal.secondstory.fragments;
 
 
 import android.content.res.TypedArray;
+import android.graphics.drawable.BitmapDrawable;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.theonlyanimal.secondstory.R;
@@ -48,6 +52,30 @@ public class GalleryFragment extends Fragment {
         ((TextView) rootView.findViewById(R.id.gallery_page_director)).setText(getResources().getStringArray(R.array.vid_directors)[mPageNumber]);
 
         TypedArray imgs = getResources().obtainTypedArray(R.array.vid_thumbs);
+
+        DisplayMetrics metrics = new DisplayMetrics();
+        getActivity().getWindowManager().getDefaultDisplay().getMetrics(metrics);
+        int height = metrics.heightPixels;
+        int width = metrics.widthPixels;
+
+        BitmapDrawable bmap = (BitmapDrawable) this.getResources().getDrawable(imgs.getResourceId(mPageNumber, -1));
+        float bmapWidth = bmap.getBitmap().getWidth();
+        float bmapHeight = bmap.getBitmap().getHeight();
+
+        float wRatio = width / bmapWidth;
+        float hRatio = height / bmapHeight;
+
+        float ratioMultiplier = wRatio;
+        if (hRatio < wRatio) {
+            ratioMultiplier = hRatio;
+        }
+        
+        int newBmapWidth = (int) (bmapWidth*ratioMultiplier);
+        int newBmapHeight = (int) (bmapHeight*ratioMultiplier);
+
+        ImageView iView = (ImageView) rootView.findViewById(R.id.gallery_page_bg);
+        iView.setLayoutParams(new RelativeLayout.LayoutParams(newBmapWidth, newBmapHeight));
+
         ((ImageView) rootView.findViewById(R.id.gallery_page_bg)).setImageResource(imgs.getResourceId(mPageNumber, -1));
 
         ImageButton play = (ImageButton) rootView.findViewById(R.id.gallery_page_btn);

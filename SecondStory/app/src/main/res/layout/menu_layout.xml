@@ -18,22 +18,22 @@
         android:id="@+id/menu_top"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="90dp"
+        android:layout_marginTop="50dp"
         android:orientation="vertical"
   	>
 
-        <Button
-            android:id="@+id/menu_about_btn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="2dp"
-            android:background="@color/light_gray"
-            android:paddingBottom="20dp"
-            android:paddingTop="20dp"
-            android:text="@string/label_about"
-            android:textColor="@color/menu_btn_font_color"
-            android:textSize="24sp"
-        />
+        <!--<Button-->
+            <!--android:id="@+id/menu_about_btn"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginBottom="2dp"-->
+            <!--android:background="@color/light_gray"-->
+            <!--android:paddingBottom="20dp"-->
+            <!--android:paddingTop="20dp"-->
+            <!--android:text="@string/label_about"-->
+            <!--android:textColor="@color/menu_btn_font_color"-->
+            <!--android:textSize="24sp"-->
+        <!--/>-->
 
         <Button
             android:id="@+id/menu_feedback_btn"

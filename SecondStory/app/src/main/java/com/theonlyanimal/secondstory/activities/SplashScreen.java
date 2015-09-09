@@ -2,6 +2,8 @@ package com.theonlyanimal.secondstory.activities;
 
 // IMPORTS
 
+import android.content.Context;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
@@ -43,8 +45,13 @@ public class SplashScreen extends Activity {
 		splashLabel = (TextView) findViewById(R.id.splash_label);
 		splashLabel.setTypeface(dinMedium);
 
+        // foo
+        Log.i(TAG, "Screen Size is " + getSize(this));
+        Log.i(TAG, "Screen Density is " + getDensity(this));
+
 
         // Parse
+        /*
         ParseQuery<ParseObject> query = ParseQuery.getQuery(Constants.kSSClassNameShow);
         query.include("currentEvent");
         query.getFirstInBackground(new GetCallback<ParseObject>() {
@@ -66,7 +73,67 @@ public class SplashScreen extends Activity {
                 }
             }
         });
-    
+        */
+
+
+
+        // Timer
+        Thread timer = new Thread() {
+            @Override
+            public void run() {
+                super.run();
+                try {
+                    sleep(750);
+                    navigate(null);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } finally {
+                    finish();
+                }
+            }
+        };
+        timer.start();
+
+
+    }
+
+
+    private static String getSize(Context context) {
+        int screenLayout = context.getResources().getConfiguration().screenLayout;
+        screenLayout &= Configuration.SCREENLAYOUT_SIZE_MASK;
+
+        switch (screenLayout) {
+            case Configuration.SCREENLAYOUT_SIZE_SMALL:
+                return "small";
+            case Configuration.SCREENLAYOUT_SIZE_NORMAL:
+                return "normal";
+            case Configuration.SCREENLAYOUT_SIZE_LARGE:
+                return "large";
+            case Configuration.SCREENLAYOUT_SIZE_XLARGE:
+                return "xlarge";
+            default:
+                return "undefined";
+        }
+    }
+
+    private static String getDensity(Context context) {
+        float density = context.getResources().getDisplayMetrics().density;
+        if (density >= 4.0) {
+            return "xxxhdpi";
+        }
+        if (density >= 3.0) {
+            return "xxhdpi";
+        }
+        if (density >= 2.0) {
+            return "xhdpi";
+        }
+        if (density >= 1.5) {
+            return "hdpi";
+        }
+        if (density >= 1.0) {
+            return "mdpi";
+        }
+        return "ldpi";
     }
 
     private void navigate(String show) {

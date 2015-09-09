@@ -74,15 +74,15 @@ public class MenuScreen extends Activity {
 			}
 		});
 		
-		Button aboutBtn = (Button) findViewById(R.id.menu_about_btn);
-		aboutBtn.setTypeface(dinBlack);
-		aboutBtn.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				Intent i = new Intent("android.intent.action.ABOUT");
-	    		startActivity(i);
-			}
-		});
+//		Button aboutBtn = (Button) findViewById(R.id.menu_about_btn);
+//		aboutBtn.setTypeface(dinBlack);
+//		aboutBtn.setOnClickListener(new View.OnClickListener() {
+//			@Override
+//			public void onClick(View v) {
+//				Intent i = new Intent("android.intent.action.ABOUT");
+//	    		startActivity(i);
+//			}
+//		});
 		
 		Button liveBtn = (Button) findViewById(R.id.menu_live_btn);
 		liveBtn.setTypeface(dinBlack);

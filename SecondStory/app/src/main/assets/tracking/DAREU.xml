@@ -1,6 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
+    <ImageTarget name="SULTAN1_89" size="720.000000 960.000000" />
+    <ImageTarget name="SULTAN1_88" size="720.000000 960.000000" />
+    <ImageTarget name="SULTAN1_87" size="720.000000 960.000000" />
+    <ImageTarget name="SULTAN1_86" size="720.000000 960.000000" />
+    <ImageTarget name="AMY_83" size="720.000000 960.000000" />
+    <ImageTarget name="AMY_85" size="720.000000 960.000000" />
+    <ImageTarget name="AMY_84" size="720.000000 960.000000" />
+    <ImageTarget name="AMY_82" size="720.000000 960.000000" />
+    <ImageTarget name="AMY_81" size="720.000000 960.000000" />
+    <ImageTarget name="MILY_81" size="720.000000 960.000000" />
+    <ImageTarget name="CLAIRE_84" size="720.000000 960.000000" />
+    <ImageTarget name="CLAIRE_83" size="720.000000 960.000000" />
+    <ImageTarget name="CLAIRE_82" size="720.000000 960.000000" />
+    <ImageTarget name="CLAIRE_81" size="720.000000 960.000000" />
+    <ImageTarget name="SULTAN1_85" size="720.000000 960.000000" />
+    <ImageTarget name="SULTAN1_84" size="720.000000 960.000000" />
+    <ImageTarget name="SULTAN1_83" size="720.000000 960.000000" />
+    <ImageTarget name="SULTAN1_82" size="720.000000 960.000000" />
+    <ImageTarget name="SULTAN1_81" size="720.000000 960.000000" />
+    <ImageTarget name="KIKI_83" size="720.000000 960.000000" />
+    <ImageTarget name="KIKI_82" size="720.000000 960.000000" />
+    <ImageTarget name="KIKI_81" size="720.000000 960.000000" />
+    <ImageTarget name="CLAIRE_73" size="720.000000 960.000000" />
+    <ImageTarget name="CLAIRE_72" size="720.000000 960.000000" />
+    <ImageTarget name="CLAIRE_71" size="720.000000 960.000000" />
+    <ImageTarget name="AMY_74" size="720.000000 960.000000" />
+    <ImageTarget name="AMY_73" size="720.000000 960.000000" />
+    <ImageTarget name="AMY_72" size="720.000000 960.000000" />
+    <ImageTarget name="AMY_71" size="720.000000 960.000000" />
+    <ImageTarget name="KIKI_72" size="720.000000 540.000000" />
+    <ImageTarget name="KIKI_71" size="720.000000 540.000000" />
+    <ImageTarget name="SULTAN1_75" size="720.000000 540.000000" />
+    <ImageTarget name="SULTAN1_74" size="720.000000 540.000000" />
+    <ImageTarget name="SULTAN1_73" size="720.000000 540.000000" />
+    <ImageTarget name="SULTAN1_72" size="720.000000 540.000000" />
+    <ImageTarget name="SULTAN1_71" size="720.000000 540.000000" />
+    <ImageTarget name="SULTAN2_72" size="720.000000 540.000000" />
+    <ImageTarget name="SULTAN2_71" size="720.000000 540.000000" />
+    <ImageTarget name="SULTAN2_98" size="720.000000 540.000000" />
+    <ImageTarget name="SULTAN1_95" size="720.000000 960.000000" />
+    <ImageTarget name="SULTAN1_96" size="720.000000 960.000000" />
+    <ImageTarget name="SULTAN1_97" size="720.000000 960.000000" />
+    <ImageTarget name="JESS_98" size="720.000000 960.000000" />
+    <ImageTarget name="MARCI_98" size="720.000000 960.000000" />
+    <ImageTarget name="CLAIRE_96" size="720.000000 960.000000" />
+    <ImageTarget name="CLAIRE_97" size="720.000000 960.000000" />
+    <ImageTarget name="AMY_94" size="720.000000 960.000000" />
+    <ImageTarget name="AMY_95" size="720.000000 960.000000" />
+    <ImageTarget name="AMY_96" size="720.000000 960.000000" />
+    <ImageTarget name="AMY_97" size="720.000000 960.000000" />
+    <ImageTarget name="AMY_98" size="720.000000 960.000000" />
+    <ImageTarget name="KIKI_95" size="720.000000 540.000000" />
+    <ImageTarget name="KIKI_96" size="720.000000 540.000000" />
+    <ImageTarget name="KIKI_97" size="720.000000 540.000000" />
+    <ImageTarget name="KIKI_98" size="720.000000 960.000000" />
+    <ImageTarget name="MILY_98" size="720.000000 540.000000" />
+    <ImageTarget name="CLAIRE_98" size="720.000000 540.000000" />
+    <ImageTarget name="SULTAN1_98" size="720.000000 540.000000" />
     <ImageTarget name="SULTAN1_99" size="100.000000 133.333328" />
     <ImageTarget name="SULTAN1_00" size="720.000000 556.363647" />
     <ImageTarget name="MILY_00" size="720.000000 556.363647" />
@@ -9,16 +67,6 @@
     <ImageTarget name="JESS_00" size="720.000000 556.363647" />
     <ImageTarget name="AMY_00" size="720.000000 556.363647" />
     <ImageTarget name="CLAIRE_00" size="720.000000 556.363647" />
-    <ImageTarget name="AMY_17" size="720.000000 960.000000" />
-    <ImageTarget name="AMY_16" size="720.000000 960.000000" />
-    <ImageTarget name="SULTAN1_02" size="100.000000 75.000000" />
-    <ImageTarget name="SULTAN1_03" size="100.000000 75.000000" />
-    <ImageTarget name="SULTAN1_04" size="100.000000 75.000000" />
-    <ImageTarget name="SULTAN1_01" size="100.000000 75.000000" />
-    <ImageTarget name="MARCI_03" size="100.000000 99.651047" />
-    <ImageTarget name="MARCI_04" size="320.000000 240.000000" />
-    <ImageTarget name="MARCI_05" size="320.000000 240.000000" />
-    <ImageTarget name="MARCI_01" size="100.000000 75.000000" />
     <ImageTarget name="JESS_07" size="100.000000 75.000000" />
     <ImageTarget name="SULTAN2_06" size="320.000000 240.000000" />
     <ImageTarget name="SULTAN2_05" size="320.000000 240.000000" />
@@ -26,53 +74,20 @@
     <ImageTarget name="SULTAN2_03" size="720.000000 540.000000" />
     <ImageTarget name="SULTAN2_02" size="720.000000 540.000000" />
     <ImageTarget name="SULTAN2_01" size="720.000000 540.000000" />
-    <ImageTarget name="CLAIRE_12" size="720.000000 960.000000" />
-    <ImageTarget name="CLAIRE_11" size="720.000000 960.000000" />
     <ImageTarget name="AMY_15" size="720.000000 960.000000" />
     <ImageTarget name="AMY_14" size="720.000000 960.000000" />
-    <ImageTarget name="MILY_07" size="320.000000 240.000000" />
-    <ImageTarget name="MILY_06" size="320.000000 240.000000" />
-    <ImageTarget name="MILY_05" size="320.000000 240.000000" />
     <ImageTarget name="AMY_13" size="100.000000 75.000000" />
-    <ImageTarget name="AMY_12" size="100.000000 133.333328" />
-    <ImageTarget name="AMY_11" size="100.000000 102.843880" />
-    <ImageTarget name="AMY_10" size="100.000000 75.000000" />
-    <ImageTarget name="KIKI_10" size="100.000000 75.000000" />
-    <ImageTarget name="KIKI_09" size="100.000000 75.000000" />
     <ImageTarget name="KIKI_08" size="100.000000 75.000000" />
     <ImageTarget name="CLAIRE_10" size="100.000000 133.333328" />
-    <ImageTarget name="CLAIRE_09" size="100.000000 133.333328" />
-    <ImageTarget name="CLAIRE_08" size="100.000000 133.333328" />
-    <ImageTarget name="CLAIRE_07" size="100.000000 133.333328" />
-    <ImageTarget name="CLAIRE_06" size="100.000000 133.333328" />
     <ImageTarget name="CLAIRE_05" size="100.000000 100.000000" />
     <ImageTarget name="CLAIRE_04" size="100.000000 99.949997" />
-    <ImageTarget name="AMY_08" size="100.000000 133.333328" />
-    <ImageTarget name="AMY_07" size="100.000000 133.333328" />
-    <ImageTarget name="MILY_04" size="100.000000 133.333328" />
-    <ImageTarget name="MILY_03" size="100.000000 133.333328" />
     <ImageTarget name="KIKI_07" size="100.000000 75.000000" />
     <ImageTarget name="KIKI_06" size="100.000000 75.000000" />
     <ImageTarget name="KIKI_05" size="100.000000 75.000000" />
     <ImageTarget name="KIKI_04" size="100.000000 133.333328" />
     <ImageTarget name="KIKI_03" size="100.000000 133.333328" />
-    <ImageTarget name="JESS_06" size="100.000000 116.801620" />
-    <ImageTarget name="JESS_04" size="100.000000 133.150543" />
-    <ImageTarget name="JESS_05" size="100.000000 152.501511" />
-    <ImageTarget name="AMY_06" size="100.000000 133.333328" />
-    <ImageTarget name="AMY_05" size="100.000000 133.333328" />
-    <ImageTarget name="AMY_04" size="10.000000 13.333333" />
-    <ImageTarget name="AMY_03" size="100.000000 133.333328" />
     <ImageTarget name="CLAIRE_03" size="100.000000 75.000000" />
-    <ImageTarget name="JESS_03" size="100.000000 133.333328" />
-    <ImageTarget name="JESS_02" size="100.000000 133.333328" />
-    <ImageTarget name="JESS_01" size="100.000000 133.333328" />
-    <ImageTarget name="CLAIRE_02" size="100.000000 75.000000" />
-    <ImageTarget name="CLAIRE_01" size="100.000000 75.000000" />
-    <ImageTarget name="KIKI_02" size="100.000000 75.000000" />
     <ImageTarget name="KIKI_01" size="100.000000 75.000000" />
-    <ImageTarget name="MILY_02" size="100.000000 75.000000" />
-    <ImageTarget name="MILY_01" size="100.000000 75.000000" />
     <ImageTarget name="AMY_02" size="100.000000 133.333328" />
     <ImageTarget name="AMY_01" size="100.000000 133.333328" />
   </Tracking>
