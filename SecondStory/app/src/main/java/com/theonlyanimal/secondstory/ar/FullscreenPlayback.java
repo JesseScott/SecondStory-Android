@@ -33,6 +33,8 @@ import android.view.SurfaceHolder;
 import android.view.View;
 import android.view.GestureDetector.OnDoubleTapListener;
 import android.view.GestureDetector.SimpleOnGestureListener;
+import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.MediaController;
 import android.widget.VideoView;
 
@@ -55,6 +57,7 @@ public class FullscreenPlayback extends Activity implements OnPreparedListener,
     private SimpleOnGestureListener mSimpleListener = null;
     private ReentrantLock mMediaPlayerLock = null;
     private ReentrantLock mMediaControllerLock = null;
+    private ImageButton xBtn;
     
     private boolean hasContent = true;
     
@@ -76,8 +79,22 @@ public class FullscreenPlayback extends Activity implements OnPreparedListener,
     {
         Log.d(LOGTAG, "Fullscreen.onCreate");
         super.onCreate(savedInstanceState);
-        
+
+
         setContentView(R.layout.fullscreen_layout);
+
+        xBtn = (ImageButton) findViewById(R.id.video_close_btn);
+        xBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                prepareForTermination();
+                // Release the resources of the media player:
+                destroyMediaPlayer();
+
+                // Then terminate this activity:
+                finish();
+            }
+        });
         
         // Create the locks:
         mMediaControllerLock = new ReentrantLock();
@@ -638,17 +655,19 @@ public class FullscreenPlayback extends Activity implements OnPreparedListener,
     @Override
     public void onCompletion(MediaPlayer mp)
     {
-
-        // If something failed then prepare for termination and  request a finish:
         prepareForTermination();
 
         // Release the resources of the media player:
         destroyMediaPlayer();
 
-        Log.v(LOGTAG, "Playback Finished, goint to MENU");
-    	Intent i = new Intent("android.intent.action.MENU");
-    	i.putExtra("cameFromFullscreen", true);
-		startActivity(i);
+        // Then terminate this activity:
+        finish();
+
+//
+//        Log.v(LOGTAG, "Playback Finished, goint to MENU");
+//    	Intent i = new Intent("android.intent.action.MENU");
+//    	i.putExtra("cameFromFullscreen", true);
+//		startActivity(i);
         //finish();
     }
 }

@@ -69,7 +69,7 @@ public class GalleryFragment extends Fragment {
         if (hRatio < wRatio) {
             ratioMultiplier = hRatio;
         }
-        
+
         int newBmapWidth = (int) (bmapWidth*ratioMultiplier);
         int newBmapHeight = (int) (bmapHeight*ratioMultiplier);
 

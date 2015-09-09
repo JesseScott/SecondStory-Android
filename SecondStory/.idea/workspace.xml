@@ -13,6 +13,12 @@
       </config>
     </shared>
     <layouts>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/fullscreen_layout.xml">
+        <config>
+          <state>Landscape</state>
+          <theme>@style/NoActionBarFullscreen</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/gallery_layout.xml">
         <config>
           <state>Landscape</state>
@@ -37,27 +43,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db28e1f4-b40c-4a10-a616-d0935a7b40c1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/tracking/DAREU.dat" afterPath="$PROJECT_DIR$/app/src/main/assets/tracking/DAREU.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/frame_amy.jpg" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/frame_amy.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/frame_claire.jpg" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/frame_claire.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/frame_jess.jpg" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/frame_jess.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/frame_kiki.jpg" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/frame_kiki.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/frame_marci.jpg" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/frame_marci.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/frame_mily.jpg" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/frame_mily.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/frame_sultan1.jpg" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/frame_sultan1.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/frame_sultan2.jpg" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/frame_sultan2.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/splash_logo.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/splash_logo.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/tracking/DAREU.xml" afterPath="$PROJECT_DIR$/app/src/main/assets/tracking/DAREU.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/FullscreenPlayback.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/FullscreenPlayback.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/fragments/GalleryFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/fragments/GalleryFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/activities/MenuScreen.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/activities/MenuScreen.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/activities/SplashScreen.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/activities/SplashScreen.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/gallery_page_layout.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/gallery_page_layout.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/menu_layout.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/menu_layout.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fullscreen_layout.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fullscreen_layout.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SecondStory.iws" />
@@ -102,65 +91,40 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="90" column="49" selection-start-line="90" selection-start-column="49" selection-end-line="90" selection-end-column="49" />
+              <caret line="175" column="49" selection-start-line="175" selection-start-column="49" selection-end-line="175" selection-end-column="49" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SplashScreen.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/activities/SplashScreen.java">
+      <file leaf-file-name="fullscreen_layout.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fullscreen_layout.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="49" column="60" selection-start-line="49" selection-start-column="60" selection-end-line="49" selection-end-column="60" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GalleryScreen.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/activities/GalleryScreen.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="69" column="38" selection-start-line="69" selection-start-column="38" selection-end-line="69" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GalleryFragment.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/fragments/GalleryFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.39548022">
-              <caret line="71" column="8" selection-start-line="71" selection-start-column="8" selection-end-line="71" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="gallery_layout.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/gallery_layout.xml">
-          <provider editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-          <provider selected="true" editor-type-id="android-designer">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="gallery_page_layout.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/gallery_page_layout.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.862069">
-              <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+            <state vertical-scroll-proportion="-8.793103">
+              <caret line="17" column="40" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="40" />
               <folding />
             </state>
           </provider>
           <provider editor-type-id="android-designer">
             <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FullscreenPlayback.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/FullscreenPlayback.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="1.8154762">
+              <caret line="94" column="25" selection-start-line="94" selection-start-column="25" selection-end-line="94" selection-end-column="25" />
+              <folding>
+                <element signature="e#3210#3543#0" expanded="true" />
+                <element signature="e#3542#3543#0" expanded="true" />
+                <element signature="method#destroyMediaPlayer#0;class#FullscreenPlayback#0" expanded="false" />
+                <element signature="method#destroyView#0;class#FullscreenPlayback#0" expanded="false" />
+                <element signature="method#onResume#0;class#FullscreenPlayback#0" expanded="false" />
+                <element signature="method#prepareForTermination#0;class#FullscreenPlayback#0" expanded="false" />
+                <element signature="class#15760:19127" expanded="false" />
+              </folding>
+            </state>
           </provider>
         </entry>
       </file>
@@ -1602,10 +1566,11 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/activities/SplashScreen.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/activities/MenuScreen.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/menu_layout.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/FullscreenPlayback.java" />
-        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/gallery_page_layout.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/fragments/GalleryFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fullscreen_layout.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/FullscreenPlayback.java" />
       </list>
     </option>
   </component>
@@ -1781,11 +1746,37 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SecondStory" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SecondStory" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="secondstory" />
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1816,10 +1807,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="secondstory" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fragments" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1865,6 +1852,8 @@
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Nexus_4_API_19_x86" />
     <property name="FullScreen" value="false" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager2.WIDTH" value="450" />
+    <property name="OverrideImplement.combined" value="true" />
+    <property name="OverrideImplement.overriding.sorted" value="false" />
   </component>
   <component name="RunManager" selected="Android Application.app">
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
@@ -2107,7 +2096,7 @@
             <element signature="method#onDestroy#0;class#FullscreenPlayback#0" expanded="false" />
             <element signature="method#onResume#0;class#FullscreenPlayback#0" expanded="false" />
             <element signature="method#prepareForTermination#0;class#FullscreenPlayback#0" expanded="false" />
-            <element signature="class#15232:18599" expanded="false" />
+            <element signature="class#15760:19127" expanded="false" />
             <element signature="method#onError#0;class#FullscreenPlayback#0" expanded="false" />
           </folding>
         </state>
@@ -2147,7 +2136,7 @@
             <element signature="method#onDestroy#0;class#FullscreenPlayback#0" expanded="false" />
             <element signature="method#onResume#0;class#FullscreenPlayback#0" expanded="false" />
             <element signature="method#prepareForTermination#0;class#FullscreenPlayback#0" expanded="false" />
-            <element signature="class#15232:18599" expanded="false" />
+            <element signature="class#15760:19127" expanded="false" />
             <element signature="method#onError#0;class#FullscreenPlayback#0" expanded="false" />
           </folding>
         </state>
@@ -2164,6 +2153,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="66" column="43" selection-start-line="66" selection-start-column="43" selection-end-line="66" selection-end-column="43" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2201,7 +2191,7 @@
             <element signature="method#onDestroy#0;class#FullscreenPlayback#0" expanded="false" />
             <element signature="method#onResume#0;class#FullscreenPlayback#0" expanded="false" />
             <element signature="method#prepareForTermination#0;class#FullscreenPlayback#0" expanded="false" />
-            <element signature="class#15232:18599" expanded="false" />
+            <element signature="class#15760:19127" expanded="false" />
             <element signature="method#onError#0;class#FullscreenPlayback#0" expanded="false" />
           </folding>
         </state>
@@ -2218,6 +2208,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="66" column="43" selection-start-line="66" selection-start-column="43" selection-end-line="66" selection-end-column="43" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2234,13 +2225,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/VideoPlayback.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="66" column="43" selection-start-line="66" selection-start-column="43" selection-end-line="66" selection-end-column="43" />
         </state>
       </provider>
     </entry>
@@ -2285,41 +2269,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/FullscreenPlayback.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="238" column="91" selection-start-line="238" selection-start-column="91" selection-end-line="238" selection-end-column="91" />
-          <folding>
-            <element signature="method#destroyMediaPlayer#0;class#FullscreenPlayback#0" expanded="false" />
-            <element signature="method#destroyView#0;class#FullscreenPlayback#0" expanded="false" />
-            <element signature="method#onDestroy#0;class#FullscreenPlayback#0" expanded="false" />
-            <element signature="method#onResume#0;class#FullscreenPlayback#0" expanded="false" />
-            <element signature="method#prepareForTermination#0;class#FullscreenPlayback#0" expanded="false" />
-            <element signature="class#15232:18599" expanded="false" />
-            <element signature="method#onError#0;class#FullscreenPlayback#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fullscreen_layout.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/activities/SplashScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="49" column="60" selection-start-line="49" selection-start-column="60" selection-end-line="49" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/helpers/Constants.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.072886296">
@@ -2339,23 +2288,12 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/fragments/GalleryFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="90" column="49" selection-start-line="90" selection-start-column="49" selection-end-line="90" selection-end-column="49" />
+        <state vertical-scroll-proportion="0.39548022">
+          <caret line="71" column="8" selection-start-line="71" selection-start-column="8" selection-end-line="71" selection-end-column="8" />
           <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/gallery_page_layout.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.862069">
-          <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/activities/GalleryScreen.java">
@@ -2366,11 +2304,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/fragments/GalleryFragment.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39548022">
-          <caret line="71" column="8" selection-start-line="71" selection-start-column="8" selection-end-line="71" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="175" column="49" selection-start-line="175" selection-start-column="49" selection-end-line="175" selection-end-column="49" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/activities/SplashScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="49" column="60" selection-start-line="49" selection-start-column="60" selection-end-line="49" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/VideoPlayback.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="777" column="0" selection-start-line="777" selection-start-column="0" selection-end-line="777" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/gallery_page_layout.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.295">
+          <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fullscreen_layout.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.793103">
+          <caret line="17" column="40" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/theonlyanimal/secondstory/ar/FullscreenPlayback.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.8154762">
+          <caret line="94" column="25" selection-start-line="94" selection-start-column="25" selection-end-line="94" selection-end-column="25" />
+          <folding>
+            <element signature="e#3210#3543#0" expanded="true" />
+            <element signature="e#3542#3543#0" expanded="true" />
+            <element signature="method#destroyMediaPlayer#0;class#FullscreenPlayback#0" expanded="false" />
+            <element signature="method#destroyView#0;class#FullscreenPlayback#0" expanded="false" />
+            <element signature="method#onResume#0;class#FullscreenPlayback#0" expanded="false" />
+            <element signature="method#prepareForTermination#0;class#FullscreenPlayback#0" expanded="false" />
+            <element signature="class#15760:19127" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

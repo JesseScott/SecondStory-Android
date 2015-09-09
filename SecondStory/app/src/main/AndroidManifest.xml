@@ -173,6 +173,7 @@
             android:name="com.theonlyanimal.secondstory.ar.VideoPlayback"
             android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize"
             android:launchMode="singleTask"
+            android:screenOrientation="landscape"
             android:label="@string/app_name"
             >
             <intent-filter>

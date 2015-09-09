@@ -1,8 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/fullscreen_layout"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical" >
+
     <VideoView android:id="@+id/surface_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center">
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:layout_gravity="center">
     </VideoView>
-</merge>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/video_close_btn"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_margin="30dp"
+        android:src="@drawable/nav_close"
+        android:background="@null"/>
+
+</RelativeLayout>
+
+<!--<merge xmlns:android="http://schemas.android.com/apk/res/android">-->
+
+
+    <!--<VideoView android:id="@+id/surface_view"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_gravity="center">-->
+    <!--</VideoView>-->
+
+<!--</merge>-->
