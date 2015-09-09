@@ -57,114 +57,114 @@
 
     </RelativeLayout>
 
-    <RelativeLayout
-        android:id="@+id/guide_labels"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:padding="5dp"
-        android:layout_centerVertical="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+    <!--<RelativeLayout-->
+        <!--android:id="@+id/guide_labels"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:padding="5dp"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:layout_alignParentLeft="true"-->
+        <!--android:layout_alignParentStart="true">-->
 
-        <ImageView
-            android:id="@+id/guide_ear_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:tint="@color/guide_nav_font_color"
-            android:src="@drawable/guide_ear_icon" />
+        <!--<ImageView-->
+            <!--android:id="@+id/guide_ear_icon"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:tint="@color/guide_nav_font_color"-->
+            <!--android:src="@drawable/guide_ear_icon" />-->
 
-        <TextView
-            android:id="@+id/guide_ear_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/guide_ear_icon"
-            android:layout_centerHorizontal="true"
-            android:padding="10dp"
-            android:text="@string/label_guide_ear"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@color/guide_nav_font_color" />
+        <!--<TextView-->
+            <!--android:id="@+id/guide_ear_label"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@+id/guide_ear_icon"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:padding="10dp"-->
+            <!--android:text="@string/label_guide_ear"-->
+            <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
+            <!--android:textColor="@color/guide_nav_font_color" />-->
 
-        <ImageView
-            android:id="@+id/guide_car_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/guide_ear_label"
-            android:layout_centerHorizontal="true"
-            android:tint="@color/guide_nav_font_color"
-            android:src="@drawable/guide_cars_icon" />
+        <!--<ImageView-->
+            <!--android:id="@+id/guide_car_icon"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@+id/guide_ear_label"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:tint="@color/guide_nav_font_color"-->
+            <!--android:src="@drawable/guide_cars_icon" />-->
 
-        <TextView
-            android:id="@+id/guide_car_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/guide_car_icon"
-            android:layout_centerHorizontal="true"
-            android:padding="10dp"
-            android:text="@string/label_guide_car"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@color/guide_nav_font_color" />
+        <!--<TextView-->
+            <!--android:id="@+id/guide_car_label"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@+id/guide_car_icon"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:padding="10dp"-->
+            <!--android:text="@string/label_guide_car"-->
+            <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
+            <!--android:textColor="@color/guide_nav_font_color" />-->
 
-        <ImageView
-            android:id="@+id/guide_live_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/guide_car_label"
-            android:layout_centerHorizontal="true"
-            android:tint="@color/guide_nav_font_color"
-            android:src="@drawable/guide_live_icon" />
+        <!--<ImageView-->
+            <!--android:id="@+id/guide_live_icon"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@+id/guide_car_label"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:tint="@color/guide_nav_font_color"-->
+            <!--android:src="@drawable/guide_live_icon" />-->
 
-        <TextView
-            android:id="@+id/guide_live_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/guide_live_icon"
-            android:layout_centerHorizontal="true"
-            android:padding="10dp"
-            android:text="@string/label_guide_live"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@color/guide_nav_font_color" />
+        <!--<TextView-->
+            <!--android:id="@+id/guide_live_label"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@+id/guide_live_icon"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:padding="10dp"-->
+            <!--android:text="@string/label_guide_live"-->
+            <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
+            <!--android:textColor="@color/guide_nav_font_color" />-->
 
-        <ImageView
-            android:id="@+id/guide_device_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/guide_live_label"
-            android:layout_centerHorizontal="true"
-            android:tint="@color/guide_nav_font_color"
-            android:src="@drawable/guide_device_icon" />
+        <!--<ImageView-->
+            <!--android:id="@+id/guide_device_icon"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@+id/guide_live_label"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:tint="@color/guide_nav_font_color"-->
+            <!--android:src="@drawable/guide_device_icon" />-->
 
-        <TextView
-            android:id="@+id/guide_device_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/guide_device_icon"
-            android:layout_centerHorizontal="true"
-            android:padding="10dp"
-            android:text="@string/label_guide_device"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@color/guide_nav_font_color" />
-        
-        <ImageView
-            android:id="@+id/guide_explore_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/guide_device_label"
-            android:layout_centerHorizontal="true"
-            android:tint="@color/guide_nav_font_color"
-            android:src="@drawable/guide_explore_icon" />
+        <!--<TextView-->
+            <!--android:id="@+id/guide_device_label"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@+id/guide_device_icon"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:padding="10dp"-->
+            <!--android:text="@string/label_guide_device"-->
+            <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
+            <!--android:textColor="@color/guide_nav_font_color" />-->
+        <!-- -->
+        <!--<ImageView-->
+            <!--android:id="@+id/guide_explore_icon"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@+id/guide_device_label"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:tint="@color/guide_nav_font_color"-->
+            <!--android:src="@drawable/guide_explore_icon" />-->
 
-	    <TextView
-	        android:id="@+id/guide_explore_label"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_below="@+id/guide_explore_icon"
-	        android:layout_centerHorizontal="true"
-	        android:padding="10dp"
-	        android:text="@string/label_guide_explore"
-	        android:textAppearance="?android:attr/textAppearanceMedium"
-	        android:textColor="@color/guide_nav_font_color" />
-        
-    </RelativeLayout>
+	    <!--<TextView-->
+	        <!--android:id="@+id/guide_explore_label"-->
+	        <!--android:layout_width="wrap_content"-->
+	        <!--android:layout_height="wrap_content"-->
+	        <!--android:layout_below="@+id/guide_explore_icon"-->
+	        <!--android:layout_centerHorizontal="true"-->
+	        <!--android:padding="10dp"-->
+	        <!--android:text="@string/label_guide_explore"-->
+	        <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
+	        <!--android:textColor="@color/guide_nav_font_color" />-->
+        <!-- -->
+    <!--</RelativeLayout>-->
 
 </RelativeLayout>
