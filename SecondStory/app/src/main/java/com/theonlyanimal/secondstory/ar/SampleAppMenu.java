@@ -205,6 +205,7 @@ public class SampleAppMenu
     
     public void setMenuDisplaying(boolean isMenuDisplaying)
     {
+        /*
         // This is used to avoid the ListView to consume the incoming event when
         // the menu is not displayed.
         mParentMenuView.setFocusable(isMenuDisplaying);
@@ -213,7 +214,7 @@ public class SampleAppMenu
         mParentMenuView.setEnabled(isMenuDisplaying);
         
         mStartMenuDisplaying = isMenuDisplaying;
-        
+        */
     }
     
     
@@ -258,6 +259,7 @@ public class SampleAppMenu
     
     public void showMenu()
     {
+        /*
         if (!mIsBelowICS)
         {
             startViewsAnimation(true);
@@ -266,6 +268,7 @@ public class SampleAppMenu
             setAnimationX(mGestureListener.getMaxSwipe());
             setMenuDisplaying(true);
         }
+        */
     }
     
     
@@ -316,6 +319,7 @@ public class SampleAppMenu
     
     public void setAnimationX(float animtationX)
     {
+        /*
         mParentMenuView.setVisibility(View.VISIBLE);
         setViewX(mMovableView, animtationX);
         
@@ -329,6 +333,7 @@ public class SampleAppMenu
                     + animtationX);
             }
         }
+        */
     }
     
     
@@ -357,6 +362,7 @@ public class SampleAppMenu
         public boolean onScroll(MotionEvent e1, MotionEvent e2,
             float distanceX, float distanceY)
         {
+            /*
             if (Math.abs(distanceX) > DISTANCE_TRESHOLD && !mSwipingMenu)
             {
                 mSwipingMenu = true;
@@ -408,7 +414,8 @@ public class SampleAppMenu
                 }, 100L);
                 
             }
-            
+
+            */
             return false;
         }
         
@@ -417,10 +424,12 @@ public class SampleAppMenu
         public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX,
             float velocityY)
         {
+            /*
             if (velocityX > VELOCITY_TRESHOLD && !isMenuDisplaying())
             {
                 showMenu();
             }
+            */
             return false;
         }
         

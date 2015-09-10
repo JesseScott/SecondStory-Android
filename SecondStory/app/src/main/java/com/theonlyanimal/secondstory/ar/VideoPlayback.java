@@ -176,8 +176,6 @@ public class VideoPlayback extends Activity implements
         mMovieName[MARCI] 		= MEDIA_PATH + "plant.mp4";
         Log.v(LOGTAG, "MARCI PATH IS " + mMovieName[MARCI]);
         
-
-        
         // Set the double tap listener:
         mGestureDetector.setOnDoubleTapListener(new OnDoubleTapListener() {
             public boolean onDoubleTap(MotionEvent e) {
@@ -261,18 +259,6 @@ public class VideoPlayback extends Activity implements
         mTextures.add(Texture.loadTextureFromApk("frames/dareu/mily.jpg", getAssets())); // 8
         mTextures.add(Texture.loadTextureFromApk("frames/dareu/jess.jpg", getAssets())); // 5
         mTextures.add(Texture.loadTextureFromApk("frames/dareu/marci.jpg", getAssets())); // 7
-
-
-
-//        mTextures.add(Texture.loadTextureFromApk("frames/beef.jpg", getAssets())); // 3
-//        mTextures.add(Texture.loadTextureFromApk("frames/bicycles.jpg", getAssets()));
-//        mTextures.add(Texture.loadTextureFromApk("frames/copper.jpg", getAssets()));
-//        mTextures.add(Texture.loadTextureFromApk("frames/gun.jpg", getAssets()));
-//        mTextures.add(Texture.loadTextureFromApk("frames/pennies.jpg", getAssets()));
-//        mTextures.add(Texture.loadTextureFromApk("frames/shrooms.jpg", getAssets()));
-//        mTextures.add(Texture.loadTextureFromApk("frames/sweeping.jpg", getAssets()));
-//        mTextures.add(Texture.loadTextureFromApk("frames/umbrellas.jpg", getAssets())); // 10
-//        mTextures.add(Texture.loadTextureFromApk("frames/alley.jpg", getAssets())); // 11
     }
     
     

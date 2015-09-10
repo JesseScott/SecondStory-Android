@@ -16,6 +16,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 //import android.content.res.AssetFileDescriptor;
+import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.Handler;
@@ -68,20 +69,11 @@ public class FullscreenPlayback extends Activity implements OnPreparedListener,
         mVideoView = (VideoView) findViewById(R.id.surface_view);
         
         // The orientation was passed as an extra by the launching activity:
-        setRequestedOrientation(mRequestedOrientation);
-        
+        //setRequestedOrientation(mRequestedOrientation);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+
         mHolder = mVideoView.getHolder();
         mHolder.addCallback(this);
-    }
-    
-    
-    protected void onCreate(Bundle savedInstanceState)
-    {
-        Log.d(LOGTAG, "Fullscreen.onCreate");
-        super.onCreate(savedInstanceState);
-
-
-        setContentView(R.layout.fullscreen_layout);
 
         xBtn = (ImageButton) findViewById(R.id.video_close_btn);
         xBtn.setOnClickListener(new View.OnClickListener() {
@@ -95,7 +87,17 @@ public class FullscreenPlayback extends Activity implements OnPreparedListener,
                 finish();
             }
         });
-        
+    }
+    
+    
+    protected void onCreate(Bundle savedInstanceState)
+    {
+        Log.d(LOGTAG, "Fullscreen.onCreate");
+        super.onCreate(savedInstanceState);
+
+
+        setContentView(R.layout.fullscreen_layout);
+
         // Create the locks:
         mMediaControllerLock = new ReentrantLock();
         mMediaPlayerLock = new ReentrantLock();

@@ -695,7 +695,7 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
             }
             
             // The following section renders the icons. The actual textures used are loaded from the assets folder
-            
+
             if ((currentStatus[currentTarget] == VideoPlayerHelper.MEDIA_STATE.READY)
                 || (currentStatus[currentTarget] == VideoPlayerHelper.MEDIA_STATE.REACHED_END)
                 || (currentStatus[currentTarget] == VideoPlayerHelper.MEDIA_STATE.PAUSED)
@@ -720,6 +720,7 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
                 // different
                 // Another posibility would be to use a depth func "ALWAYS" but
                 // that is typically not a good idea
+                /*
                 Matrix
                     .translateM(
                         modelViewMatrixButton,
@@ -737,6 +738,7 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
                 Matrix.multiplyMM(modelViewProjectionButton, 0,
                     vuforiaAppSession.getProjectionMatrix().getData(), 0,
                     modelViewMatrixButton, 0);
+                    */
                 
                 GLES20.glUseProgram(keyframeShaderID);
                 
@@ -761,36 +763,31 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
                 switch (currentStatus[currentTarget])
                 {
                     case READY:
-                        GLES20.glBindTexture(GLES20.GL_TEXTURE_2D,
-                            mTextures.get(0).mTextureID[0]); // Play
+                        //GLES20.glBindTexture(GLES20.GL_TEXTURE_2D, mTextures.get(0).mTextureID[0]); // Play
                         break;
                     case REACHED_END:
-                        GLES20.glBindTexture(GLES20.GL_TEXTURE_2D,
-                            mTextures.get(0).mTextureID[0]); // Play
+                        //GLES20.glBindTexture(GLES20.GL_TEXTURE_2D, mTextures.get(0).mTextureID[0]); // Play
                         break;
                     case PAUSED:
-                        GLES20.glBindTexture(GLES20.GL_TEXTURE_2D,
-                            mTextures.get(0).mTextureID[0]); // Play
+                        //GLES20.glBindTexture(GLES20.GL_TEXTURE_2D, mTextures.get(0).mTextureID[0]); // Play
                         break;
                     case NOT_READY:
-                        GLES20.glBindTexture(GLES20.GL_TEXTURE_2D,
-                            mTextures.get(1).mTextureID[0]); // Busy
+                        //GLES20.glBindTexture(GLES20.GL_TEXTURE_2D, mTextures.get(1).mTextureID[0]); // Busy
                         break;
                     case ERROR:
-                        GLES20.glBindTexture(GLES20.GL_TEXTURE_2D,
-                            mTextures.get(2).mTextureID[0]); // Error
+                        //GLES20.glBindTexture(GLES20.GL_TEXTURE_2D, mTextures.get(2).mTextureID[0]); // Error
                         break;
                     default:
-                        GLES20.glBindTexture(GLES20.GL_TEXTURE_2D,
-                            mTextures.get(2).mTextureID[0]);
+                        //GLES20.glBindTexture(GLES20.GL_TEXTURE_2D, mTextures.get(2).mTextureID[0]);
                         break;
                 }
+                /*
                 GLES20.glUniformMatrix4fv(keyframeMVPMatrixHandle, 1, false, modelViewProjectionButton, 0);
                 GLES20.glUniform1i(keyframeTexSampler2DHandle, 0);
-                
+
+
                 // Render
-                GLES20.glDrawElements(GLES20.GL_TRIANGLES, NUM_QUAD_INDEX,
-                    GLES20.GL_UNSIGNED_SHORT, quadIndices);
+                GLES20.glDrawElements(GLES20.GL_TRIANGLES, NUM_QUAD_INDEX, GLES20.GL_UNSIGNED_SHORT, quadIndices);
                 
                 GLES20.glDisableVertexAttribArray(keyframeVertexHandle);
                 GLES20.glDisableVertexAttribArray(keyframeNormalHandle);
@@ -801,8 +798,9 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
                 // Finally we return the depth func to its original state
                 GLES20.glDepthFunc(GLES20.GL_LESS);
                 GLES20.glDisable(GLES20.GL_BLEND);
+                */
             }
-            
+
             SampleUtils.checkGLError("VideoPlayback renderFrame");
         }
         
