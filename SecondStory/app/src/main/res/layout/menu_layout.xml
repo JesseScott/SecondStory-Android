@@ -61,18 +61,18 @@
             android:textSize="24sp"
         />
 
-        <Button
-            android:id="@+id/menu_guide_btn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="2dp"
-            android:background="@color/light_gray"
-            android:paddingBottom="20dp"
-            android:paddingTop="20dp"
-            android:text="@string/label_guide"
-            android:textColor="@color/menu_btn_font_color"
-            android:textSize="24sp"
-        />
+        <!--<Button-->
+            <!--android:id="@+id/menu_guide_btn"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginBottom="2dp"-->
+            <!--android:background="@color/light_gray"-->
+            <!--android:paddingBottom="20dp"-->
+            <!--android:paddingTop="20dp"-->
+            <!--android:text="@string/label_guide"-->
+            <!--android:textColor="@color/menu_btn_font_color"-->
+            <!--android:textSize="24sp"-->
+        <!--/>-->
 
     </LinearLayout>
 
