@@ -24,6 +24,7 @@ public class MenuScreen extends Activity {
 
 	
 	// LifeCycle
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -34,7 +35,7 @@ public class MenuScreen extends Activity {
 		dinBlack = Typeface.createFromAsset(getAssets(), "fonts/din alternate black.ttf");
 		dinMedium = Typeface.createFromAsset(getAssets(), "fonts/din alternate medium.ttf"); 
 		
-		Button guideBtn = (Button) findViewById(R.id.menu_guide_btn);
+/*		Button guideBtn = (Button) findViewById(R.id.menu_guide_btn);
 		guideBtn.setTypeface(dinBlack);
 		guideBtn.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -42,7 +43,7 @@ public class MenuScreen extends Activity {
 				Intent i = new Intent("android.intent.action.GUIDE");
 	    		startActivity(i);
 			}
-		});
+		});*/
 		
 		Button galleryBtn = (Button) findViewById(R.id.menu_gallery_btn);
         galleryBtn.setTypeface(dinBlack);
