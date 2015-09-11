@@ -13,11 +13,11 @@
     <string name="label_done">Done</string>
     <string name="label_guide">GUIDE</string>
     <string name="label_maps">MAPS</string>
-    <string name="label_gallery">GALLERY</string>
+    <string name="label_gallery">VIEW GALLERY</string>
     <string name="label_settings">SETTINGS</string>
-    <string name="label_feedback">FEEDBACK</string>
+    <string name="label_feedback">GIVE FEEDBACK</string>
     <string name="label_about">ABOUT</string>
-    <string name="label_live">LIVE VIEW</string>
+    <string name="label_live">AUGMENT REALITY</string>
     
     <string name="label_welcome">Welcome</string>
     <string name="label_pg1">Page 1 of the credits</string>

@@ -59,22 +59,7 @@ public class GuideScreen extends Activity {
 				finish();
 			}
 		});
-		
-		restartAudio = (ImageButton) findViewById(R.id.guide_replay);
-		restartAudio.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				if(mediaIsPlaying) {
-					player.pause();
-					player.seekTo(0);
-					player.start();
-				}
-				else {
-					player.seekTo(0);
-					player.start();
-				}
-			}
-		});
+
 		/*
 		toggleVolume = (ImageButton) findViewById(R.id.guide_toggle);
 		toggleVolume.setOnClickListener(new View.OnClickListener() {

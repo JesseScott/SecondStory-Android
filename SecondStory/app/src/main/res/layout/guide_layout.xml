@@ -32,7 +32,7 @@
             android:layout_centerVertical="true"
             android:background="@null"
             android:padding="15dp"
-            android:src="@drawable/guide_back_icon" />
+            android:src="@drawable/nav_close" />
 
         <TextView
             android:id="@+id/guide_title"
@@ -45,15 +45,6 @@
             android:textColor="@color/guide_nav_font_color"
             android:textSize="30sp" />
 
-        <ImageButton
-            android:id="@+id/guide_replay"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_alignTop="@+id/guide_back"
-            android:background="@null"
-            android:padding="15dp"
-            android:src="@drawable/guide_replay_icon" />
 
     </RelativeLayout>
 

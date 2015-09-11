@@ -4,47 +4,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:ignore="ContentDescription" >
-
-    <ImageView
-        android:id="@+id/menu_bg_img"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_alignParentTop="true"
-        android:scaleType="fitXY"
-        android:src="@drawable/menu_bg" />
+    android:background="@color/white"
+    tools:ignore="ContentDescription"
+>
 
     <LinearLayout
         android:id="@+id/menu_top"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="0dp"
         android:orientation="vertical"
-  	>
+        android:background="@color/dareu_bg_red"
+        >
 
-        <!--<Button-->
-            <!--android:id="@+id/menu_about_btn"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_marginBottom="2dp"-->
-            <!--android:background="@color/light_gray"-->
-            <!--android:paddingBottom="20dp"-->
-            <!--android:paddingTop="20dp"-->
-            <!--android:text="@string/label_about"-->
-            <!--android:textColor="@color/menu_btn_font_color"-->
-            <!--android:textSize="24sp"-->
-        <!--/>-->
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/menu_header"
+            android:src="@drawable/header"
+            android:layout_gravity="center_horizontal"
+            android:scaleType="fitCenter"
+        />
 
         <Button
-            android:id="@+id/menu_feedback_btn"
+            android:id="@+id/menu_live_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="2dp"
-            android:background="@color/light_gray"
-            android:paddingBottom="20dp"
-            android:paddingTop="20dp"
-            android:text="@string/label_feedback"
-            android:textColor="@color/menu_btn_font_color"
+            android:background="@drawable/du_button"
+            android:padding="20dp"
+            android:layout_margin="20dp"
+            android:text="@string/label_live"
+            android:textColor="@color/white"
             android:textSize="24sp"
         />
 
@@ -52,52 +42,26 @@
             android:id="@+id/menu_gallery_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="2dp"
-            android:background="@color/light_gray"
-            android:paddingBottom="20dp"
-            android:paddingTop="20dp"
+            android:background="@drawable/du_button"
+            android:padding="20dp"
+            android:layout_margin="20dp"
             android:text="@string/label_gallery"
-            android:textColor="@color/menu_btn_font_color"
+            android:textColor="@color/white"
             android:textSize="24sp"
         />
 
-        <!--<Button-->
-            <!--android:id="@+id/menu_guide_btn"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_marginBottom="2dp"-->
-            <!--android:background="@color/light_gray"-->
-            <!--android:paddingBottom="20dp"-->
-            <!--android:paddingTop="20dp"-->
-            <!--android:text="@string/label_guide"-->
-            <!--android:textColor="@color/menu_btn_font_color"-->
-            <!--android:textSize="24sp"-->
-        <!--/>-->
-
-    </LinearLayout>
-
-    <RelativeLayout
-        android:id="@+id/menu_bot"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_below="@+id/menu_top"
-        android:layout_marginTop="15dp"
-        android:padding="15dp"
-        android:background="@color/menu_live_bg"
-        android:orientation="vertical" >
-
         <Button
-            android:id="@+id/menu_live_btn"
+            android:id="@+id/menu_feedback_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:background="@null"
-            android:paddingBottom="20dp"
-            android:paddingTop="20dp"
-            android:text="@string/label_live"
-            android:textColor="@color/menu_live_font"
-            android:textSize="45sp" />
+            android:background="@drawable/du_button"
+            android:padding="20dp"
+            android:layout_margin="20dp"
+            android:text="@string/label_feedback"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+        />
 
-    </RelativeLayout>
+    </LinearLayout>
 
 </RelativeLayout>

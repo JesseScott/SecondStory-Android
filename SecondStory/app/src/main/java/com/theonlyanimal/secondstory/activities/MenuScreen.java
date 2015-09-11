@@ -33,17 +33,7 @@ public class MenuScreen extends Activity {
 
 		// Fonts
 		dinBlack = Typeface.createFromAsset(getAssets(), "fonts/din alternate black.ttf");
-		dinMedium = Typeface.createFromAsset(getAssets(), "fonts/din alternate medium.ttf"); 
-		
-/*		Button guideBtn = (Button) findViewById(R.id.menu_guide_btn);
-		guideBtn.setTypeface(dinBlack);
-		guideBtn.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				Intent i = new Intent("android.intent.action.GUIDE");
-	    		startActivity(i);
-			}
-		});*/
+		dinMedium = Typeface.createFromAsset(getAssets(), "fonts/din alternate medium.ttf");
 		
 		Button galleryBtn = (Button) findViewById(R.id.menu_gallery_btn);
         galleryBtn.setTypeface(dinBlack);
@@ -54,17 +44,7 @@ public class MenuScreen extends Activity {
 	    		startActivity(i);
 			}
 		});
-        /*
-        Button mapsBtn = (Button) findViewById(R.id.menu_maps_btn);
-        mapsBtn.setTypeface(dinBlack);
-        mapsBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent("android.intent.action.MAPS");
-                startActivity(i);
-            }
-        });
-		*/
+
 		Button feedbackBtn = (Button) findViewById(R.id.menu_feedback_btn);
 		feedbackBtn.setTypeface(dinBlack);
 		feedbackBtn.setOnClickListener(new View.OnClickListener() {
@@ -74,17 +54,7 @@ public class MenuScreen extends Activity {
 	    		startActivity(i);
 			}
 		});
-		
-//		Button aboutBtn = (Button) findViewById(R.id.menu_about_btn);
-//		aboutBtn.setTypeface(dinBlack);
-//		aboutBtn.setOnClickListener(new View.OnClickListener() {
-//			@Override
-//			public void onClick(View v) {
-//				Intent i = new Intent("android.intent.action.ABOUT");
-//	    		startActivity(i);
-//			}
-//		});
-		
+
 		Button liveBtn = (Button) findViewById(R.id.menu_live_btn);
 		liveBtn.setTypeface(dinBlack);
 		liveBtn.setOnClickListener(new View.OnClickListener() {

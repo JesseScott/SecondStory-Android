@@ -2,6 +2,8 @@
 <resources>
 
     <color name="holo_light_blue">#33B5E5</color>
+
+    <color name="dareu_bg_red">#EF4036</color>
     
     <color name="black">#000000</color>
     <color name="white">#FFFFFF</color>
