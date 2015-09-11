@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
+    <ImageTarget name="KIKI_65" size="720.000000 540.000000" />
+    <ImageTarget name="KIKI_64" size="720.000000 540.000000" />
+    <ImageTarget name="KIKI_63" size="720.000000 540.000000" />
+    <ImageTarget name="KIKI_62" size="720.000000 540.000000" />
+    <ImageTarget name="KIKI_61" size="720.000000 540.000000" />
     <ImageTarget name="MARCI_83" size="720.000000 540.000000" />
     <ImageTarget name="MARCI_82" size="720.000000 540.000000" />
     <ImageTarget name="MARCI_81" size="720.000000 540.000000" />
@@ -27,7 +32,6 @@
     <ImageTarget name="SULTAN1_82" size="720.000000 960.000000" />
     <ImageTarget name="SULTAN1_81" size="720.000000 960.000000" />
     <ImageTarget name="KIKI_83" size="720.000000 960.000000" />
-    <ImageTarget name="KIKI_82" size="720.000000 960.000000" />
     <ImageTarget name="KIKI_81" size="720.000000 960.000000" />
     <ImageTarget name="CLAIRE_73" size="720.000000 960.000000" />
     <ImageTarget name="CLAIRE_72" size="720.000000 960.000000" />
@@ -60,8 +64,6 @@
     <ImageTarget name="AMY_98" size="720.000000 960.000000" />
     <ImageTarget name="KIKI_95" size="720.000000 540.000000" />
     <ImageTarget name="KIKI_96" size="720.000000 540.000000" />
-    <ImageTarget name="KIKI_97" size="720.000000 540.000000" />
-    <ImageTarget name="KIKI_98" size="720.000000 960.000000" />
     <ImageTarget name="MILY_98" size="720.000000 540.000000" />
     <ImageTarget name="CLAIRE_98" size="720.000000 540.000000" />
     <ImageTarget name="SULTAN1_98" size="720.000000 540.000000" />
@@ -89,11 +91,9 @@
     <ImageTarget name="CLAIRE_04" size="100.000000 99.949997" />
     <ImageTarget name="KIKI_07" size="100.000000 75.000000" />
     <ImageTarget name="KIKI_06" size="100.000000 75.000000" />
-    <ImageTarget name="KIKI_05" size="100.000000 75.000000" />
     <ImageTarget name="KIKI_04" size="100.000000 133.333328" />
     <ImageTarget name="KIKI_03" size="100.000000 133.333328" />
     <ImageTarget name="CLAIRE_03" size="100.000000 75.000000" />
-    <ImageTarget name="KIKI_01" size="100.000000 75.000000" />
     <ImageTarget name="AMY_02" size="100.000000 133.333328" />
     <ImageTarget name="AMY_01" size="100.000000 133.333328" />
   </Tracking>
