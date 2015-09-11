@@ -703,6 +703,7 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
                 || (currentStatus[currentTarget] == VideoPlayerHelper.MEDIA_STATE.ERROR))
             {
                 // If the movie is ready to be played, pause, has reached end or is not ready then we display one of the icons
+                /*
                 float[] modelViewMatrixButton = Tool.convertPose2GLMatrix(trackableResult.getPose()).getData();
                 float[] modelViewProjectionButton = new float[16];
                 
@@ -710,7 +711,7 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
                 
                 GLES20.glEnable(GLES20.GL_BLEND);
                 GLES20.glBlendFunc(GLES20.GL_SRC_ALPHA, GLES20.GL_ONE_MINUS_SRC_ALPHA);
-                
+                */
                 // The inacuracy of the rendering process in some devices means
                 // that
                 // even if we use the "Less or Equal" version of the depth
@@ -739,7 +740,7 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
                     vuforiaAppSession.getProjectionMatrix().getData(), 0,
                     modelViewMatrixButton, 0);
                     */
-                
+                /*
                 GLES20.glUseProgram(keyframeShaderID);
                 
                 GLES20.glVertexAttribPointer(keyframeVertexHandle, 3,
@@ -754,7 +755,7 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer
                 GLES20.glEnableVertexAttribArray(keyframeTexCoordHandle);
                 
                 GLES20.glActiveTexture(GLES20.GL_TEXTURE0);
-                
+                */
                 // Depending on the status in which we are we choose the
                 // appropriate
                 // texture to display. Notice that unlike the video these are

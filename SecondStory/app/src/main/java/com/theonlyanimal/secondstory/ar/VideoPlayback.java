@@ -689,6 +689,8 @@ public class VideoPlayback extends Activity implements
             
             // Sets the UILayout to be drawn in front of the camera
             mUILayout.bringToFront();
+
+            //TODO: x btn here ???
             
             // Hides the Loading Dialog
             loadingDialogHandler.sendEmptyMessage(LoadingDialogHandler.HIDE_LOADING_DIALOG);
