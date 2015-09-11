@@ -3,6 +3,7 @@ package com.theonlyanimal.secondstory.fragments;
 
 
 import android.content.res.TypedArray;
+import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
@@ -24,6 +25,7 @@ public class GalleryFragment extends Fragment {
     public static final String ARG_PAGE = "page";
     private static OnMovieSelectedListener mListener;
     private int mPageNumber;
+    Typeface dinBlack, dinMedium;
 
     public static GalleryFragment create(int pageNumber) {
         GalleryFragment fragment = new GalleryFragment();
@@ -48,9 +50,20 @@ public class GalleryFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.gallery_page_layout, container, false);
 
-        ((TextView) rootView.findViewById(R.id.gallery_page_title)).setText(getResources().getStringArray(R.array.vid_title)[mPageNumber]);
-        ((TextView) rootView.findViewById(R.id.gallery_page_director)).setText(getResources().getStringArray(R.array.vid_directors)[mPageNumber]);
+        // Fonts
+        dinBlack = Typeface.createFromAsset(getActivity().getAssets(), "fonts/din alternate black.ttf");
+        dinMedium = Typeface.createFromAsset(getActivity().getAssets(), "fonts/din alternate medium.ttf");
 
+        // TextViews
+        TextView title = (TextView) rootView.findViewById(R.id.gallery_page_title);
+        title.setText(getResources().getStringArray(R.array.vid_title)[mPageNumber]);
+        title.setTypeface(dinBlack);
+
+        TextView director = (TextView) rootView.findViewById(R.id.gallery_page_director);
+        director.setText(getResources().getStringArray(R.array.vid_directors)[mPageNumber]);
+        director.setTypeface(dinMedium);
+
+        // Image
         TypedArray imgs = getResources().obtainTypedArray(R.array.vid_thumbs);
 
         DisplayMetrics metrics = new DisplayMetrics();
@@ -78,6 +91,7 @@ public class GalleryFragment extends Fragment {
 
         ((ImageView) rootView.findViewById(R.id.gallery_page_bg)).setImageResource(imgs.getResourceId(mPageNumber, -1));
 
+        // Button
         ImageButton play = (ImageButton) rootView.findViewById(R.id.gallery_page_btn);
         play.setOnClickListener(new View.OnClickListener() {
             @Override

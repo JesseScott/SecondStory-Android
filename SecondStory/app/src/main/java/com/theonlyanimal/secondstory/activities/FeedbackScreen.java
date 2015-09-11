@@ -44,7 +44,7 @@ public class FeedbackScreen extends Activity {
 		
 		// Label
 		navLabel = (TextView) findViewById(R.id.feedback_title);
-		navLabel.setTypeface(dinBlack);
+		navLabel.setTypeface(dinMedium);
 		
 		// Buttons
 		backBtn = (ImageButton) findViewById(R.id.feedback_back);
@@ -66,11 +66,14 @@ public class FeedbackScreen extends Activity {
 
 		// EditText
         nameField = (EditText) findViewById(R.id.feedback_name);
+		nameField.setTypeface(dinMedium);
 
         emailField = (EditText) findViewById(R.id.feedback_email);
+		emailField.setTypeface(dinMedium);
 
         messageField = (EditText) findViewById(R.id.feedback_message);
-		
+		messageField.setTypeface(dinMedium);
+
 	}
  
 	@Override

@@ -1,24 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:ignore="ContentDescription" >
-
-    <ImageView
-        android:id="@+id/maps_bg_img"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_alignParentTop="true"
-        android:scaleType="fitXY"
-        android:src="@drawable/feedback_bg" />
+    android:orientation="vertical"
+    android:background="@color/dareu_bg_red"
+    tools:ignore="ContentDescription"
+>
 
     <RelativeLayout
         android:id="@+id/feedback_nav"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:background="@color/feedback_nav_bg_color"
         android:padding="5dp" >
 
         <ImageButton
@@ -28,7 +22,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:background="@null"
-            android:padding="15dp"
+            android:padding="5dp"
             android:src="@drawable/nav_close" />
 
         <TextView
@@ -38,25 +32,24 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="30dp"
-            android:shadowColor="@color/black"
-            android:shadowDx="2"
-            android:shadowDy="2"
-            android:shadowRadius="2"
-            android:textColor="@color/feedback_nav_font_color"
+            android:textColor="@color/white"
             android:textSize="30sp"
             android:text="@string/label_feedback"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+        />
     </RelativeLayout>
 
 
     <EditText
         android:id="@+id/feedback_name"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:hint="Name (optional)"
-        android:textColorHint="@color/black"
-        android:textColor="@color/black"
+        android:padding="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:hint="NAME (OPTIONAL)"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
         android:ems="10"
         android:layout_above="@+id/feedback_email"
         android:layout_centerHorizontal="true"
@@ -64,13 +57,16 @@
 
     <EditText
         android:id="@+id/feedback_email"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
+        android:padding="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:ems="10"
-        android:hint="Email (optional)"
-        android:textColorHint="@color/black"
-        android:textColor="@color/black"
+        android:hint="EMAIL (OPTIONAL)"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
         android:layout_above="@+id/feedback_message"
         android:layout_centerHorizontal="true"
         android:textStyle="bold"
@@ -78,13 +74,16 @@
 
     <EditText
         android:id="@+id/feedback_message"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textMultiLine"
+        android:padding="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:ems="10"
-        android:hint="Feedback"
-        android:textColorHint="@color/black"
-        android:textColor="@color/black"
+        android:hint="FEEDBACK"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:maxLines="5"
@@ -93,17 +92,18 @@
 
     <Button
         android:id="@+id/feedback_btn"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="15dp"
-        android:layout_marginBottom="30dp"
-        android:background="@color/transparent_grey"
-        android:textColor="@color/feedback_nav_font_color"
+        android:background="@drawable/du_button"
+        android:padding="20dp"
+        android:layout_margin="20dp"
+        android:textColor="@color/white"
         android:textAllCaps="true"
         android:text="@string/button_feedback"
         android:textSize="30sp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="bottom"
+        />
 
-
-</RelativeLayout>
+</LinearLayout>
