@@ -22,8 +22,9 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:background="@null"
-            android:padding="5dp"
-            android:src="@drawable/nav_close" />
+            android:padding="10dp"
+            android:src="@drawable/nav_close"
+        />
 
         <TextView
             android:id="@+id/feedback_title"
@@ -35,7 +36,8 @@
             android:textColor="@color/white"
             android:textSize="30sp"
             android:text="@string/label_feedback"
-        />
+            android:textStyle="bold"
+            />
     </RelativeLayout>
 
 
@@ -47,13 +49,14 @@
         android:padding="10dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:hint="NAME (OPTIONAL)"
+        android:layout_marginTop="20dp"
+        android:hint="NAME   (OPTIONAL)"
         android:textColorHint="@color/white"
         android:textColor="@color/white"
         android:ems="10"
         android:layout_above="@+id/feedback_email"
         android:layout_centerHorizontal="true"
-        android:textStyle="bold"/>
+    />
 
     <EditText
         android:id="@+id/feedback_email"
@@ -64,12 +67,11 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:ems="10"
-        android:hint="EMAIL (OPTIONAL)"
+        android:hint="EMAIL   (OPTIONAL)"
         android:textColorHint="@color/white"
         android:textColor="@color/white"
         android:layout_above="@+id/feedback_message"
         android:layout_centerHorizontal="true"
-        android:textStyle="bold"
         />
 
     <EditText
@@ -96,11 +98,14 @@
         android:layout_height="wrap_content"
         android:background="@drawable/du_button"
         android:padding="20dp"
-        android:layout_margin="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="120dp"
         android:textColor="@color/white"
         android:textAllCaps="true"
         android:text="@string/button_feedback"
         android:textSize="30sp"
+        android:textStyle="bold"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_gravity="bottom"

@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/du_button"
             android:padding="20dp"
-            android:layout_margin="20dp"
+            android:layout_margin="10dp"
             android:text="@string/label_live"
             android:textColor="@color/white"
             android:textSize="24sp"
@@ -44,7 +44,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/du_button"
             android:padding="20dp"
-            android:layout_margin="20dp"
+            android:layout_margin="10dp"
             android:text="@string/label_gallery"
             android:textColor="@color/white"
             android:textSize="24sp"
@@ -56,11 +56,11 @@
             android:layout_height="wrap_content"
             android:background="@drawable/du_button"
             android:padding="20dp"
-            android:layout_margin="20dp"
+            android:layout_margin="10dp"
             android:text="@string/label_credits"
             android:textColor="@color/white"
             android:textSize="24sp"
-        />
+            />
 
         <Button
             android:id="@+id/menu_feedback_btn"
@@ -68,7 +68,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/du_button"
             android:padding="20dp"
-            android:layout_margin="20dp"
+            android:layout_margin="10dp"
             android:text="@string/label_feedback"
             android:textColor="@color/white"
             android:textSize="24sp"

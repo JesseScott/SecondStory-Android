@@ -36,7 +36,7 @@ public class MenuScreen extends Activity {
 		dinMedium = Typeface.createFromAsset(getAssets(), "fonts/din alternate medium.ttf");
 		
 		Button galleryBtn = (Button) findViewById(R.id.menu_gallery_btn);
-        galleryBtn.setTypeface(dinBlack);
+        galleryBtn.setTypeface(dinMedium);
         galleryBtn.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -46,7 +46,7 @@ public class MenuScreen extends Activity {
 		});
 
 		Button feedbackBtn = (Button) findViewById(R.id.menu_feedback_btn);
-		feedbackBtn.setTypeface(dinBlack);
+		feedbackBtn.setTypeface(dinMedium);
 		feedbackBtn.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -55,8 +55,18 @@ public class MenuScreen extends Activity {
 			}
 		});
 
+		Button creditsBtn = (Button) findViewById(R.id.menu_credits_btn);
+        creditsBtn.setTypeface(dinMedium);
+        creditsBtn.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				//Intent i = new Intent("android.intent.action.ABOUT");
+				//startActivity(i);
+			}
+		});
+
 		Button liveBtn = (Button) findViewById(R.id.menu_live_btn);
-		liveBtn.setTypeface(dinBlack);
+		liveBtn.setTypeface(dinMedium);
 		liveBtn.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
