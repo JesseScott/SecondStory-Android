@@ -4,14 +4,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:ignore="ContentDescription" >
+    tools:ignore="ContentDescription"
+    android:background="@color/dareu_bg_red"
+>
 
     <ImageView
         android:id="@+id/welcome_bg"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_alignParentTop="true"
-        android:scaleType="fitXY"
-        android:src="@drawable/splash_bg" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/header"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+    />
 
 </RelativeLayout>

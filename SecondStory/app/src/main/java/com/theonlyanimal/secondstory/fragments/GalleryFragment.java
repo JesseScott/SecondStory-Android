@@ -57,7 +57,7 @@ public class GalleryFragment extends Fragment {
         // TextViews
         TextView title = (TextView) rootView.findViewById(R.id.gallery_page_title);
         title.setText(getResources().getStringArray(R.array.vid_title)[mPageNumber]);
-        title.setTypeface(dinBlack);
+        title.setTypeface(dinMedium);
 
         TextView director = (TextView) rootView.findViewById(R.id.gallery_page_director);
         director.setText(getResources().getStringArray(R.array.vid_directors)[mPageNumber]);

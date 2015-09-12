@@ -5,15 +5,6 @@
     android:layout_height="match_parent"
     tools:ignore="ContentDescription" >
 
-    <ImageView
-        android:id="@+id/guide_bg_img"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_alignParentTop="true"
-        android:layout_centerVertical="true"
-        android:scaleType="fitXY"
-        android:src="@drawable/guide_bg"
-    />
 
     <RelativeLayout
         android:id="@+id/guide_nav"
