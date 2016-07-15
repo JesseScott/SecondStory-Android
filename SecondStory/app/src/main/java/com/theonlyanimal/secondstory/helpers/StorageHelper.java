@@ -4,22 +4,13 @@ import android.annotation.SuppressLint;
 import android.os.Environment;
 import android.os.StatFs;
 
-/**
- * Checks the state of the external storage of the device.
- * 
- * @author kaolick
- * 
- * taken from http://stackoverflow.com/questions/7616974/how-to-check-internal-and-external-storage-if-exist
- * 
- */
-
 public class StorageHelper {
 
-	// Constructor
+	  // Constructor
     public StorageHelper() {
-		
+
 	}
-	
+
     // Storage states
     private boolean externalStorageAvailable, externalStorageWriteable;
 
@@ -44,7 +35,7 @@ public class StorageHelper {
 
     /**
      * Checks the state of the external storage.
-     * 
+     *
      * @return True if the external storage is available, false otherwise.
      */
     public boolean isExternalStorageAvailable() {
@@ -54,7 +45,7 @@ public class StorageHelper {
 
     /**
      * Checks the state of the external storage.
-     * 
+     *
      * @return True if the external storage is writeable, false otherwise.
      */
     public boolean isExternalStorageWriteable() {
@@ -64,7 +55,7 @@ public class StorageHelper {
 
     /**
      * Checks the state of the external storage.
-     * 
+     *
      * @return True if the external storage is available and writeable, false
      *         otherwise.
      */
@@ -78,10 +69,10 @@ public class StorageHelper {
             return true;
         }
     }
-    
+
     /**
      * Checks the space available on the external storage.
-     * 
+     *
      * @return A double of the GB available
      */
     @SuppressLint("NewApi")
@@ -102,7 +93,7 @@ public class StorageHelper {
     	else {
         	return 0;
     	}
-	
+
     }
 
 } /* EOC */
